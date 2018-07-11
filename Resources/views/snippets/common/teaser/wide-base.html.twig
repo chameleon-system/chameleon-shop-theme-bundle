@@ -1,0 +1,31 @@
+{#
+  description: shows a teaser with image, name, etc. the teaser ist tall
+  variables:
+    sTitle
+    sText
+    sURL
+    sImageURL
+    sImageId
+#}
+
+<div class="snippetTeaserWideBase">
+    <div class="row teaserContent">
+        <div class="col-xs-6 teaserImage">
+            <a href="{{sURL}}" title="{{sTitle}}">
+                {% if sImageURL %}
+                    <img src="{{sImageURL}}" alt="{{sTitle}}" />
+                {% elseif sImageId %}
+                    <img src="{{sImageId|cmsthumb(170, 90, true)}}" alt="{{sTitle}}" />
+                {% endif %}
+            </a>
+        </div>
+        <div class="col-xs-6 teaserText">
+            <header>
+                <h5><a href="{{sURL}}" title="{{sTitle}}">{{sTitle}}</a></h5>
+            </header>
+            <div class="teaserTextContent">
+                {{sText|raw}}
+            </div>
+        </div>
+    </div>
+</div>

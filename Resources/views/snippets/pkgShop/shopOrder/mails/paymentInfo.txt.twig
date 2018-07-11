@@ -1,0 +1,13 @@
+{#
+    description:
+    parameters:
+        ** sPaymentName
+        ** aPaymentInformation
+            ** sName
+            ** sValue
+#}
+{{'chameleon_system_chameleon_shop_theme.order_mail.payment'|trans({'%sPaymentName%': sPaymentName})}}
+
+{% for aPaymentInfo in aPaymentInformation %}
+{{aPaymentInfo.sName}}: {{aPaymentInfo.sValue}}
+{% endfor %}

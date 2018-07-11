@@ -1,0 +1,50 @@
+.snippetGalleryItems {
+  li {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 0;
+  }
+}
+
+ul.snippetGalleryItems {
+    margin-left:-5px;
+}
+
+@media (max-width: @screen-xs-max) {
+  .snippetGalleryItems {
+    .thumbnails > li {
+      float:left;
+    }
+  }
+}
+
+.cmsgallery {
+  .thumbnails .thumbnail {
+    .sliderContainer {
+      .sliderElementContainer.active {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .thumbnailBulletNav {
+    li {
+      color: #CCCCCC;
+      font-size: 20px;
+      margin-right: 5px;
+      cursor: pointer;
+      &.active {
+        color: #484848;
+      }
+      display: inline-block;
+      &:after {
+        content: "●";
+        height: 100%;
+        text-align: center;
+        vertical-align: middle;
+        width: 100%;
+      }
+    }
+  }
+}

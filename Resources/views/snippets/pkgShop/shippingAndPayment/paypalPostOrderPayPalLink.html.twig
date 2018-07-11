@@ -1,0 +1,16 @@
+{#
+    description: shows the paypal payment link
+    vars
+        sPaymentLink
+        sPaymentText
+#}
+
+<div class="snippetPaymentPaypalPostOrderPayPalLink">
+    <p class="link">
+        <a href="{{sPaymentLink|raw}}" target="_blank"><img src="/bundles/chameleonsystemchameleonshoptheme/images/snippets/payment/paypal/logo-small.png" alt="{{"chameleon_system_chameleon_shop_theme.payment.paypal_action_pay"|trans}}"></a>
+        <a href="{{sPaymentLink|raw}}" class="btn btn-warning btn-lg" target="_blank">{{"chameleon_system_chameleon_shop_theme.payment.paypal_action_pay"|trans}}</a>
+    </p>
+
+    {{sPaymentText |raw}}
+
+</div>

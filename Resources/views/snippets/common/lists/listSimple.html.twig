@@ -1,0 +1,31 @@
+{#
+  description: renders simple list with header and floating left entry text
+
+    sTitle
+    bShowMinimizer
+    aItemList
+        -sLink
+        -sTitle
+
+#}
+
+<ul class="snippetListSimple">
+    <li>
+        <a id="{{sTitle}}"></a>
+        <div class="header">{{sTitle}}</div>
+        {% if bShowMinimizer %}
+            <div class="minimizer active">&nbsp;</div>
+        {% endif %}
+        <div class="listContainer row">
+            <div class="listContainerInner">
+                <ul>
+                    {% for aItem in aItemList%}
+                        <li class="col-xs-4 col-sm-3 col-md-2">
+                            <a href="{{aItem.sLink}}" title="{{aItem.sTitle}}">{{aItem.sTitle}}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </li>
+</ul>

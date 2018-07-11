@@ -1,0 +1,59 @@
+{#
+  vars
+  dRating
+  sStockMessage
+  plus everything from /common/userInput/buttonAddToNoticeList.html.twig
+
+#}
+{% extends "/common/teaser/standard-shopArticle.html.twig" %}
+
+{% block colors %}
+    {% include "/pkgShop/shopArticle/articleColors.html.twig" with {'aColors': aColors} %}
+{% endblock %}
+
+{% block footerdetails %}
+    {% set sParent = parent() %}
+    {{sParent|raw}}
+
+    {% set bHasAdditionInfo = sSize is defined %}
+    {% set bHasAdditionInfo = bHasAdditionInfo or dRating is defined %}
+    {% set bHasAdditionInfo = bHasAdditionInfo or sStockMessage is defined %}
+    {% set bHasAdditionInfo = bHasAdditionInfo or (aVariantTypes is defined and (0 < aVariantTypes|length)) %}
+
+    {% if bHasAdditionInfo and sParent == '' %}
+        <table class="infoline table table-condensed" title="{{"chameleon_system_chameleon_shop_theme.products.product_details"|trans}}">
+    {% else %}
+        <div class="infoline-placeholder"></div>
+    {% endif %}
+    {% if (aVariantTypes is defined and (0 < aVariantTypes|length))%}
+        <tr class="size">
+            <td colspan="2" class="sizeRow">
+                {% include "/pkgShop/shopArticle/variants/boxShow.html.twig"  %}
+            </td>
+        </tr>
+    {% endif %}
+    {% if dRating is defined %}
+        <tr class="rating">
+            <th>{{"chameleon_system_chameleon_shop_theme.products.product_reviews"|trans}}:</th>
+            <td>{% include "/pkgShopArticleReview/standard.html.twig"%}</td>
+        </tr>
+    {% endif %}
+    {% if sStockMessage is defined %}
+        <tr class="shipping">
+            <th>{{"chameleon_system_chameleon_shop_theme.products.shipping_info"|trans}}:</th>
+            <td>{% include "/pkgShop/shopArticle/partials/articleStockMessage.html.twig" with {'sStockMessage':sStockMessage, 'sStockMessageCSSClass': sStockMessageCSSClass} %}</td>
+        </tr>
+    {% endif %}
+
+    {% if bHasAdditionInfo and sParent == '' %}
+        </table>
+    {% endif %}
+
+{% endblock %}
+
+{%- block footer -%}
+    {{parent() }}
+    {% block notice %}
+        <div class="noticewrapper">{% include "/common/userInput/buttonAddToNoticeList.html.twig" %}</div>
+    {% endblock %}
+{%- endblock -%}

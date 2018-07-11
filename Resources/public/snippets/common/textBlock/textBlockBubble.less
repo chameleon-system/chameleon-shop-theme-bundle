@@ -1,0 +1,55 @@
+.snippetTextBlockBubble {
+    .bubble {
+        border-radius: 10px 10px 10px 10px;
+        border: 1px solid @cmsBorder3;
+        margin: 0;
+        padding: 11px 9px 11px 3px;
+        position: relative;
+        background: -moz-linear-gradient(#F1F1F1, #F8F8F8);
+        &:after {
+            border-color: #F1F1F1 transparent;
+            border-style: solid;
+            border-width: 0 17px 24px 0;
+            content: "";
+            display: block;
+            left: 85%;
+            position: absolute;
+            top: -24px;
+            width: 0;
+
+        }
+
+        .bubbleInner {
+            &:after {
+                visibility: hidden;
+                clear: both;
+                display: block;
+                content: "";
+            }
+            .optionalImage {
+                .i();
+                .i-successSignMiddle();
+                float: left;
+                margin-left: 6px;
+                margin-top: 6px;
+                margin-right:6px;
+            }
+            .content {
+                padding-left: 6px;
+                .text {
+                    .cssFont5();
+                  color:@cmsColorPrimaryHigh1;
+                }
+                .link {
+                    padding-top: 9px;
+                    padding-bottom: 2px;
+                    .linkimage{
+                        .i-point_green();
+                    }
+                }
+
+            }
+        }
+
+    }
+}

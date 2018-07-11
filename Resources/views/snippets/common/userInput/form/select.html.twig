@@ -1,0 +1,22 @@
+{#
+    description: show a select field
+    vars:
+        - same as /common/userInput/form/text.html.twig
+        - aValueList (array with each element having  sValue and sName)
+#}
+{% extends "/common/userInput/form/text.html.twig" %}
+{% block field %}
+    <div class="input-group {% if sInputClass is defined %}{{sInputClass}}{% endif %}">
+        <select class="form-control"
+                {% if sFieldId is defined %}id="{{sFieldId}}"{% endif %}
+                name="{{sName}}"
+                {% if bRequired == true%} required {%endif%}
+                {% if sTitle is defined %}title="{{ sTitle }}"{% else %}title="Sortierung"{% endif %}
+                {% if onchange is defined %}onchange="{{ onchange }}"{% endif %} >
+            <option value="" {% if "" == aValue.sValue %}selected="selected"{% endif %}>{% if sPlaceholder is defined %}{{ sPlaceholder }}{% else %}&nbsp;{% endif %}</option>
+            {% for aValue in aValueList %}
+                <option value="{{aValue.sValue}}" {% if sValue == aValue.sValue or aValue.bSelected %}selected="selected"{% endif %}>{{aValue.sName}}</option>
+            {% endfor %}
+        </select>
+    </div>
+{% endblock %}

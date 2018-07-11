@@ -1,0 +1,66 @@
+{% if bHideTables is not defined or bHideTables == false %}<table class="snippetShopArticleVariantsBoxSelection" title="{{"chameleon_system_chameleon_shop_theme.products.available_variants"|trans}}">{% endif %}
+    {% set sPreviousType = '' %}
+    {%for aType in aVariantTypes %}
+        {% set bSelected = false %}
+        <tr class="snippetShopArticleVariantsBoxSelection {{aType.sSystemName}}">
+            <th class="{{aType.sSystemName}}">{{aType.sTitle}}:</th>
+            <td class="{{aType.sSystemName}}">
+                {% block listStart %}
+                    <ul>
+                {% endblock %}
+                    {% for aValue in aType.aItems %}
+                        {% if aValue.bIsActive %}
+                            {% set bSelected = true %}
+                        {% endif %}
+                        {% block listItemStart %}
+                            <li {%if aValue.bIsActive %}class="active"{% endif %}>
+                        {% endblock %}
+                            {%block variantValue%}
+                                {% if aValue.bArticleIsActive == '1' %}
+                                    {% if aType.bAllowSelection %}
+                                        <a class="item{% if aType.sSystemName != 'color' %} btn btn-default{%endif%}{%if aValue.bIsActive %} active{% endif %}" href="{{aValue.sSelectLink | raw}}" style="{%if aValue.sColor %}background-color:#{{aValue.sColor}};{% endif %} {%if aType.sSystemName == 'color' and aValue.cms_media_id %}background: url({{ aValue.cms_media_id|cmsthumb(20,20,true) }});{% endif %}" title="{{aType.sTitle ~" "~aValue.sTitle}}">
+                                    {% else %}
+                                        <span class="item{% if aType.sSystemName != 'color' %} btn btn-default{%endif%} disabled" style="{%if aValue.sColor %}background-color:#{{aValue.sColor}};{% endif %} {%if aType.sSystemName == 'color' and aValue.cms_media_id %}background: url({{ aValue.cms_media_id|cmsthumb(20,20,true) }});{% endif %}" title="{{aType.sTitle ~" "~aValue.sTitle}}">
+                                    {% endif %}
+                                {% else %}
+                                    <span  class="item disabled inactive{% if aType.sSystemName != 'color' %} btn btn-default{%endif%}{%if aValue.bIsActive %} active{% endif %}" {%if aValue.sColor %}style="background-color:#{{aValue.sColor}}"{% endif %} title="{{aType.sTitle ~" "~aValue.sTitle}} {{"chameleon_system_chameleon_shop_theme.products.variant_sold_out"|trans }}">
+                                {% endif %}
+                                {% if aType.sSystemName != 'color' %}{{aValue.sTitle}}{%else %}&nbsp;{%endif%}
+                                {% if aValue.bArticleIsActive == '1' %}
+                                    {% if  aType.bAllowSelection %}
+                                        </a>
+                                    {% else %}
+                                        </span>
+                                    {% endif %}
+                                {% else %}
+                                    </span>
+                                {% endif %}
+                            {% endblock %}
+                        {% block listItemEnd %}
+                            </li>
+                        {% endblock %}
+                    {% endfor %}
+                {% block listEnd %}
+                    </ul>
+                {% endblock %}
+                {%block seclectionInfo %}
+                    {% if aType.bAllowSelection %}
+                        {% if not bSelected %}
+                            <span class="label label-warning">{{"chameleon_system_chameleon_shop_theme.products.variant_action_select_type" | trans({'%sType%': aType.sTitle})}}</span>
+                        {% endif %}
+                    {% else %}
+                        <span class="label label-warning">{{"chameleon_system_chameleon_shop_theme.products.variant_error_no_type_selected" | trans({'%sType%': sPreviousType})}}</span>
+                    {% endif %}
+                    {% if sManufacturerSizeTable and  aType.sSystemName == 'size' %}
+                        <div class="sizetable-container">
+                            <div class="sizetablelink">{{ 'chameleon_system_chameleon_shop_theme.products.manufacturer_sizes_all' | trans}}: <span onclick="CHAMELEON.Custom.ToggleSizeTable('sizetable');return false;">{{ 'chameleon_system_chameleon_shop_theme.products.manufacturer_size_table' | trans}}</span></div>
+                            <div class="sizetable" id="sizetable">{{ sManufacturerSizeTable|raw }}</div>
+                        </div>
+                    {% endif %}
+                {% endblock %}
+            </td>
+        </tr>
+        {% set sPreviousType = aType.sTitle %}
+    {% endfor %}
+
+    {% if bHideTables is not defined  or bHideTables == false %}</table>{% endif %}

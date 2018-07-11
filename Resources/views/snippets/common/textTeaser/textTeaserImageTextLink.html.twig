@@ -1,0 +1,38 @@
+{#
+  description: a text teaser with image on left side and text and link on the right
+  parameters:
+    ** aImage array of image information
+       ** sClassSrc contains sprite class of the image
+    ** aLink
+        ** sLinkURL
+        ** sTitle
+    ** sText
+#}
+
+<div class="snippetTextTeaserImageTextLink">
+    {%block image%}
+        {% if aImage %}
+            <div class="image">
+                <span class="{{aImage.sClassSrc}}">&nbsp;</span>
+            </div>
+        {%endif%}
+    {%endblock%}
+    {{ sImage | raw}}
+    {% block right%}
+        <div class="rightText">
+            <div class="text font_ubuntu_med_1 color_grey_1">
+                {% block text%}
+                    {{ sText }}
+                {% endblock %}
+            </div>
+            {% block link%}
+                {% if aLink %}
+                    <div class="link">
+                        {% include "/common/links/linkStylesIcon.html.twig" with aLink %}
+                    </div>
+                {% endif %}
+            {%endblock%}
+        </div>
+    {% endblock %}
+    <div class="clearfix">&nbsp;</div>
+</div>

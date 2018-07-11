@@ -1,0 +1,84 @@
+{#
+    description: renders login form
+    vars
+
+    aTextData - optional - vars see /common/textBlock/textBlockSmallHeadline.html.twig
+    aFieldUserName - required - vars see /common/userInput/form/text.html.twig
+    aFieldPassword - required - vars see /common/userInput/form/text.html.twig
+    aLinkForgotPassword - optional - vars see /common/links/linkStylesIcon.html.twig
+    aLinkRegister - optional - vars see /common/links/linkStylesIcon.html.twig
+    sSpotName - optional
+    sLoginSuccessURL - optional
+    sLoginFailureURL - optional
+    bIsLoggedIn - optional - should be set to display message instead of login form, if value is true the following variables are required
+        sUsername - username of the logged in user
+        sLogoutLink - link to the logout page
+
+#}
+<div class="snippetFormLoginStandard">
+    {% if formDefaultInputClass == '' %}{% set formDefaultInputClass = 'fullWidth' %}{% endif %}
+    {% if aTextData %}
+        {% include "/common/textBlock/textBlockSmallHeadline.html.twig" with aTextData%}
+    {% endif %}
+    {% if not bIsLoggedIn %}
+        <div class="loginForm">
+            <form accept-charset="utf-8" method="post" class="{% block formClass%}form-horizontal{% endblock%}">
+                {% if sSpotName %}<input type="hidden" value="Login" name="module_fnc[{{sSpotName}}]">{% endif %}
+                <input type="hidden" value="" name="spwdhash">
+                <input type="hidden" value="loginBox" name="sConsumer">
+                <input type="hidden" value="{{sLoginSuccessURL}}" name="sSuccessURL">
+                <input type="hidden" value="{{sLoginFailureURL}}" name="sFailureURL">
+                <div class="inputBlock">
+                    <div class="userName">
+                        {% set aFieldUserNameMapped = {
+                        'sLabelText' : '',
+                        'sLabelClass' : formDefaultLabelClass,
+                        'sInputClass' : formDefaultInputClass,
+                        'sHelpClass' : formDefaultHelpClass,
+                        'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_username_email'|trans,
+                        'sName' : 'slogin',
+                        'bRequired' : true,
+                        'sFieldId':"LoginUserName",
+                        'sError': aFieldUserName.sError,
+                        'sValue' : aFieldUserName.sValue}%}
+                        {% include "/common/userInput/form/text.html.twig" with aFieldUserNameMapped%}
+                    </div>
+                    <div class="password">
+                        {% set aFieldPasswordMapped = {
+                        'sLabelText' : '',
+                        'sLabelClass' : formDefaultLabelClass,
+                        'sInputClass' : formDefaultInputClass,
+                        'sHelpClass' : formDefaultHelpClass,
+                        'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_password'|trans,
+                        'sName' : 'password',
+                        'bRequired' : true,
+                        'sFieldId':"LoginPW",
+                        'sError': aFieldPassword.sError,
+                        'sValue' : aFieldPassword.sValue}%}
+                        {% include "/common/userInput/form/password.html.twig" with aFieldPasswordMapped%}
+                    </div>
+                    {{sOverallMessage|raw}}
+                    <div class="buttons">
+                        {% include "/common/userInput/buttonStandard.html.twig" with {sButtonText: 'chameleon_system_chameleon_shop_theme.extranet.action_login'|trans, sButtonClass: formDefaultSubmitClass}%}
+                        <div class="form-group">
+                            {% if aLinkForgotPassword%}
+                                <div class="passwordLink input-group {{ formDefaultSubmitClass }}">
+                                    {% include "/common/links/linkStylesIcon.html.twig" with aLinkForgotPassword %}
+                                </div>
+                            {% endif %}
+                            {% if aLinkRegister%}
+                                <div class="registerLink input-group {{ formDefaultSubmitClass }}">
+                                    {% include "/common/links/linkStylesIcon.html.twig" with aLinkRegister %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    {% else %}
+        <div>
+            {{ 'chameleon_system_chameleon_shop_theme.extranet.logged_in_as'|trans({'%sUsername%':sUsername, '%sLink%':sLogoutLink})|raw }}
+        </div>
+    {% endif %}
+</div>

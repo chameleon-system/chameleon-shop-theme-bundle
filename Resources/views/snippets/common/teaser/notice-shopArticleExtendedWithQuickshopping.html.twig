@@ -1,0 +1,33 @@
+{#
+  vars
+  sShippingTime
+  dRating
+  sShippingTime
+
+regular 15px
+#}
+
+
+{% extends "/common/teaser/standard-shopArticleExtended.html.twig" %}
+
+{% block shopArticleColumn %}{% endblock %}
+
+{%- block linkbar -%}
+    {%  if sQuickShopDisable == false %}
+
+        {% set sParent = parent() %}
+        {{sParent|raw}}
+        {% if sParent == '' %}
+            <span class="linkBar">
+        {% endif %}
+        <a href="{{sQuickShopLink}}" class="quickshop" target="_blank">{{"chameleon_system_chameleon_shop_theme.products.action_quickshop"|trans}}</a>
+        {% if sParent == '' %}
+            </span>
+        {% endif %}
+    {% endif %}
+{%- endblock -%}
+
+{% block notice%}
+    <div class="basketWrapper">{% include "/common/userInput/buttonAddToBasketOneAmount.html.twig" %}</div>
+    <div class="noticewrapper">{% include "/common/userInput/buttonRemoveFromNoticeList.html.twig" %}</div>
+{%- endblock -%}

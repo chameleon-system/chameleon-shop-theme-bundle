@@ -1,0 +1,57 @@
+.snippetListPaging {
+  float: right;
+  padding-top: 4px;
+  margin-bottom: 1em;
+  @media (min-width: @screen-lg-min) {
+    margin-bottom: 0;
+  }
+  .cmsSmallRegular;
+  color: @cmsColorPrimaryHigh2;
+  a {
+    color: @cmsColorPrimaryHigh2;
+    border: 1px solid @cmsBorder3;
+    display: block;
+    float: left;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-left: 2px;
+    line-height: 17px;
+    min-width: 20px;
+    text-align: center;
+    text-decoration: none;
+
+    &.activePageItem {
+      color: @cmsColorSecondary;
+      border-color: @cmsBorder7;
+    }
+    &.pageItem:Hover {
+      color: @cmsColorSecondary;
+      border-color: @cmsBorder7;
+    }
+    &.next,
+    &.back {
+      border: none;
+      margin: 0;
+      padding: 0;
+      min-width: 0;
+      padding-top: 3px;
+    }
+  }
+  span.backDummy,
+  span.nextDummy {
+    display: none;
+  }
+
+  span {
+    float: left;
+    line-height: 16px;
+    display: block;
+    padding-top: 6px;
+    &.spacerBack {
+      margin-left: 2px;
+    }
+    &.spacerNext {
+      margin-left: 2px;
+    }
+  }
+}

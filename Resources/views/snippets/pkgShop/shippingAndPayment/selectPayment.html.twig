@@ -1,0 +1,64 @@
+{#
+    description: shows list of shipping groups for the user to select from
+    sCurrency
+    parameter
+        aPaymentList array of groups each with the following
+            bIsActive
+            sCost
+            sTitle
+            id
+            cmsMediaId
+            sDescription
+            sDetails
+            sTargetURL
+
+#}
+
+<div class="snippetOrderWizardShippingAndPaymentSelectPayment" data-primarybuttonid="primarypaymentbutton">
+    <h2 class="headline3">{{ "chameleon_system_chameleon_shop_theme.checkout.payment_headline" | trans }}</h2>
+
+    <div class="description">{{ "chameleon_system_chameleon_shop_theme.checkout.payment_help" | trans }}</div>
+    <ul class="options">
+        {% for aPayment in aPaymentList %}
+            <li class="{% if aPayment.bIsActive %}active{% endif %}">
+                <form name="paymentmethod{{ aPayment.id }}" method="post" accept-charset="utf-8" {% if aPayment.sTargetURL %}action="{{ aPayment.sTargetURL }}"{% endif %}>
+                    <input type="hidden" name="module_fnc[[{sModuleSpotName}]]" value="ExecuteStep"/>
+                    <input type="hidden" name="orderstepmethod" value=""/>
+
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="header col-xs-12 col-sm-5">
+                                <div class="radio">
+                                    <label>
+                                        {% if aPaymentList | length == 1 %}
+                                            <input class="paymentid" type="hidden" name="aShipping[shop_payment_method_id]" value="{{ aPayment.id }}" >
+                                        {% else %}
+                                            <input class="paymentid" type="radio" {% if aPayment.bIsActive %}checked="checked"{% endif %}  name="aShipping[shop_payment_method_id]" value="{{ aPayment.id }}">
+                                        {% endif %}
+                                        <span class="icon"><img src="{{ aPayment.cmsMediaId | cmsthumb(80,30) }}" alt="{{ aPayment.sTitle }}"></span>
+                                        <span class="title">{{ aPayment.sTitle }}{% if aPayment.sCost %} (
+                                                <span class="additionalcost">+ {{ sCurrency }}{{ aPayment.sCost }}
+                                                )</span>{% endif %}</span>
+                                    </label>
+                                </div>
+                            </div>
+                            {% if aPayment.sDescription %}
+                                <div class="description col-xs-12 col-sm-7">{{ aPayment.sDescription | raw }}</div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    {% if aPayment.sDetails %}
+                        <div class="col-xs-11 col-xs-offset-1">{{ aPayment.sDetails | raw }}</div>
+                    {% endif %}
+
+                    <noscript>
+                        <button type="submit" class="btn btn-lg btn-primary">{{ "chameleon_system_chameleon_shop_theme.checkout.payment_select" | trans }}</button>
+                    </noscript>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+</div>

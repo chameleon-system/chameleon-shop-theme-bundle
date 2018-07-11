@@ -1,0 +1,41 @@
+{#
+    description: wraps the bootstrap thumbnail html block WITHOUT the ul.
+    vars:
+        iGridSize - the number of grid columns the thumbnail should occupy
+        sLabel, sDescription - optional you may link a label with a description under the thumbnail instead of linking the image itself
+        sImageURL - the thumbnail image
+        sTitle - the alt-tag for the image
+        sSelectImageURL - URL to call when the image is clicked
+        bOpenZoomInNewWindow - optional - if set will open detail link in new window
+
+
+#}
+
+{% set bThumbnailHasText =  sLabel is defined or sDescription is defined or sSelectImageURL == '' or sSelectImageURL is not defined %}
+<li class="col-xs-{{ iGridSize|default(3) }}">
+    {%- if bThumbnailHasText -%}
+        <div class="thumbnail {% if bActiveZoom == 1 %} zoomMagnifier" data-zoom-image="{{ sLargeImageURL }}{% endif %}">
+    {%- else -%}
+        <a href="{{ sSelectImageURL | raw }}" class="thumbnail zoomMagnifier"  data-zoom-image="{{ sLargeImageURL }}"{% if bOpenZoomInNewWindow %} target="_blank"{% endif %}>
+    {%- endif -%}
+
+            {%- block item -%}
+                {% block image %}
+                    <img src="{{ sImageURL }}" alt="{{ sImageTitle|trim | default ("chameleon_system_chameleon_shop_theme.products.default_product_alt_text")|trans }}" itemprop="image">
+                {% endblock %}
+                {%- if sLabel -%}
+                    <div class="headline5">
+                        <a href="{{ oItem.sSelectImageURL | raw }}" {% if bOpenZoomInNewWindow %}target="_blank"{% endif %}>{{ sLabel }}</a>
+                    </div>
+                {%- endif -%}
+                {%- if sDescription -%}
+                    {{ sDescription|raw }}
+                {%- endif -%}
+            {%- endblock -%}
+
+    {%- if bThumbnailHasText -%}
+        </div>
+    {%- else -%}
+        </a>
+    {%- endif -%}
+</li>

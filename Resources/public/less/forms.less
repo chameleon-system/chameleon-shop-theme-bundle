@@ -1,0 +1,46 @@
+.inputIncDecField {
+  display: block;
+  float: left;
+  input {
+    float: left;
+  }
+
+  .controls {
+    padding-left: 4px;
+    padding-right: 4px;
+    display: block;
+    float: left;
+
+    .icon-inc,
+    .icon-dec {
+      display: block !important;
+      cursor: pointer;
+      opacity: 0.7;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .icon-inc {
+      .glyphicon;
+      .glyphicon-chevron-up;
+    }
+    .icon-dec {
+      .glyphicon;
+      .glyphicon-chevron-down;
+    }
+  }
+}
+
+//addThis bootstrap fix
+#at16psf input, #at16psf input:focus {
+    box-shadow: none;
+    height:auto;
+}
+
+.help-block {
+  .cmsmessage {
+    margin-bottom: 0;
+    padding: 5px;
+  }
+}

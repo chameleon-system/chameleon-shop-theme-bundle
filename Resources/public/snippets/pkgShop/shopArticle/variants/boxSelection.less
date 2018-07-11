@@ -1,0 +1,97 @@
+table.snippetShopArticleArticleInfoBlock tbody,
+table.snippetShopArticleVariantsBoxSelection tbody {
+    tr {
+        th {
+            padding-top: 11px;
+            padding-left: 0;
+            padding-bottom: 14px;
+            width:24.0%;
+        }
+        td {
+            padding-top: 11px;
+            padding-bottom: 14px;
+        }
+        &.snippetShopArticleVariantsBoxSelection {
+            border-bottom: 1px solid @table-border-color;
+            th {
+                padding-top: 14px;
+            }
+            td {
+                .snipptShopArticlePartialsArticleStockMessage {
+                    line-height: 20px;
+                }
+                .label-warning {
+                    font-weight: normal;
+                    font-size: 80%;
+                }
+            }
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                span {
+                    display: block;
+                    float: left;
+                }
+                li {
+                    float: left;
+                    display: block;
+                    margin-right: 3px;
+                    margin-bottom:3px;
+                    span.btn.disabled {
+                        background-color: @cmsBackground;
+                    }
+                    span.inactive {
+                        text-decoration: line-through;
+                        &:Hover{
+                            text-decoration: line-through;
+                        }
+                    }
+                    a.btn {
+                        background-color: @white;
+                        &.active {
+                            border: 1px solid @cmsColorSecondary;
+                        }
+                        &.active,
+                        &:hover {
+                            background-color: @cmsBackground5;
+                        }
+                    }
+                    &.active {
+                        span {
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .clearfix();
+            }
+
+            .color {
+                .item {
+
+                    display: block;
+                    border: 4px solid @cmsBorder3;
+                    width: 28px;
+                    height: 28px;
+                    &:hover, &.active {
+                        border: 1px solid @cmsBorder7;
+                        padding: 3px;
+                        text-decoration: none;
+                    }
+
+                }
+            }
+
+            .sizetable-container {
+                margin-top: 10px;
+                span {
+                    color: @cmsColorSecondary;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+}
+

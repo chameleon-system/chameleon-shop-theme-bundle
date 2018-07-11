@@ -1,0 +1,39 @@
+{#
+    description: renders profile form to edit user specific data like alias name or birthday
+    vars
+
+    aTextData - optional - vars see /common/textBlock/textBlockSmallHeadline.html.twig
+    aFieldBirthdate - required - vars see /common/userInput/form/text.html.twig
+    sSpotName - optional
+    sWizardModuleModuleSpot - required
+    sStepURL -required
+
+#}
+<div class="snippetFormUserProfile">
+    {% if aTextData %}
+        {% include "/common/textBlock/textBlockSmallHeadline.html.twig" with aTextData%}
+    {% endif %}
+    <div class="form">
+        <form accept-charset="utf-8"  method="post" class="form-horizontal">
+            <input type="hidden" value="ExecuteStep" name="module_fnc[{{sSpotName}}]">
+            <input type="hidden" value="{{sSpotName}}" name="{{sWizardModuleModuleSpot}}">
+            <input type="hidden" name="sFailureURL" value="{{sStepURL}}" />
+            <input type="hidden" name="sSuccessURL" value="{{sStepURL}}" />
+                <div class="inputBlock">
+                    <div class="userName">
+                        {% set aFieldBirthdateMapped = {
+                            'sLabelClass' : formDefaultLabelClass,
+                            'sInputClass' : formDefaultInputClass,
+                            'sHelpClass' : formDefaultHelpClass,
+                            'sFieldId': "profileBirthDate",
+                            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_date_of_birth'|trans,
+                            'sName' : 'aUserInput[birthdate]',
+                            'sError': aFieldBirthdate.sError,
+                            'sValue' : aFieldBirthdate.sValue}%}
+                        {% include "/common/userInput/form/text.html.twig" with aFieldBirthdateMapped%}
+                    </div>
+                </div>
+                {% include "/common/userInput/buttonStandard.html.twig" with {sButtonText:"chameleon_system_chameleon_shop_theme.action.submit"|trans, sButtonClass: formDefaultSubmitClass}%}
+        </form>
+    </div>
+</div>

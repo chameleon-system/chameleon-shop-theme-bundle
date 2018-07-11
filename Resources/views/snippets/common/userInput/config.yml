@@ -1,0 +1,13 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/buttonAddToBasket.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/buttonAddToBasketOneAmount.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/buttonAddToBasketOrNoticeList.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/buttonAddToNoticeList.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/inputPreorderNotification.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/userInputBox.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/userInputBoxWithText.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/userInputSelect.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/userInputSubmit.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/userInputText.less
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopBasket/shopBasketAddToBasketViaAjax.js

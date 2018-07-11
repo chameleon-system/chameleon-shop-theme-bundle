@@ -1,0 +1,39 @@
+{#
+    description: quick search form
+    vars
+        sSearchURL
+        q
+#}
+
+{% set defaultText = 'chameleon_system_chameleon_shop_theme.products.you_searched_for' | trans %}
+
+{% if not q %}
+    {% set q = defaultText %}
+{% endif %}
+<div class="snippetModulesMTShopSearchFormQuicksearch hidden-print">
+    <form class="form-search" name="quicksearch" action="{{sSearchURL | raw}}" method="get" accept-charset="utf-8" id="quicksearchform">
+        {% set aMappedData = {
+            'sInputClass': 'userInputBox inputBoxQuickSearch',
+            'sPlaceholder': defaultText,
+            'sIconClassLeft' : 'glyphicon glyphicon-search'
+        }%}
+        {% embed "/common/userInput/form/text.html.twig" with aMappedData %}
+            {% block inputField %}
+                {% set sValue = q %}
+                {% set sPlaceHolder = defaultText %}
+                {% if sValue == sPlaceholder %}{% set sValue = "" %}{% endif %}
+                <input class="quicksearchInputField userInputBoxInput form-control" type="text" name="q" title="{{ sPlaceholder }}" value="{{ sValue }}" placeholder="{{ sPlaceholder }}" />
+            {% endblock %}
+
+            {% block postInputField %}
+                <span class="input-group-addon">
+                    <button type="submit" class="userInputBoxSubmit" value="" aria-label="Right Align" />
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button>
+                </span>
+            {% endblock%}
+            {% block helpBlock %}
+            {% endblock %}
+        {% endembed %}
+    </form>
+</div>

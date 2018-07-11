@@ -1,0 +1,28 @@
+{#
+  description: shows a list of teaser with image, name, etc.
+  variables:
+    sTitle
+    aTeaserList
+        sImageId
+        sHeadline
+        sLink
+        sTeaserText - optional
+#}
+{% if( aTeaserList and aTeaserList|length >0) %}
+    
+    <div class="snippetShopCategorySubcategoryTeaserList">
+        <div class="headline">
+            <h3>{{ "chameleon_system_chameleon_shop_theme.category_teaser.headline" | trans({'%sTitle%':sCategoryName}) }}</h3>
+        </div>
+        <div class="row">
+            {% for aTeaserData in aTeaserList %}
+                {% include "/common/teaser/standard-base.html.twig" with {'sImageId': aTeaserData.sImageId,
+                'sHeadline': aTeaserData.sHeadline,
+                'sLink' : aTeaserData.sLink,
+                'sTeaserText' : aTeaserData.sTeaserText,
+                'iMaxImageHeight': 50
+                } %}
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

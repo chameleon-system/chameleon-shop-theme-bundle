@@ -1,0 +1,15 @@
+{% if  previousItem or backToListUrl or  nextItem %}
+<div class="snippetShopArticleDetailPageNextPrev">
+    {% if previousItem %}
+        <a class="prev" href="{{ previousItem.getUrl() | raw }}" title="{{ previousItem.getName() }}" rel="nofollow"><span class="i i-arrow_small_left"></span> {{ "chameleon_system_chameleon_shop_theme.products.previous_product" | trans }}</a>
+    {% else %}
+        <span class="previous-product col-xs-4">&nbsp;</span>
+    {% endif %}
+    &nbsp;&nbsp;
+    {% if nextItem %}
+        <a class="next pull-right" href="{{ nextItem.getUrl() | raw }}" title="{{ nextItem.getName() }}" rel="nofollow">{{"chameleon_system_chameleon_shop_theme.products.next_product" | trans}} <span class="i i-arrow_small_right"></span></a>
+    {% else %}
+        <span class="next-product col-xs-4 pull-right">&nbsp;</span>
+    {% endif %}
+</div>
+{% endif %}

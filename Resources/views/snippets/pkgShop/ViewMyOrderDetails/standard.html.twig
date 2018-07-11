@@ -1,0 +1,13 @@
+<div class="view-my-order-details">
+    {% if error %}
+        {% if errorCode == 'notMyOrderError'%}
+            {{"chameleon_system_chameleon_shop_theme.order.detail_access_denied"|trans}}
+        {% elseif errorCode == 'orderNotFoundError' %}
+            {{"chameleon_system_chameleon_shop_theme.order.detail_order_not_found"|trans}}
+        {% else %}
+            {{"chameleon_system_chameleon_shop_theme.order.detail_unknown_error"|trans}}
+        {% endif %}
+    {% else %}
+        {{ orderHTML|raw }}
+    {% endif %}
+</div>

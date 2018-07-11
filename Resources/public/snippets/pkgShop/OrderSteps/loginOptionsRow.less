@@ -1,0 +1,92 @@
+.topLine {
+    border-top: 1px solid @cmsBorder3;
+    margin-top: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    @media(max-width: @screen-sm-max){
+        margin-top:0;
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+
+    .snippetFormTelephoneOrder{
+        .button{
+            @media(max-width: @screen-sm-max){
+                float:right;
+            }
+        }
+    }
+}
+.loginOptionsRow {
+
+    .borderLeft {
+
+        border-left: 1px solid @cmsBorder3;
+        padding-left: 20px;
+
+        /*
+        padding-left is adjusted in the same way as the the margin-left of span* - classes
+        */
+        @media (max-width: @screen-sm-max){
+          border-left: 0;
+          border-top: 1px solid @cmsBorder3;
+          padding-left: 0;
+        }
+        @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+          padding-left: 20px;
+        }
+        @media (min-width: @screen-lg-min){
+          padding-left: 30px;
+        }
+    }
+    .snippetTextBlockStandard {
+        .textBlockContent {
+          min-height: 188px;
+          height:auto !important;
+          @media (max-width: @screen-sm-max){
+              min-height: inherit;
+          }
+
+        }
+        .bottomLink {
+            margin-top: 20px;
+        }
+
+    }
+    .snippetFormLoginStandard {
+        .snippetTextBlockStandard {
+            .textBlockContent {
+              min-height: 45px;
+              height:auto !important;
+              height: 45px;
+            }
+        }
+        .loginForm{
+            form{
+                margin: 0;
+                .buttons{
+                    &:after {
+                        visibility: hidden;
+                        clear: both;
+                        display: block;
+                        content: "";
+                    }
+                }
+            }
+          &:after {
+            visibility: hidden;
+            clear: both;
+            display: block;
+            content: "";
+          }
+          .inputBlock {
+            float: none;
+          }
+        }
+    }
+    .amazonPaymentButton,
+    .amazonPaymentButton .payWithAmazonDiv,
+    .amazonPayLoginText {
+      text-align: left;
+    }
+}

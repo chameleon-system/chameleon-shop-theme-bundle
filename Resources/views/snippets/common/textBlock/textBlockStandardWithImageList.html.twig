@@ -1,0 +1,39 @@
+{#
+    description: an text block with optional link in header and image list under text content
+    parameters:
+        ** sTitle
+        ** sText
+        ** aLink optional if not given no link will be rendered
+            ** sLinkURL
+            ** sTitle
+            ** sLinkFont
+            ** sLinkColor
+            ** sLinkIconClass
+        ** aImageList
+            ** aImage
+                ** sImageURL
+                ** sLinkURL
+                ** sTitle
+  )
+#}
+
+<div class="snippetTextBlockStandardWithImageList">
+    {% include "/common/textBlock/textBlockStandard.html.twig" %}
+    {% if aImageList %}
+        <div class="imagelist row">
+            {% for aImage in aImageList %}
+                <div class="col-xs-2">
+                    <div class="image">
+                        {% if aImage.sLinkURL %}
+                            <a href="{{aImage.sLinkURL}}" title="{{aImage.sTitle|trim}}">
+                        {% endif %}
+                                <img src="{{aImage.sImage|cmsthumb(170,76,true)}}" alt="{{aImage.sTitle|trim}}" />
+                        {% if aImage.sLinkURL %}
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

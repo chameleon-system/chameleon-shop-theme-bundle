@@ -1,0 +1,11 @@
+{#
+    description: an text teaser with image on left side and text and optional link on the right
+    parameters:
+        ** see /common/textBlock/textBlockMediumHeadline.html.twig
+  )
+#}
+{% extends '/common/textBlock/textBlockMediumHeadline.html.twig' %}
+
+{%block imageTag %}
+    <img src="{{sImageId | cmsthumb(370,80)}}" alt="{{sHeadline}}" />
+{% endblock %}

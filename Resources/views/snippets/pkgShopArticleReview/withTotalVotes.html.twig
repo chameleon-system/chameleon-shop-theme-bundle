@@ -1,0 +1,15 @@
+{#
+    description: adds the total number of votes to the rating block
+    vars
+        - see /pkgShopArticleReview/standard.html.twig
+        - iRatingCount
+#}
+
+<div class="snippetRatingWithTotalVotes">
+    {% include "/pkgShopArticleReview/standard.html.twig" %}
+    <span class="votecount">
+        <a href="#ReviewStart" title="{{'chameleon_system_chameleon_shop_theme.review.action_show_all'|trans}}">
+        ({{"chameleon_system_chameleon_shop_theme.review.review_count"|transchoice(iRatingCount, {'%iRatingCount%': iRatingCount})}})
+        </a>
+    </span>
+</div>

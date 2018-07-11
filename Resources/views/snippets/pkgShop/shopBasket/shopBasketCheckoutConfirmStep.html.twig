@@ -1,0 +1,112 @@
+{#
+    description: show basket
+    parameters:
+        ** bInForm
+        ** sCurrency
+        ** sVatPercentage
+        ** sSumProducts
+        ** sSumShipping
+        ** sSumVat
+        ** sSumGrandTotal
+        ** aArticleList
+            ** aArticle
+                ** sImageId
+                ** iAmount
+                ** sManufacturer
+                ** sArticleName
+                ** sArticleColor
+                ** sArticleSize
+                ** sShippingInformation
+                ** sPrice
+                ** sPriceTotal
+                ** sCurrency
+                ** sArticleDetailURL
+#}
+
+
+<div class="snippetShopBasketShopBasketCheckoutConfirmStep ">
+    {% if bInForm %}
+    {# we set the action manually to avoid collisions with module_fnc in the URL to the current page #}
+    <form id="checkout" name="checkout" method="post" action="{{ basketUrl }}">
+        <input type="hidden" name="module_fnc[[{sModuleSpotName}]]" value="ExecuteStep"/>
+        <input type="hidden" name="basket[consumer]" value="[{sModuleSpotName}]">
+        <input type="hidden" name="orderstepmethod" value="">
+        {% endif %}
+
+        {% block headline %}
+            <h3>{{ 'chameleon_system_chameleon_shop_theme.checkout.confirm_product_list'|trans }}</h3>
+        {% endblock %}
+        {% if iColumnCount is not defined %}
+            {% set iColumnCount = 12 %}
+        {% endif %}
+        {% if iColumnSizeArticleImage is not defined %}
+            {% set iColumnSizeArticleImage = 1 %}
+        {% endif %}
+        {% if iColumnSizeArticle is not defined %}
+            {% set iColumnSizeArticle = 6 %}
+        {% endif %}
+        {% if iColumnSizeArticleMobile is not defined %}
+            {% set iColumnSizeArticleMobile = 6 %}
+        {% endif %}
+        {% if iColumnSizeAmount is not defined %}
+            {% set iColumnSizeAmount = 1 %}
+        {% endif %}
+        {% if iColumnSizeAmountMobile is not defined %}
+            {% set iColumnSizeAmountMobile = 1 %}
+        {% endif %}
+        {% if iColumnSizeSinglePrice is not defined %}
+            {% set iColumnSizeSinglePrice = 2 %}
+        {% endif %}
+        {% if iColumnSizeTotalPrice is not defined %}
+            {% set iColumnSizeTotalPrice = 2 %}
+        {% endif %}
+
+        {% embed '/pkgShop/shopBasket/shopBasketArticleListAsTable.html.twig' %}
+        {% endembed %}
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <a class="btn btn-default" href="{{ aShopSystemPageURL.checkout }}">{{ 'chameleon_system_chameleon_shop_theme.checkout.confirm_edit_items' | trans }}</a>
+
+                <div class="cssFont5">({{ 'chameleon_system_chameleon_shop_theme.checkout.confirm_edit_items_help' | trans }})</div>
+
+                {# require pkgShopCustomerComment package to enable customer comments in orders #}
+                {% if aFieldCustomerComment %}
+                    <div class="customerCommentContainer">
+                        {% block fieldMessage %}
+                            <div class="row">
+                                {% set aFieldMessageMapped = {
+                                'sLabelClass' : 'col-xs-12',
+                                'sInputClass' : 'col-xs-12',
+                                'sLabelText' : 'chameleon_system_chameleon_shop_theme.checkout.confirm_order_comment' | trans,
+                                'sName' : 'customerComment',
+                                'sFieldId': "customerComment",
+                                'bRequired' : false,
+                                'sError': aFieldCustomerComment.sError,
+                                'sValue' : aFieldCustomerComment.sValue} %}
+                                {% include "/common/userInput/form/textarea.html.twig" with aFieldMessageMapped%}
+                            </div>
+
+                        {% endblock %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="basketSummary">
+                    {% include "/pkgShop/shopBasket/shopBasketSummary.html.twig" %}
+                </div>
+            </div>
+            {% block basketfooter %}
+            {% endblock %}
+        </div>
+
+        {% if bInForm %}
+        <input type="submit" class="btn btn-success btn-lg" value="next"/>
+    </form>
+    {% endif %}
+
+    {% block voucher %}
+    {% endblock %}
+
+
+</div>

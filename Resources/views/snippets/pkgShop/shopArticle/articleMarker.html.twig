@@ -1,0 +1,12 @@
+{#
+    description: shows the articles marker
+    vars
+        aArticleMarker with (sImageId, sName, sDescription)
+
+#}
+
+<ul class="snippetShopArticleArticleMarker unstyled">
+    {% for aMarker in aArticleMarker %}
+        <li><img class="cmspopover" src="{{aMarker.sImageId | cmsthumb(100,22,false)}}" alt="{{aMarker.sName}}" title="{{aMarker.sName}}" data-trigger="hover" data-content="{{aMarker.sDescription}}"></li>
+    {% endfor%}
+</ul>

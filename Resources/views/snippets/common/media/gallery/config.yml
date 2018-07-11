@@ -1,0 +1,11 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/media/gallery/gallery.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/media/gallery/items.less
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/js/jquery/jquery.easing.1.3.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/media/gallery/snippetGalleryGalleryVertical.js
+   - /bundles/chameleonsystemchameleonshoptheme/js/jquery/jquery.touchSwipe.min.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/media/gallery/itemsWithZoom.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/media/gallery/imageZoomDrag.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/media/gallery/imageZoomMagnifier.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/media/gallery/imageMobileSlider.js

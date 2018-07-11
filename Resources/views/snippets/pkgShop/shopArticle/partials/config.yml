@@ -1,0 +1,3 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/partials/articleBulkOrderPrices.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/partials/articleStockMessage.less

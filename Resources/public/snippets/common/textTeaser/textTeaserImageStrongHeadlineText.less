@@ -1,0 +1,26 @@
+.snippetTextTeaserImageStrongHeadlineText {
+    .rightText{
+        float:left;
+        @media (max-width: @screen-xs-max){
+          float: none;
+        }
+        padding-top:1px;
+        .headline{
+                padding-bottom:1px;
+                .cmsHeadlineSmall();
+                letter-spacing: -0.6px;
+                color: @cmsColorPrimaryHigh2;
+                margin-bottom: 2px;
+
+            }
+        .text{
+            .cmsStandardRegular();
+            line-height: 18px;
+            color:@cmsColorPrimaryHigh1;
+        }
+    }
+    .image{
+        float:left;
+        padding-right:10px;
+    }
+}

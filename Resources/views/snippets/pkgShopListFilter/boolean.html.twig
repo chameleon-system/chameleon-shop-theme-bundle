@@ -1,0 +1,30 @@
+{#
+  extends from shopFilterItem.html.twig but show size content value
+  description: an filter item with header and size selection
+  parameters:
+    -sTitle
+    -sInputURLName
+    -aFilterData - array of
+        - sValue, bActive, iCount, sURL
+    -sResetURL
+#}
+{% extends "/pkgShopListFilter/shopFilterItem.html.twig" %}
+{% block contentValue %}
+    <div class="snippetShopFilterShopBoolean">
+        <div class="checkbox">
+            <label>
+                <input title="{{sTitle|trim}}" onclick="$(this).parentsUntil('form').parent().submit();" type="checkbox" name="{{sInputURLName}}" value="1" {% if aFilterData['1'].bActive %}checked="checked"{% endif %}>
+                {{sTitle}}
+                <span class="count">({{aFilterData['1'].iCount}})</span>
+            </label>
+        </div>
+        <div class="cleardiv">&nbsp;</div>
+    </div>
+{% endblock %}
+{% block start %}
+{%if aFilterData and aFilterData|length >0 %}
+{% if (aFilterData|length == 1 and (aFilterData['0'].bActive == true or aFilterData['0'].iCount >0)) or ((aFilterData|length == 2 and (aFilterData['1'].bActive == true or aFilterData['1'].iCount >0)))%}
+{{ parent() }}
+{% endif %}
+{% endif %}
+{%endblock %}

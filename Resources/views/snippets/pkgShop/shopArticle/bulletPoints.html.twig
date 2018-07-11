@@ -1,0 +1,16 @@
+{#
+    usable with TPkgShopTradeByteMapper_ArticleBulletPoints
+
+    aBulletPoints
+#}
+{% if aBulletPoints | length > 0 %}
+    <div class="snippetPkgShopShopArticleBulletPoints articletext">
+        <h2 class="cmsHeadlineBig">{{ 'chameleon_system_chameleon_shop_theme.products.special_attributes' | trans }}</h2>
+        <ul>
+            {%for aBulletPoint in aBulletPoints %}
+                <li>{{ aBulletPoint.sTitle }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endif %}

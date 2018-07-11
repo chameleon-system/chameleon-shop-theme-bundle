@@ -1,0 +1,11 @@
+{#
+    description: adds the total number of votes to the rating block
+    vars
+        - see /pkgShopArticleReview/standard.html.twig
+        - iRatingCount
+#}
+
+<div class="snippetRatingWithTotalVotes">
+    {% include "/pkgShopArticleReview/standard.html.twig" %}
+    <span class="votecount">({{iRatingCount}})</span>
+</div>

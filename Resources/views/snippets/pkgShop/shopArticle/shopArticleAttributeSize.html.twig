@@ -1,0 +1,13 @@
+{#
+  description: renders shop article attribute size
+  parameters:
+        - sURL
+        - sValue
+        - bActive
+#}
+
+<div class="snippetShopArticleAttributeSize sizeBlock{% if bActive %} active{% endif %}">
+    <a href="{{sURL|raw}}" title="{{sValue}}">
+        <span class="sizeValue">{{sValue}}</span>
+    </a>
+</div>

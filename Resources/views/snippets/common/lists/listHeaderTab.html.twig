@@ -1,0 +1,44 @@
+{#
+  description: renders header tab list for multiple lists (use multi module for multiple article list with tabs)
+               can also be used for single list as header. Then tab contains no a tag
+  parameters:
+  - bShowMinimizer
+  - sMinimizeListContainerId
+  - aTabHeaderList
+    - sName
+    - bActive
+    - sUrl    to activate tab content
+    - sAllUrl Optional if set show link to all article in this tab
+
+#}
+{% if aTabHeaderList and aTabHeaderList|length >0 %}
+
+<div class="snippetListHeaderTab">
+    <div class="tabListHeaderContent">
+        <ul class="tabList">
+            {% set aActiveTab = false %}
+            {% for aTab in aTabHeaderList %}
+                {% if aTab.bActive and aTab.sAllUrl%}
+                    {% set aActiveTab = aTab %}
+                {% endif %}
+                <li class="tabItem{% if aTab.bActive %} active{% endif %}{%if loop.last%} lastTab{%endif%}">
+                    {% if  aTabHeaderList|length == 1%}
+                        <span class="oneListHeader">{{aTab.sName}}</span>
+                    {% else %}
+                        <a class="tabLink" href="{{aTab.sUrl}}"  title="{{aTab.sName}}">{{aTab.sName}}</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        {% if bShowMinimizer %}
+            <div class="minimizer active" onclick="CMSSnippetListHeaderTabMinimizeList(this,'{{sMinimizeListContainerId|e('js')}}')">&nbsp;</div>
+        {% endif %}
+        {% if aActiveTab %}
+            <div class="activeTabAllLink">
+                {% include "/common/links/linkStylesIcon.html.twig" with {"sTitle" : "chameleon_system_chameleon_shop_theme.tab.show_all"|trans({'%sActiveTabName%': aActiveTab.sName}) , "%sLinkURL%" : aActiveTab.sAllUrl} %}
+            </div>
+        {% endif %}
+        <div class="clearfix">&nbsp;</div>
+    </div>
+</div>
+{% endif %}

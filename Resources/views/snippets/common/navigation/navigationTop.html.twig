@@ -1,0 +1,62 @@
+{#
+  description: renders a navigation tree
+  parameters:
+  - aTree: array of items (object or assoc array). each item has the following properties:
+    ** bIsActive
+    ** bIsExpanded
+    ** sLink
+    ** sTitle
+    ** sSeoTitle (defaults to sTitle)
+    ** aChildren - this is a subtree of the same form as aTree
+    ** sNavigationIconClass  - shows icon before link
+#}
+{% set sUlClass = 'nav navbar-nav' %}
+{% if bDropDown == true %}
+       {% set sUlClass = 'dropdown-menu' %}
+{% endif %}
+
+<ul class="{{sUlClass}}">
+    {% for oItem in aTree %}
+        {% set sLiClass = '' %}
+        {% if oItem.aChildren %}{% set sLiClass = sLiClass ~' dropdown hasChildren'%}{% endif %}
+        {%if loop.last%}{% set sLiClass = sLiClass ~' lastNode'%}{% endif %}
+        {%if oItem.bIsActive%}{% set sLiClass = sLiClass ~' active'%}{% endif %}
+        {%if oItem.bIsExpanded%}{% set sLiClass = sLiClass ~' expanded'%}{% endif %}
+        {%if loop.first%}{% set sLiClass = sLiClass ~' firstNode'%}{% endif %}
+
+        <li class="{{sLiClass|trim}}">
+            {% set saClass = "" %}
+            {%if loop.last%}{% set saClass = saClass ~' lastNode'%}{% endif %}
+            {%if oItem.bIsActive%}{% set saClass = saClass ~' active'%}{% endif %}
+            {%if oItem.bIsExpanded%}{% set saClass = saClass ~' expanded'%}{% endif %}
+            {% if oItem.aChildren %}{% set saClass = saClass ~' hasChildren'%}{%endif%}
+            {%if loop.first%}{% set saClass = saClass ~' firstNode'%}{% endif %}
+
+            {% if oItem.aChildren %}
+                {% set saClass = 'dropdown-toggle '~ saClass %}
+                <a href="{{ oItem.sLink|raw }}" class="{{ saClass|trim }}" data-toggle="dropdown"
+                   role="button" aria-haspopup="true" aria-expanded="false"
+                   title="{{ oItem.sSeoTitle|default(oItem.sTitle)|raw }}">
+                    {% if oItem.sNavigationIconClass %}
+                        <i class="i {{ oItem.sNavigationIconClass }}"></i>
+                    {% endif %}
+                    {{ oItem.sTitle }}
+                    <span class="caret"></span>
+                </a>
+            {%else%}
+                <a class="{{ saClass|trim }}" href="{{ oItem.sLink|raw }}"
+                   title="{{ oItem.sSeoTitle|default(oItem.sTitle)|raw }}"
+                   {% if oItem.sTarget %}target="{{ oItem.sTarget }}"{% endif %}>
+                    {% if oItem.sNavigationIconClass %}
+                        <i class="i {{ oItem.sNavigationIconClass }}"></i>
+                    {% endif %}
+                    {{ oItem.sTitle }}
+                </a>
+            {%endif%}
+
+            {% if oItem.aChildren %}
+                {% include _self with {'aTree': oItem.aChildren, 'bDropDown' : true} %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,8 @@
+
+{% if (aColors|length > 0) -%}
+    <ul class="snippetShopArticleArticleColors">
+        {%for aColor in aColors%}
+            <li><a href="#" style="background-color:{{aColor.sHex}}" title="{{aColor.sLink}}">&nbsp;</a></li>
+        {%endfor%}
+    </ul>
+{%- endif%}

@@ -1,0 +1,65 @@
+.sliderPrice {
+  .ui-slider {
+    clear: both;
+    height: 10px;
+    position: relative;
+    background-color: @cmsBackground5;
+    -webkit-box-shadow: 0 0 0 1px @cmsBorder3;
+    box-shadow: 0 0 0 1px @cmsBorder3;
+    border: 2px solid @cmsBackground3;
+    margin-right: 5px;
+    margin-top: 5px;
+
+    &:after {
+      clear: both;
+    }
+    .ui-slider-range {
+      height: 6px;
+      position: absolute;
+      z-index:8;
+      background-color: @cmsColorSecondary2;
+    }
+
+    .ui-slider-handle {
+      margin-top: -5px;
+      margin-left:-9px;
+      display: block;
+      height: 15px;
+      position: absolute;
+      z-index:10;
+      width: 15px;
+      background-color: @cmsBackground;
+      -webkit-box-shadow: 0 0 0 1px @cmsBorder3;
+      box-shadow: 0 0 0 1px @cmsBorder3;
+      border: 2px solid @cmsBackground3;
+    }
+  }
+
+  .sliderLabel {
+    margin-bottom: 25px;
+    margin-top: 4px;
+    position: relative;
+    z-index:5;
+
+    .amountStart {
+      float:left;
+    }
+    .amountEnd {
+      float:right;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 0;
+    .control-label {
+      margin-bottom: 0;
+    }
+    select {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    button {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+.snippetShopArticleGalleryVerticalWithSocialSharePrivacy {
+  border: 1px solid @cmsBorder2;
+  position: relative;
+  margin-bottom: 37px;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .nose-wrapper {
+    .nose {
+      position: absolute;
+      .i();
+      left: 50%;
+      z-index: 3;
+    }
+
+    &.thumbnails .nose {
+      .i-grey-nose-transparent();
+      bottom: -1px;
+      margin-left: -20px;
+    }
+
+    &.social .nose {
+      .i-white-nose-transparent();
+      bottom: -1px;
+      margin-left: -20px;
+    }
+  }
+
+  .snippetGalleryGalleryVertical {
+    .activeImageMapper {
+      position: relative;
+    }
+
+    ul.activeImage, ul.activeImage li {
+      margin-bottom: 0;
+
+      .thumbnail {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        cursor: zoom-in;
+        cursor: -webkit-zoom-in;
+        margin-bottom: 0;
+      }
+    }
+
+    .thumnailItemsWrapper {
+      .snippetGalleryItems {
+
+        .thumbnail {
+          cursor: zoom-in;
+          cursor: -webkit-zoom-in;
+        }
+      }
+    }
+
+    .row {
+      .thumnailItemsWrapper {
+        margin-left: 0;
+      }
+    }
+
+    .well {
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+      box-shadow: none;
+      padding: 12px 25px 6px 25px;
+      margin-bottom: 0;
+      position: relative;
+      .snippetGalleryItems {
+        li {
+          margin-right: 0;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+
+
+  .zoomPane {
+    background: url("/bundles/chameleonsystemchameleonshoptheme/images/background.png") repeat scroll left top #666666;
+    opacity: 0.5;
+  }
+  .socialSharePrivacy {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  @media (min-width: @screen-xs-min) and (max-width: @screen-xs-max) {
+    .socialSharePrivacy {
+      margin-left: 5%;
+      margin-right:5%;
+    }
+  }
+}

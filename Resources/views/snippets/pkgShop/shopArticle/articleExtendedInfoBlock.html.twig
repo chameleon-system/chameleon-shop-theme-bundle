@@ -1,0 +1,64 @@
+{#
+    available descriptions: sShortDescription, sDescription, sAdditionalDescription
+#}
+{# @var oObject \TdbShopArticle #}
+
+{% set bHasRating = dRating is defined and dRating > 0 %}
+{% set bHasAttributes = aAttributeList is defined and aAttributeList|length > 0 %}
+{% set bHasArticleMarker = aArticleMarker is defined and aArticleMarker|length > 0 %}
+{% set bHasBundleArticles = aBundleArticleList is defined and aBundleArticleList|length > 0 %}
+{% set bHasIntro = sTopic is defined or sHeadline is defined %}
+{% set bHasData = bHasRating or bHasAttributes or bHasArticleMarker or bHasBundleArticles %}
+
+<div class="snippetShopArticleArticleExtendedInfoBlock" itemscope itemtype="http://schema.org/Product">
+
+    {% if activeArticleUrl %}
+        <meta itemprop="url" content="{{ activeArticleUrl | sanitizeurl('html_attr') }}"/>
+    {% endif %}
+
+    {% if bHasIntro %}
+        <h1 class="articleHeadline">
+            {% if sTopic -%}
+            <span class="manufacturer" itemprop="brand">{{sTopic}}:</span><br />
+            {%- endif %}
+            <span class="article" itemprop="name">{{sHeadline}}</span>
+        </h1>
+    {% endif%}
+    {%- if bHasData %}<table class="snippetShopArticleArticleExtendedInfoBlock table table-condensed" title="{{"chameleon_system_chameleon_shop_theme.products.additional_info"|trans}}"><tbody>{% endif -%}
+        {%- block articleDetails -%}
+            {%- if bHasRating -%}
+                <tr>
+                    <th>{{"chameleon_system_chameleon_shop_theme.review.reviews" | trans}}:</th>
+                    <td>{% include "/pkgShopArticleReview/withTotalVotes.html.twig" with {'dRating':dRating, 'iRatingCount': iRatingCount} %}</td>
+                </tr>
+            {%- endif -%}
+
+            {%- if bHasAttributes -%}
+                {%for aAttribute in aAttributeList %}
+                    <tr>
+                        <th>{{aAttribute.sName}}:</th>
+                        <td>{{aAttribute.sValue}}</td>
+                    </tr>
+                {% endfor %}
+            {%- endif -%}
+
+            {% if bHasArticleMarker %}
+                <tr>
+                    <th>{{"chameleon_system_chameleon_shop_theme.products.attributes" | trans}}:</th>
+                    <td>{% include "/pkgShop/shopArticle/articleMarker.html.twig" %}</td>
+                </tr>
+            {% endif %}
+            {% if bHasBundleArticles %}
+                <tr>
+                    <th>{{"chameleon_system_chameleon_shop_theme.bundle.bundle_content_short" | trans}}:</th>
+                    <td>{% include "/pkgShop/shopArticle/articleBundleProducts.html.twig"%}</td>
+                </tr>
+            {% endif %}
+
+
+        {%- endblock -%}
+        {%- if bHasData %}</tbody></table>{% endif -%}
+    {% if sDescription%}
+        <div class="articletext" itemprop="description">{{sDescription|raw}}</div>
+    {% endif %}
+</div>

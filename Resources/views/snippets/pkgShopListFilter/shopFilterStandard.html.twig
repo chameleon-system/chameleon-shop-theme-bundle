@@ -1,0 +1,37 @@
+{#
+  description: an filter item with header and html content
+  parameters:
+    -sTitle
+    -aFilterItemList
+        -sTitle
+        -sResetURL
+        -aFilterData
+            -sURL
+            -sValue
+            -bActive
+
+
+#}
+
+<div class="snippetShopFilter">
+    <div class="col-xs-2">
+        <div class="filterBox">
+            <div class="filterHeader filterOpen">
+                <span>{{sTitle}}</span>
+            </div>
+            <div class="filterContent filterOpen">
+                {%for sFilterItem, aFilterItem in aFilterItemList %}
+                <div class="filterContentItemList">
+                    {% if sFilterItem == "aFilterItemSize"%}
+                        {% include "/pkgShopListFilter/shopFilterItemSize.html.twig" with aFilterItem%}
+                    {% elseif sFilterItem == "aFilterItemColor"%}
+                        {% include "/pkgShopListFilter/shopFilterItemColor.html.twig" with aFilterItem%}
+                    {% elseif sFilterItem == "aFilterItemPrice" %}
+                    {% include "/pkgShopListFilter/shopFilterItemPrice.html.twig" with aFilterItem%}
+                    {%endif%}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

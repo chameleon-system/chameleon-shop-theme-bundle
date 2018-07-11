@@ -1,0 +1,14 @@
+{#
+  description: renders play list of articles for ajax loading of article lists
+  parameters:
+  - aArticleList look at /common/teaser/standard-shopArticle.dummy.php
+#}
+{% block list %}
+    {% if aArticleList and aArticleList|length >0 %}
+        {% for sArticle in aArticleList %}
+            {{sArticle | raw}}
+        {% endfor %}
+    {% else %}
+        <div class="noItems">{{'chameleon_system_chameleon_shop_theme.products.no_products'|trans}}</div>
+    {% endif %}
+{% endblock %}

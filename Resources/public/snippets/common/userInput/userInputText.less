@@ -1,0 +1,94 @@
+.snippetUserInputText {
+    .userInputBoxImage {
+        left: 6px;
+        position: absolute;
+        top: 6px;
+    }
+
+    .inputHolderBox {
+        position: relative;
+        float: left;
+//        border: 1px solid @cmsBorder4;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        width: 100%;
+        .userInputBoxInputWithImage {
+            .userInputBoxInput {
+                text-indent:20px;
+            }
+        }
+
+        .userInputBoxInput {
+            width: 100%;
+            margin: 0;
+            background: @cmsBackground3;
+            opacity: 1;
+            //border: none;
+            box-shadow: none;
+        }
+
+        .inputHolderBoxInner {
+            padding-right: 14px;
+
+            &.userInputBoxInputWithImage {
+                padding-left: 0;
+                padding-right: 9px;
+            }
+
+        }
+
+        &.required {
+            .inputHolderBoxInner {
+                .icon {
+                    position: absolute;
+                    right: 6px;
+                    top: 5px;
+                }
+            }
+        }
+
+        &.style1 {
+            @height: 38px;
+
+            border: 1px solid @cmsBorder4;
+            border-radius: 0;
+            height: @height;
+            -webkit-box-shadow: inset 8px 8px 15px -1px @cmsBorder4; /* webkit browser*/
+            -moz-box-shadow: inset 8px 8px 15px -1px @cmsBorder4; /* firefox */
+            box-shadow: inset 8px 8px 15px -1px @cmsBorder4;
+
+            .userInputBoxImage {
+                top: 12px;
+            }
+
+            .userInputBoxInput {
+                border: none;
+                height: @height - 8px;
+                background-color: transparent;
+            }
+
+            &.required {
+                .inputHolderBoxInner {
+                    .icon {
+                        right: 9px;
+                        top: 12px;
+                    }
+                }
+            }
+        }
+
+        &.style2 {
+            border: 1px solid @cmsBorder4;
+            border-radius: 0;
+            height: 28px;
+            -webkit-box-shadow: inset 8px 8px 15px -1px @cmsBorder4; /* webkit browser*/
+            -moz-box-shadow: inset 8px 8px 15px -1px @cmsBorder4; /* firefox */
+            box-shadow: inset 8px 8px 15px -1px @cmsBorder4;
+
+            .userInputBoxInput {
+                height: 20px;
+                background-color: transparent;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="chameleon_system_shop.article_list.view_to_list_view_mapping.rightNoticeList">/common/lists/listStandardWideShopArticle.html.twig</parameter>
+        <parameter key="chameleon_system_shop.article_list.view_to_list_view_mapping.full">/common/lists/listExtendedShopArticle.html.twig</parameter>
+        <parameter key="chameleon_system_shop.article_list.view_to_list_view_mapping.fullWide">/common/lists/listExtendedWideShopArticle.html.twig</parameter>
+        <parameter key="chameleon_system_shop.article_list.view_to_list_view_mapping.standardEmptyOnNoArticles">/common/lists/listScrollShopArticle.html.twig</parameter>
+        <parameter key="chameleon_system_shop.article_list.view_to_list_view_mapping.standard">/common/lists/listScrollShopArticle.html.twig</parameter>
+    </parameters>
+
+    <services>
+        <service id="chameleon_system_chameleon_shop_theme.mapper.form_style_defaults"
+                 class="ChameleonSystem\ChameleonShopThemeBundle\Bridge\Chameleon\Mapper\FormBootstrapStyleDefaultsMapper">
+        </service>
+
+        <service id="chameleon_system_chameleon_shop_theme.mapper.schema_org_product"
+                 class="ChameleonSystem\ChameleonShopThemeBundle\Bridge\Chameleon\Mapper\SchemaOrgProductMapper">
+        </service>
+    </services>
+
+</container>

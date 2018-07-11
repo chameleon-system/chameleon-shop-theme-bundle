@@ -1,0 +1,292 @@
+
+.snippetTeaserStandardBase {
+  .content {
+    .body {
+      .productdetails {
+        .hgroup {
+          .topic, .topic a {
+            height: 1.1em;  //1 line
+            color: @cmsColorPrimaryHigh2;
+            text-transform: none;
+          }
+          .headline {
+            height: 2.2em;  //2 lines
+            color: @cmsColorPrimary;
+          }
+          .topic, .headline {
+            line-height: 1.1em;
+            overflow: hidden;
+            font-size: 17px;
+            font-weight: 300;
+            @media (max-width: 395px) {
+              font-size: 15px;
+            }
+          }
+        }
+        .teasertext {
+          padding-top: 10px;
+          .snippetShopArticleArticlePrice {
+            .retailPrice {
+              margin-top: -3px;
+            }
+            @media (max-width: 395px) {
+              .snippetShopArticlePrice,
+              .snippetShopArticlePrice .currency {
+                font-size: 16px;
+              }
+              .retailPrice .snippetShopArticlePrice,
+              .retailPrice .snippetShopArticlePrice .currency {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .infoline,
+    .infoline-placeholder {
+      height: 25px;
+      .icons .label {
+        font-size: 95%;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+.snippetTeaserStandardBase .shippingInfo {
+  display: block;
+  margin-top: -5px;
+  line-height: @line-height-base;
+}
+
+.snippetTeaserStandardBase .infoline {
+  margin-bottom: 0;
+  width: 92%;
+  margin: auto;
+}
+
+.snippetTeaserStandardBase table.infoline tbody tr:hover td, .snippetTeaserStandardBase table.infoline tbody tr:hover th {
+  background-color: transparent;
+}
+
+.snippetTeaserStandardBase .infoline .icons {
+  padding-right: 0;
+}
+
+.snippetTeaserStandardBase .infoline .icons ul {
+  margin: 0;
+  list-style: none;
+  float: right;
+}
+
+.snippetTeaserStandardBase .infoline .icons ul li {
+  float: right;
+  display: block;
+  line-height: 18px;
+  padding-left: 3px;
+}
+
+@media (min-width: @screen-lg-min) {
+  .snippetTeaserStandardBase .infoline tr.colors td {
+    padding-top: 3px;
+  }
+}
+
+.snippetTeaserStandardBase .image {
+  position: relative;
+}
+
+.snippetTeaserStandardBase .image .linkBar {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  margin-top: -20px;
+  line-height: 40px;
+  display: block;
+}
+
+.snippetTeaserStandardBase .image .linkBar .linkPrevious {
+  background-color: black;
+  overflow: hidden;
+  display: block;
+  float: left;
+  line-height: 40px;
+  .i();
+  .i-arrow-black-left();
+  text-indent: -100px;
+}
+
+.snippetTeaserStandardBase .image .linkBar .linkNext {
+  background-color: black;
+  display: block;
+  float: right;
+  overflow: hidden;
+  .i();
+  .i-arrow-black-right();
+  height: 40px;
+  line-height: 40px;
+  text-indent: 100px;
+}
+
+.snippetTeaserStandardBase .infoline td, .snippetTeaserStandardBase .infoline th {
+  .cmsMessage();
+  padding-left: 5px;
+  padding-right: 0;
+  font-weight: normal;
+}
+
+.snippetTeaserStandardBase .infoline td {
+  paddign-right: 10px;
+  padding-bottom: 0;
+}
+
+.snippetTeaserStandardBase .infoline th {
+  width: 60px;
+  padding-bottom: 0;
+}
+
+.snippetTeaserStandardBase .infoline tr.shipping td {
+  color: @cmsColorSecondary;
+  .cmsInlineHeadlineSmall();
+}
+
+.snippetTeaserStandardBase .infoline tr td.sizeRow {
+  padding: 0;
+  border-top: 0;
+}
+
+.snippetTeaserStandardBase .infoline tr td.sizeRow table {
+  width: 100%;
+}
+
+.snippetTeaserStandardBase .noticewrapper {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.snippetTeaserStandardBase .snippetUserInputButtonAddToNoticeList a, .snippetTeaserStandardBase .snippetUserInputButtonAddToNoticeList {
+  display: block;
+}
+
+.snippetTeaserStandardBase {
+  .body {
+    .productdetails {
+      .hgroup {
+        .topic, .headline {
+          a:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-md-max) {
+  .snippetTeaserStandardBase .noticewrapper {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .snippetTeaserStandardBase .infoline td, .snippetTeaserStandardBase .infoline th {
+    .cmsSmall();
+    padding-left: 5px;
+  }
+
+  .snippetTeaserStandardBase .infoline th {
+    width: 40px;
+  }
+
+  .snippetTeaserStandardBase .snippetRatingStandard .star {
+    .i-star-tiny-empty();
+  }
+
+  .snippetTeaserStandardBase .snippetRatingStandard .starhalf {
+    .i-star-tiny-half();
+  }
+
+  .snippetTeaserStandardBase .snippetRatingStandard .starfull {
+    .i-star-tiny-full();
+  }
+}
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+
+  .snippetTeaserStandardBase .snippetRatingStandard .star {
+    .i-star-tiny-empty();
+  }
+
+  .snippetTeaserStandardBase .snippetRatingStandard .starhalf {
+    .i-star-tiny-half();
+  }
+
+  .snippetTeaserStandardBase .snippetRatingStandard .starfull {
+    .i-star-tiny-full();
+  }
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  .snippetTeaserStandardBase {
+    .snippetUserInputButtonAddToNoticeList {
+      .btn {
+        font-size: 12px;
+      }
+    }
+    .shippingInfo {
+      margin-top: -5px;
+    }
+    .infoline {
+      .icons {
+        .label {
+          font-size: 9px;
+          font-weight: @cmsFontWeightLight;
+        }
+      }
+    }
+    .body {
+      .productdetails {
+        .hgroup {
+          .topic, .headline {
+            .cssFont6();
+            a:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .teasertext {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+.snippetTeaserStandardBase .snippetRatingStandard .star {
+  .i-star-very-tiny-empty();
+}
+
+.snippetTeaserStandardBase .snippetRatingStandard .starhalf {
+  .i-star-very-tiny-half();
+}
+
+.snippetTeaserStandardBase .snippetRatingStandard .starfull {
+  .i-star-very-tiny-full();
+}
+
+.carousel .snippetTeaserStandardBase .content .body .productdetails .teasertext .snippetShopArticleArticlePrice {
+  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    .snippetShopArticlePrice,
+    .snippetShopArticlePrice .currency {
+      font-size: 18px;
+    }
+    .retailPrice .snippetShopArticlePrice,
+    .retailPrice .snippetShopArticlePrice .currency {
+      font-size: 15px;
+    }
+  }
+}

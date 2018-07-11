@@ -1,0 +1,47 @@
+{#
+    description: input field for and button to add a product to the basket
+    vars
+        sAddToBasketHiddenFields - hidden html form elements required to add the item to basket (should not include the amount field)
+
+#}
+
+{% extends "/common/userInput/buttonAddToBasketOneAmount.html.twig" %}
+{% block amount %}
+    {% if bIsBuyable %}
+        <div class="input">
+            <input type="text" class="input-mini amount cmsIncDec form-control" name="basket[amount]" title="{{"chameleon_system_chameleon_shop_theme.checkout.quantity"|trans}}" value="1" {% if not allowChangeAmount %}disabled{% endif %}>
+        </div>
+    {% endif %}
+{% endblock %}
+{% block submit %}
+    <div class="submit">
+        {% if bHasActiveVariants %}
+            <div class="hidden" id="select-variant-overlay">
+                <h2>{{ 'chameleon_system_chameleon_shop_theme.checkout.text_select_a_variant'|trans }}</h2>
+            </div>
+        {% endif %}
+        {% if bIsBuyable %}
+            <button type="submit" class="btn btn-success btn-lg" onclick="{{ sAjaxBasketLink }}">{{ "chameleon_system_chameleon_shop_theme.checkout.action_add_to_basket" | trans }}</button>
+        {%  elseif bHasActiveVariants %}
+            <button type="button" class="btn btn-success btn-lg disabled" data-toggle="modal" data-target="#myModal">{{ "chameleon_system_chameleon_shop_theme.checkout.action_add_to_basket" | trans }}</button>
+        {% endif %}
+    </div>
+    {%  if bIsBuyable == false and bHasActiveVariants %}
+        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 id="myModalLabel">{{ "chameleon_system_chameleon_shop_theme.checkout.error_add_to_basket" | trans}}</h3>
+                    </div>
+                    <div class="modal-body">
+                        {{ "chameleon_system_chameleon_shop_theme.checkout.error_select_a_variant_first" |trans}}
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+     {%  endif %}
+{% endblock %}

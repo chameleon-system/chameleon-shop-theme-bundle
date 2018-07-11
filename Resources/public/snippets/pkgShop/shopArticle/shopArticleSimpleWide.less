@@ -1,0 +1,72 @@
+.snippetShopArticleSimpleWide {
+    .completerow{
+        .cmsLinkBtn();
+        border-bottom:1px solid @cmsBorder5;
+    }
+
+    .articleRow {
+        float: left;
+        height:60px;
+        display: inline-table;
+
+        .content{
+            display: table-cell;
+            vertical-align: middle;
+            width:100%;
+            text-align:left
+        }
+    }
+
+    .articleImage {
+        width: 19.3%;
+    }
+
+    .amount {
+        width: 11.076%;
+        height:58px;
+
+        .content{
+            text-align: center;
+        }
+    }
+
+    .name {
+        width: 45.915%;
+        height:58px;
+
+        .manufacturerName{
+            color:@cmsColorPrimaryHigh4;
+        }
+
+        .articleName{
+            color:@cmsColorPrimary;
+        }
+    }
+
+    .price {
+        width: 21.172%;
+        height:58px;
+
+        .content{
+            text-align:right;
+        }
+
+        .price {
+            .cmsInlineHeadlineSmall();
+        }
+
+        .currency {
+            .cmsInlineHeadlineSmall();
+        }
+    }
+}
+
+
+
+/*
+.snippetShopArticleSimpleWide .price .priceValue{
+    color:@cmsColorSecondary;
+}
+.snippetShopArticleSimpleWide .price .currency{
+    color:@cmsColorSecondary2;
+}*/

@@ -1,0 +1,20 @@
+{#
+    description: show a list of articles in the basket for telphone order
+    parameters:
+        ** aArticleList
+            ** aArticle
+                ** sImageId
+                ** iAmount
+                ** sManufacturer
+                ** sArticleName
+                ** sArticleColor
+                ** sArticleSize
+                ** sShippingInformation
+                ** sPrice
+                ** sPriceTotal
+                ** sCurrency
+                ** sArticleDetailURL
+#}
+{% for aArticle in aArticleList %}
+    {{ aArticle.iAmount }}x <a href="{{ aArticle.sArticleDetailURL }}">{{ aArticle.sArticleName }}</a><br/>
+{% endfor %}

@@ -1,0 +1,32 @@
+{#
+    description: an input radio form for bootstrap
+    vars
+        sError - error text if one occured. my be html
+        sName - form field name
+        sInputClass - Optional- To set width of input with span
+        sPlaceholder - optional
+        sSelectedValue - optional
+        aValueList
+            sFieldId - id of the field. required to associate the lable with the input field
+            sValue - current value of the field
+            sLabelText
+#}
+
+<div class="form-group {%if sError%}error{% endif %}">
+    <div class="controls">
+        {% for aRadioField in aValueList%}
+            {% if aRadioField.sLabelText is defined %}<label class="radio {% if sInputClass is defined %}{{sInputClass}}{% endif %}">{% endif %}
+            {% block field %}
+                <input type="radio"
+                       {% if aRadioField.sFieldId is defined %}id="{{aRadioField.sFieldId}}"{% endif %}
+                        {% if bRequired == true%} required {%endif%}
+                       name="{{sName}}"
+                       value="{{aRadioField.sValue}}"
+                        {% if sSelectedValue == aRadioField.sValue%}checked="checked"{% endif %}
+                        >
+            {% endblock %}
+            {% if aRadioField.sLabelText is defined %}{{aRadioField.sLabelText}}</label>{% endif %}
+        {% endfor %}
+        {%if sError %}<span class="help-inline">{{sError|raw}}</span>{% endif %}
+    </div>
+</div>

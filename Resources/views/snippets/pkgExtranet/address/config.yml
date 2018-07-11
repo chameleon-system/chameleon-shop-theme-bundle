@@ -1,0 +1,4 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgExtranet/address/addressBasketSelection.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgExtranet/address/address.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgExtranet/address/addressSelector.less

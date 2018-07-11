@@ -1,0 +1,31 @@
+{#
+    renders text wrapped in a bubble
+
+    sImageUrl - optional - show image on left side
+    sTitle - optional
+    sText - required
+    aLink - optional - show link below text - see /common/links/linkStylesIcon.html.twig
+
+#}
+
+
+<div class="snippetTextBlockBubble">
+    <div class="bubble">
+        <div class="bubbleInner">
+            <span class="optionalImage"></span>
+            <div class="content">
+                {% if sTitle %}
+                    <div class="header">{{sTitle}}</div>
+                {% endif %}
+                <div class="text">
+                    {{sText|raw}}
+                </div>
+                {% if aLink and aLink|length >0%}
+                    <div class="link">
+                        {% include "/common/links/linkStylesIcon.html.twig" with aLink %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

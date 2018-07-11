@@ -1,0 +1,9 @@
+{% extends "/common/media/gallery/items.html.twig" %}
+
+{% block item %}
+    {% include "/common/media/gallery/thumbnailWithZoom.html.twig" with {'iGridSize': 3, 'sImageURL': oItem.sImageId|cmsthumb(60,60,true), 'sImageTitle': oItem.sImageTitle, 'sSelectImageURL': oItem.sSelectImageURL,
+    'sLargeImageURL': oItem.sLargeImageId | cmsthumb(1000, 1000, true),
+    'sLargeTitle': oItem.sLargeTitle,
+    'sLargeLink':oItem.sLargeSelectImageURL,
+    'sDescription' : false} %}
+{% endblock %}

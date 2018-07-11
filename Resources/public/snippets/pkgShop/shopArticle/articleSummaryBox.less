@@ -1,0 +1,75 @@
+.snippetShopArticleArticleSummary {
+  .priceblock {
+    border-top: 1px solid @cmsBorder4;
+    border-left: 1px solid @cmsBorder4;
+    border-right: 1px solid @cmsBorder4;
+    position: relative;
+    z-index: 50;
+    background-color: @cmsBackground;
+    display: block;
+
+    .snippetShopArticleArticlePrice {
+      display: block;
+      text-align: right;
+      padding: 7px 21px 0 9px;
+
+      .snippetShopArticlePrice {
+        display: block;
+        @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min){
+          .cmsHeadline();
+        }
+        @media (min-width: @screen-lg-min){
+          .cmsHeadlinePrimary();
+        }
+        .cmsHeadlineBig();
+
+        .currency {
+          @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min){
+            .cmsHeadline();
+          }
+          @media (min-width: @screen-lg-min){
+            .cmsHeadlinePrimary();
+          }
+          .cmsHeadlineBig();
+        }
+      }
+      .retailPrice {
+        display: block;
+        margin-top: -8px;
+        .snippetShopArticlePrice {
+          .cmsHeadline();
+          .currency {
+            .cmsHeadline();
+          }
+        }
+      }
+      .shippingInfo {
+        display: block;
+        margin-top: -2px;
+      }
+    }
+
+  }
+
+  .body {
+    border-left: 1px solid @cmsBorder4;
+    border-right: 1px solid @cmsBorder4;
+    border-bottom: 1px solid @cmsBorder4;
+    background-color: @cmsBackground;
+    padding: 0 15px 15px 15px;
+  }
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  .snippetShopArticleArticleSummary {
+    .priceblock {
+      .snippetShopArticleArticlePrice {
+        padding: 0 6px;
+        .shippingInfo {
+          width: 80px;
+          line-height: 13px;
+        }
+      }
+    }
+  }
+}

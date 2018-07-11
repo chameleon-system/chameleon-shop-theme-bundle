@@ -1,0 +1,72 @@
+{#
+    renders layover for add article to basket
+
+    aArticle - required - see /pkgShop/shopArticle/shopArticleAddedToBasket.html.twig
+    aArticleList - optional - see /common/lists/listStandardShopArticle.html.twig
+    sShopUrl - optional
+    sBasketUrl - optional
+
+#}
+
+{% if bShowAsOverlay == true %}
+    <div class="inline_overlay modal fade {% if aArticle and aArticleList|length >0%}inline_overlay-long{% endif %}" id="added_to_basket_layover" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>
+                        {% if aArticle.iAmount > 0 %}
+                            {{ "chameleon_system_chameleon_shop_theme.checkout.msg_added_to_basket"|trans }}
+                        {%  else %}
+                            {{ "chameleon_system_chameleon_shop_theme.checkout.msg_not_added_to_basket"|trans }}
+                        {% endif %}
+                    </h3>
+                </div>
+                <div class="modal-body">
+{% endif %}
+                    <div class="snippetShopBasketAddedToBasket">
+                        <div class="basketInfo">
+                            <div class="row">
+                                {% if aArticle.iAmount > 0 %}
+                                    <div class="col-xs-12 col-sm-4 col-sm-push-4 sign"><span class="i i-successSign">&nbsp;</span></div>
+                                {% endif %}
+                                <div class="col-xs-6{% if aArticle.iAmount > 0 %} col-sm-4 col-sm-pull-4{% endif %} backShop">
+                                    {% if sShopUrl%}
+                                        <a href="{{sShopUrl}}" title="{{'chameleon_system_chameleon_shop_theme.checkout.action_continue_shopping'|trans}}" data-dismiss="modal" class="btn btn-default btn-success btn-lg">{{'chameleon_system_chameleon_shop_theme.checkout.action_continue_shopping'|trans}}</a>
+                                    {% endif %}
+                                </div>
+                                <div class="col-xs-6{% if aArticle.iAmount > 0 %} col-sm-4{% endif %} toBasket">
+                                    {% if sBasketUrl%}
+                                        <a class="btn btn-default btn-lg" title="{{'chameleon_system_chameleon_shop_theme.checkout.action_to_basket'|trans}}" href="{{sBasketUrl|raw}}">{{'chameleon_system_chameleon_shop_theme.checkout.action_to_basket'|trans}}</a>
+                                    {% endif %}
+                                </div>
+                                <div class="col-xs-12">
+                                    {% include 'pkgshoppaymentamazon/amazonbutton.html.twig' with amazonPayment %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="infoText">
+                            <!--[{sInsertedMessages}]-->
+                            {% if aArticle.iAmount > 0 %}
+                                {{'chameleon_system_chameleon_shop_theme.checkout.msg_added_to_basket'|trans}}
+                            {%  else %}
+                                {{'chameleon_system_chameleon_shop_theme.checkout.msg_not_added_to_basket'|trans}}
+                            {% endif %}
+                            </div>
+                        {% if aArticle and aArticle|length >0%}
+                            <div class="basketArticle">
+                                {% include '/pkgShop/shopArticle/shopArticleAddedToBasket.html.twig' with aArticle%}
+                            </div>
+                        {% endif %}
+                        {% if aArticle and aArticleList|length >0%}
+                            <div class="teaserArticle">
+                                {% include '/common/lists/listStandardShopArticle.html.twig' %}
+                            </div>
+                        {% endif %}
+                    </div>
+{% if bShowAsOverlay == true %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

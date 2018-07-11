@@ -1,0 +1,60 @@
+{#
+    vars
+        aFieldLogin
+        aFieldPassword
+        aFieldBirthday
+
+#}
+{% extends "/common/userInput/address/shipping-packstation.html.twig" %}
+
+{% block fields %}
+    {{ parent() }}
+
+    {% set aMappedData = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_email'|trans,
+            'sName' : 'aUser[name]',
+            'bRequired' : true,
+            'sFieldId': "userRegistrationCHEMail",
+            'sError': aFieldLogin.sError,
+            'sValue' : aFieldLogin.sValue}%}
+    {% include "/common/userInput/form/text.html.twig" with aMappedData%}
+
+    {% set aMappedData = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_password'|trans,
+            'sName' : 'aUser[password]',
+            'bRequired' : true,
+            'sFieldId': "userRegistrationCHPassword",
+            'sError': aFieldPassword.sError,
+            'sValue' : ''}%}
+    {% include "/common/userInput/form/password.html.twig" with aMappedData%}
+
+    {% set aMappedData = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_password_check'|trans,
+            'sName' : 'aUser[password2]',
+            'bRequired' : true,
+            'sFieldId': "userRegistrationCHPasswordCheck",
+            'sError': aFieldPassword2.sError,
+            'sValue' : ''}%}
+    {% include "/common/userInput/form/password.html.twig" with aMappedData%}
+
+    {% set aMappedData = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_date_of_birth'|trans,
+            'sName' : 'aUser[birthdate]',
+            'sFieldId': "userRegistrationCHBirthDate",
+            'sError': aFieldBirthday.sError,
+            'sValue' : aFieldBirthday.sValue}%}
+    {% include "/common/userInput/form/text.html.twig" with aMappedData%}
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{#
+    Renders shop article add to basket layover
+    vars
+        sArticleDetailURL
+        sImageURL
+        sImageId
+        sManufacturer
+        sArticleName
+        iAmount
+        sShippingTime
+        price see /pkgShop/shopArticle/articlePrice.html.twig
+
+#}
+
+
+<article>
+    <div class="snippetShopArticleToBasket">
+        <div class="row">
+            <div class="col-xs-2">
+                <div class="leftContent">
+                    <a href="{{sArticleDetailURL}}">
+                        {% if sImageId != '' %}
+                            {% set sValue = sImageId %}
+                        {% else %}
+                            {% set sValue = sImageURL %}
+                        {% endif %}
+                        <img src="{{sValue|cmsthumb(70, 75)}}" alt="{{sManufacturer}} {{sArticleName}}"/>
+                    </a>
+                </div>
+            </div>
+            <div class="topBlock">
+                <div class="col-xs-6">
+                    <div class="middleContent">
+                        <a href="{{sArticleDetailURL}}">
+                            <span class="amount">{{iAmount}}x</span>&nbsp;
+                            <span class="manufacturerName">{{sManufacturer}}</span><br>
+                            <span class="articleName">{{sArticleName}}</span>
+                         </a>
+                        {%  if sStockMessage is defined  %}
+                            {% include '/pkgShop/shopArticle/partials/articleStockMessage.html.twig' %}
+                        {%  else %}
+                            <div class="shipping">{{sShippingTime}}</div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="rightContent">
+                        {% include '/pkgShop/shopArticle/articlePrice.html.twig' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

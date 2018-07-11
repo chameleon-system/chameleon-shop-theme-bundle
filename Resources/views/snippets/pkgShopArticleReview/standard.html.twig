@@ -1,0 +1,32 @@
+{#
+  description: shows user selected stars from 0 to 5 stars
+  vars:
+    dRating - a float between 0 and 5
+
+
+    0.3 => 1/2 star
+
+    iStar = 1 -> 0.7 missing
+
+
+
+
+#}
+
+{% set iNumberOfStars = 5 %}
+{% set bIsHalfStar = false %}
+{% spaceless %}
+<ul class="snippetRatingStandard" title="{{'chameleon_system_chameleon_shop_theme.review.rating'|trans({'%dStars%':dRating})}}">
+    {% for iStar in 1..iNumberOfStars %}
+    {% set starType = "" %}
+    {% if dRating >= iStar %}
+        {% set starType = "full" %}
+    {% elseif (dRating > (iStar - 1) and dRating < iStar) %}
+        {% set starType = "half" %}
+    {% else %}
+        {% set starType = "" %}
+    {% endif %}
+    <li class="star{{starType}} star_{{iStar}}">{% if starType == "half" %}o{% elseif starType == "full" %}*{%else%}&nbsp;{% endif %}</li>
+    {% endfor %}
+</ul>
+{% endspaceless %}

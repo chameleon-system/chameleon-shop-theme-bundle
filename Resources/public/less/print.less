@@ -1,0 +1,54 @@
+@media print {
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+  a[href]:after {
+    content: none;
+  }
+
+  .snippetRatingWithTotalVotes {
+    ul.snippetRatingStandard {
+
+      &:after {
+        content: attr(title);
+      }
+      li.starfull {
+        display: none !important;
+      }
+    }
+    span.votecount {
+      top: 0;
+    }
+  }
+
+  .snippetShopArticleArticleSummary {
+    .topBlock {
+      .manufacturerBlock {
+        float: none !important;
+        border-right: none !important;
+      }
+    }
+  }
+  .snippetShopArticleArticleSummary {
+    .manufacturerBody {
+      .body {
+        padding-bottom: 0;
+
+        table.snippetShopArticleArticleInfoBlock {
+          margin-bottom: 0;
+          border-bottom: none;
+        }
+        .snippetUserInputButtonAddToBasketOrNoticeList {
+          display: none;
+        }
+      }
+    }
+  }
+  .snippetShopArticleGalleryVerticalWithSocialSharePrivacy {
+    .sharePrivacy {
+      display:none;
+    }
+  }
+
+}

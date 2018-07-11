@@ -1,0 +1,41 @@
+.snippetShopArticleDetailPageNextPrev {
+  list-style: none;
+  .previous-product {
+    text-align: left;
+  }
+  .back-to-list {
+    text-align: center;
+  }
+  .next-product {
+    /*text-align: right;*/
+  }
+  a {
+    color: @cmsColorPrimary;
+    line-height: 32px;
+
+    span {
+      vertical-align: text-top;
+      position: relative;
+      top: -1px;
+    }
+    &.prev {
+      float: left;
+
+      span {
+        margin-right: 4px;
+      }
+    }
+    &.next {
+      span {
+        margin-left: 4px;
+      }
+    }
+  }
+}
+@media (max-width: @screen-xs-max) {
+  .snippetShopArticleDetailPageNextPrev {
+    .back-to-list {
+      text-align: left;
+    }
+  }
+}

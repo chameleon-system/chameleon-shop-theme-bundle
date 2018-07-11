@@ -1,0 +1,40 @@
+{% if aTagProperties.cmsshowcaption == '1' %}
+<figure class="cssmedia"
+        style="{{ aTagProperties.style }};
+        {% if aTagProperties.align == 'left' or aTagProperties.align == 'right' or aTagProperties.align == 'center' -%}text-align: {{ aTagProperties.align }};{%- endif -%}
+        ">
+{% endif %}
+    {% set showFullWideImage = bFullsizeImageBiggerThanThumbnail and aTagProperties.cmsshowfull == '1' %}
+    {% set showTextAlign = aTagProperties.cmsshowcaption != '1' and (aTagProperties.align == 'left' or aTagProperties.align == 'right' or aTagProperties.align == 'center') %}
+
+    {%- if showFullWideImage %}
+    <a href="{{ sFullImageURL }}"
+       class="cmsmediafullimagelink lightbox"
+       title="{% if fromWYSIWYG %}{{ aTagProperties.title|raw }}{% else %}{{ aTagProperties.title }}{% endif %}"
+       rel="{{ sImageGroupName }}">
+    {% endif %}
+
+        <picture class="img-responsive {{ aTagProperties.class }}
+                        {% if aTagProperties.cmsshowcaption != '1' %}cssmedia{% endif %}"
+                 style="{% if aTagProperties.cmsshowcaption != '1'%}{{ aTagProperties.style }} {% endif %}
+                        {% if showTextAlign -%} text-align: {{ aTagProperties.align }};{%- endif -%}"
+        >
+            <source media="(min-width: {{ iSmallScreenSize+1 }}px)" srcset="{{ sMediumThumbnailURL }}" />
+            <source media="(min-width: {{ iMediumScreenSize+1 }}px)" srcset="{{ sThumbnailURL }}" />
+            <source srcset="{{ sSmallThumbnailURL }}" />
+            <img src="{{ sThumbnailURL }}"
+                 alt="{% if fromWYSIWYG %}{{ aTagProperties.title|raw }}{% else %}{{ aTagProperties.title }}{% endif %}"
+                 title="{% if fromWYSIWYG %}{{ aTagProperties.title|raw }}{% else %}{{ aTagProperties.title }}{% endif %}"
+                 {%- if aTagProperties.usemap %}usemap="{{ aTagProperties.usemap }}"{% endif %}
+                 class="img-responsive {{ aTagProperties.class }} {% if aTagProperties.cmsshowcaption != '1' %}cssmedia{% endif %}"
+                 style="height: auto; {% if aTagProperties.cmsshowcaption != '1' %}{{ aTagProperties.style }};{% endif %}
+                        {%- if showTextAlign %} text-align: {{ aTagProperties.align }};{%- endif %}"
+            />
+        </picture>
+    {%- if showFullWideImage -%}
+    </a>
+    {%- endif %}
+{% if aTagProperties.cmsshowcaption == '1' %}
+    <figcaption class="cssmediacaption">{% if fromWYSIWYG %}{{ aTagProperties.cmscaption|raw }}{% else %}{{ aTagProperties.cmscaption }}{% endif %}</figcaption>
+</figure>
+{% endif %}

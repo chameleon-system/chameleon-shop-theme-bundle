@@ -1,0 +1,45 @@
+.snippetListStandardArticleReview {
+    margin-top: 32px;
+    margin-bottom: 27px;
+    .snippetListHeaderTab {
+        padding-bottom: 19px;
+    }
+    .loginBox, .writeReviewBox {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        clear: both;
+        border-top: 1px solid #E5E5E5;
+        border-bottom: 1px solid #E5E5E5;
+    }
+    .overview {
+        &:after {
+            visibility: hidden;
+            clear: both;
+            display: block;
+            content: "";
+        }
+        .snippetRatingOverview {
+            .snippetRatingWithTotalVotes {
+                float: left;
+            }
+        }
+    }
+    .ratingItemList {
+        clear: both;
+        .snippetRatingItem {
+            padding-bottom: 15px;
+        }
+        .snippetLinkStylesIcon {
+            margin-top: -2px;
+            .linkimage {
+                .i();
+                .i-point_green();
+            }
+        }
+    }
+    .writeReviewButton {
+        float: right;
+        margin-top: -5px;
+        margin-bottom: 15px;
+    }
+}

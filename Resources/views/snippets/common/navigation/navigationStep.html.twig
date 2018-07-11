@@ -1,0 +1,69 @@
+{#
+  description: renders a navigation for a step list for example used by wizards
+  parameters:
+  - aSteps: array of items (object or assoc array). each item has the following properties:
+    ** bIsActive
+    ** sLink
+    ** sTitle
+    ** sSeoTitle (defaults to sTitle)
+    ** sIconUrl shows icon before link
+    ** sIconClass css class (used in a span) that defines the icon this will be used if no icon url is given
+    [{less}]/bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/navigationStep.less[{/less}]
+#}
+
+{%  if bOrderCompleted == false %}
+<nav>
+    <ul class="snippetNavigationStep colorblack_2">
+        {% for oItem in aSteps %}
+            {% set sCssClassActive = "" %}
+            {% set sCssClassCurrent = "" %}
+            {% set sCssClassNode = "" %}
+
+            {% if loop.first %}
+                {% set sCssClassNode = "firstNode" %}
+            {% elseif loop.last %}
+                {% set sCssClassNode = "lastNode" %}
+            {% endif %}
+
+            {% if oItem.bIsActive %}
+                {% set sCssClassActive = "active" %}
+            {% endif %}
+            {% set sClass = sCssClassActive~" "~sCssClassNode %}
+
+            {% if oItem.isCurrentStep %}
+                {% set sCssClassCurrent = "current" %}
+            {% endif %}
+            {% set sClass = sCssClassCurrent~" "~sClass %}
+
+            <li class="{{sClass|trim}}"><div class="wrapper">
+                {% if oItem.sIconUrl or oItem.sIconClass %}
+                    <div class="naviItemImage">
+                        {% if oItem.sIconUrl %}
+                            <img src="{{oItem.sIconUrl}}" alt="{{oItem.sTitle}}" />
+                        {% elseif oItem.sIconClass %}
+                            <span class="{{oItem.sIconClass}}">&nbsp;</span>
+                        {% endif %}
+
+                    </div>
+                {% endif %}
+                {% if oItem.sLink%}
+                    <a class="{{sClass|trim}}" href="{{oItem.sLink|raw}}" title="{{oItem.sSeoTitle | default(oItem.sTitle)}}">
+                {% else %}
+                    <span class="{{("noAccess "~sClass)|trim}}">
+                {% endif%}
+                <span>{{oItem.sTitle}}</span>
+                {% if oItem.sLink%}
+                    </a>
+                {% else %}
+                    </span>
+                {% endif%}
+                {% if not loop.last %}
+                    <span class="{{("arrow "~sCssClassActive)|trim}}">
+                        &nbsp;
+                    </span>
+                {% endif %}
+            </div></li>
+        {% endfor %}
+    </ul>
+</nav>
+{%  endif %}

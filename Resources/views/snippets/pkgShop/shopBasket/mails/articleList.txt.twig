@@ -1,0 +1,68 @@
+{#
+    description: show basket
+    parameters:
+        ** sCurrency
+        **
+        ** sSumVat
+        ** sSumVatWithoutShipping
+        ** sVatPercentage
+        ** aVatList
+        **
+        ** sSumDiscounts
+        ** aDiscountList
+        **
+        ** dSumDiscountVouchers
+        ** aDiscountVoucherList
+        **
+        ** sSumSponsoredVouchers
+        ** aSponsoredVoucherList
+        **
+        ** sSumShipping
+        ** sSumGrandTotal
+        **
+        ** sSumProducts
+        ** sSumProductsAfterDiscountsAndDiscountVouchers
+        ** sSumPaymentSurcharge
+        ** sSumTotalBasket
+        **
+        ** iNumberOfUniqueProducts
+        ** iNumberOfProducts
+        **
+        ** aArticleList
+            ** aArticle
+                ** sImageId
+                ** iAmount
+                ** sManufacturer
+                ** sArticleName
+                ** sArticleColor
+                ** sArticleSize
+                ** sShippingInformation
+                ** sPrice
+                ** sPriceTotal
+                ** sCurrency
+                ** sArticleDetailURL
+#}
+{% for aArticle in aArticleList %}
+{{aArticle.iAmount}}x {{aArticle.sArticleName}} á {{sCurrency}} {{aArticle.sPrice}} = {{sCurrency}} {{aArticle.sPriceTotal}}
+{% endfor %}
+
+{{ 'chameleon_system_chameleon_shop_theme.basket.product_total'|trans }}: {{ sCurrency }} {{ sSumProducts }}
+{% if 0 < sSumDiscounts %}
+    {{- 'chameleon_system_chameleon_shop_theme.basket.discount_total' |trans}}: {{ sCurrency }} {{ sSumDiscounts }}
+{% endif %}
+{{ 'chameleon_system_chameleon_shop_theme.basket.shipping_cost'|trans }}: {{ sCurrency }} {{ sSumShipping }}
+{% if 0 < sSumPaymentSurcharge %}
+    {{- 'chameleon_system_chameleon_shop_theme.basket.payment_surcharge'|trans }}: {{ sCurrency }} {{ sSumPaymentSurcharge }}
+{% endif %}
+{% for vat in aVatList %}
+    {% if vat.dValue > 0 %}
+        {{- 'chameleon_system_chameleon_shop_theme.basket.vat_value' | trans({'%dPercent%':aVat.iPercent}) }}: {{ sCurrency }} {{ vat.sValue }}
+    {% endif %}
+{% endfor %}
+{% for aVoucher in aDiscountVoucherList %}
+    {{- 'chameleon_system_chameleon_shop_theme.basket.voucher'|trans({'%sVoucherCode%': aVoucher.sCode}) }}: {{ sCurrency }} {{ aVoucher.sValue }}
+{% endfor %}
+{% for aSponsoredVoucher in aSponsoredVoucherList %}
+    {{- 'chameleon_system_chameleon_shop_theme.basket.voucher'|trans({'%sVoucherCode%': aSponsoredVoucher.sCode}) }}: {{ sCurrency }} {{ aSponsoredVoucher.sValue }}
+{% endfor %}
+{{ 'chameleon_system_chameleon_shop_theme.basket.grand_total'|trans}}: {{ sCurrency }} {{ sSumGrandTotal }}

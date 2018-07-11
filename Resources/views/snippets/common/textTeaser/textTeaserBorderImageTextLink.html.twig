@@ -1,0 +1,54 @@
+{#
+  description: an text teaser with image on left side and text and link on the right
+               you can leave text or image empty
+  parameters:
+    ** aImage array of image information
+       ** sClassSrc contains sprite class of the image
+    ** aLink
+        ** sLinkFont  Set font (default = font_ubuntu_light_1)
+        ** sLinkColor default (default colorblack_1)
+        ** sLinkIconClass sprite class for icon (default i-point_dark_grey)
+        ** sTitle
+        ** sLinkURL
+    ** sText
+    ** sTitle
+#}
+
+<div class="snippetTextTeaserBorderImageTextLink">
+    <div class="col-xs-4">
+        <div class="borderBox">
+            <div>
+                <div class="{% if aImage%}row{%endif%}">
+                    {% if aImage %}
+                        <div class="leftImage {% if sText%}col-xs-2{%else%}col-xs-4{%endif%}">
+                            {% if aLink %}
+                                <a href="{{aLink.sLinkURL}}" title="{{aLink.sText}}">
+                            {% endif %}
+                            <img src="{{aImage.sClassSrc}}" alt="{{sTitle}}" />
+                            {% if aLink %}
+                                </a>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    {% if sText%}
+                        <div class="rightContent {% if aImage %}col-xs-2{%else%}col-xs-4{%endif%}">
+                            {% if sText %}
+                                <div class="ContentHeadLine"><h2 class="font_ubuntu_med_7 color_grey_4">{{sTitle}}</h2></div>
+                            {% endif %}
+                            {% if sText %}
+                                <div class="ContentText">{{sText}} </div>
+                            {% endif %}
+                            {% if aLink %}
+                                <div class="ContentLink">
+                                    {% include "/common/links/linkStylesIcon.html.twig" with aLink %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="clearfix">&nbsp;</div>
+                    {% endif %}
+                </div>
+                <div class="clearfix">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+</div>

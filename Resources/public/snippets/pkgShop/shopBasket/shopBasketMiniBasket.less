@@ -1,0 +1,137 @@
+
+.snippetShopBasketMiniBasket {
+  .rightBasketInfo {
+    .articleInfo {
+      .amount, .value {
+        white-space: nowrap;
+        @media (max-width: @screen-md-max) {
+          display:block;
+        }
+      }
+      .snippetShopArticlePrice {
+        .cmsInlineHeadline();
+        color: @cmsColorSecondary4;
+
+        .currency {
+          .cmsInlineHeadline();
+          color: @cmsColorSecondary4;
+        }
+      }
+    }
+  }
+  .shopBasketMiniBasketBox {
+    position: relative;
+
+    .shopBasketMiniBasketBoxBoxSpacerLeft {
+      @media (max-width:979px) {
+        padding-left: 10px;
+      }
+    }
+
+    .leftBasketIcon {
+      display: table-cell;
+      @media (min-width: @screen-md-min) {
+      padding-right: 15px;
+      }
+      @media (max-width:979px) {
+        padding-right: 5px;
+      }
+    }
+    .rightBasketInfo {
+      display: table-cell;
+      @media (min-width: @screen-md-min) {
+      margin-top: -7px;
+      }
+      @media (min-width: @screen-lg-min) {
+        margin-top:3px;
+      }
+      .header {
+        @media (max-width: @screen-sm-max) {
+          display: none;
+        }
+
+        .cmsHeadline;
+        color: @cmsColorPrimaryHigh2;
+        letter-spacing: -0.6px;
+        @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+          font-size:18px;
+        }
+        .intro {
+          color: @cmsColorPrimaryHigh4;
+        }
+      }
+      .articleInfo {
+        margin-top: -2px;
+        padding-left: 3px;
+        .cmsInlineHeadline;
+        letter-spacing: 0.4px;
+      }
+      .miniBasketInfo {
+        color: @cmsColorSecondary4;
+      }
+      .miniBasketInfoInner {
+        color: @cmsColorPrimary;
+        .cmsBtn-small;
+        letter-spacing: -0.6px;
+      }
+      .miniBasketPrice {
+        .cmsBtn-small;
+      }
+    }
+    .layoverInMiniBasket {
+      position: absolute;
+      width: 371px;
+      z-index: 105;
+      right: -11px;
+      display:none;
+    }
+    &:hover {
+      @media (min-width: @screen-md-min) {
+        .layoverInMiniBasket {
+          display:block;
+        }
+        .shopBasketMiniBasketBoxBoxInner {
+          margin: -11px;
+          margin-top: -10px;
+          margin-bottom: -15px;
+          background-color: @cmsBackground3;
+          -webkit-box-shadow: 0 -6px 6px -6px @cmsBorder4; /* webkit browser*/
+          -moz-box-shadow: 0 -6px 6px -6px @cmsBorder4; /* firefox */
+          box-shadow: 0 -6px 6px -6px @cmsBorder4;
+          position: relative;
+          z-index: 110;
+          .shopBasketMiniBasketBoxBoxSpacerLeft {
+            -webkit-box-shadow: -6px -5px 6px -6px @cmsBorder4; /* webkit browser*/
+            -moz-box-shadow: -6px -5px 6px -6px @cmsBorder4; /* firefox */
+            box-shadow: -6px -5px 6px -6px @cmsBorder4;
+            padding-left: 11px;
+            padding-top: 10px;
+            padding-bottom: 15px;
+          }
+          .shopBasketMiniBasketBoxBoxSpacerRight {
+            -webkit-box-shadow: 6px -5px 6px -6px @cmsBorder4; /* webkit browser*/
+            -moz-box-shadow: 6px -5px 6px -6px @cmsBorder4; /* firefox */
+            box-shadow: 6px -5px 6px -6px @cmsBorder4;
+            padding-right: 11px;
+          }
+        }
+      }
+    }
+  }
+}
+.snippetShopBasketMiniBasket {
+    .leftBasketIcon, .rightBasketInfo, .header, .articleInfo {
+        display:block;
+    }
+    .teaser {
+        .lighttextshadow;
+        .clearfix();
+        display:block;
+        &:hover {
+          @media (min-width: @screen-md-min) {
+            text-shadow: none;
+            text-decoration: none;
+          }
+        }
+    }
+}

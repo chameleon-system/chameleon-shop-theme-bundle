@@ -1,0 +1,56 @@
+{#
+    description: renders address and options to delete, change or select
+    vars
+        sExtranetHandlerSelectFunction - required - can be SelectShippingAddress or SelectBillingAddress
+        sExtranetHandlerDeleteFunction - required - can be DeleteShippingAddress or DeleteBillingAddress
+        sExtranetSpot - required - spot from extranet handler
+        sSpotName - required - spot from active module
+        sAddressId - required - id of the rendered address
+        sFieldNamesPrefix - required - can be aUserAddressShipping or aUserAddressBilling
+#}
+
+<div class="snippetPkgExtranetAddressSelector col-xs-6 col-sm-4 col-md-3">
+    {% include "/pkgExtranet/address/address.html.twig" %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="change pull-left">
+                <form action="{{ sFormUrl }}" method="post" accept-charset="utf-8">
+                    <input type="hidden" value="0" name="bShowShippingAddressInput">
+                    <input type="hidden" value="{{sExtranetHandlerSelectFunction}}" name="module_fnc[{{sExtranetSpot}}]">
+                    <input type="hidden" value="" name="module_fnc[{{sSpotName}}]">
+                    <input type="hidden" value="" name="cmswizardmethodcallname">
+                    <input type="hidden" value="{{sSpotName}}" name="spot">
+                    <input type="hidden" value="{{sAddressId}}" name="{{sFieldNamesPrefix}}[selectedAddressId]">
+                    <input type="submit" class="btn btn-success btn-sm" value="{{'chameleon_system_chameleon_shop_theme.extranet.action_edit_address'|trans}}"/>
+                </form>
+            </div>
+            {% if bAllowDelete %}
+            <div class="delete pull-left">
+                <form action="{{ sFormUrl }}" method="post" accept-charset="utf-8">
+                    <input type="hidden" value="0" name="bShowShippingAddressInput">
+                    <input type="hidden" value="{{sExtranetHandlerDeleteFunction}}" name="module_fnc[{{sExtranetSpot}}]">
+                    <input type="hidden" value="" name="module_fnc[{{sSpotName}}]">
+                    <input type="hidden" value="" name="cmswizardmethodcallname">
+                    <input type="hidden" value="{{sSpotName}}" name="spot">
+                    <input type="hidden" value="{{sAddressId}}" name="{{sFieldNamesPrefix}}[selectedAddressId]">
+                    <input class="btn btn-success btn-sm" type="submit" value="{{'chameleon_system_chameleon_shop_theme.extranet.action_delete_address'|trans}}"/>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% if allowSelect %}
+        <div class="select">
+            <form action="{{ sFormUrl }}" method="post" accept-charset="utf-8">
+                <input type="hidden" value="0" name="bShowShippingAddressInput">
+                <input type="hidden" value="{{sExtranetHandlerSelectFunction}}" name="module_fnc[{{sExtranetSpot}}]">
+                <input type="hidden" value="" name="module_fnc[{{sSpotName}}]">
+                <input type="hidden" value="" name="cmswizardmethodcallname">
+                <input type="hidden" value="{{sSpotName}}" name="spot">
+                <input type="hidden" value="{{sAddressId}}" name="{{sFieldNamesPrefix}}[selectedAddressId]">
+                <input type="hidden" value="{{sredirectURL}}" name="sRedirectToURL">
+                <input class="btn btn-success btn-sm" type="submit" value="{{'chameleon_system_chameleon_shop_theme.extranet.action_use_for_shipping'|trans}}"/>
+            </form>
+        </div>
+    {% endif %}
+</div>

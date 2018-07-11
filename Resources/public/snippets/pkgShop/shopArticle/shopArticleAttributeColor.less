@@ -1,0 +1,27 @@
+.snippetShopArticleAttributeColor {
+
+    &.ColorBlock {
+        padding-right: 3.3%;
+        float: left;
+        padding-bottom: 5px;
+    }
+
+    a {
+        background-color: @cmsBackground7;
+        padding: 3px;
+        display: block;
+
+        span {
+            display: block;
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+.snippetShopArticleAttributeColor.ColorBlock.active a, .snippetShopArticleAttributeColor.ColorBlock a:Hover {
+    background-color: @cmsBackground3;
+    border: 1px solid @cmsBorder5;
+    padding: 2px;
+    text-decoration: none;
+}

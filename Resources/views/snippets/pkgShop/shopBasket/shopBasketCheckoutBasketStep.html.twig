@@ -1,0 +1,176 @@
+{#
+    description: show basket
+    parameters:
+        ** bInForm
+        ** sCurrency
+        ** sVatPercentage
+        ** sSumProducts
+        ** sSumShipping
+        ** sSumVat
+        ** sSumGrandTotal
+        ** aArticleList
+            ** aArticle
+                ** sImageId
+                ** iAmount
+                ** sManufacturer
+                ** sArticleName
+                ** sArticleColor
+                ** sArticleSize
+                ** sShippingInformation
+                ** sPrice
+                ** sPriceTotal
+                ** sCurrency
+                ** sArticleDetailURL
+#}
+
+{% set bInForm = true %}
+{% set iColumnCount = 12 %}
+{% set iColumnSizeArticle = 4 %}
+{% set iColumnSizeAmount = 3 %}
+{% set iColumnSizeSinglePrice = 2 %}
+{% set iColumnSizeTotalPrice = 2 %}
+{% set iColumnSizeArticleImage = 1 %}
+
+<div class="snippetShopBasketCheckoutBasketStep">
+    {% if 0 < aArticleList|length %}
+        {# we set the action manually to avoid collisions with module_fnc in the URL to the current page #}
+        <form id="checkout" name="checkout" method="post" action="{{ basketUrl }}">
+            <input type="hidden" name="module_fnc[[{sModuleSpotName}]]" value="ExecuteStep"/>
+            <input type="hidden" name="basket[consumer]" value="[{sModuleSpotName}]">
+            <input type="hidden" name="orderstepmethod" value="">
+
+            {% embed '/pkgShop/shopBasket/shopBasketArticleListAsTable.html.twig' %}
+                {% block amount %}
+                    {% if aArticle.bAllowChangeAmount == true %}
+                        <input type="hidden" name="basket[{{ loop.index-1 }}][shop_article_id]" value="{{ aArticle.sId }}"/>
+                        <input type="hidden" name="basket[{{ loop.index-1 }}][sBasketItemKey]" value="{{ aArticle.sBasketItemKey }}"/>
+                        <div class="input-group amount-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default hidden-xs decrease">-</button>
+                            </span>
+                            <input class="input-micro amount form-control" type="text" min="0" step="1" pattern="\d*"
+                                   value="{{ aArticle.iAmount }}" name="basket[{{ loop.index-1 }}][amount]" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default hidden-xs increase">+</button>
+                                <button class="btn btn-default refresh" title="{{ 'chameleon_system_chameleon_shop_theme.checkout.basket_refresh' | trans }}">
+                                    <i class="glyphicon glyphicon-refresh"></i>
+                                </button>
+                                <button class="btn btn-default delete" title="{{ 'chameleon_system_chameleon_shop_theme.checkout.basket_remove_from_basket'|trans }}" data-href="{{ aArticle.sRemoveFromBasketLink | raw }}">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                </button>
+                            </span>
+                        </div>
+                    {%  else %}
+                        {{ aArticle.iAmount }}
+                    {% endif %}
+                    <div class="hidden-xs">
+                        {% include '/common/userInput/buttonAddToNoticeList.html.twig' with { 'sButtonText':'chameleon_system_chameleon_shop_theme.notice_list.action_move'|trans, 'sNoticeListLink':aArticle.sNoticeListLink} %}
+                    </div>
+                    {#% include '/pkgShop/userInput/buttonGiftWrapping.html.twig' with {'sGiftWrappingLink':"javascript:alert('not yet implemented')"} %#}
+                {% endblock %}
+            {% endembed %}
+            <script type="text/javascript">
+                $(document).ready(function(){
+
+                    $('.amount-control').each(function(){
+                        var $container = $(this);
+                        $container.find('.decrease').on('click', function(e){
+                            e.preventDefault();
+                            e.stopPropagation();
+                            var $amount = $container.find('input.amount'),
+                                amountVal = $amount.val(),
+                                amountMin = $amount.attr('min');
+
+                            amountMin = amountMin || 0;
+                            if(amountVal > amountMin){
+                                amountVal--;
+                                $amount.val(amountVal)
+                            }
+
+                        });
+                        $container.find('.increase').on('click', function(e){
+                            e.preventDefault();
+                            e.stopPropagation();
+                            var $amount = $container.find('input.amount'),
+                                    amountVal = $amount.val(),
+                                    amountMax = $amount.attr('max');
+
+                            amountMax = amountMax || 1000;
+                            if(amountVal < amountMax){
+                                amountVal++;
+                                $amount.val(amountVal)
+                            }
+
+                        });
+                        $container.find('.refresh').on('click', function(e){
+                            e.preventDefault();
+                            e.stopPropagation();
+
+                            var $form = $('form#checkout');
+                            $form.find('input[name=orderstepmethod]').val('UpdateBasket');
+                            $form.submit();
+                        });
+                        $container.find('.delete').on('click', function(e){
+                            e.preventDefault();
+                            e.stopPropagation();
+                            window.location.href = $(this).data('href');
+                        });
+                    });
+                });
+            </script>
+        </form>
+
+        <div class="basketSummary">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    {% include '/pkgShop/userInput/voucherInput.html.twig' %}
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    {% include "/pkgShop/shopBasket/shopBasketSummary.html.twig" with {bShowVoucherRemovalLinks:true} %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-12 continueShopping">
+                    <a class="btn btn-default btn-lg" href="{{ sBackLink | sanitizeurl('html_attr') }}">{{ 'chameleon_system_chameleon_shop_theme.checkout.action_continue_shopping' | trans }}</a>
+                </div>
+                <div class="hidden-xs col-sm-8">
+                    {% set aImage = {'sClassSrc': 'i i-telephone'} %}
+                    <div class="telephoneOrderContainer">
+                        {{ chameleon_system_chameleon_shop_theme.telephone_order.help }}
+                        {% set aLink = { 'sLinkURL': '#telephoneModal', 'sTitle': 'chameleon_system_chameleon_shop_theme.checkout.action_request_call'|trans } %}
+                        {% include '/pkgShop/shopOrder/telephoneOrder/telephoneOrderTeaser.html.twig' with {'aImage': aImage, 'aLink':aLink, 'sText':'chameleon_system_chameleon_shop_theme.telephone_order.help'|trans} %}
+                        <div id="telephoneModal" class="modal fade" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        {% set aLink = false %}
+                                        {% include'/common/userInput/form/formTelphoneOrder.html.twig'%}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                    <div class="buttonContainer">
+                        <div>
+                            {% include 'pkgshoppaymentamazon/amazonbutton.html.twig' with amazonPayment %}
+                        </div>
+                        <a class="btn btn-success btn-lg btn-block" onclick="forms.checkout.submit();">{{ 'chameleon_system_chameleon_shop_theme.checkout.action_to_payment' | trans }}</a>
+                        {% if sPayPalExpressLink %}
+                            <a class="btn btn-warning btn-lg btn-block" href="{{ sPayPalExpressLink | sanitizeurl('html_attr') }}">{{ 'chameleon_system_chameleon_shop_theme.checkout.basket_paypal_express_checkout' | trans }}
+                                <span class="paypalLogo i i-paypal"></span>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+
+        <div>{{ 'chameleon_system_chameleon_shop_theme.checkout.msg_empty_basket'|trans }}</div>
+        <br><br>
+        <a class="btn btn-success btn-lg" href="{{ sBackLink | sanitizeurl('html_attr') }}">{{ 'chameleon_system_chameleon_shop_theme.checkout.action_continue_shopping' | trans }}</a>
+    {% endif %}
+</div>

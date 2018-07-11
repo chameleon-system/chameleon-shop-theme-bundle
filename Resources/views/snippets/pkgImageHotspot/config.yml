@@ -1,0 +1,4 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgImageHotspot/presenter.less
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgImageHotspot/presenter.js

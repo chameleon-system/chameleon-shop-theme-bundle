@@ -1,0 +1,4 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shippingAndPayment/paypalPostOrderPayPalLink.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shippingAndPayment/selectPayment.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shippingAndPayment/selectShippingGroup.less

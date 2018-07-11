@@ -1,0 +1,1 @@
+loadingAnimation.gif is taken from the Thickbox jQuery plugin, which is licensed under the MIT license.

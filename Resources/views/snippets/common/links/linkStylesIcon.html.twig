@@ -1,0 +1,12 @@
+{#
+  description: an text teaser with image on left side and text and link on the right
+  parameters:
+      ** sLinkFont  Set font (default = font_ubuntu_light_1)
+      ** sLinkIconClass sprite class for icon (default i-point_dark_grey)
+      ** sTitle
+      ** sLinkURL
+#}
+
+<a class="snippetLinkStylesIcon {{sLinkFont|default('cmsBtn-small')}} {{ additionalCssClasses }}" href="{{ sLinkURL | raw}}" title="{{ sTitle}}" {%  block aAdditionalTags %} {% endblock %} >
+    <span class="linkimage i {{sLinkIconClass|default('i-point_dark_grey')}}">&nbsp;</span><span class="link">{{ sTitle}}</span>
+</a>

@@ -1,0 +1,22 @@
+{#
+  description: an text teaser with image on left side and text and strong headline on the right
+               you can leave text or image empty
+  parameters:
+    ** aImage array of image information
+       ** sImageSrc
+    ** sText
+    ** sHeadline
+#}
+
+<div class="snippetTextTeaserImageStrongHeadlineText">
+    {% if aImage %}
+        <div class="image">
+            <img src="{{aImage.sImageSrc | raw}}" alt="{{aImage.sImageAlt}}" />
+        </div>
+    {% endif %}
+    <div class="rightText">
+        {% if sHeadline %}<div class="headline">{{sHeadline}}</div>{% endif %}
+        <div class="text">{{sText}}</div>
+    </div>
+    <div class="clearfix"></div>
+</div>

@@ -1,0 +1,17 @@
+{#
+    description: address based on order data
+    parameters:
+        ** bShipToBillingAddress
+        ** aShippingAddress - see /pkgExtranet/address/address.dummy.php
+#}
+
+<div class="snippetMailsShopOrderShippingAddress">
+    <strong>{{'chameleon_system_chameleon_shop_theme.order_mail.shipping_address'|trans}}</strong>
+    {% if bShipToBillingAddress == false %}
+        {% include '/pkgExtranet/mails/address.html.twig' with aShippingAddress %}
+    {% else %}
+        <div>
+            {{'chameleon_system_chameleon_shop_theme.order_mail.shipping_address_is_billing_address'|trans}}
+        </div>
+    {% endif %}
+</div>

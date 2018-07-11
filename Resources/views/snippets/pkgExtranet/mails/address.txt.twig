@@ -1,0 +1,29 @@
+{#
+    description: renders user address
+    vars
+
+    sSalutation
+    sFirstName
+    sLastName
+    sAdditionalInfo
+    sAddressStreet
+    sAddressStreetNr
+    sAddressZip
+    sAddressCity
+    sAddressCountry
+#}
+{% if sSalutation != '' or sFirstName != '' or sLastName != '' %}
+{{sSalutation}} {{sFirstName}} {{sLastName}}
+{% endif %}
+{% if sAdditionalInfo != '' %}
+{{sAdditionalInfo}}
+{% endif %}
+{% if sAddressStreet != '' or sAddressStreetNr != '' %}
+{{sAddressStreet}} {{sAddressStreetNr}}
+{% endif %}
+{% if sAddressZip != '' or sAddressCity != '' %}
+{{sAddressZip}} {{sAddressCity}}
+{% endif %}
+{% if sAddressCountry != '' %}
+{{sAddressCountry}}
+{% endif %}

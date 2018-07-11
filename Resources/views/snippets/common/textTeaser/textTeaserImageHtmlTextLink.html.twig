@@ -1,0 +1,15 @@
+{#
+  extends from textTeaserImageTextLink.html.twig but you html text
+  parameters:
+    ** aImage array of image information
+       ** sClassSrc contains src url of the image
+       ** sTitle
+    ** aLink
+        ** sLinkURL
+        ** sTitle
+    ** sText
+#}
+{% extends "/common/textTeaser/textTeaserImageTextLink.html.twig" %}
+{% block text%}
+    {{ sText | raw}}
+{% endblock %}

@@ -1,0 +1,49 @@
+.snippetOrderWizardShippingAndPaymentSelectPayment {
+  .description {
+    margin-bottom: 15px;
+  }
+
+  ul {
+    .description {
+      margin-bottom: 0;
+      color: @cmsColorPrimaryHigh2;
+    }
+    list-style: none;
+    margin: 0 0 20px 0;
+    padding: 0;
+    li {
+      border-bottom: 1px solid @cmsBorder3;
+      padding: 15px 0;
+
+      input.paymentid {
+        margin-top: 8px;
+      }
+      .header {
+        .title {
+          padding-left: 10px;
+        }
+      }
+
+      .details {
+        display: none;
+      }
+      &.active {
+        background-color: @cmsBackground5;
+        form {
+
+        /*.well();*/
+        }
+        .details {
+          display: block;
+        }
+        .description {
+          color: @cmsColorPrimaryHigh1;
+        }
+      }
+    }
+  }
+}
+
+.amazonSelectPayment {
+  margin: 20px 0 20px 0;
+}

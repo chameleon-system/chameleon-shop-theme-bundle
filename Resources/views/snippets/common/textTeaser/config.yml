@@ -1,0 +1,4 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/textTeaser/textTeaserBorderImageTextLink.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/textTeaser/textTeaserImageStrongHeadlineText.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/textTeaser/textTeaserImageTextLink.less

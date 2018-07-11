@@ -1,0 +1,64 @@
+.shopBasketSummary {
+  .table {
+    th {
+      .cmsH4();
+    }
+    td {
+      .cmsH4();
+      text-align: right;
+    }
+  }
+  tr {
+    td, th {
+      .cmsH4();
+      color: @cmsColorPrimaryHigh2;
+      .snippetShopArticlePrice {
+        .cmsH4();
+        color: @cmsColorPrimaryHigh2;
+        .currency {
+          .cmsH4();
+          color: @cmsColorPrimaryHigh2;
+        }
+      }
+    }
+  }
+  tr.is-total {
+    td, th {
+      .cmsHeadline();
+      color: @cmsColorPrimaryHigh1;
+      .snippetShopArticlePrice {
+        .cmsHeadline();
+        color: @cmsColorPrimaryHigh1;
+        .currency {
+          .cmsHeadline();
+          color: @cmsColorPrimaryHigh2;
+        }
+      }
+    }
+  }
+  tr.negative {
+    td, th {
+      color: @cmsColorSecondary3;
+      .snippetShopArticlePrice {
+        color: @cmsColorSecondary3;
+        .currency {
+          color: @cmsColorSecondary4;
+        }
+      }
+    }
+  }
+  tr.grand-total {
+    td, th {
+      .cmsHeadline();
+      color: @cmsColorSecondary;
+      .snippetShopArticlePrice {
+        .cmsHeadline();
+        color: @cmsColorSecondary;
+        .currency {
+          .cmsHeadline();
+          color: @cmsColorSecondary2;
+        }
+      }
+    }
+  }
+}

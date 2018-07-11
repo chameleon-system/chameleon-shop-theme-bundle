@@ -1,0 +1,14 @@
+
+<article class="snippetPkgShopAddress">
+    <a href="{{sHomeURL}}" class="logo"><img src="{{sLogoURL}}" alt="{{adr_company}}" class="photo"></a>
+    <div class="vcard">
+        <div class="fn org">{{adr_company}}</div>
+        <div class="adr">
+            <span class="street-address">{{adr_street}}</span>,
+            <span class="postal-code">{{adr_zip}}</span>
+            <span class="locality">{{adr_city}}</span>
+        </div>
+        {% if customer_service_telephone %}<span>{{"chameleon_system_chameleon_shop_theme.extranet.address_vcard_telefon"|trans}} <span class="tel">{{customer_service_telephone}}</span></span>{% endif %}
+        {% if customer_service_email %}<div><a class="email" href="mailto:{{customer_service_email}}">{{customer_service_email}}</a></div>{% endif %}
+    </div>
+</article>

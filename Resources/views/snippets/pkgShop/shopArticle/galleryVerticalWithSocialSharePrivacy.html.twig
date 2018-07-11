@@ -1,0 +1,37 @@
+{#
+    description: show image gallery and "add-this" below
+    parameters:
+#}
+
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="snippetShopArticleGalleryVerticalWithSocialSharePrivacy">
+
+            {% embed '/common/media/gallery/galleryVertical.html.twig' %}
+            {% block activeImageNose %}
+                <div class="thumbnails nose-wrapper">
+                    <span class="nose">&nbsp;</span>
+                </div>
+            {% endblock %}
+
+            {% block imageList -%}
+                <div class="thumnailItemsWrapper">
+                    {% include "/common/media/gallery/itemsWithZoom.html.twig" with {'aItems' : aItems} %}
+                </div>
+                <div class="social nose-wrapper">
+                    <span class="nose">&nbsp;</span>
+                </div>
+            {%- endblock %}
+
+            {% endembed %}
+            <div class="row">
+                <div class="col-xs-12">
+                    {% include '/widgets/socialSharePrivacy/socialSharePrivacy.html.twig' %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

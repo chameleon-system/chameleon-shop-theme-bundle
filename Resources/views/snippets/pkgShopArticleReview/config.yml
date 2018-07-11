@@ -1,0 +1,5 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShopArticleReview/ratingItem.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShopArticleReview/ratingOverview.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShopArticleReview/standard.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShopArticleReview/withTotalVotes.less

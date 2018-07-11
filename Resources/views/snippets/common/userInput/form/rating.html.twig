@@ -1,0 +1,6 @@
+{% extends "/common/userInput/form/text.html.twig" %}
+{% block field %}
+
+    <input type="hidden" {% if sFieldId is defined %}id="{{sFieldId}}"{% endif %} name="{{sName}}" value="{{sValue}}" {% if sPlaceholder is defined %}placeholder="{{sPlaceholder}}"{% endif %}>
+    {% include "/pkgShopArticleReview/standard.html.twig" with { 'dRating':sValue}%}
+{% endblock %}

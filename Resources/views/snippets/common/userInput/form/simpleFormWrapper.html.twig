@@ -1,0 +1,27 @@
+{#
+    sName
+    sSpotName
+    sFunction
+    sAction
+    aValues
+        - sName
+        - sValue
+    sSubmitTitle
+    sCustomFormHTML
+#}
+
+<form name="{{sName}}" accept-charset="utf-8" method="post" action="{{sAction}}" {% block formClass%}{%endblock%}>
+    <input type="hidden" name="module_fnc[{{sSpotName}}]" value="{{sFunction}}" />
+
+    {% for value in aValues %}
+        <input type="hidden" name="{{value.sName}}" value="{{value.sValue}}" />
+    {% endfor %}
+
+    {% block customFields %}
+        {{ sCustomFormHTML|raw }}
+    {% endblock %}
+
+    {% block submitbutton %}
+        {% include "/common/userInput/buttonStandard.html.twig" with {sButtonText:sSubmitTitle, sButtonClass: formDefaultSubmitClass}%}
+    {% endblock %}
+</form>

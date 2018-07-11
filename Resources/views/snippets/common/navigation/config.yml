@@ -1,0 +1,15 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/navigationBreadcrumb.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/navigationFooter.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/navigationMain.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/navigationSimple.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/navigationStep.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/navigationTop.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/navigationVertical.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/onelevel.less
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/bootstrap/js/dropdown.js
+   - /bundles/chameleonsystemchameleonshoptheme/bootstrap/js/transition.js
+   - /bundles/chameleonsystemchameleonshoptheme/bootstrap/js/collapse.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/navigationMobile.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/navigationDesktop.js

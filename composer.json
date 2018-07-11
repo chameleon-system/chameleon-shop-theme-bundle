@@ -1,0 +1,38 @@
+{
+    "name": "chameleon-system/chameleon-shop-theme-bundle",
+    "type": "esono-theme",
+    "description": "Chameleon Shop standard Bootstrap/Twig theme",
+    "keywords": [
+        "Themes",
+        "Theme",
+        "Template"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ESONO AG",
+            "email": "info@chameleonsystem.com",
+            "homepage": "https://www.chameleonsystem.com",
+            "role": "Company"
+        }
+    ],
+    "extra": {
+        "name": "Chameleon Shop Theme Standard",
+        "dev_info_installation": "",
+        "dev_info_usage": "based on Twitter Bootstrap Framework 3.3",
+        "pricegroup": 0,
+        "public": false,
+        "screenshotfolder_id": ""
+    },
+    "require": {
+        "bassjobsen/bootstrap-3-typeahead": "~4.0",
+        "chameleon-system/chameleon-shop": "dev-master",
+        "oyejorge/less.php": "~1.5",
+        "twbs/bootstrap": "~3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "ChameleonSystem\\ChameleonShopThemeBundle\\": ""
+        }
+    }
+}

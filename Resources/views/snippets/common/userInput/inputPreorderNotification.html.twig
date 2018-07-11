@@ -1,0 +1,27 @@
+
+{% if not bHasActiveVariants and not bIsBuyable %}
+    <div class="snippetUserInputPreorderNotification">
+        <div class="intro">
+            <div class="headline">{{ "chameleon_system_chameleon_shop_theme.preorder.headline" | trans }}</div>
+            <span>
+                {{ "chameleon_system_chameleon_shop_theme.preorder.help" | trans }}
+            </span>
+        </div>
+        <div class="row">
+            <form action="" method="post" accept-charset="utf-8" class="">
+                <input type="hidden" name="module_fnc[{{ sShopCentralHandlerSpotName }}]" value="PreorderArticle"/>
+                {% set aMappedData = {
+                'sLabelClass' : 'col-xs-4',
+                'sInputClass' : 'col-xs-8',
+                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_email'|trans,
+                'sName' : 'user_email',
+                'bRequired' : true,
+                'sHelpText': '' }%}
+                {% include "/common/userInput/form/text.html.twig" with aMappedData%}
+                {% include "/common/userInput/buttonStandard.html.twig" with {sButtonText:"chameleon_system_chameleon_shop_theme.preorder.action_preorder"|trans, 'sButtonClass': 'col-xs-offset-4 col-xs-8'}%}
+                [{CMSMSG-PKG-SHOP-ARTICLE-PREORDER}]
+            </form>
+        </div>
+
+    </div>
+{% endif %}

@@ -1,0 +1,148 @@
+<div class="klarnaInvoiceBaseSnippet">
+    {% block main %}
+        <div class="row">
+            <div class="col-xs-8">
+                {% block mainErrors %}[{CMSMSG-TShopPaymentHandlerKlarnaBaseMSG}]<br />{% endblock mainErrors %}
+                {% if bShowInputfieldBirthday %}
+                    <div class="row">
+                        <span class="col-xs-2">
+                            {% include "common/userInput/form/select.html.twig" with {
+                            'sLabelText':'Geburtstag',
+                            'sName':InputNames~'[klarnaBirthdayDay]',
+                            'bRequired' : true,
+                            'sPlaceholder': 'Bitte auswählen',
+                            'sError': aInputError.sSelectDayInputName,
+                            'sValue':aUserPaymentData.klarnaBirthdayDay,
+                            'aValueList': aDays } %}
+                         </span>
+
+                        <span class="col-xs-2">
+                            {% include "common/userInput/form/select.html.twig" with {
+                            'sLabelText':'Geburtsmonat',
+                            'sName':InputNames~'[klarnaBirthdayMonth]',
+                            'bRequired' : true,
+                            'sPlaceholder': 'Bitte auswählen',
+                            'sError': aInputError.sSelectMonthInputName,
+                            'sValue':aUserPaymentData.klarnaBirthdayMonth,
+                            'aValueList': aMonths } %}
+                        </span>
+
+                        <span class="col-xs-2">
+                            {% include "common/userInput/form/select.html.twig" with {
+                            'sLabelText':'Geburtsjahr',
+                            'sName':InputNames~'[klarnaBirthdayYear]',
+                            'bRequired' : true,
+                            'sPlaceholder': 'Bitte auswählen',
+                            'sError': aInputError.sSelectYearInputName,
+                            'sValue':aUserPaymentData.klarnaBirthdayYear,
+                            'aValueList': aYears } %}
+                        </span>
+
+                    </div>
+                {% block birthdayErrors %}[{CMSMSG-TShopPaymentHandlerKlarnaBaseMSG-klarnaBirthday}]{% endblock birthdayErrors %}
+                {% endif %}
+                {% if bShowInputfieldPNO == true %}
+                    <div class="row">
+                        <span class="col-xs-3">
+                            {% include "common/userInput/form/text.html.twig" with {
+                            'sLabelText':'Sozialversicherungsnummer',
+                            'sName':InputNames~'[klarnaPno]',
+                            'sError': aInputError.sInputPno,
+                            'bRequired' : true,
+                            'sValue':aUserPaymentData.klarnaPno } %}
+                        </span>
+                    </div>
+                    {% block PNOErrors %}[{CMSMSG-TShopPaymentHandlerKlarnaBaseMSG-klarnaPno}]{% endblock PNOErrors %}
+                {% endif %}
+                {% if bShowTelInputField %}
+                    <div class="row">
+                        <span class="col-xs-3">
+                            {% include "common/userInput/form/text.html.twig" with {
+                            'sLabelText':'Telefonnummer',
+                            'sName':InputNames~'[klarnaTel]',
+                            'sError': aInputError.sInputTel,
+                            'bRequired' : true,
+                            'sValue':aUserPaymentData.klarnaTel } %}
+                         </span>
+
+                        <span class="col-xs-3">
+                            {% include "common/userInput/form/select.html.twig" with {
+                            'sLabelText':'Festnetz/Mobil',
+                            'sName':InputNames~'[klarnaTelIsMobile]',
+                            'bRequired' : true,
+                            'sPlaceholder': 'Bitte auswählen',
+                            'sError': aInputError.sSelectTelType,
+                            'sValue':aUserPaymentData.klarnaTelIsMobile,
+                            'aValueList': aTelTypeList } %}
+                        </span>
+                    </div>
+                    {% block telErrors %}[{CMSMSG-TShopPaymentHandlerKlarnaBaseMSG-klarnaTel}]{% endblock telErrors %}
+                    {% block telTypeErrors %}[{CMSMSG-TShopPaymentHandlerKlarnaBaseMSG-klarnaTelType}]{% endblock telTypeErrors %}
+                {% endif %}
+                {% if sGender == false %}
+                    <div class="row">
+                        <span class="col-xs-3">
+                            {% include "common/userInput/form/select.html.twig" with {
+                            'sLabelText':'Geschlecht',
+                            'sName':InputNames~'[klarnaGender]',
+                            'bRequired' : true,
+                            'sPlaceholder': 'Bitte auswählen',
+                            'sError': aInputError.sSelectTelgender,
+                            'sValue':aUserPaymentData.klarnaGender,
+                            'aValueList': aGenderList } %}
+                        </span>
+                    </div>
+                    {% block genderErrors %}[{CMSMSG-TShopPaymentHandlerKlarnaBaseMSG-klarnaGender}]{% endblock genderErrors %}
+                {% else %}
+                    <input type="hidden" name="{{InputNames~'[klarnaGender]'}}" value="{{ sGender }}" />
+                {% endif %}
+                {% block agbCheck %}
+                    {% if bNeedAGBSecurityText == true %}
+                        {%  set checkText = 'Mit der Übermittlung der für die Abwicklung der gewählten Klarna Zahlungsmethode und einer Identitäts- und Bonitätsprüfung erforderlichen Daten an Klarna bin ich einverstanden. Meine <span id="%consent%"></span> kann ich jederzeit mit Wirkung für die Zukunft widerrufen. Es gelten die AGB des Händlers.<br />Zu den <span id="%invoice%"></span>'|replace({'%consent%':'consent','%invoice%':'invoice'}) %}
+                    {% else  %}
+                        {%  set checkText = 'Mit der Übermittlung der für die Abwicklung der gewählten Klarna Zahlungsmethode und einer Identitäts- und Bonitätsprüfung erforderlichen Daten an Klarna bin ich einverstanden.  Es gelten die AGB des Händlers.<br />Zu den <span id="%invoice%"></span>'|replace({'%invoice%':'invoice'}) %}
+                    {%  endif %}
+                    {% set aFieldMapped = {'sLabelText' : checkText,
+                    'sInputClass' : '',
+                    'sPlaceholder' : 'Postnummer',
+                    'sFieldId': "addressToPackStation"~sFieldNamesPrefix,
+                    'sName' : InputNames~'[klarnaCheckAGB]',
+                    'sError': aInputError.klarnaCheckAGB,
+                    'sValue' : '1',
+                    'bRequired' : true,
+                    'sHelpText': '',
+                    'bIsChecked': false
+                    }
+                    %}
+                    {% include "/common/userInput/form/checkboxWithRawLabel.html.twig" with aFieldMapped%}
+                    {% block AGBErrors %}[{CMSMSG-TShopPaymentHandlerKlarnaBaseMSG-klarnaCheckAGB}]{% endblock AGBErrors %}
+                {% endblock  agbCheck%}
+            </div>
+        </div>
+    {% endblock %}
+</div>
+{% block js %}
+    {% set invoiceId = 'invoicep' %}
+    {% set consentId = 'consentp' %}
+    <script src="https://cdn.klarna.com/public/kitt/core/v1.0/js/klarna.min.js" ></script>
+    <script src="https://cdn.klarna.com/public/kitt/toc/v1.1/js/klarna.terms.min.js" ></script>
+    <script type="text/javascript">
+        var terms = new Klarna.Terms.Invoice({
+            el: 'invoice',
+            eid: '{{ sMerchantId }}',
+            country: '{{ sCountryISO }}',
+            charge: 0,
+            type: 'desktop'
+        })
+        {% if bNeedAGBSecurityText == true %}
+            var terms = new Klarna.Terms.Consent({
+                el: 'consent',
+                eid: '{{ sMerchantId }}',
+                country: '{{ sCountryISO }}',
+                charge: 0,
+                type: 'desktop'
+            })
+        {%  endif %}
+    </script>
+{% endblock js%}
+

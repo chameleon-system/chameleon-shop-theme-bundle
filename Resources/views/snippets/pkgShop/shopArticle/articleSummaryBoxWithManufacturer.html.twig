@@ -1,0 +1,22 @@
+{#
+    description: the summary box including manufacturer link/logo
+    uses articleSummaryBoxWith
+#}
+
+{% extends "/pkgShop/shopArticle/articleSummaryBox.html.twig" %}
+{% block price %}
+    <div class="topBlock">
+        {% if sManufacturerIconId and sManufacturerLink %}
+            <div class="manufacturerBlock"><a href="{{sManufacturerLink}}" title="{{sManufacturerName|trim}}" class="manufacturer"><img src="{{sManufacturerIconId | cmsthumb(117,65)}}" alt="{{sManufacturerName|trim}}" ></a></div>
+        {% endif %}
+        {{ parent() }}
+        <div class="clearfix">&nbsp;</div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="manufacturerBody">
+        {{ parent() }}
+    </div>
+{% endblock %}
+

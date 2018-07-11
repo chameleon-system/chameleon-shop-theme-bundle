@@ -1,0 +1,86 @@
+{#
+    description: presenter with marker and layovers
+    vars
+        sActiveItemId
+        sHeadline
+        aNext
+            sTitle
+            sLink
+            sLinkJS
+        aPrevious
+            sTitle
+            sLink
+            sLinkJS
+        aNavigation -array with
+            sTitle
+            sLink
+            sLinkJS
+            bIsActive
+            sItemId
+        sBackgroundImageId
+        sBackgroundImageAlt
+        aImageLayoverList
+            iLeft
+            iTop
+            sLink
+            sTitle
+            sImageURL
+            sHoverImageURL
+
+        aMarkerList
+            iLeft
+            iTop
+            sLink
+            sContent
+#}
+
+
+
+
+<div class="sliderContainer snippetPkgImageHotspotPresenter">
+    <div class="sliderElements">
+        <div class="sliderElement activeSlide" id="slide{{ sActiveItemId }}">
+            {% include 'pkgImageHotspot/item.html.twig' %}
+        </div>
+    </div>
+    
+    {# place image navigation #}
+    {% if aNavigation is defined and aNavigation|length > 1 %}
+        <nav class="nav navWithoutMargin">
+            <ul>
+                {% set bIsBeforeActive = true %}
+                {% for aNavItem in aNavigation %}
+                {% if aNavItem.bIsActive %}{% set bIsBeforeActive = false %}{% endif %}
+                <li{% if aNavItem.bIsActive%} class="active"{% endif %}>
+                    <a href="{{aNavItem.sLink}}" class="{% if bIsBeforeActive %}previousItemLink{% else %}nextItemLink{% endif %} pagelink" rel="{{aNavItem.sLinkJS|raw}}" data-item-id="{{ aNavItem.sItemId }}">&nbsp;</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    {% endif %}
+    
+    {% if aNext is defined %}
+        <a class="next nextItemLink" href="{{aNext.sLink}}" title="{{"chameleon_system_chameleon_shop_theme.products.page_next"|trans}}"><i class="icon">&gt;</i></a>
+    {% endif %}
+    {% if aPrevious is defined %}
+        <a class="prev previousItemLink" href="{{aPrevious.sLink}}" title="{{ 'chameleon_system_chameleon_shop_theme.products.page_back'|trans }}"><i class="icon">&lt;</i></a>
+    {% endif %}
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var config = {
+            {% if iAutoSlideTime is defined and iAutoSlideTime > 0 %}
+            autoslideon: true,
+            autoslidetime: {{ iAutoSlideTime * 1000 }},
+            {% else %}
+            autoslideon: false,
+            {% endif %}
+            parentContainerSelector: '.cmsspot'
+        };
+
+        $('.snippetPkgImageHotspotPresenter').CHAMELEON_Custom_Slider(config);
+        $(window).on('resize', function() {
+            $('.snippetPkgImageHotspotPresenter').CHAMELEON_Custom_Slider(config);
+        });
+    });
+</script>

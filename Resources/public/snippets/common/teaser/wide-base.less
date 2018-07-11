@@ -1,0 +1,31 @@
+.snippetTeaserWideBase {
+    .teaserContent {
+        .teaserImage {
+            a {
+                img {
+                    border: 1px solid @cmsBorder3;
+                }
+            }
+        }
+        .teaserText {
+            height:90px;
+            overflow:hidden;
+            header {
+                h5 {
+                    margin-top:5px;
+                    margin-bottom:7px;
+                    a {
+                        .cmsInlineHeadline();
+                        &:hover {
+                            text-decoration: none;
+                          color: @cmsColorSecondary2;
+                        }
+                    }
+                }
+            }
+            .teaserTextContent {
+                .cssFont5();
+            }
+        }
+    }
+}

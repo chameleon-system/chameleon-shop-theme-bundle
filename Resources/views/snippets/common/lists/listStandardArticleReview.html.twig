@@ -1,0 +1,66 @@
+{#
+  description: renders rating item with star rating author headline and text. contains login form and write review form
+  vars:
+   aTabList - optional - look at /common/lists/listHeaderTab
+   aRatingItemList - optional - look at /pkgShopArticleReview/ratingItem
+   aLoginData - optional - show only if user not logged in else show review input look at /common/userInput/form/formLoginStandard.html.twig
+   aWriteReviewData - optional
+   iItemCountStart - required
+
+#}
+
+<div class="snippetListStandardArticleReview">
+        <a id="ReviewStart"></a>
+        {% set aTabHeader = {'sName' : "chameleon_system_chameleon_shop_theme.review.reviews"|trans,
+                                 'bActive' : true} %}
+        {% set aTabHeaderList = {'' : aTabHeader}%}
+        {% set aTabList = {'bShowMinimizer' : false,
+                           'sMinimizeListContainerId' : '',
+                           'aTabHeaderList' : aTabHeaderList} %}
+        {% include "/common/lists/listHeaderTab.html.twig" with aTabList%}
+    <div class="overview">
+        {% include "/pkgShopArticleReview/ratingOverview.html.twig" with aRatingOverview%}
+        <div class="writeReviewButton"><span class="btn btn-default">{{'chameleon_system_chameleon_shop_theme.review.add_review'|trans}}</span></div>
+    </div>
+    {{sOverallMessage|raw}}
+    {% if bDisplayWriteReview is defined and bDisplayWriteReview == false%}
+        {% set aLoginData = {'sMessageConsumer' : '',
+                             'sSpotName' : 'col-xs-4'}%}
+        <div class="loginBox {{sLoginHideOnJS}}">
+            <a id="WriteReview"></a>
+            <div class="row">
+                <div class="col-xs-12">
+                    {{ sLoginHtml|raw}}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if bDisplayWriteReview is defined and bDisplayWriteReview == true%}
+        <div class="writeReviewBox {{sWriteReviewHideOnJS}}">
+            <a id="WriteReview"></a>
+            <div class="row">
+                <div class="col-xs-12">
+                    {{ sWriteReviewHtml|raw}}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if aRatingItemList and aRatingItemList|length >0%}
+        <div class="ratingItemList">
+            {% set iCount = 1%}
+            {% for aRatingItem in aRatingItemList %}
+                {% if iCount == iItemCountStart +1%}
+                    <div class="hideOnJS">
+                {% endif %}
+                {{ aRatingItem|raw}}
+                {% if iCount > iItemCountStart and loop.last%}
+                    </div>
+                {% endif %}
+                {% set iCount = iCount +1 %}
+            {% endfor %}
+            {% if aRatingItemList|length > iItemCountStart%}
+                {% include "/common/links/linkStylesIcon.html.twig" with  {'sTitle': sShowAllReviews, 'additionalCssClasses': 'reviewListToggleButton'}  %}
+            {% endif %}
+        </div>
+    {% endif %}
+</div>

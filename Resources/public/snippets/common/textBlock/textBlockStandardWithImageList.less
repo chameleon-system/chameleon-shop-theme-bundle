@@ -1,0 +1,23 @@
+.snippetTextBlockStandardWithImageList{
+    .snippetTextBlockStandard{
+        .leftTitle{
+            h2{
+                margin-top: 0;
+            }
+        }
+    }
+    .imagelist {
+      .image {
+        margin-bottom:10px;
+      }
+    }
+    @media (max-width: @screen-xs-max) {
+      .imagelist{
+        margin-left:-30px;
+        .image {
+          float:left;
+          margin-left:30px;
+        }
+      }
+    }
+}

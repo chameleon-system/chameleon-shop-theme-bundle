@@ -1,0 +1,12 @@
+{#
+    vars:
+    aGraduatedPriceList - array with sAmount and sPrice
+    sCurrency - currency
+#}
+
+<dl class="snippetShopArticlePartialsArticleBulkOrderPrices">
+    {% for aPrice in aGraduatedPriceList %}
+        <dt class="amount">{{"chameleon_system_chameleon_shop_theme.products.bulk_prices_from_quantity"|trans({'%amount%': aPrice.sAmount})}}</dt>
+        <dd class="price">{% include "/pkgShop/shopArticle/price.html.twig" with {'sPrice':aPrice.sPrice,'sCurrency':sCurrency} %}</dd>
+    {% endfor %}
+</dl>

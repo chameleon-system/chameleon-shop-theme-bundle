@@ -1,0 +1,38 @@
+nav .breadcrumb {
+  border: none;
+  background-image: none;
+}
+
+nav .breadcrumb .homeSign, nav .breadcrumb li a {
+  padding-right: 4px;
+  .cmsBtn-mini;
+  color: @cmsColorPrimaryHigh2;
+}
+
+nav .breadcrumb li .divider {
+  padding-left: 8px;
+}
+
+nav .breadcrumb {
+  margin-bottom: 0;
+  background-color: transparent;
+  >li+li:before {  //overwrite bootstrap3-styles
+    content: "";
+    padding: 0;
+  }
+
+}
+
+#spotbreadcrumbNavigation {
+  background-color: @cmsBackground3;
+  border-bottom: 1px solid @cmsBorder5;
+  padding-top: 0;
+  margin-bottom: 20px;
+  margin-top: -3px;
+  //padding-left: 0;
+}
+
+nav .breadcrumb .homeSign {
+  margin-bottom: 4px;
+  vertical-align: bottom;
+}

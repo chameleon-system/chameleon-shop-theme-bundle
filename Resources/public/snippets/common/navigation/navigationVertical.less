@@ -1,0 +1,179 @@
+nav ul.snippetNavigationVertical {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    li, a {
+      padding-left: 15px;
+      a {
+        padding-left: 0;
+      }
+    }
+  }
+  a.expanded {
+
+  }
+}
+
+nav ul.snippetNavigationVertical  li.level_1 {
+  border-left: 1px solid @cmsBorder2;
+  border-right: 1px solid @cmsBorder2;
+}
+
+nav ul.snippetNavigationVertical  li a.level_1 {
+  .cmsPrimaryNav;
+  color: @cmsColorPrimary;
+  display: block;
+/*height: 47px;*/
+  border-bottom: 1px solid @cmsBorder2;
+  .gradientMain;
+  position: relative;
+  line-height: 26px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+nav ul.snippetNavigationVertical  li.expanded a.level_1 {
+  margin-bottom: 19px;
+}
+
+nav ul.snippetNavigationVertical  li.expanded a.level_1 span {
+  display: block;
+  padding-right: 15%;
+  .lighttextshadow;
+}
+
+nav ul.snippetNavigationVertical  li a.level_1 span {
+  display: block;
+  padding-right: 15%;
+}
+
+nav ul.snippetNavigationVertical  li.expanded a.level_1:after {
+  border-color: transparent transparent;
+  border-style: solid;
+  border-width: 17px 17px 18px;
+  bottom: -17px;
+  content: "";
+  display: block;
+  left: 39.9%;
+  position: absolute;
+  width: 0;
+  background: url("/bundles/chameleonsystemchameleonshoptheme/images/layout/arrow-down.png") no-repeat center top
+}
+
+ul.snippetNavigationVertical li a.level_2 {
+  .cmsBtn-small;
+  color: @cmsColorPrimaryHigh1;
+  display: block;
+  padding: 6px 0;
+
+  @media (max-width: @screen-xs-max) {
+    font-size: 15px;
+  }
+}
+
+ul.snippetNavigationVertical  li.level_3 a {
+  .cmsMessage;
+  color: @cmsColorPrimaryHigh1;
+}
+
+ul.snippetNavigationVertical li.level_1 li.level_3 {
+  margin-top: -3px;
+  padding-bottom: 3px;
+}
+
+ul.snippetNavigationVertical  li.level_1 li {
+}
+
+nav ul.snippetNavigationVerticalLevel_3 {
+  padding-bottom: 5px;
+}
+
+nav ul.snippetNavigationVertical ul {
+  display: none;
+}
+
+nav ul.snippetNavigationVerticalLevel_1 {
+  border-top: 1px solid @cmsBorder2;
+  @media (max-width:479px) {
+    width: 100%;
+  }
+}
+
+nav ul.snippetNavigationVertical ul.expanded {
+  display: block;
+  margin-bottom: 20px;
+}
+
+nav ul.snippetNavigationVertical ul.snippetNavigationVerticalLevel_4 {
+  padding-bottom: 6px;
+}
+
+nav ul.snippetNavigationVertical ul.snippetNavigationVerticalLevel_5 {
+  margin-bottom: -2px;
+}
+
+ul.snippetNavigationVerticalLevel_2  li.level_2 {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+ul.snippetNavigationVerticalLevel_2  li.level_2.lastNode {
+  border-bottom: 1px solid @cmsBorder2;
+}
+
+ul.snippetNavigationVerticalLevel_2  li.level_2.expanded, ul.snippetNavigationVerticalLevel_2  li.level_2.active, ul.snippetNavigationVerticalLevel_2  li.level_2:hover {
+  background-color: @cmsBackground5;
+  border-top: 1px solid @cmsBorder2;
+  border-bottom: 1px solid @cmsBorder2;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+ul.snippetNavigationVerticalLevel_2  li.level_2.expanded:after, ul.snippetNavigationVerticalLevel_2  li.level_2.active:after, ul.snippetNavigationVerticalLevel_2  li.level_2:hover:after {
+  border-color: transparent transparent;
+  border-style: solid;
+  border-width: 0 3px 13px 3px;
+  bottom: auto;
+  content: "";
+  display: block;
+  left: auto;
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  width: 0;
+  margin-top: -4px;
+  background: url("/bundles/chameleonsystemchameleonshoptheme/images/layout/arrow-right-grey.png") no-repeat center top
+}
+
+ul.snippetNavigationVerticalLevel_2  li.level_2.lastNode:hover {
+  margin-bottom: 1px;
+}
+
+nav ul.snippetNavigationVertical li.level_2 a.expanded, nav ul.snippetNavigationVertical li.level_2 a.active, nav ul.snippetNavigationVertical li.level_2 a:Hover {
+  color: @cmsColorPrimary;
+  .lighttextshadow;
+}
+
+nav ul.snippetNavigationVertical li.level_2.expanded a.level_3 {
+  .lighttextshadow;
+}
+
+nav ul.snippetNavigationVertical a, nav ul.snippetNavigationVertical a:hover {
+  text-decoration: none;
+}
+
+#mobileCategoryNav {
+  select {
+    width: 100%;
+    margin-bottom: 1.5em;
+
+    option:checked {
+      font-weight: bold;
+    }
+  }
+}
+
+

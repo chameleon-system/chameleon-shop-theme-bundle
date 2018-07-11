@@ -1,0 +1,15 @@
+{#
+  description: renders headline with tabs, horizontal scroller and complete article list
+  parameters:
+  - sTitle
+  - aArticleList look at /common/teaser/standard-shopArticle.dummy.php
+  - aListPaging  look at /common/lists/listPaging.dummy.php
+  - aTabHeaderList look at /common/lists/listHeaderTab.dummy.php
+#}
+{% extends "/common/lists/listStandardShopArticle.html.twig" %}
+{% block header %}
+
+    <div class="header">
+        {% include "/common/lists/listHeaderTab.html.twig" with aTabHeaderList%}
+    </div>
+{% endblock %}

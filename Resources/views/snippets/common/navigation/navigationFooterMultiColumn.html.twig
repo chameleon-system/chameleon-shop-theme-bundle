@@ -1,0 +1,66 @@
+{# copied from 'navigation/navigationFooter.html.twig' #}
+
+{#
+  description: renders a navigation tree
+  parameters:
+  - aTree: array of items (object or assoc array). each item has the following properties:
+    ** bIsActive
+    ** bIsExpanded
+    ** sLink
+    ** sTitle
+    ** sSeoTitle (defaults to sTitle)
+    ** aChildren - this is a subtree of the same form as aTree
+#}
+
+{% if iLevel is defined %}
+{% set iLevel = iLevel + 1 %}
+{% else %}
+{% set iLevel = 1 %}
+
+{% set iItemsInLevel = 1 %}
+<nav>
+    <div>
+        {% endif%}
+        <ul class="level_{{iLevel}} snippetNavigationFooterMultiColumn {% if iLevel == 1%} row{% endif %}">
+            {% for oItem in aTree %}
+                {% set sLIClass = '' %}
+                {% set sLinkClass = '' %}
+                {% set sClass = 'level_'~iLevel~' itemcount'~iItemsInLevel %}
+                {%if loop.last%}{% set sClass = sClass ~' lastNode'%}{% endif %}
+                {%if oItem.bIsActive%}{% set sClass = sClass ~' active'%}{% endif %}
+                {%if oItem.bIsExpanded%}{% set sClass = sClass ~' expanded'%}{% endif %}
+                {%if loop.first%}{% set sClass = sClass ~' firstNode'%}{% endif %}
+
+                {% if iLevel == 1 %}
+                    {% if oItem.aChildren|length > 8 %}
+                        {% set sLIClass = sLIClass ~' col-xs-6'%}
+                    {% else %}
+                        {% set sLIClass = sLIClass ~' col-xs-3'%}
+                    {% endif %}
+                {% endif %}
+
+                {% if iLevel == 1 %}
+                    {% set sLinkClass = sLinkClass ~' cmsHeadlineFooter '%}
+                {% endif %}
+
+                {% if iItemsInLevel == 9 %}
+                    </ul><ul class="snippetNavigationFooterMultiColumn secondColumn level_2">
+                {% endif %}
+                <li class="{{sClass|trim}} {{sLIClass|trim}}">
+                    {% if iLevel == 2%}
+                        {% include "/common/links/linkStylesIcon.html.twig" with oItem %}
+                    {% else %}
+                        <a class="{{sClass|trim}}  {{sLinkClass|trim}}" href="{{oItem.sLink|raw}}" title="{{oItem.sSeoTitle | default(oItem.sTitle)}}">{{oItem.sTitle}}</a>
+                    {% endif %}
+                    {% if oItem.aChildren %}
+                        {% include _self with {'aTree': oItem.aChildren} %}
+                    {% endif %}
+                </li>
+                {% set iItemsInLevel = iItemsInLevel + 1 %}
+
+            {% endfor %}
+        </ul>
+        {% if iLevel == 1%}
+    </div>
+</nav>
+{% endif %}

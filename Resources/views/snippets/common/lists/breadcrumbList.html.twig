@@ -1,0 +1,30 @@
+{#
+    description: shows a list of link path
+    vars
+        aLinks - array with an array for each item consisting of (sName, sLink)
+        sHeadline - optional headline
+
+#}
+
+{% if aLinks is defined and aLinks|length > 0%}
+    <nav class="snippetListBreadcrumbList">
+        {% if sHeadline %}<div class="headline">{{sHeadline}}</div>{% endif %}
+        <ul>
+            {% for aLinkPath in aLinks %}
+                <li>
+                    <i class="icon">&nbsp;</i>
+                    <ul>
+                        {% for aPath in aLinkPath %}
+                        <li>
+                            {%if loop.index > 1%}<span class="sep">&gt;</span>{% endif %}
+                            {%if aPath.sLink != '' %}<a {% if loop.last %}class="lastNode"{% endif %}href="{{aPath.sLink}}">{%endif%}
+                            {{aPath.sName}}
+                            {%if aPath.sLink%}</a>{%endif%}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{% endif %}

@@ -1,0 +1,41 @@
+.snippetShopBasketCheckoutBasketStep {
+  .basketSummary {
+
+    .continueShopping {
+      margin-bottom: 2em;
+    }
+
+    .paypalLogo {
+      position: relative;
+      top: 6px;
+      font-size: 0;
+      line-height: 0;
+      margin-top: -4px;
+      @media (max-width: @screen-xs) {
+        display: none;
+      }
+    }
+
+    .telephoneOrderContainer {
+      @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        .image {
+          display: none;
+        }
+      }
+      @media (min-width: @screen-xs-min) and (max-width: @screen-xs-max) {
+        float: left;
+      }
+
+      @media (max-width: 497px) {
+        .image, .text {
+          display: none;
+        }
+      }
+    }
+
+    .table tr.summary td.sumValue.voucher .table td {
+      border: none;
+    }
+
+  }
+}

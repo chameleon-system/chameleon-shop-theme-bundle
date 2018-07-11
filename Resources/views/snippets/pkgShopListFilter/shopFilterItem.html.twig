@@ -1,0 +1,30 @@
+{#
+  description: an filter item with header and html content
+  parameters:
+    -sTitle
+    -sHtmlContent
+
+#}
+{% block start %}
+    <div class="snippetShopFilterItem">
+        {% set bActiveClass = '' %}
+        {%  if bActive %}
+            {% set bActiveClass = 'filterActive' %}
+        {% endif %}
+        {%block header%}
+            <div class="filterItemHeader filterOpen {{ bActiveClass }}"><span>{{sTitle}}</span></div>
+        {% endblock %}
+        <div class="filterItemContentBox filterOpen {{ bActiveClass }}">
+            {% block content%}
+                <div class="filterItemContent">
+                    <fieldset>
+                        <legend>{{ 'chameleon_system_chameleon_shop_theme.filter.headline'|trans }} {{sTitle}}</legend>
+                        {% block contentValue%}
+                            {{sHtmlContent}}
+                        {% endblock %}
+                    </fieldset>
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+{%endblock %}

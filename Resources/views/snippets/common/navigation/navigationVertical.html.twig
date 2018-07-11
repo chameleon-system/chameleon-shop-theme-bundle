@@ -1,0 +1,56 @@
+{#
+  description: renders a vertical navigation tree
+  parameters:
+  - aTree: array of items (object or assoc array). each item has the following properties:
+    ** bIsActive
+    ** bIsExpanded
+    ** sLink
+    ** sTitle
+    ** sSeoTitle (defaults to sTitle)
+    ** aChildren - this is a subtree of the same form as aTree
+#}
+
+{% if iLevel is defined %}
+    {% set iLevel = iLevel + 1 %}
+{% else %}
+    {% set iLevel = 1 %}
+<nav id="desktopCategoryNav" class="hidden-xs">
+    {% endif%}
+    {% if bExpanded is not defined %}
+        {% set bExpanded =  "" %}
+    {% endif%}
+    <ul class="snippetNavigationVertical {{("snippetNavigationVerticalLevel_"~iLevel~" "~bExpanded)|trim}}">
+        {% for oItem in aTree %}
+            {% set sClass = 'level_'~iLevel %}
+            {%if loop.last%}{% set sClass = sClass ~' lastNode'%}{% endif %}
+            {%if oItem.bIsActive%}{% set sClass = sClass ~' active'%}{% endif %}
+            {%if oItem.bIsExpanded%}{% set sClass = sClass ~' expanded'%}{% endif %}
+            {% if oItem.aChildren %}{% set sClass = sClass ~' hasChildren'%}{%endif%}
+            {%if loop.first%}{% set sClass = sClass ~' firstNode'%}{% endif %}
+            <li class="{{(sClass~" "~sUnderline)|trim}}">
+                <a class="{{sClass|trim}}" href="{{oItem.sLink|raw}}" title="{%if sRootNode is defined%}{{sRootNode}} {%endif%}{{(oItem.sSeoTitle|trim )| default(oItem.sTitle)|trim}}"><span>{{oItem.sTitle}}{{sSpacer}}</span></a>
+                {%if loop.first and not sRootNode is defined %}{% set sRootNode = oItem.sSeoTitle | default(oItem.sTitle) %}{% endif %}
+                {% if oItem.aChildren %}
+                    {%if oItem.bIsActive or  oItem.bIsExpanded %}
+                        {% set bExpanded = "expanded" %}
+                    {% else %}
+                        {% set bExpanded =  "" %}
+                    {% endif %}
+                    {% set sParentName =  oItem.sSeoTitle | default(oItem.sTitle)%}
+                    {% include _self with {'aTree': oItem.aChildren, 'iLevel': iLevel, "bExpanded" : bExpanded, 'sRootNode':sRootNode} %}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% if iLevel == 1 %}
+</nav>
+    {% set rootNode = aTree|first %}
+    {% if rootNode.aChildren|length > 0 %}
+        <div id="mobileCategoryNav" class="visible-xs">
+        <h3>{{ 'chameleon_system_chameleon_shop_theme.category.navigation_mobile'|trans }}</h3>
+            <select class="form-control">
+                {% include 'common/navigation/navigationMobile.html.twig' with { 'aTree': rootNode.aChildren, 'iLevel': iLevel, 'sRootNode':sRootNode } %}
+            </select>
+        </div>
+    {% endif %}
+{% endif %}

@@ -1,0 +1,35 @@
+{#
+  extends from shopFilterItem.html.twig but show size content value
+  description: an filter item with header and size selection
+  parameters:
+    -sTitle
+    -sInputURLName
+    -aFilterData - array of
+        - sValue, bActive, iCount, sURL,color_code, cms_media_id
+    -sResetURL
+#}
+{% extends "/pkgShopListFilter/shopFilterItem.html.twig" %}
+{% block contentValue %}
+    <div class="snippetShopFilterItemSize">
+        
+        {% for aData in aFilterData%}
+            {% if aData.bActive %}
+                {% if aData.bAllowMultiSelect %}
+                    <input type="hidden" name="{{sInputURLName}}[]" value="{{aData.sValue}}" />
+                {% else %}
+                    <input type="hidden" name="{{sInputURLName}}" value="{{aData.sValue}}" />
+                {%  endif %}
+            {% endif %}
+            {% include "/pkgShop/shopArticle/shopArticleAttributeSize.html.twig" with aData %}
+        {% endfor %}
+            <a href="{{sResetURL|raw}}" title="{{"chameleon_system_chameleon_shop_theme.filter.size_all_title"|trans}}" class="allBlock">{{'chameleon_system_chameleon_shop_theme.filter.size_all'|trans}}</a>
+        <div class="cleardiv">&nbsp;</div>
+    </div>
+{% endblock %}
+{% block start %}
+{%if aFilterData and aFilterData|length >0 %}
+        {% if aFilterData|length > 1 or (aFilterData|length == 1 and (aFilterData['0'].bActive == true or aFilterData['0'].iCount >0))%}
+            {{ parent() }}
+        {% endif %}
+    {% endif %}
+{%endblock %}

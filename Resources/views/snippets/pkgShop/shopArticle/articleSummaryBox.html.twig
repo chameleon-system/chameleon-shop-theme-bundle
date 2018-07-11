@@ -1,0 +1,29 @@
+{#
+    description: shows the article price and variant infos along with a to-basket button
+
+#}
+
+<div class="snippetShopArticleArticleSummary">
+    <div>
+        {% block price %}
+            <div class="priceblock">{% include "/pkgShop/shopArticle/articlePrice.html.twig" %}</div>
+        {% endblock %}
+    </div>
+
+    {% block body %}
+        <div class="body">
+            {% include "/pkgShopPaymentKlarna/shopArticle/klarna_invoice_partial_sale_article.html.twig" %}
+            {% include "/pkgShop/shopArticle/articleInfoBlock.html.twig" %}
+            {% include "/common/userInput/inputPreorderNotification.html.twig" %}
+            {% include "/common/userInput/buttonAddToBasketOrNoticeList.html.twig" %}
+        </div>
+    {%  endblock %}
+
+    {% include "pkgShop/shopArticle/articleTags.html.twig" %}
+</div>
+
+{% if schemaOrgProduct %}
+    <script type="application/ld+json">
+        {{ schemaOrgProduct|json_encode(64)|raw }} {# 64 = JSON_UNESCAPED_SLASHES #}
+    </script>
+{% endif %}

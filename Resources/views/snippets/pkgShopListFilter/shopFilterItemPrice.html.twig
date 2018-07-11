@@ -1,0 +1,124 @@
+{#
+  extends from shopFilterItem.html.twig but show size content value
+  description: an filter item with header and size selection
+  parameters:
+      "sTitle"
+      "slider" (object)
+        - disabled (true / false as string)
+        - valueLow
+        - valueHigh
+        - min
+        - max
+        - step
+      "selectFromPrice" / "selectToPrice" (object)
+        - options (array)
+        - selectedOption
+        - disabled (bool)
+      "sCurrency"
+      "sInputURLName"
+      "s"
+#}
+{% extends "/pkgShopListFilter/shopFilterItem.html.twig" %}
+{% block contentValue %}
+    <div class="snippetShopFilterItemPrice">
+        
+        <div class="sliderPrice sliderPriceContainer">
+            <div class="slider-no-touch">
+                <div id="sliderPrice"></div>
+                <div class="sliderLabel">
+                    <span class="amountStart">{{sCurrency}} {{ slider.valueLow }}</span>
+                    <span class="amountEnd">{{sCurrency}} {{ slider.valueHigh }}</span>
+                </div>
+            </div>
+            <div class="slider-touch">
+                <div class="form-group">
+                    <label class="control-label" for="{{sInputURLName}}[dStartValue]">von</label>
+                    <div class="controls">
+                        <select name="{{sInputURLName}}[dStartValue]" class="priceFrom">
+                            {% for option in selectFromPrice.options %}
+                                {% set selected = (selectFromPrice.selectedOption == option) ? 'selected' : '' %}
+                                <option value="{{ option }}" {{ selected }}>{{sCurrency}} {{ option }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="{{sInputURLName}}[dEndValue]">bis</label>
+                    <div class="controls">
+                        <select name="{{sInputURLName}}[dEndValue]" class="priceTo" >
+                            {% for option in selectToPrice.options %}
+                                {% set selected = (selectToPrice.selectedOption == option) ? 'selected' : '' %}
+                                <option value="{{ option }}" {{ selected }}>{{sCurrency}} {{ option }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-success">{{ 'chameleon_system_chameleon_shop_theme.filter.action_set'|trans }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var $sliderPriceContainer = $('.sliderPriceContainer');
+            if(Modernizr.touch){
+                $sliderPriceContainer.find('.slider-touch').show();
+                $sliderPriceContainer.find('.slider-no-touch').hide();
+
+                $sliderPriceContainer.find('select.priceFrom').attr('disabled', false);
+                $sliderPriceContainer.find('select.priceTo').attr('disabled', false);
+            }
+            else {
+                $sliderPriceContainer.find('.slider-touch').hide();
+                $sliderPriceContainer.find('.slider-no-touch').show();
+                $sliderPriceContainer.find('#sliderPrice').slider({
+                    range:true,
+                    disabled: {{ slider.disabled }},
+                    values: [
+                        {{slider.valueLow}},
+                        {{slider.valueHigh}}
+                    ],
+                    min: {{slider.min}},
+                    max: {{slider.max}},
+                    step: {{slider.step}},
+
+                    slide: function(event, ui){
+                        var startValue = ui.values[0],
+                            endValue = ui.values[1];
+                        $sliderPriceContainer.find('.sliderLabel .amountStart').html(' {{sCurrency}} ' + startValue );
+                        $sliderPriceContainer.find('.sliderLabel .amountEnd').html(' {{sCurrency}} ' + endValue );
+
+                        /**
+                         * shortcut for changing a the selected option of a select input
+                         */
+                        var $priceFromSelect = $sliderPriceContainer.find('select.priceFrom'),
+                            $priceToSelect = $sliderPriceContainer.find('select.priceTo');
+
+                        $priceFromSelect.val(startValue);
+                        $priceToSelect.val(endValue);
+
+
+                    },
+                    stop: function (event, ui) {
+                        var startValue = ui.values[0],
+                            endValue = ui.values[1];
+
+                        if($(this).slider('option', 'min') != startValue ||
+                           $(this).slider('option', 'max') != endValue){
+                            /**
+                             * we only want to submit the form if the user really changed something
+                             */
+                            //document.TdbPkgShopListfilter.submit();
+                        }
+                        document.TdbPkgShopListfilter.submit();
+                    }
+                });
+                $sliderPriceContainer.find('#sliderPrice a:first').addClass('selectorLeft');
+                $sliderPriceContainer.find('#sliderPrice a:last').addClass('selectorRight');
+            }
+        });
+    </script>
+{% endblock %}

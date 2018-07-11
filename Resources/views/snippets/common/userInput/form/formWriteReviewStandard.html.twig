@@ -1,0 +1,84 @@
+{#
+    description: renders write review form
+    vars
+
+    aTextData - optional - vars see /common/textBlock/textBlockSmallHeadline.html.twig
+    aFieldUserName - required - vars see /common/userInput/form/text.html.twig
+    aFieldTitle - required - vars see /common/userInput/form/text.html.twig
+    aFieldText - required - vars see /common/userInput/form/textarea.html.twig
+    aFieldRating - required - vars see /pkgShopArticleReview/standard.html.twig
+    sFormName - optional
+    sFormAction - optional
+    sSpotName - optional
+
+#}
+
+{% set sReviewInputFieldName = "aReviewData" %}
+<div class="snippetFormWriteReviewStandard">
+    {% if aTextData == null%}
+        {% set aTextData = {'sTitle' : 'chameleon_system_chameleon_shop_theme.review.write_review_headline'|trans}%}
+    {% endif %}
+    {% include "/common/textBlock/textBlockSmallHeadline.html.twig" with aTextData%}
+    <div class="formBox">
+        <form accept-charset="utf-8" method="post" name="writereview" class="form-horizontal">
+            {% if sSpotName %}<input type="hidden" value="WriteReview" name="module_fnc[{{sSpotName}}]" />{% endif %}
+            <input type="hidden" name="{{sReviewInputFieldName}}[data_extranet_user_id]" value="{{sUserId}}"/>
+            <input type="hidden" name="{{sReviewInputFieldName}}[author_email]" value="{{sUserEmail}}"/>
+            <div class="fields ">
+                {% set aFieldUserNameMapped = {
+                        'sLabelClass' : formDefaultLabelClass,
+                        'sInputClass' : formDefaultInputClass,
+                        'sHelpClass' : formDefaultHelpClass,
+                        'sLabelText' : 'chameleon_system_chameleon_shop_theme.review.author_name'|trans,
+                        'sName' : sReviewInputFieldName~'[author_name]',
+                        'sError': aFieldUserName.sError,
+                        'sFieldId':"writeReviewUserName",
+                        'sHelpText': 'chameleon_system_chameleon_shop_theme.review.author_name_help'|trans,
+                        'sValue' : aFieldUserName.sValue}%}
+                <div class="field">{% include "/common/userInput/form/text.html.twig" with aFieldUserNameMapped%}</div>
+            </div>
+            <div class="fields">
+                {% set aFieldRatingMapped = {
+                        'sLabelClass' : formDefaultLabelClass,
+                        'sInputClass' : formDefaultInputClass,
+                        'sHelpClass' : formDefaultHelpClass,
+                        'sLabelText' : 'chameleon_system_chameleon_shop_theme.review.rating_value'|trans,
+                        'sName' : sReviewInputFieldName~'[rating]',
+                        'bRequired' : true,
+                        'sFieldId':"writeReviewRating",
+                        'sError': aFieldRating.sError,
+                        'sHelpText': 'chameleon_system_chameleon_shop_theme.review.rating_value_help'|trans,
+                        'sValue' : aFieldRating.sValue}%}
+                <div class="field">{% include "/common/userInput/form/rating.html.twig" with aFieldRatingMapped%}</div>
+            </div>
+            <div class="fields">
+                {% set aFieldTitleMapped = {
+                        'sLabelClass' : formDefaultLabelClass,
+                        'sInputClass' : formDefaultInputClass,
+                        'sHelpClass' : formDefaultHelpClass,
+                        'sName' : sReviewInputFieldName~'[title]',
+                        'sLabelText' : 'chameleon_system_chameleon_shop_theme.review.title'|trans,
+                        'bRequired' : true,
+                        'sFieldId':"writeReviewTitle",
+                        'sError': aFieldTitle.sError,
+                        'sValue' : aFieldTitle.sValue}%}
+                <div class="field">{% include "/common/userInput/form/text.html.twig" with aFieldTitleMapped%}</div>
+            </div>
+            <div class="fields">
+                {% set aFieldTextMapped = {
+                        'sLabelClass' : formDefaultLabelClass,
+                        'sInputClass' : formDefaultInputClass,
+                        'sHelpClass' : formDefaultHelpClass,
+                        'sName' : sReviewInputFieldName~'[comment]',
+                        'sLabelText' : 'chameleon_system_chameleon_shop_theme.review.rating_text'|trans,
+                        'bRequired' : true,
+                        'sFieldId':"writeReviewText",
+                        'sError': aFieldText.sError,
+                        'sValue' : aFieldText.sValue}%}
+                <div class="field">{% include "/common/userInput/form/textarea.html.twig" with aFieldTextMapped%}</div>
+            </div>
+            {% include "/common/userInput/buttonStandard.html.twig" with {sButtonText: 'chameleon_system_chameleon_shop_theme.review.rating_submit'|trans, sButtonClass: formDefaultSubmitClass}%}
+        </form>
+    </div>
+
+</div>

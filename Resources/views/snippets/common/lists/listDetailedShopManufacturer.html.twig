@@ -1,0 +1,37 @@
+{#
+  description: renders complete manufacture list with alphabet navigation and search box
+
+    sTitle - Optional
+    sText  - Optional
+    aManufacturerList -see /common/lists/listSimple.html.twig
+    aSearchInput - optional - see /common/userInput/userInputBox.html.twig
+
+
+#}
+
+<div class="snippetListDetailedShopManufacturer">
+    <div class="headerContent">
+        <div class="row">
+            {% if sTitle or sText %}
+                <div class="col-xs-12 col-md-9">
+                    {% include "/common/textBlock/textBlockMediumHeadline.html.twig" with {'sHeadline': sTitle, 'sText': sText} %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            {% if  aManufacturerList and aManufacturerList|length>0%}
+                <div class="row">
+                    {% for aManufacturer in aManufacturerList%}
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
+                            {% include "/common/teaser/wide-base.html.twig" with aManufacturer%}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else%}
+                <div class="noItemFound">{{"chameleon_system_chameleon_shop_theme.manufacturer.no_matches"|trans}}</div>
+            {% endif %}
+        </div>
+    </div>
+</div>

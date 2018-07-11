@@ -1,0 +1,12 @@
+{#
+    description: an text teaser
+    parameters:
+        ** sText
+  )
+#}
+
+<div class="snippetTextBlockStandard">
+    <div class="textBlockContainer">
+        {% if sText %}<div class="textBlockContent">{{sText|raw}}</div>{% endif %}
+    </div>
+</div>

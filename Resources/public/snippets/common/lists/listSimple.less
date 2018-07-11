@@ -1,0 +1,64 @@
+.snippetListSimple {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    li {
+        .header {
+            position: relative;
+            zindex: 1;
+            .cmsH1();
+            color: @cmsColorPrimary;
+            line-height: 43px;
+            background-color: @cmsBackground3;
+            float: left;
+            padding-right: 12px;
+        }
+        .minimizer {
+            cursor: pointer;
+            position: relative;
+            top: 10px;
+            zindex: 1;
+            float: right;
+            width: 10px;
+            padding-top: 22px;
+            padding-left: 19px;
+            height: 0;
+            padding-right: 2px;
+            background: url("/bundles/chameleonsystemchameleonshoptheme/images/layout/arrow-down-small.png") no-repeat scroll 20px center @cmsBackground3;
+            &.active {
+                background: url("/bundles/chameleonsystemchameleonshoptheme/images/layout/arrow-up-small.png") no-repeat scroll 20px center @cmsBackground3;
+            }
+        }
+        .listContainerInner {
+            border-top: 1px solid @cmsBorder;
+            float: left;
+            width: 100%;
+            margin-top: -22px;
+            padding-top: 26px;
+            ul {
+
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    /*float: left;*/
+                    a {
+                        .cmsBtn-small();
+                        color: @cmsColorPrimary;
+                        display: block;
+                        padding-bottom: 7px;
+                        padding-top: 6px;
+                        border-bottom: 1px solid @cmsBorder5;
+                        &:Hover {
+                            text-decoration: none;
+                            border-bottom: 1px solid @cmsColorPrimary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/teaser/horizontal-base.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/teaser/standard-shopArticleExtendedWithQuickshopping.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/teaser/notice-shopArticleExtendedWithQuickshopping.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/teaser/standardWithHover.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/teaser/standard-base.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/teaser/standard-shopArticle.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/teaser/wide-base.less
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/teaser/standard-shopArticleExtendedWithQuickshopping.js
+include:
+  - pkgShop/shopBasket
+  - pkgShop/userInput
+  - common/lists
+  - common/badges

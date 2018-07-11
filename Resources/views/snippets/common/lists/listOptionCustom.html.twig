@@ -1,0 +1,21 @@
+{#
+  extends /common/userInput/userInputSelect.html.twig render select field from template
+  description: renders list option like sort or list page size
+  parameters:
+    -sName
+    -sFormActionUrl
+    -sFormId
+    -sSelectName
+    - sFormHiddenFields
+
+    -aOptionList
+        -sValue
+        -sName
+        -bSelected
+
+#}
+{% extends "common/lists/listOption.html.twig" %}
+{% block selectField %}
+    
+        {% include "/common/userInput/userInputSelect.html.twig" with {'sInputName':sSelectName, 'aOptionList': aOptionList }%}
+{% endblock %}

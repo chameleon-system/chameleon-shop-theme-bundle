@@ -1,0 +1,180 @@
+.snippetPkgImageHotspotPresenter {
+  z-index: 2;
+  &.sliderContainer {
+
+    @media (max-width: @screen-xs-max) {
+      display: none;
+    }
+
+    position: relative;
+    .sliderElements {
+      position: relative;
+      height: auto; //385px;
+      .sliderElement {
+        display: none;
+        position: absolute;
+        width: 100% !important;
+        height: auto !important;
+        &.activeSlide {
+          display: block;
+          top: 0;
+          left: 0;
+        }
+        .layover {
+          position: absolute;
+        }
+
+        .backgroundImage {
+          width: 100%;
+          height: auto;
+          border: 0;
+        }
+        .marker {
+          position: absolute;
+          .markericon-left {
+            .i();
+            .i-marker-left();
+            font-size: 0;
+          }
+          .markericon-right {
+            .i();
+            .i-marker-right();
+            font-size: 0;
+          }
+
+          .objectDisplayBlock {
+            display: none;
+          }
+          &:hover {
+            .objectDisplayBlock {
+              display: block;
+            }
+          }
+
+          .objectDisplayBlock {
+            border: 1px solid @cmsBorder;
+            padding: 5px;
+            background-color: #ffffff;
+            opacity: 0.9;
+            filter: alpha(opacity=90); /* For IE8 and earlier */
+            width: 240px;
+            -moz-box-shadow: 0 5px 10px 0 @cmsBorder;
+            -webkit-box-shadow: 0 5px 10px 0 @cmsBorder;
+            box-shadow: 0 5px 10px 0 @cmsBorder;
+            z-index: 100;
+            border-radius: 15px;
+            .snippetTeaserStandardBase {
+              background-color: transparent;
+              border: none;
+            }
+          }
+          @media (min-width: @screen-lg-min) {
+            .objectDisplayBlock {
+              width: 300px;
+            }
+          }
+          @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+            .objectDisplayBlock {
+              width: 186px;
+            }
+          }
+        }
+      }
+    }
+    .nav {
+      &.navWithoutMargin{
+        margin: 0;
+      }
+      ul {
+        list-style: none;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 50;
+        li {
+          background-color: #ffffff;
+          padding-left: 5px;
+          display: block;
+          float: left;
+          padding-bottom: 5px;
+
+          a {
+            display: block;
+            background-color: @cmsBackground;
+            width: 20px;
+            height: 20px;
+            line-height: 1px;
+            font-size: 1px;
+            text-decoration: none;
+            font-size: 0;
+
+          }
+          &.active, &:hover {
+            a {
+              background-color: @cmsBackground2;
+            }
+          }
+        }
+
+      }
+    }
+
+    .prev, .next {
+      display: bock;
+      position: absolute;
+      z-index: 7;
+      height: 100%;
+      opacity: 0.4;
+      filter: alpha(opacity=40); /* For IE8 and earlier */
+      width: 21px;
+      background-color: #ffffff;
+      &:hover {
+        opacity: 0.75;
+        filter: alpha(opacity=75); /* For IE8 and earlier */
+        text-decoration: none;
+      }
+    }
+
+    .prev {
+      left: 0;
+      top: 0;
+      .icon {
+        .i();
+        .i-arrow-black-left();
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        overflow: hidden;
+        text-indent: -50px;
+      }
+    }
+    .next {
+      bottom: 0;
+      right: 0;
+      .icon {
+        .i();
+        .i-arrow-black-right();
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        overflow: hidden;
+        text-indent: -50px;
+      }
+    }
+  }
+}
+
+.no-js {
+  .sliderContainer {
+    overflow: visible;
+    height: auto;
+    .sliderElements {
+      overflow: visible;
+      height: auto;
+      .sliderElement {
+        position: relative;
+      }
+    }
+  }
+}

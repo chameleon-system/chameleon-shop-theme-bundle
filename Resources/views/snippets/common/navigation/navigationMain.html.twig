@@ -1,0 +1,103 @@
+{#
+  description: renders a navigation tree
+  parameters:
+  - aTree: array of items (object or assoc array). each item has the following properties:
+    ** bIsActive
+    ** bIsExpanded
+    ** sLink
+    ** sTitle
+    ** sSeoTitle (defaults to sTitle)
+    ** aChildren - this is a subtree of the same form as aTree
+    ** sNavigationIconClass  - shows icon before link
+#}
+
+{% if iLevel is defined %}
+    {% set iLevel = iLevel + 1 %}
+{% else %}
+    {% set iLevel = 1 %}
+{% endif %}
+
+{% set sUlClass = 'nav navbar-nav' %}
+{% if bDropDown == true and iLevel < 3 %}
+    {% set sUlClass = 'dropdown-menu' %}
+{% endif %}
+{% if iLevel == 1 %}
+    <nav class="hidden-print">
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" id="buttonMobileNavigationMain" data-toggle="collapse"
+                        data-target="#mainMenu" aria-expanded="false">
+                    <span class="sr-only">{{ "chameleon_system_chameleon_shop_theme.navigation.shop_menu"|trans }}</span>
+                    <span class="icon-menu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </span>
+                    <span class="buttonText">
+                        {{ "chameleon_system_chameleon_shop_theme.navigation.shop_menu"|trans }}
+                    </span>
+                </button>
+            </div>
+
+            <div id="mainMenu" class="collapse navbar-collapse">
+{% endif %}
+                <ul class="{{sUlClass}}{% if iLevel >= 1 %} snippetNavigationMain colorblack_2{% endif %} level_{{ iLevel }}">
+                    {% for oItem in aTree %}
+                        {% set sSpacer = '' %}
+                        {% if iLevel == 3 and not loop.last %}
+                            {% if loop.index < 5 %}
+                                {% set sSpacer = ',' %}
+                            {% else %}
+                                {% set sSpacer = ' ...' %}
+                            {% endif %}
+                        {% endif %}
+
+                        {% set sUnderline = '' %}
+                        {% if iLevel == 2 and loop.index > 3 %}
+                            {% set sUnderline = 'underline' %}
+                        {% endif %}
+
+                        {% set sLiClass = 'level_'~iLevel %}
+                        {% if oItem.aChildren %}{% set sLiClass = sLiClass ~' dropdown hasChildren'%}{% endif %}
+                        {%if loop.last%}{% set sLiClass = sLiClass ~' lastNode'%}{% endif %}
+                        {%if oItem.bIsActive%}{% set sLiClass = sLiClass ~' active'%}{% endif %}
+                        {%if oItem.bIsExpanded%}{% set sLiClass = sLiClass ~' expanded'%}{% endif %}
+                        {%if loop.first%}{% set sLiClass = sLiClass ~' firstNode'%}{% endif %}
+                        {%if oItem.sCssClass%}{% set sLiClass = sLiClass ~' '~oItem.sCssClass%}{% endif %}
+                        <li class="{{sLiClass|trim}} {% if iLevel == 2 %}{{(sUnderline~" col-sm-4 "~sClass)|trim}}{% else %}{{(sUnderline~" "~sClass)|trim}}{% endif %}">
+                            {% set saClass = "dropdown-toggle level_"~iLevel %}
+                            {%if loop.last%}{% set saClass = saClass ~' lastNode'%}{% endif %}
+                            {%if oItem.bIsActive%}{% set saClass = saClass ~' active'%}{% endif %}
+                            {%if oItem.bIsExpanded%}{% set saClass = saClass ~' expanded'%}{% endif %}
+                            {% if oItem.aChildren %}{% set saClass = saClass ~' hasChildren'%}{%endif%}
+                            {%if loop.first%}{% set saClass = saClass ~' firstNode'%}{% endif %}
+
+                            {% if oItem.sNavigationIconId %}
+                                <span class="naviItemImage">
+                                    <a href="{{ oItem.sLink|raw }}">
+                                        <img src="{{ oItem.sNavigationIconId|cmsthumb(32,49,true) }}" alt="{{ oItem.sTitle|trim }}"/>
+                                    </a>
+                                </span>
+                            {% endif %}
+
+                            {% if oItem.aChildren and iLevel == 1 %}
+                                <a href="{{oItem.sLink|raw}}" class="{{saClass|trim}}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="{{oItem.sSeoTitle|default(oItem.sTitle)|raw}}">
+                                    {{oItem.sTitle}}
+                                    <span class="caret"></span>
+                                </a>
+                            {% else %}
+                                <a href="{{oItem.sLink|raw}}" class="{{saClass|trim}}" title="{{oItem.sSeoTitle|default(oItem.sTitle)|raw}}" {% if oItem.sTarget %}target="{{ oItem.sTarget }}"{% endif %}>
+                                    {{oItem.sTitle}}{% if iLevel > 2 %}{{ sSpacer }}{% endif %}
+                                </a>
+                            {% endif %}
+                            {% if oItem.aChildren %}
+                                {% include _self with {'aTree': oItem.aChildren, 'bDropDown' : true , 'iLevel': iLevel} %}
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+{% if iLevel == 1 %}
+            </div>
+        </div>
+    </nav>
+{% endif %}

@@ -1,0 +1,43 @@
+{#
+  description: renders headline, horizontal scroller and complete article list
+  parameters:
+  - sTitle
+  - aArticleList look at /common/teaser/standard-shopArticle.dummy.php
+  - aListPaging  look at /common/lists/listPaging.dummy.php
+#}
+{% if itemsPerRow is not defined %}{% set itemsPerRow = 4 %}{% endif %}
+<div class="snippetListStandardShopArticle">
+    <div class="content">
+        {% block header %}
+            {% if sTitle %}
+                <div class="header">
+                    <h3>{{sTitle}}</h3>
+                </div>
+            {% endif %}
+        {% endblock %}
+        <div id="key{{listIdent}}">
+            {% block list %}
+                {% if aArticleList and aArticleList|length >0%}
+                    <div class="articleList row">
+                        {% for sArticle in aArticleList %}
+                            {% if itemsPerRow == 6 %}
+                                <div class="col-xs-6 col-sm-3 col-lg-2 fullWide">
+                            {% else %}
+                                <div class="col-xs-6 col-md-3 full">
+                            {% endif %}
+                                    {{sArticle | raw}}
+                                </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="noItems">{{'chameleon_system_chameleon_shop_theme.products.no_products'|trans}}</div>
+                {% endif %}
+            {% endblock %}
+            {% block scroller %}
+                {% if aListPaging and aListPaging|length >0%}
+                    {% include "/common/lists/listPagingScroller.html.twig" with aListPaging %}
+                {% endif %}
+            {% endblock %}
+        </div>
+    </div>
+</div>

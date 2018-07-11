@@ -1,0 +1,110 @@
+{#
+    description: show a basket article list as table
+    parameters:
+        ** aArticleList
+            ** aArticle
+                ** sImageId
+                ** iAmount
+                ** sManufacturer
+                ** sArticleName
+                ** sArticleColor
+                ** sArticleSize
+                ** sShippingInformation
+                ** sPrice
+                ** sPriceTotal
+                ** sCurrency
+                ** sArticleDetailURL
+        ** iColumnCount
+        ** iColumnSizeArticle
+        ** iColumnSizeAmount
+        ** iColumnSizeSinglePrice
+        ** iColumnSizeTotalPrice
+        ** iColumnSizeArticleImage
+#}
+
+
+{% if iColumnCount is not defined %}
+    {% set iColumnCount = 12 %}
+{% endif %}
+{% if iColumnSizeArticleImage is not defined %}
+    {% set iColumnSizeArticleImage = 1 %}
+{% endif %}
+{% if iColumnSizeArticle is not defined %}
+    {% set iColumnSizeArticle = 4 %}
+{% endif %}
+{% if iColumnSizeArticleMobile is not defined %}
+    {% set iColumnSizeArticleMobile = 5 %}
+{% endif %}
+{% if iColumnSizeAmount is not defined %}
+    {% set iColumnSizeAmount = 3 %}
+{% endif %}
+{% if iColumnSizeAmountMobile is not defined %}
+    {% set iColumnSizeAmountMobile = 2 %}
+{% endif %}
+{% if iColumnSizeSinglePrice is not defined %}
+    {% set iColumnSizeSinglePrice = 2 %}
+{% endif %}
+{% if iColumnSizeTotalPrice is not defined %}
+    {% set iColumnSizeTotalPrice = 2 %}
+{% endif %}
+
+<table class="table snippetShopBasketArticleListAsTable">
+    <thead>
+    <tr>
+        <th class="hidden-xs hidden-sm image-and-article col-md-{{iColumnSizeArticleImage}}">
+
+        </th>
+        <th class="col-xs-{{ iColumnSizeArticleMobile }} col-md-{{ iColumnSizeArticle }}">
+            {{'chameleon_system_chameleon_shop_theme.basket.column_article'|trans}}
+        </th>
+        <th class="amount col-xs-{{iColumnSizeAmountMobile}} col-md-{{iColumnSizeAmount}}">
+            {{'chameleon_system_chameleon_shop_theme.basket.column_quantity'|trans}}
+        </th>
+        <th class="single price hidden-xs hidden-sm col-md-{{iColumnSizeSinglePrice}}">
+            {{'chameleon_system_chameleon_shop_theme.basket.column_item_price'|trans}}
+        </th>
+        <th class="total price col-xs-{{iColumnSizeTotalPrice}}">
+            {{'chameleon_system_chameleon_shop_theme.basket.column_total_price'|trans}}
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for aArticle in aArticleList %}
+        <tr class="article">
+            {% set iColumnSizeArticleInformation = iColumnSizeArticle %}
+
+            {% if iColumnSizeArticle > 1 %}
+
+                {% set iColumnSizeArticleInformation = iColumnSizeArticle - iColumnSizeArticleImage %}
+                <td class="hidden-xs hidden-sm image col-md-{{iColumnSizeArticleImage}}">
+                    {% block image %}
+                    <a href="{{aArticle.sArticleDetailURL}}">
+                        <img src="{{aArticle.sImageId | cmsthumb(174,300,false)}}" alt="{{aArticle.sManufacturer}} {{aArticle.sArticleName}}"/>
+                    </a>
+                    {% endblock %}
+                </td>
+            {% endif %}
+            <td class="article col-xs-{{ iColumnSizeArticleMobile }} col-md-{{iColumnSizeArticleInformation}}">
+                {% include '/pkgShop/shopArticle/articleBasket.html.twig' with aArticle %}
+            </td>
+            <td class="amount col-xs-{{iColumnSizeAmountMobile}} col-md-{{iColumnSizeAmount}}">
+                {% block amount %}
+                {{aArticle.iAmount}}&nbsp;x
+                {% endblock %}
+            </td>
+            <td class="single price hidden-xs hidden-sm col-md-{{iColumnSizeSinglePrice}}">
+                {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': aArticle.sPrice}  %}
+            </td>
+            <td class="total price col-xs-{{iColumnSizeTotalPrice}}">
+                {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': aArticle.sPriceTotal} %}
+            </td>
+        </tr>
+    {% endfor %}
+
+    {% set iColumnSizeSumCaption = 2 %}
+    {% set iColumnSizeSumValue = 2 %}
+    {% set iColumnSizeSpacer = iColumnCount - (iColumnSizeSumCaption + iColumnSizeSumValue) %}
+
+    </tbody>
+</table>

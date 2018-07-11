@@ -1,0 +1,15 @@
+{#
+  description: renders shop article attribute color
+  parameters:
+        - sURL
+        - sValue
+        - bActive
+        - color_code
+        - cms_media_id
+#}
+
+<div class="snippetShopArticleAttributeColor ColorBlock {% if bActive %} active {% endif %}">
+    <a href="{{sURL|raw}}" title="{{sValue}}">
+        <span class="ColorValue" style="background-color: #{{color_code}}">&nbsp;</span>
+    </a>
+</div>

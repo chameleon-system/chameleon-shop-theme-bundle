@@ -1,0 +1,90 @@
+{#
+
+    sName
+    sAction
+    sFunction
+    sSpotName
+
+
+#}
+
+<div class="snippetFormTelephoneOrder">
+    <a id="telephoneOrder"></a>
+    {% include "/common/textBlock/textBlockSmallHeadline.html.twig" with {'sTitle': 'chameleon_system_chameleon_shop_theme.order_login.telefon_order_headline'|trans, 'sText': 'chameleon_system_chameleon_shop_theme.order_login.telefon_order_help'|trans } %}
+    <div class="formBox row">
+        <form name="{{ sName }}" accept-charset="utf-8" method="post" action="{{ sAction }}#telephoneModal">
+            <input type="hidden" name="module_fnc[{{ sSpotName }}]" value="{{ sFunction }}"/>
+            {{ sOverallError|raw }}
+            <div class="leftBox col-xs-12 col-sm-6">
+                <div class="fields">
+                    <div class="field">
+                        {% set aMappedData = {
+                        'sInputClass' : 'fullWidth',
+                        'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_first_name'|trans,
+                        'sName' : aFieldFirstName.sName,
+                        'bRequired' : true,
+                        'sFieldId': aFieldFirstName.sFieldId,
+                        'sError': aFieldFirstName.sError,
+                        'sValue' : aFieldFirstName.sValue,
+                        }%}
+                        {% include "/common/userInput/form/text.html.twig" with aMappedData%}
+                    </div>
+                </div>
+                <div class="fields">
+                    <div class="field">
+                        {% set aMappedData = {
+                        'sInputClass' : 'fullWidth',
+                        'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_last_name'|trans,
+                        'sName' : aFieldLastName.sName,
+                        'bRequired' : true,
+                        'sFieldId': aFieldLastName.sFieldId,
+                        'sError': aFieldLastName.sError,
+                        'sValue' : aFieldLastName.sValue,
+                        }%}
+                        {% include "/common/userInput/form/text.html.twig" with aMappedData %}
+                    </div>
+                </div>
+                <div class="fields">
+                    <div class="field">
+                        {% set aMappedData = {
+                        'sInputClass' : 'fullWidth',
+                        'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_phone'|trans,
+                        'sName' : aFieldTel.sName,
+                        'bRequired' : true,
+                        'sFieldId': aFieldTel.sFieldId,
+                        'sError': aFieldTel.sError,
+                        'sValue' : aFieldTel.sValue,
+                        }%}
+                        {% include "/common/userInput/form/text.html.twig" with aMappedData %}
+                    </div>
+                </div>
+                <div class="fields ">
+                    <div class="field">
+                        {% set aMappedData = {
+                        'sInputClass' : 'fullWidth',
+                        'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_subject'|trans,
+                        'sName' : aFieldReason.sName,
+                        'bRequired' : false,
+                        'sFieldId': aFieldReason.sFieldId,
+                        'sError': aFieldReason.sError,
+                        'sValue' : aFieldReason.sValue,
+                        }%}
+                        {% include "/common/userInput/form/text.html.twig" with aMappedData %}
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="{{ 'chameleon_system_chameleon_shop_theme.checkout.action_request_call'|trans }}">
+                </div>
+            </div>
+            <div class="rightBox col-xs-12 col-sm-6">
+                <div class="infoText">
+                    {% if sInfoText %}
+                        {{ sInfoText }}
+                        {% elseif sRawInfoText %}
+                        {{ sRawInfoText|raw }}
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

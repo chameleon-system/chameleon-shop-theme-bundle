@@ -1,0 +1,12 @@
+{% extends "/common/userInput/form/text.html.twig" %}
+{% block field %}
+{% if sInputClass %}<div class="{{sInputClass}}">{% endif %}
+{% if sValue != "" and sValue != "0000-00-00" %}
+
+{% endif %}
+
+<input type="text" name="{{sName}}-day" value="{{sValue}}-day" {% if sPlaceholder is defined %}placeholder="{{sPlaceholder}}"{% endif %} />
+<input {% if sInputClass is defined %}class="{{sInputClass}}"{% endif %} type="text" {% if sFieldId is defined %}id="{{sFieldId}}"{% endif %} name="{{sName}}" value="{{sValue}}" {% if sPlaceholder is defined %}placeholder="{{sPlaceholder}}"{% endif %} />
+<input {% if sInputClass is defined %}class="{{sInputClass}}"{% endif %} type="text" {% if sFieldId is defined %}id="{{sFieldId}}"{% endif %} name="{{sName}}" value="{{sValue}}" {% if sPlaceholder is defined %}placeholder="{{sPlaceholder}}"{% endif %} />
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{#
+  description: renders list header with list information , sort option , page size option nad paging
+  parameters:
+      -sStartItem
+      -sEndItem
+      -sMaxItems
+      "sListOptionSort"
+      "aListOptionPageSize"
+           -sName
+           -sFormActionUrl
+           -sFormId
+           -sSelectName
+            -aOptionList
+               -sValue
+               -sName
+               -bSelected
+      "aListPaging"
+          -iActivePage
+          -iLastPage
+          -sURL with {[pageNumber]} to replace with page number
+#}
+
+<div class="snippetListHeader">
+    <div class="ListHeaderContent">
+        <div class="row">
+            <div class="listHeaderItem col-xs-6 col-lg-4">
+                {% if sStartItem and sEndItem %}
+                    <span class="articlePrefix">{{'chameleon_system_chameleon_shop_theme.products.product_list_header'|trans}}</span>
+                    {% include "/common/lists/listInformation.html.twig"%}
+                {% endif %}
+            </div>
+            {% if aListPaging and aListPaging.iLastPage > 1 %}
+                <div class="listHeaderItem col-xs-6 col-lg-4 col-lg-push-4">
+                    {% include "/common/lists/listPaging.html.twig" with aListPaging%}
+                </div>
+                <div class="listHeaderItem col-xs-12 col-lg-4 col-lg-pull-4">
+                    <div>
+            {% else %}
+                <div class="listHeaderItem col-xs-6 col-lg-8">
+                    <div class="pull-right">
+            {%endif%}
+                        {% if sListOptionSort %}
+                            {{sListOptionSort | raw}}
+                        {% endif %}
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

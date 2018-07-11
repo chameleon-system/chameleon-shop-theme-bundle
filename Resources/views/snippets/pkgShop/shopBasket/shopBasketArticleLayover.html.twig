@@ -1,0 +1,69 @@
+{#
+  description: show mini basket layover
+  parameters:
+    ** sBasketURL
+    ** sCheckoutURL
+    ** sShippingInfoURL
+    ** sSumProductsAfterDiscountsAndDiscountVouchers
+    ** sCurrency
+    ** aArticleList
+        **aArticle
+            ** sImageId
+            ** iAmount
+            ** sManufacturer
+            ** sArticleName
+            ** sPrice
+            ** sCurrency
+            ** sArticleDetailURL
+#}
+
+<div class="snippetShopBasketArticleLayover">
+    <div class="box">
+        <div class="boxInner">
+            {% if aArticleList is not defined or aArticleList|length < 1 %}
+                <div class="basketblock">{{"chameleon_system_chameleon_shop_theme.checkout.msg_empty_basket"| trans}}</div>
+            {% else %}
+                <div class="articlelist">
+                    {% set bgcolor = 'bgGrey' %}
+                    {% for aArticle in aArticleList %}
+                        {% if bgcolor == "bgGrey" %}
+                            {% set bgcolor = 'bgWhite' %}
+                        {% else %}
+                            {% set bgcolor = 'bgGrey' %}
+                        {% endif %}
+                        <div class="article {{bgcolor}}">
+                            {% include "/pkgShop/shopArticle/shopArticleSimpleWide.html.twig" with aArticle%}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="basketblock">
+                    <div class="total">
+                        <div class="title font_ubuntu_2">{{ 'chameleon_system_chameleon_shop_theme.basket.column_total_price'|trans }}</div>
+                        <div class="priceTotal">
+                            <div class="price font_ubuntu_med_3">
+                                <div class="snippetShopArticlePrice">
+                                    <span class="currency">{{sCurrency}}</span>&nbsp;<span class="priceValue">{{sSumProductsAfterDiscountsAndDiscountVouchers}}</span>
+                                </div>
+                            </div>
+                            <div class="mwst color_grey_3 font_ubuntu_light_2">{{'chameleon_system_chameleon_shop_theme.checkout.product_vat_note'|trans}} {{ sShippingInfoURL|raw }}</div>
+                        </div>
+                        <div class="clearfix">&nbsp;</div>
+                    </div>
+                    <div class="link">
+                        <div class="linkBasket">
+                            {%set sLinkURL = sBasketURL%}
+                            {%set sTitle = 'chameleon_system_chameleon_shop_theme.minibasket.action_show_basket_title'|trans %}
+                            {%set sLinkIconClass = 'i-point_green '%}
+                            {% include "/common/links/linkStylesIcon.html.twig" %}
+                        </div>
+                        <div>
+                            {% include 'pkgshoppaymentamazon/amazonbutton.html.twig' with amazonPayment %}
+                        </div>
+                        <div class="linkCheckout"><a class="btn btn-default btn-lg " href="{{sCheckoutURL | raw}}">{{'chameleon_system_chameleon_shop_theme.checkout.action_to_payment'|trans}}</a></div>
+                        <div class="clearfix">&nbsp;</div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

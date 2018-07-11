@@ -1,0 +1,28 @@
+{#
+    description: shows bootstrap tab view
+    vars
+        aTabs
+            sTitle
+            bIsActive
+            sURL
+            sAjaxURL
+        sContent
+
+#}
+{% extends "common/navigation/tabs/standard.html.twig" %}
+{% block snippetClass %}<div class="snippetNavigationTabsStandardVertical tabbable"> {% endblock%}
+{% block tabcontent%}
+
+    <div class="tab-content">
+        <div class="tab-pane col-xs-12">
+            <div class="closer i i-close">&nbsp;</div>
+            <div class="tabContent">
+
+            </div>
+
+        </div>
+    </div>
+{%endblock%}
+{% block linkText%}
+    {{aTab.sTitle}} {{'chameleon_system_chameleon_shop_theme.tab.show'|trans}}
+{%endblock%}

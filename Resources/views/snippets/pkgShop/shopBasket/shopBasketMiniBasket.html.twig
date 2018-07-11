@@ -1,0 +1,48 @@
+{#
+  description: show mini basket
+  parameters:
+    ** iNumberOfProducts
+    ** sCurrency
+    ** sSumProductsAfterDiscountsAndDiscountVouchers
+    ** sBasketURL
+    ** sCheckoutURL
+    ** sShippingInfoURL
+    ** sPriceTotal
+    ** sCurrencyName
+    ** aArticleList
+    **aArticle
+        ** sImageId
+        ** iAmount
+        ** sManufacturer
+        ** sArticleName
+        ** sPrice
+        ** sCurrency
+        ** sArticleDetailURL
+#}
+
+<div class="snippetShopBasketMiniBasket">
+    <div class="shopBasketMiniBasketBox">
+        <div class="shopBasketMiniBasketBoxBoxInner">
+            <div class="shopBasketMiniBasketBoxBoxSpacerRight">
+                <a class="shopBasketMiniBasketBoxBoxSpacerLeft teaser" href="{{sBasketURL|raw}}" title="{{"chameleon_system_chameleon_shop_theme.minibasket.action_show_basket_title"|trans}}">
+                    <span class="leftBasketIcon">
+                        <span class="i i-basket_icon">&nbsp;</span>
+                    </span>
+                    <span class="rightBasketInfo">
+                        <span class="header">{{"chameleon_system_chameleon_shop_theme.minibasket.action_show_basket"|trans}}</span>
+                        <span class="articleInfo">
+                            <span class="miniBasketInfo">
+                                <span class="amount"><span class="miniBasketInfoInner">{{ "chameleon_system_chameleon_shop_theme.minibasket.number_of_products"|trans }}:</span> <span class="productCount"> {{ sNumberOfProducts }}</span></span>
+                                <span class="value"><span class="miniBasketInfoInner">{{ "chameleon_system_chameleon_shop_theme.minibasket.basket_value"|trans }}:</span> {% include "/pkgShop/shopArticle/price.html.twig" with {'sCurrency':sCurrency, 'sPrice':sSumProductsAfterDiscountsAndDiscountVouchers} %}</span>
+
+                            </span>
+                        </span>
+                    </span>
+                 </a>
+            </div>
+        </div>
+            <div class="hideOnJS layoverInMiniBasket">
+                {% include "/pkgShop/shopBasket/shopBasketArticleLayover.html.twig"%}
+            </div>
+    </div>
+</div>

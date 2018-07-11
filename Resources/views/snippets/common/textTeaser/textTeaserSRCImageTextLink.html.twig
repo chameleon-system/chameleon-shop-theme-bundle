@@ -1,0 +1,20 @@
+{#
+  extends from textTeaserImageTextLink.html.twig but load real image instead of a sprite image
+  description: an text teaser with image on left side and text and link on the right
+  parameters:
+    ** aImage array of image information
+       ** sClassSrc contains src url of the image
+       ** sTitle
+    ** aLink
+        ** sLinkURL
+        ** sTitle
+    ** sText
+#}
+{% extends "/common/textTeaser/textTeaserImageTextLink.html.twig" %}
+{%block image%}
+    {% if aImage %}
+        <div class="image">
+            <img src="{{aImage.sClassSrc}}" alt="{{aImage.sTitle}}" />
+        </div>
+    {%endif%}
+{%endblock%}

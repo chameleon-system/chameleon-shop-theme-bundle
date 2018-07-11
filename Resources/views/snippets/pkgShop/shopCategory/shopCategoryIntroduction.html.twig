@@ -1,0 +1,13 @@
+{#
+    description: an text teaser with image on left side and text and optional link on the right
+    parameters:
+        ** see /common/textBlock/textBlockMediumHeadline.html.twig
+  )
+#}
+{% extends '/common/textBlock/textBlockMediumHeadlineSmallImage.html.twig' %}
+{% block main %}
+    <div class="shopCategoryIntroductionSnippet hidden-xs">
+        {{ parent() }}
+    </div>
+{% endblock %}
+{% block sText %}{% endblock %}

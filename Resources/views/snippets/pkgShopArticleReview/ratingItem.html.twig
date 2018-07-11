@@ -1,0 +1,25 @@
+{#
+  description: renders rating item with star rating author headline and text
+  vars:
+    sTitle
+    sUser
+    sDate
+    sText
+    dRating
+
+#}
+
+<div class="snippetRatingItem">
+    <div class="header">
+        <div class="stars">
+            {% include "/pkgShopArticleReview/standard.html.twig" %}
+        </div>
+        <div class="title">{{sTitle}}</div>
+        <div class="author">
+            {{'chameleon_system_chameleon_shop_theme.review.author'|trans({'%user%':sUser, '%date%':sDate}) }}
+        </div>
+    </div>
+    <div class="textContent">
+        {{sText}}
+    </div>
+</div>

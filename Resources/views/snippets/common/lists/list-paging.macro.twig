@@ -1,0 +1,6 @@
+{%- macro getPageURL(sURL, iPageNumber) -%}
+    {{sURL|replace({'{[pageNumber]}': iPageNumber, '{[pageNumber0]}':iPageNumber -1}) | raw }}
+{%- endmacro -%}
+{%- macro getPageURLV2(sURL, iPageNumber) -%}
+    {{sURL|replace({'_pageNumber_': iPageNumber}) | raw }}
+{%- endmacro -%}

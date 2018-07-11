@@ -1,0 +1,53 @@
+{#
+    description: an input form for bootstrap
+    vars
+        sLabelText
+        sHelpText
+        sHelpTextHTML
+        sError - error text if one occured. my be html
+        sFieldId - id of the field. required to associate the lable with the input field
+        sName - form field name
+        sValue - current value of the field
+        sPlaceholder - text hint - must be plain text, will be auto translated
+        sInputClass - Optional- To set width of input with span
+        bRequired - optional - to mark a field as required
+#}
+
+<div class="form-group{%if sError%} error{% endif %}">
+    {% if sLabelText is defined %}
+        <label class="control-label {{sLabelClass}}" {% if sFieldId is defined %}for="{{sFieldId}}"{% endif %}>{{sLabelText}}{% if bRequired == true%}<span class="required">*</span> {% endif %}</label>
+    {% endif %}
+
+    {% block field %}
+        <div class="input-group {{sInputClass}}">
+            {% block preInputField %}
+                {% if sIconClassLeft or sIconLeft %}
+                    <span class="input-group-addon {{sIconClassLeft}}">{{ sIconLeft }}</span>
+                {% endif %}
+            {% endblock%}
+            {% block inputField %}
+                <input  class="form-control"
+                        {% if sFieldId is defined %}id="{{sFieldId}}"{% endif %}
+                        type="text"
+                        name="{{sName}}"
+                        value="{{sValue}}"
+                        {% if sPlaceholder is defined %}placeholder="{{sPlaceholder}}"{%endif%}
+                        {% if sTitle is defined %}title="{{sTitle}}"{%endif%}
+                        {% if bRequired == true%} required {%endif%}/>
+            {% endblock%}
+            {% block postInputField %}
+                {% if sIconClassRight or sIconRight %}
+                    <span class="input-group-addon {{ sIconClassRight }}">{{ sIconRight }}</span>
+                {% endif %}
+            {% endblock%}
+        </div>
+    {% endblock %}
+    {% block helpBlock %}
+        <div class="help-block input-group {{ sHelpClass }}">
+            {% if sHelpText %}<div class="helptext">{{sHelpText}}</div>{% endif %}
+            {% if sHelpTextHTML %}<div class="helptext">{{sHelpTextHTML|raw}}</div>{% endif %}
+            {% if sError %}<div class="errortext">{{sError|raw}}</div>{% endif %}
+        </div>
+    {% endblock %}
+</div>
+

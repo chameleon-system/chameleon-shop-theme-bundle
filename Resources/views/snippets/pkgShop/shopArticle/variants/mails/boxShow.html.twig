@@ -1,0 +1,26 @@
+{#
+    description: shows the available sizes an article is available in.
+    vars
+        sActiveSizeId
+        aSizeList = array(
+            array('id'=>'','name'=>'', 'selectLink'=>''),
+            ..
+        )
+#}
+{% extends "/pkgShop/shopArticle/variants/boxSelection.html.twig" %}
+{% block listStart %}
+    <table><tr>
+{% endblock listStart %}
+{% block listEnd %}
+    </tr></table>
+{% endblock listEnd %}
+{% block listItemStart %}
+    <td>
+{% endblock listItemStart %}
+{% block listItemEnd %}
+    </td>
+{% endblock listItemEnd %}
+{% block variantValue%}
+    <span{% if aValue.bArticleIsActive == '0' %} class="inactive"{% endif %}>{{aValue.sTitle}}</span>
+{% endblock %}
+{%block seclectionInfo %}{% endblock %}

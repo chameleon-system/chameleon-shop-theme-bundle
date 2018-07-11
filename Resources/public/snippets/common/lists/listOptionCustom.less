@@ -1,0 +1,48 @@
+.snippetListOption{
+    span{
+
+        &.optionTypeName{
+            float:left;
+            display:block;
+            .cmsSmall;
+            color:@cmsColorPrimary;
+            padding-top:7px;
+            padding-right:3px;
+        }
+    }
+    form{
+        margin: 0;
+        @media (max-width: @screen-md-max) {
+            float:right;
+        }
+        .snippetUserInputText{
+            float:left;
+
+            .form-group{
+                margin-bottom: 0;
+                .selectBox{
+                    margin: 0;
+                }
+            }
+            .inputHolderBox{
+                width: auto;
+
+                .inputHolderBoxInner {
+                    padding-right: 0;
+                    .selectBox{
+                        color:@cmsColorPrimaryHigh1;
+                        select{
+                            @media(max-width: @screen-md-max)  {
+                                width:auto;
+                                float:left;
+                            }
+                            @media(max-width: @screen-sm-max)  {
+                                .cssFont7();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

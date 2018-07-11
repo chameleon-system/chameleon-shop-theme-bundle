@@ -1,0 +1,23 @@
+{#
+    description: renders user address
+    vars
+
+    sSalutation
+    sFirstName
+    sLastName
+    sAdditionalInfo
+    sAddressStreet
+    sAddressStreetNr
+    sAddressZip
+    sAddressCity
+    sAddressCountry
+
+#}
+
+<span class="snippetPkgExtranetAddress adr">
+    <span class="name">{{sSalutation}} {{sFirstName}} {{sLastName}}</span>
+    <span class="addition">{{sAdditionalInfo}}</span>
+    <span class="street-address">{{sAddressStreet}} {{sAddressStreetNr}}</span>
+    <span class="postal-code">{{sAddressZip}} {{sAddressCity}}</span>
+    <span class="locality">{{sAddressCountry}}</span>
+</span>

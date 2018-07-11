@@ -1,0 +1,16 @@
+{#
+  description: renders headline, horizontal scroller and complete article list
+  parameters:
+  - sTitle
+  - aArticleList look at /common/teaser/standard-shopArticle.dummy.php
+  - aListPaging  look at /common/lists/listPaging.dummy.php
+#}
+
+
+{% for sArticle in aArticleList %}
+    <div class="col-xs-6 col-sm-3">
+        {{sArticle | raw}}
+    </div>
+{% endfor %}
+
+

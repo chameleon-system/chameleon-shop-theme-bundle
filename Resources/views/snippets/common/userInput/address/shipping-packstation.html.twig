@@ -1,0 +1,87 @@
+{#
+#}
+{% extends "/common/userInput/address/base.html.twig" %}
+{% block fields %}
+    <div class="form-group">
+        {% set aFieldMapped = {
+        'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.send_to_packstation'|trans,
+        'sInputClass' : 'packstation-checkbox',
+        'sCheckboxClass': formDefaultSubmitClass,
+        'sPlaceholder' : 'chameleon_system_chameleon_shop_theme.extranet.packstation_postnumber'|trans,
+        'sFieldId': "addressToPackStation"~sFieldNamesPrefix,
+        'sName' : sFieldNamesPrefix~'[is_dhl_packstation]',
+        'sError': aFieldPackstation.sError,
+        'sValue' : '1',
+        'sHelpText': '',
+        'bIsChecked': aFieldPackstation.bIsChecked,
+        'sOnClick' : "var oForm = $(this).closest('form'); $('input.cmsaction', oForm).attr('value','ChangeShippingAddressIsPackstationState'); oForm.submit();"
+        }%}
+        {% include "/common/userInput/form/checkbox.html.twig" with aFieldMapped%}
+    </div>
+
+    {{ parent() }}
+
+{% endblock %}
+
+    {% block fieldAdditionalInfo %}
+        {% if aFieldPackstation.bIsChecked %}
+            {% set aFieldAdditionalInfoMapped = {
+                'sLabelClass' : formDefaultLabelClass,
+                'sInputClass' : formDefaultInputClass,
+                'sHelpClass' : formDefaultHelpClass,
+                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.packstation_postnumber'|trans,
+                'sFieldId': "addressAddInfo"~sFieldNamesPrefix,
+                'sName' : sFieldNamesPrefix~'[address_additional_info]',
+                'bRequired' : true,
+                'sError': aFieldAdditionalInfo.sError,
+                'sValue' : aFieldAdditionalInfo.sValue,
+                'sHelpText': '' }%}
+            {% include "/common/userInput/form/text.html.twig" with aFieldAdditionalInfoMapped%}
+        {% else %}
+            {{parent()}}
+        {% endif %}
+    {% endblock %}
+
+    {% block fieldStreet %}
+        {% if aFieldPackstation.bIsChecked %}
+            <input type="hidden" name="{{sFieldNamesPrefix}}[street]'" value="Packstation">
+        {% else %}
+            {{parent()}}
+        {% endif %}
+    {% endblock %}
+
+    {% block fieldStreetNr %}
+        {% if aFieldPackstation.bIsChecked %}
+            {% set aFieldStreetNrMapped = {
+                'sLabelClass' : formDefaultLabelClass,
+                'sInputClass' : formDefaultInputClass,
+                'sHelpClass' : formDefaultHelpClass,
+                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.packstation_number'|trans,
+                'sFieldId': "addressPackStationNr"~sFieldNamesPrefix,
+                'sName' : sFieldNamesPrefix~'[streetnr]',
+                'bRequired' : true,
+                'sError': aFieldStreetNr.sError,
+                'sValue' : aFieldStreetNr.sValue,
+                'sHelpTextHTML': '<a href="http://standorte.dhl.de/Standortsuche?standorttyp=packstationen_paketboxen&lang=de" target="_blank">' ~ "chameleon_system_chameleon_shop_theme.extranet.packstation_finder" | trans ~ '</a>'
+                } %}
+            {% include "/common/userInput/form/text.html.twig" with aFieldStreetNrMapped%}
+        {% else %}
+            {{parent()}}
+        {% endif %}
+
+    {% endblock %}
+
+{% block fieldTelefon %}
+    {% set aFieldTelMapped = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_phone'|trans,
+            'sFieldId': "addressShippingTel"~sFieldNamesPrefix,
+            'sName' : sFieldNamesPrefix~'[telefon]',
+            'sError': aFieldTel.sError,
+            'sValue' : aFieldTel.sValue,
+            'bRequired' : false,
+            'sHelpText': 'chameleon_system_chameleon_shop_theme.extranet.form_phone_help'|trans }%}
+    {% include "/common/userInput/form/text.html.twig" with aFieldTelMapped%}
+{% endblock %}

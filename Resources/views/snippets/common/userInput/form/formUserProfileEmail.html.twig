@@ -1,0 +1,61 @@
+{#
+    description: renders profile form to edit email address
+    vars
+
+    aTextData - optional - vars see /common/textBlock/textBlockSmallHeadline.html.twig
+    aFieldEmail - required - vars see /common/userInput/form/text.html.twig
+    aFieldPassword - required - vars see /common/userInput/form/text.html.twig
+    sSpotName - optional
+    sWizardModuleModuleSpot - required
+    sStepURL -required
+    sCustomMSGConsumer - optional
+    sSuccessMessage - optional
+
+#}
+
+<div class="snippetFormUserProfileEmail">
+    {% if aTextData %}
+    {% include "/common/textBlock/textBlockSmallHeadline.html.twig" with aTextData%}
+    {% endif %}
+    <div class="form">
+        {{sSuccessMessage|raw}}
+        <form accept-charset="utf-8" method="post" class="form-horizontal">
+            <input type="hidden" value="ChangeUserEmail" name="module_fnc[{{sSpotName}}]">
+            <input type="hidden" value="{{sSpotName}}" name="{{sWizardModuleModuleSpot}}">
+            <input type="hidden" name="sFailureURL" value="{{sStepURL}}" />
+            <input type="hidden" name="sSuccessURL" value="{{sStepURL}}" />
+            <input type="hidden" name="sCustomConsumer" value="{{sCustomMSGConsumer}}" />
+                <div class="inputBlock">
+                    <div class="userName">
+                        {% set aFieldEmailMapped = {
+                            'sLabelClass' : formDefaultLabelClass,
+                            'sInputClass' : formDefaultInputClass,
+                            'sHelpClass' : formDefaultHelpClass,
+                            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_new_email'|trans,
+                            'sName' : 'aUser[name]',
+                            'sFieldId': "profileEmailEMail",
+                            'bRequired' : true,
+                            'sError': aFieldEmail.sError,
+                            'sValue' : aFieldEmail.sValue}%}
+                        {% include "/common/userInput/form/text.html.twig" with aFieldEmailMapped%}
+                    </div>
+                </div>
+                <div class="inputBlock">
+                    <div class="userName">
+                        {% set aFieldPasswordMapped = {
+                            'sLabelClass' : formDefaultLabelClass,
+                            'sInputClass' : formDefaultInputClass,
+                            'sHelpClass' : formDefaultHelpClass,
+                            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_password'|trans,
+                            'sName' : 'sRequirePassword',
+                            'sFieldId': "profileEmailPassword",
+                            'bRequired' : true,
+                            'sError': aFieldPassword.sError,
+                            'sValue' : aFieldPassword.sValue}%}
+                        {% include "/common/userInput/form/password.html.twig" with aFieldPasswordMapped%}
+                    </div>
+                </div>
+                {% include "/common/userInput/buttonStandard.html.twig" with {sButtonText:"chameleon_system_chameleon_shop_theme.action.submit"|trans, sButtonClass: formDefaultSubmitClass}%}
+        </form>
+    </div>
+</div>

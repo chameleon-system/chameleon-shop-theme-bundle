@@ -1,0 +1,130 @@
+{#
+    if bShowVoucherRemovalLinks = true is passed, then the voucher removal links are shown
+#}
+<div class="shopBasketSummary">
+    <table class="table">
+        <tbody>
+            {% block productsum %}
+                <tr class="products-sum is-total">
+                    <th>{{'chameleon_system_chameleon_shop_theme.basket.product_total'|trans}}:</th>
+                    <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':sSumProducts} %}</td>
+                </tr>
+            {% endblock %}
+
+            {% set bHasDiscounts = false %}
+            {% if  dSumDiscounts != 0 or dSumDiscountVouchers != 0 %}
+                {% set bHasDiscounts = true %}
+            {% endif %}
+            {% if  bHasDiscounts %}
+                {% block discounts %}
+                    {% for aDiscount in aDiscountList %}
+                        <tr class="discount negative">
+                            <th>{{aDiscount.sName}}:</th>
+                            <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':aDiscount.sValue} %}</td>
+                        </tr>
+                    {%  endfor %}
+
+                    {%  if aDiscountList | length > 1%}
+                        <tr class="discount-sum is-total negative">
+                            <th>{{"chameleon_system_chameleon_shop_theme.basket.discount_total"|trans}}:</th>
+                            <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':sSumDiscounts} %}</td>
+                        </tr>
+                    {% endif %}
+                {% endblock %}
+
+                {%  block discountVouchers %}
+                    {% for aDiscountVoucher in aDiscountVoucherList %}
+                        <tr class="discount-voucher negative">
+                            <th>{{aDiscountVoucher.sName}} ({{ aDiscountVoucher.sCode }}) {% if bShowVoucherRemovalLinks and aDiscountVoucher.sRemoveFromBasketLink %}<span class="remove">[<a href="{{ aDiscountVoucher.sRemoveFromBasketLink|raw }}">{{ "chameleon_system_chameleon_shop_theme.basket.action_remove_voucher"|trans }}</a></span>]{% endif %}:</th>
+                            <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':aDiscountVoucher.sValue} %}</td>
+                        </tr>
+                    {%  endfor %}
+
+                    {%  if aDiscountVoucherList | length > 1 %}
+                        <tr class="discount-voucher-sum is-total negative" >
+                            <th>{{"chameleon_system_chameleon_shop_theme.basket.discount_voucher_total"|trans}}:</th>
+                            <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':sSumDiscountVouchers} %}</td>
+                        </tr>
+                    {% endif %}
+                {%  endblock %}
+
+                {% block productsumDiscounted %}
+                    <tr class="products-sum is-total">
+                        <th>{{'chameleon_system_chameleon_shop_theme.basket.discounted_product_total'|trans}}:</th>
+                        <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':sSumProductsAfterDiscountsAndDiscountVouchers} %}</td>
+                    </tr>
+                {% endblock %}
+            {%  endif %}
+
+            {%  block shipping %}
+                <tr class="shippingcost">
+                    <th>{{'chameleon_system_chameleon_shop_theme.basket.shipping_cost'|trans}}:</th>
+                    <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':sSumShipping} %}</td>
+                </tr>
+            {%  endblock %}
+
+            {%  block paymentsurcharge %}
+                {% if dSumPaymentSurcharge != 0 %}
+                    <tr class="paymentsurcharge">
+                        <th>{{'chameleon_system_chameleon_shop_theme.basket.payment_surcharge'|trans}}:</th>
+                        <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':sSumPaymentSurcharge} %}</td>
+                    </tr>
+                {%  endif %}
+            {% endblock %}
+
+            {% if  aSponsoredVoucherList | length > 0 %}
+                {% block sumBeforeSponsoredVouchers %}
+                    <tr class="sum-before-sponsored-vouchers is-total">
+                        <th>{{'chameleon_system_chameleon_shop_theme.basket.grand_total_without_sponsored_vouchers'|trans}}:</th>
+                        <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':sBasketTotalWithoutSponsoredVouchers} %}</td>
+                    </tr>
+                {% endblock %}
+
+                {% block vatWithSponsoredVouchers %}
+                    {% for aVat in aVatList %}
+                        <tr class="vat">
+                            <th>{{"chameleon_system_chameleon_shop_theme.basket.vat_value"|trans({'%dPercent%':aVat.iPercent}) }}:</th>
+                            <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':aVat.sValue} %}</td>
+                        </tr>
+                    {%  endfor %}
+                {% endblock %}
+
+                {% block sponsoredVouchers %}
+                    {% for aSponsoredVoucher in aSponsoredVoucherList %}
+                        <tr class="sponsored-voucher negative">
+                            <th>{{aSponsoredVoucher.sName}} ({{ aSponsoredVoucher.sCode }}) {% if bShowVoucherRemovalLinks and aSponsoredVoucher.sRemoveFromBasketLink %}<span class="remove">[<a href="{{ aSponsoredVoucher.sRemoveFromBasketLink|raw }}">{{ "chameleon_system_chameleon_shop_theme.basket.action_remove_voucher"|trans }}</a></span>]{% endif %}:</th>
+                            <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':aSponsoredVoucher.sValue} %}</td>
+                        </tr>
+                    {%  endfor %}
+                {% endblock %}
+
+                {% block sponsoredVouchersSum %}
+                    {%  if aSponsoredVoucherList | length > 1 %}
+                        <tr class="sponsored-voucher-sum is-total negative">
+                            <th>{{"chameleon_system_chameleon_shop_theme.basket.sponsored_vouchers_total"|trans}}:</th>
+                            <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':sSumSponsoredVouchers} %}</td>
+                        </tr>
+                    {% endif %}
+                {%  endblock %}
+            {% endif %}
+
+            {% block grandtotal %}
+                <tr class="grand-total is-total">
+                    <th>{{'chameleon_system_chameleon_shop_theme.basket.grand_total'|trans}}:</th>
+                    <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':sSumGrandTotal} %}</td>
+                </tr>
+            {% endblock %}
+            {% block vat %}
+                {% if  aSponsoredVoucherList | length < 1 %}
+                    {% for aVat in aVatList %}
+                        <tr class="vat">
+                            <th>{{"chameleon_system_chameleon_shop_theme.basket.vat_value"|trans({'%dPercent%':aVat.iPercent}) }}:</th>
+                            <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':aVat.sValue} %}</td>
+                        </tr>
+                    {%  endfor %}
+                {% endif %}
+            {%  endblock %}
+
+        </tbody>
+    </table>
+</div>

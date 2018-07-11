@@ -1,0 +1,11 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShopListFilter/shopFilterItemColor.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShopListFilter/shopFilterItem.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShopListFilter/shopFilterItemPrice.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShopListFilter/shopFilterItemSize.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShopListFilter/shopFilterMultiSelect.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShopListFilter/shopFilterStandard.less
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShopListFilter/shopFilterItem.js
+   - /bundles/chameleonsystemchameleonshoptheme/js/jquery/ui/jquery-ui.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShopListFilter/shopFilterStandard.js

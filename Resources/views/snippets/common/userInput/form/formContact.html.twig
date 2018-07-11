@@ -1,0 +1,201 @@
+{#
+    description: renders login form
+    vars
+
+    aTextData - optional - vars see /common/textBlock/textBlockSmallHeadline.html.twig
+    aFieldUserName - required - vars see /common/userInput/form/text.html.twig
+    aFieldPassword - required - vars see /common/userInput/form/text.html.twig
+    aLinkForgotPassword - optional - vars see /common/links/linkStylesIcon.html.twig
+    aLinkRegister - optional - vars see /common/links/linkStylesIcon.html.twig
+    sSpotName - optional
+    sLoginSuccessURL - optional
+    sLoginFailureURL - optional
+    bIsLoggedIn - optional - should be set to display message instead of login form, if value is true the following variables are required
+        sUsername - username of the logged in user
+        sLogoutLink - link to the logout page
+
+#}
+<div class="snippetFormContact">
+    
+    {% if aTextData %}
+        {% include "/common/textBlock/textBlockMediumHeadline.html.twig" with aTextData%}
+    {% endif %}
+
+    {% if oFeedbackErrorList._errorRegister.mail %}
+        <div class="alert alert-danger">
+            {{ oFeedbackErrorList._errorRegister.mail|first }}
+        </div>
+    {% endif %}
+
+    <div class="contactForm">
+        <form method="post" class="form-horizontal">
+              <input type="hidden" name="module_fnc[{{sSpotName}}]" value="SendEMail" />
+               <div class="inputBlock">
+                   {% block fields %}
+                       {% block fieldFirstname %}
+                           {% set aFieldFirstNameMapped = {
+                                'sLabelClass' : formDefaultLabelClass,
+                                'sInputClass' : formDefaultInputClass,
+                                'sHelpClass' : formDefaultHelpClass,
+                                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_first_name'|trans,
+                                'sName' : 'firstname',
+                                'sFieldId': "contactFirstName",
+                                'sError': aFieldFirstName.sError,
+                                'sValue' : aFieldFirstName.sValue
+                           }%}
+                           {% include "/common/userInput/form/text.html.twig" with aFieldFirstNameMapped%}
+                       {% endblock %}
+
+
+                       {% block fieldLastname %}
+                           {% set aFieldNameMapped = {
+                                'sLabelClass' : formDefaultLabelClass,
+                                'sInputClass' : formDefaultInputClass,
+                                'sHelpClass' : formDefaultHelpClass,
+                                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_last_name'|trans,
+                                'sName' : 'name',
+                                'sFieldId': "contactLastName",
+                                'bRequired' : true,
+                                'sError': aFieldName.sError,
+                                'sValue' : aFieldName.sValu
+                           }%}
+                           {% include "/common/userInput/form/text.html.twig" with aFieldNameMapped%}
+                       {% endblock %}
+
+
+                       {% block fieldAdditionalInfo %}
+                           {% set aFieldAdditionalInfoMapped = {
+                                'sLabelClass' : formDefaultLabelClass,
+                                'sInputClass' : formDefaultInputClass,
+                                'sHelpClass' : formDefaultHelpClass,
+                                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_company'|trans,
+                                'sName' : 'address_additional_info',
+                                'sFieldId': "contactAInfo",
+                                'sError': aFieldAdditionalInfo.sError,
+                                'sValue' : aFieldAdditionalInfo.sValue
+                           }%}
+                           {% include "/common/userInput/form/text.html.twig" with aFieldAdditionalInfoMapped%}
+                       {% endblock %}
+
+                       {% block fieldStreet %}
+                           {% set aFieldStreetMapped = {
+                                'sLabelClass' : formDefaultLabelClass,
+                                'sInputClass' : formDefaultInputClass,
+                                'sHelpClass' : formDefaultHelpClass,
+                                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_street'|trans,
+                                'sName' : 'street',
+                                'sFieldId': "contactStreet",
+                                'sError': aFieldStreet.sError,
+                                'sValue' : aFieldStreet.sValue
+                           }%}
+                           {% include "/common/userInput/form/text.html.twig" with aFieldStreetMapped%}
+                       {% endblock %}
+
+                       {% block fieldPostalcode %}
+                           {% set aFieldPLZMapped = {
+                                'sLabelClass' : formDefaultLabelClass,
+                                'sInputClass' : formDefaultInputClass,
+                                'sHelpClass' : formDefaultHelpClass,
+                                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_zip'|trans,
+                                'sName' : 'postalcode',
+                                'sFieldId': "contactPLZ",
+                                'sError': aFieldPLZ.sError,
+                                'sValue' : aFieldPLZ.sValue
+                           }%}
+                           {% include "/common/userInput/form/text.html.twig" with aFieldPLZMapped%}
+                       {% endblock %}
+
+                       {% block fieldCity %}
+                           {% set aFieldCityMapped = {
+                                'sLabelClass' : formDefaultLabelClass,
+                                'sInputClass' : formDefaultInputClass,
+                                'sHelpClass' : formDefaultHelpClass,
+                                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_city'|trans,
+                                'sName' : 'city',
+                                'sFieldId': "contactCity",
+                                'sError': aFieldCity.sError,
+                                'sValue' : aFieldCity.sValue
+                           }%}
+                           {% include "/common/userInput/form/text.html.twig" with aFieldCityMapped%}
+                       {% endblock %}
+
+                       {% block fieldCountry %}
+                           {% set aFieldCountryMapped = {
+                                'sLabelClass' : formDefaultLabelClass,
+                                'sInputClass' : formDefaultInputClass,
+                                'sHelpClass' : formDefaultHelpClass,
+                                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_country'|trans,
+                                'sName' : 'data_country_id',
+                                'sFieldId': "contactCountry",
+                                'sError': aFieldCountry.sError,
+                                'sValue' : aFieldCountry.sValue,
+                                'aValueList' : aFieldCountry.aValueList
+                           }%}
+                           {% include "/common/userInput/form/select.html.twig" with aFieldCountryMapped%}
+                       {% endblock %}
+
+                       {% block fieldMail %}
+                          {% set aFieldEMailMapped = {
+                                'sLabelClass' : formDefaultLabelClass,
+                                'sInputClass' : formDefaultInputClass,
+                                'sHelpClass' : formDefaultHelpClass,
+                                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_email'|trans,
+                                'sName' : 'email',
+                                'sFieldId': "contactEMail",
+                                'bRequired' : true,
+                                'sError': aFieldEMail.sError,
+                                'sValue' : aFieldEMail.sValue
+                          }%}
+                          {% include "/common/userInput/form/text.html.twig" with aFieldEMailMapped%}
+                       {% endblock %}
+
+                       {% block fieldTel %}
+                            {% set aFieldTelMapped = {
+                                'sLabelClass' : formDefaultLabelClass,
+                                'sInputClass' : formDefaultInputClass,
+                                'sHelpClass' : formDefaultHelpClass,
+                                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_phone'|trans,
+                                'sName' : 'tel',
+                                'sFieldId': "contactTel",
+                                'sError': aFieldTel.sError,
+                                'sValue' : aFieldTel.sValue
+                            }%}
+                            {% include "/common/userInput/form/text.html.twig" with aFieldTelMapped%}
+                       {% endblock %}
+
+                       {% block fieldSubject %}
+                           {% set aFieldSubjectMapped = {
+                                'sLabelClass' : formDefaultLabelClass,
+                                'sInputClass' : formDefaultInputClass,
+                                'sHelpClass' : formDefaultHelpClass,
+                                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_subject'|trans,
+                                'sName' : 'subject',
+                                'sFieldId': "contactSubject",
+                                'bRequired' : true,
+                                'sError': aFieldSubject.sError,
+                                'sValue' : aFieldSubject.sValue
+                           }%}
+                           {% include "/common/userInput/form/text.html.twig" with aFieldSubjectMapped%}
+                        {% endblock %}
+
+                       {% block fieldMessage %}
+                           {% set aFieldMessageMapped = {
+                                'sLabelClass' : formDefaultLabelClass,
+                                'sInputClass' : formDefaultInputClass,
+                                'sHelpClass' : formDefaultHelpClass,
+                                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_message'|trans,
+                                'sName' : 'body',
+                                'sFieldId': "contactMessage",
+                                'bRequired' : true,
+                                'sError': aFieldMessage.sError,
+                                'sValue' : aFieldMessage.sValue,
+                                'sRows' : '8'
+                           }%}
+                           {% include "/common/userInput/form/textarea.html.twig" with aFieldMessageMapped%}
+                       {% endblock %}
+                   {% endblock %}
+               </div>
+                {% include "/common/userInput/buttonStandard.html.twig" with {sButtonText:"chameleon_system_chameleon_shop_theme.action.submit"|trans, sButtonClass: formDefaultSubmitClass}%}
+        </form>
+    </div>
+</div>

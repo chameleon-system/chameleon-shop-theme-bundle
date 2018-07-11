@@ -1,0 +1,8 @@
+{#
+    description: shows a price
+    vars
+        sCurrency
+        sPrice
+#}
+
+<span class="snippetShopArticlePrice"><span class="currency" {% if not hasReducedPrice %}itemprop="priceCurrency"{% endif %}>{{sCurrency}}&nbsp;</span><span {% if not hasReducedPrice %}itemprop="price"{% endif %}>{{sPrice}}</span></span>

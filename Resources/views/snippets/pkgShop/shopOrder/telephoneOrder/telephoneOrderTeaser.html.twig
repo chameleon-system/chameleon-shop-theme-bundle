@@ -1,0 +1,27 @@
+{#
+  extends from textTeaserImageTextLink.html.twig
+  parameters:
+    ** aImage array of image information
+       ** sClassSrc contains src url of the image
+       ** sTitle
+    ** aLink
+        ** sLinkURL
+        ** sTitle
+    ** sText
+#}
+
+{% extends "/common/textTeaser/textTeaserImageTextLink.html.twig" %}
+{% block right %}
+    <div class="rightText snippetTelephoneOrderTeaser">
+        <div class="headline">
+            {{'chameleon_system_chameleon_shop_theme.telephone_order.phone' | trans}}
+        </div>
+        {% block link %}
+            {% if aLink %}
+                <div class="link">
+                    {% include "/common/links/linkStylesIconModal.html.twig" with aLink %}
+                </div>
+            {% endif %}
+        {%endblock%}
+    </div>
+{% endblock %}

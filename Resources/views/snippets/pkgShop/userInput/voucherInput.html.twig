@@ -1,0 +1,32 @@
+{#
+    description: voucher form
+    vars
+        sFormInputName
+        sErrorMessage
+        sMessageConsumerParameterName
+#}
+
+<div class="snippetPkgShopUserInputVoucherInput">
+    <a id="voucherInput" name="voucherInput" class="cmsanchor"></a>
+    {% set aImage = {'sImageSrc': '/bundles/chameleonsystemchameleonshoptheme/images/snippets/voucherInput/voucherInput.png'} %}
+    {% include '/common/textTeaser/textTeaserImageStrongHeadlineText.html.twig' with {'aImage':aImage, 'sHeadline':'chameleon_system_chameleon_shop_theme.checkout.basket_form_voucher_code'|trans,'sText':'chameleon_system_chameleon_shop_theme.checkout.basket_form_voucher_code_help'|trans} %}
+    <form name="voucher" action="{{ sAction }}#voucherInput" method="post" accept-charset="utf-8">
+        <input type="hidden" name="module_fnc[shopBasketHandler]" value="AddVoucher"/>
+        <input type="hidden" name="{{sMessageConsumerParameterName}}" value="{{sMessageConsumerName}}"/>
+        {% set aFieldMapped = {
+        'sLabelClass' : '',
+        'sInputClass' : 'snippetUserInputText',
+        'sHelpClass' : '',
+        'sName' : sFormInputName,
+        'bRequired' : true }%}
+        {% include "/common/userInput/form/text.html.twig" with aFieldMapped%}
+        <div class="submitVoucher"><input type="submit" class="btn btn-success" value="{{ "chameleon_system_chameleon_shop_theme.checkout.basket_action_submit_voucher" |trans }}" /></div>
+    </form>
+    {% if sErrorMessage %}
+    <div class="text-error">
+        <br/><br/>
+        {{sErrorMessage|raw}}
+    </div>
+    {% endif %}
+
+</div>

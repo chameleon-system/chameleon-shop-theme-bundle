@@ -1,0 +1,35 @@
+{#
+    description: shows a gallery (active image large, other images small)
+    vars
+        - sTopic
+        - sHeadline
+        - sImageId - url for the active image
+        - sTitle - title (alt text) of the active image
+        - aItems - array of images for the thumbnails. see /common/media/gallery/items.html.twig for details
+#}
+
+<article class="snippetGalleryGallery cmsgallery">
+    <header>
+        {% block header %}
+            {% if sTopic %}<h2 class="topic">{{sTopic}}{% if sHeadline %}{% endif %}</h2>{% endif %}
+            {% if sHeadline %}<h1 class="headline">{{sHeadline}}</h1>{% endif %}
+        {% endblock %}
+    </header>
+    <div class="row">
+        <div class="col-xs-7">
+            <ul class="row activeImage thumbnails">
+                {% include "/common/media/gallery/thumbnail.html.twig" with {'bActiveZoom': 12, 'iGridSize': 7, 'sImageURL': sImageId | cmsthumb(400,400,true), 'sLargeImageURL': sLargeImageId | cmsthumb(1000,1000,true), 'sImageTitle': sImageTitle, 'sSelectImageURL': sSelectImageURL} %}
+            </ul>
+        </div>
+        <div class="details col-xs-5">
+            {% block imageList -%}
+            <div class="images row">
+                <div class="col-xs-4">
+                {% include "/common/media/gallery/itemsWithZoom.html.twig" with {'aItems' : aItems} %}
+                </div>
+            </div>
+            {%- endblock %}
+        </div>
+
+    </div>
+</article>

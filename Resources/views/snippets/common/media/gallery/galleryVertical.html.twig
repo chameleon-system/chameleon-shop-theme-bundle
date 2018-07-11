@@ -1,0 +1,24 @@
+{#
+    description: show image gallery with zoom
+
+#}
+
+{% set bOpenZoomInNewWindow = true %}
+<div class="snippetGalleryGalleryVertical row cmsgallery">
+    <div class="col-xs-12">
+        <div class="activeImageMapper row">
+            <ul class="activeImage thumbnails">
+                {% include "/common/media/gallery/thumbnail.html.twig" with {'iGridSize': 12, 'sImageURL': sImageId | cmsthumb(760,760,true), 'sLargeImageURL': sLargeImageId | cmsthumb(1000,1000,true), 'bActiveZoom': 1, sImageTitle: sImageTitle, 'sSelectImageURL': sSelectImageURL} %}
+            </ul>
+            {% block activeImageNose %}
+            {% endblock %}
+        </div>
+
+        <div class="well">
+            {% block imageList -%}
+                {% include "/common/media/gallery/itemsWithZoom.html.twig" with {'aItems' : aItems} %}
+            {%- endblock %}
+        </div>
+
+    </div>
+</div>

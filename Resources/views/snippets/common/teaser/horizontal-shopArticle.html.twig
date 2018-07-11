@@ -1,0 +1,8 @@
+{#
+    same standard-base.html.twig but using a horizontal layout
+#}
+{% extends "/common/teaser/horizontal-base.html.twig" %}
+
+{%- block teasertext -%}
+        {% include "/pkgShop/shopArticle/articlePrice.html.twig" %}
+{%- endblock -%}

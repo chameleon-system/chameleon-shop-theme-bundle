@@ -1,0 +1,21 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/breadcrumbList.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listDetailedShopManufacturer.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listExtendedShopArticle.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listHeader.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listHeaderTab.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listOptionCustom.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listPagingScroller.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listSimple.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listStandardArticleReview.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listStandardShopArticle.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listStandardShopManufacturer.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listWithTabsShopArticle.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listPaging.less
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/bootstrap/js/carousel.js
+   - /bundles/chameleonsystemchameleonshoptheme/bootstrap/js/transition.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listHeaderTab.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listOptionCustom.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listSimple.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/lists/listStandardArticleReview.js

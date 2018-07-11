@@ -1,0 +1,10 @@
+{% set iLevel = iLevel + 1 %}
+{% for oItem in aTree %}
+    <option value="{{ oItem.sLink|e('html_attr') }}" {% if oItem.bIsActive %}selected{% endif %}>
+        {% set indentLevel = iLevel-2 %}
+        {% if indentLevel > 0 %}{% for i in 1..indentLevel %}- {% endfor %}{% endif %}{{ oItem.sTitle }}
+    </option>
+    {% if oItem.aChildren %}
+        {% include _self with {'aTree': oItem.aChildren, 'iLevel': iLevel, "bExpanded" : bExpanded, 'sRootNode':sRootNode} %}
+    {% endif %}
+{% endfor %}

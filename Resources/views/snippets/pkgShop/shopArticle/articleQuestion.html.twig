@@ -1,0 +1,80 @@
+{#
+    description: show the ask-a-question for the product form
+    vars
+        aErrors - array with the field name as key for which an error occurred, and the value with the message
+        sHiddenFormFields - control fields
+        sFormMessages - messages (like success messages)
+
+
+#}
+
+<div class="snippetShopArticleArticleQuestion">
+    <div class="row">
+        <div class="col-xs-12 col-sm-2">
+            <img src="/bundles/chameleonsystemchameleonshoptheme/images/snippets/shopArticle/articleQuestion.png" alt="{{"chameleon_system_chameleon_shop_theme.products.questions_you_ask_we_answer"|trans}}" class="icon">
+        </div>
+        <div class="col-xs-12 col-sm-10">
+            <div class="header">{{"chameleon_system_chameleon_shop_theme.products.questions_you_ask"|trans}}</div>
+            <div class="formteaser">
+                {%if aErrors|length == 0%}<a href="#" onclick="$('.form',$(this).parentsUntil('.body').parent()).show();$(this).parent().hide();return false;"><i>&nbsp;</i> {{"chameleon_system_chameleon_shop_theme.products.questions_we_answer"|trans}}</a>{% endif %}
+                {{sFormMessages | raw}}
+            </div>
+            <div class="form {%if aErrors|length == 0%}hideOnJS{% endif %}">
+                <form class="well form-horizontal" name="productquestion" method="post" accept-charset="utf-8" action="?">
+                    {{sHiddenFormFields|raw}}
+                    {% set formDefaultLabelClass = 'col-xs-12 col-sm-3 col-md-2' %}
+                    {% set formDefaultInputClass = 'col-xs-12 col-sm-9 col-md-10' %}
+                    {% set formDefaultHelpClass = 'col-xs-11' %}
+                    {% set formDefaultSubmitClass = 'col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10' %}
+
+                    <div class="userName">
+                        {% set aFieldUserNameMapped = {
+                        'sLabelText' : '',
+                        'sLabelClass' : formDefaultLabelClass,
+                        'sInputClass' : formDefaultInputClass,
+                        'sHelpClass' : formDefaultHelpClass,
+                        'sLabelText' : 'chameleon_system_chameleon_shop_theme.products.questions_form_name'|trans,
+                        'sName' : '[{sModuleSpotName}][name]',
+                        'bRequired' : true,
+                        'sError': aErrors.name,
+                        'sValue' : '',
+                        'sPlaceHolder' : 'chameleon_system_chameleon_shop_theme.products.questions_form_name_placeholder'|trans}%}
+                        {% include "/common/userInput/form/text.html.twig" with aFieldUserNameMapped%}
+                    </div>
+                    <div class="email">
+                        {% set aMappedData = {
+                        'sPlaceholder' : '',
+                        'sLabelClass' : formDefaultLabelClass,
+                        'sInputClass' : formDefaultInputClass,
+                        'sHelpClass' : formDefaultHelpClass,
+                        'sLabelText' : 'chameleon_system_chameleon_shop_theme.products.questions_form_email'|trans,
+                        'sName' : '[{sModuleSpotName}][email]','sValue':'',
+                        'bRequired' : true,
+                        'sError': aErrors.email,
+                        'sValue' : ''} %}
+                        {% include "/common/userInput/form/text.html.twig" with aMappedData%}
+                    </div>
+                    <div class="message">
+                        {% set aMappedData = {
+                        'sPlaceholder' : '',
+                        'sLabelClass' : formDefaultLabelClass,
+                        'sInputClass' : formDefaultInputClass,
+                        'sHelpClass' : formDefaultHelpClass,
+                        'sLabelText' : 'chameleon_system_chameleon_shop_theme.products.questions_form_question'|trans,
+                        'sName' : '[{sModuleSpotName}][question]','sValue':'',
+                        'bRequired' : true,
+                        'sError': aErrors.question,
+                        'sValue' : ''} %}
+                        {% include "/common/userInput/form/textarea.html.twig" with aMappedData%}
+                    </div>
+                    <div class="form-group">
+                        <div class="buttons input-group {{ formDefaultSubmitClass }}">
+                            <button type="submit" class="btn btn-success">{{"chameleon_system_chameleon_shop_theme.products.questions_action_send"|trans}}</button>
+                            <button class="btn btn-default" onclick="$('.formteaser',$(this).parentsUntil('.body').parent()).show();$(this).parentsUntil('.form').parent().hide();return false;">{{"chameleon_system_chameleon_shop_theme.action.abort"|trans}}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

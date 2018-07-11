@@ -1,0 +1,50 @@
+{#
+    description: Show the shopping relevant details of a product - focus is on a large image
+    vars
+        see the following includes for external vars:
+            - /common/media/gallery/gallery.html.twig
+            - /pkgShop/shopArticle/articleInfoBlock.html.twig
+            - /common/userInput/buttonAddToNoticeList.html.twig
+            - /common/userInput/buttonAddToBasket.html.twig
+            - /pkgShop/shopArticle/articlePrice.html.twig
+        sShippingTime
+
+
+#}
+
+<article class="snippetGalleryGallery cmsgallery">
+    <header>
+        <div class="row">
+            <div class="col-xs-9">
+                {% if sTopic %}<h2 class="topic">{{sTopic}}{% if sHeadline %}{% endif %}</h2>{% endif %}
+                {% if sHeadline %}<h1 class="headline">{{sHeadline}}</h1>{% endif %}</div>
+            <div class="col-xs-3 pull-right">{% include "/pkgShop/shopArticle/articlePrice.html.twig" %}</div>
+        </div>
+        <div class="row"><div class="col-xs-12"><hr></div></div>
+    </header>
+    <div class="row contentbox">
+        <div class="col-xs-12 col-sm-6">
+                <ul class="activeImage thumbnails">
+                    {% include "/common/media/gallery/thumbnail.html.twig" with {'bActiveZoom': 12, 'iGridSize': 12, 'sImageURL': sImageId | cmsthumb(400,400,true), 'sLargeImageURL': sLargeImageId | cmsthumb(1000,1000,true), 'sImageTitle': sImageTitle, 'sSelectImageURL': sSelectImageURL} %}
+                </ul>
+        </div>
+        <div class="details col-xs-12 col-sm-6">
+            {%- block imageList -%}
+                <div class="images row">
+                    <div class="col-xs-4">
+                        {% include "/common/media/gallery/itemsWithZoom.html.twig" with {'aItems' : aItems} %}
+                    </div>
+                </div>
+                <div class="quickshopping">
+                    {% include "/pkgShop/shopArticle/articleInfoBlock.html.twig" %}
+                </div>
+                <div class="quickShopAddToBasket">
+                    {% include "/common/userInput/buttonAddToBasketOrNoticeList.html.twig" %}
+                </div>
+            {%- endblock -%}
+        </div>
+    </div>
+</article>
+
+
+

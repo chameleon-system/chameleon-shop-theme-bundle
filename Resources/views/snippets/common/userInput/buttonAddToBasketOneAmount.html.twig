@@ -1,0 +1,29 @@
+{#
+    description: input field for and button to add a product to the basket
+    vars
+        sAddToBasketHiddenFields - hidden html form elements required to add the item to basket (should not include the amount field)
+
+#}
+
+<form class="snippetUserInputButtonAddToBasketOneAmount form-inline" method="post" name="{{ sBasketFormId }}">
+    {{sAddToBasketHiddenFields | raw }}
+    <div class="buttonContainer">
+    {% block amount %}
+    <input type="hidden"  name="basket[amount]" value="1" {% if not bIsBuyable %}disabled{% endif %}>
+    {% endblock %}
+    {% block submit %}
+        {% if bIsBuyable %}
+            <div class="submit">
+                <button type="submit" class="btn btn-success btn-lg {% if not bIsBuyable %}onclick-layover-SelectVariant{% endif %}">{{"chameleon_system_chameleon_shop_theme.checkout.action_add_to_basket" | trans}}</button>
+            </div>
+        {% endif %}
+     {% endblock %}
+    </div>
+    [{CMSMSG-{{sConsumerAddToBasketName}}:bubble:customer}]
+</form>
+<script type="text/javascript">
+    if (window!=window.top) {
+        $('form[name="{{ sBasketFormId }}"]').attr('action',window.top.location.href);
+        $('form[name="{{ sBasketFormId }}"]').attr('target','top');
+    }
+</script>

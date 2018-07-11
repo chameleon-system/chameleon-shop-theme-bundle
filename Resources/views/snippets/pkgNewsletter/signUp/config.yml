@@ -1,0 +1,4 @@
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgNewsletter/signUp.js
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgNewsletter/newsletterSignUp.less

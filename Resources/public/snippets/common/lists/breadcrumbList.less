@@ -1,0 +1,41 @@
+.snippetListBreadcrumbList {
+    margin-bottom:20px;
+    .headline {
+        .cmsH4();
+        margin-bottom:20px;
+        color:@cmsColorPrimaryHigh1;
+    }
+    ul {
+        list-style:none;
+        margin:0;
+        padding:0;
+
+        li {
+            display:block;
+
+            .icon {
+                .i();
+                .i-pointer_transparent();
+            }
+
+            ul {
+                margin: 3px 0 3px 5px;
+                display:inline-block;
+                li {
+                    display:inline-block;
+                    .sep {
+                        display:inline-block;
+                        padding-right:5px;
+                        padding-left:5px;
+                    }
+                a{
+                    color:@cmsColorPrimary;
+                    &.lastNode{
+                        color:@cmsColorSecondary;
+                    }
+                }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+{#
+    description: shows details for the current article in table form
+    vars:
+        see the following includes:
+            - /pkgShopArticleReview/standard.html.twig
+            - /pkgShop/shopArticle/articleColors.html.twig
+            - /pkgShop/shopArticle/articleSize.html.twig
+        sShippingTime
+
+#}
+{% set bHasRating = dRating is defined and dRating > 0 %}
+{% set bHasStaffelpreis = aGraduatedPriceList is defined and aGraduatedPriceList|length > 0 %}
+{% set bHasShippingTime = sStockMessage is defined %}
+{% set bHasColors = aColors is defined and aColors|length > 0 %}
+{% set bHasSizes = aSizeList is defined and aSizeList|length > 0 %}
+
+{% set bHasData = bHasRating or bHasStaffelpreis or bHasShippingTime or bHasColors or bHasSizes %}
+
+
+
+{%- if bHasData %}<table class="snippetShopArticleArticleInfoBlock table table-condensed" title="{{"chameleon_system_chameleon_shop_theme.products.info_block_header"|trans}}"><tbody>{% endif -%}
+    {%- block articleDetails -%}
+        {%- if bHasRating -%}
+            <tr>
+                <th>{{"chameleon_system_chameleon_shop_theme.review.reviews" | trans}}:</th>
+                <td>{% include "/pkgShopArticleReview/withTotalVotesSimple.html.twig" with {'dRating':dRating, 'iRatingCount': iRatingCount} %}</td>
+            </tr>
+        {%- endif -%}
+
+        {%- if bHasStaffelpreis -%}
+            <tr>
+                <th>{{"chameleon_system_chameleon_shop_theme.products.bulk_prices_headline" | trans}}:</th>
+                <td>{% include "/pkgShop/shopArticle/partials/articleBulkOrderPrices.html.twig" with {'sCurrency': sCurrency, 'aGraduatedPriceList': aGraduatedPriceList} %}</td>
+            </tr>
+        {%- endif -%}
+
+        {%- if bHasShippingTime -%}
+            <tr>
+                <th>{{"chameleon_system_chameleon_shop_theme.products.shipping_info" | trans}}:</th>
+                <td>{% include "/pkgShop/shopArticle/partials/articleStockMessage.html.twig" with {'sStockMessage':sStockMessage, 'sStockMessageCSSClass': sStockMessageCSSClass} %}</td>
+            </tr>
+        {%- endif -%}
+        {% if bHasData %}
+            {% set bHideTables = true %}
+        {% else %}
+            {% set bHideTables = false %}
+        {% endif%}
+            {% include "/pkgShop/shopArticle/variants/boxSelection.html.twig" with {'bHideTables': bHideTables } %}
+
+    {%- endblock -%}
+{%- if bHasData %}</tbody></table>{% endif -%}

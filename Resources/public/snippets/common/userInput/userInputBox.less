@@ -1,0 +1,18 @@
+.snippetUserInputBox  {
+    .box{
+        border-top: 1px solid @cmsBorder5;
+        background-color: @cmsBackground6;
+        opacity: 0.5;
+        form{
+            margin: 0;
+            padding: 0;
+            .snippetUserInputText{
+                &:after{
+                    clear:both;
+                    display:block;
+                    content: "";
+                }
+            }
+        }
+    }
+}

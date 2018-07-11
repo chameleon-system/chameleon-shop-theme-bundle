@@ -1,0 +1,26 @@
+{#
+  description: show mini basket
+  parameters:
+    ** iNumberOfProducts
+    ** sCurrency
+    ** sSumProductsAfterDiscountsAndDiscountVouchers
+    ** sBasketURL
+    ** sCheckoutURL
+    ** sShippingInfoURL
+    ** sPriceTotal
+    ** sCurrencyName
+    ** aArticleList
+    **aArticle
+        ** sImageId
+        ** iAmount
+        ** sManufacturer
+        ** sArticleName
+        ** sPrice
+        ** sCurrency
+        ** sArticleDetailURL
+#}
+
+<a class="basketIconMobile" href="{{sBasketURL|raw}}" title="{{"chameleon_system_chameleon_shop_theme.minibasket.action_show_basket_title"|trans}}">
+    <span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>
+    <span class="amount badge">{{ sNumberOfProducts }}</span>
+</a>

@@ -1,0 +1,17 @@
+{#
+    description: shows a list of items. selecting an item will trigger a js function to show the item details
+    vars
+      aItems with the elements required by /common/media/gallery/thumbnail.html.twig
+#}
+
+{%- if aItems|length > 0 -%}
+    <div class="snippetGalleryItems row">
+        <ul class="thumbnails">
+            {% for oItem in aItems %}
+                {% block item %}
+                    {% include "/common/media/gallery/thumbnail.html.twig" with {'iGridSize': 3, 'sImageURL': oItem.sImageId|cmsthumb(60,60,true), 'sImageTitle': oItem.sImageTitle, 'sSelectImageURL': oItem.sSelectImageURL,'sDescription' : false} %}
+                {% endblock %}
+            {% endfor %}
+        </ul>
+    </div>
+{%- endif -%}

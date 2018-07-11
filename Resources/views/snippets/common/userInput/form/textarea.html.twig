@@ -1,0 +1,11 @@
+{% extends "/common/userInput/form/text.html.twig" %}
+{% block field %}
+    <div class="input-group {{ sInputClass }}">
+        <textarea class="form-control"
+                  {% if sRows is defined %}rows="{{ sRows }}"{% endif %}
+                  {% if sFieldId is defined %}id="{{ sFieldId }}"{% endif %}
+                  name="{{ sName }}"
+                {% if sPlaceholder is defined %}placeholder="{{ sPlaceholder }}"{% endif %}
+                {% if bRequired == true %} required {% endif %}>{{ sValue }}</textarea>
+    </div>
+{% endblock %}

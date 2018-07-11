@@ -1,0 +1,19 @@
+{#
+  description: renders an input select box
+  parameters:
+    ** sInputName
+    ** sBoxStyleClass - use to set different input box styles if not set use default
+    ** aOptionList  -l ist of options (sValue, sName, bSelected)
+#}
+{% extends "/common/userInput/userInputText.html.twig" %}
+{% block inputField %}
+    
+    <div class="selectBox">
+        <select class="form-control userInputSelect" onchange="$(this).parentsUntil('form').parent().submit()" name="{{sInputName}}" title="{{"chameleon_system_chameleon_shop_theme.form.select_box_no_selection"|trans}}">
+            <option value="">&nbsp;</option>
+            {% for aSelectOption in aOptionList%}
+                <option value="{{aSelectOption.sValue}}" {% if aSelectOption.bSelected %} selected="selected" title="{{"chameleon_system_chameleon_shop_theme.form.select_box_title"|trans({'%option%':aSelectOption.sName|trim})}}" {% endif %}>{{aSelectOption.sName}}</option>
+            {% endfor %}
+        </select>
+    </div>
+{% endblock%}

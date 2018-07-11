@@ -1,0 +1,4 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/variants/boxSelection.less
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/variants/boxSelection.js

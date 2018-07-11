@@ -1,0 +1,16 @@
+{#
+  description: renders an input box with (optional) image and submit button in it
+  parameters:
+    ** sInputValue
+    ** sInputName
+    ** sIconClass - use to set icon before input value text. If empty no image will be show (styles: style1)
+    ** sBoxStyleClass - use to set different input box styles if not set use default
+#}
+
+{% extends '/common/userInput/userInputText.html.twig' %}
+
+
+
+{% block postInputField %}
+    <input type="submit" class="glyphicon glyphicon-chevron-right userInputBoxSubmit" value="" />
+{% endblock%}

@@ -1,0 +1,49 @@
+.snippetShopFilter {
+
+  .filterHeader {
+    border-left: 1px solid @cmsBorder2;
+    border-right: 1px solid @cmsBorder2;
+    border-top: 1px solid @cmsBorder2;
+    color: @cmsColorPrimary;
+    .lighttextshadow;
+    display: block;
+    .cmsH4;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    line-height: 20px;
+    padding-left: 9%;
+    text-transform: uppercase;
+    letter-spacing: -0.7px;
+    .gradientMain;
+
+    span {
+      background: url("/bundles/chameleonsystemchameleonshoptheme/images/layout/arrow-up-small.png") no-repeat scroll 90% center transparent;
+      display: block;
+      padding-right: 15%;
+      cursor: pointer;
+    }
+
+    &.filterOpen {
+      span {
+        background: url("/bundles/chameleonsystemchameleonshoptheme/images/layout/arrow-down-small.png") no-repeat scroll 90% center transparent;
+      }
+    }
+  }
+
+  .filterBox {
+    border-bottom: 1px solid @cmsBorder2;
+    .filterContent {
+      border: 1px solid @cmsBorder2;
+      display: none;
+
+      &.filterOpen {
+        display: block;
+        border-bottom: medium none;
+      }
+    }
+    &.open {
+      border-bottom: medium none;
+    }
+  }
+}
+

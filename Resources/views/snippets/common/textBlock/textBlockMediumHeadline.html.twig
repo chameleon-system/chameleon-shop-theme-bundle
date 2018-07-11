@@ -1,0 +1,14 @@
+{#
+    description: an text teaser with image on left side and text and optional link on the right
+    parameters:
+        ** see /common/textBlock/textBlockStandard.html.twig
+  )
+#}
+{% extends '/common/textBlock/textBlockStandard.html.twig' %}
+
+{%block headline %}
+    <h1>{{sHeadline}}</h1>
+{%endblock%}
+{%block subHeadline %}
+    <h2 class="subHeadline">{{sSubHeadLine}}</h2>
+{%endblock%}

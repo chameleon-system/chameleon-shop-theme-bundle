@@ -1,0 +1,43 @@
+.snippetListPagingScroller {
+    .scrollContentHandler {
+        border-top: 1px solid @cmsBorder5;
+        margin-top: 20px;
+        padding-bottom: 20px;
+        width:100%;
+        .scrollContent {
+            width: 100%;
+            position: relative;
+            .scrollBlock {
+                background-color: @cmsBorder6;
+                width: 46px;
+                height: 24px;
+                position: absolute;
+                top: -12px;
+                -webkit-border-radius: 10px;
+                -khtml-border-radius: 10px;
+                -moz-border-radius: 10px;
+                border-radius: 10px;
+                .back, .next {
+                    float: left;
+                    width: 23px;
+                    height:23px;
+                    a {
+                        display: block;
+                        padding-top: 3px;
+                        padding-bottom: 3px;
+                    }
+                }
+                .back {
+                    a {
+                        padding-left: 6px;
+                    }
+                }
+                .next {
+                    a {
+                        padding-left: 3px;
+                    }
+                }
+            }
+        }
+    }
+}

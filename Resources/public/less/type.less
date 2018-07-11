@@ -1,0 +1,359 @@
+h1, .cmsH1, h1 a, .cmsH1 a {
+  font-family: @cmsFontFamily;
+  font-size: 40px;
+  color: @cmsColorPrimaryLow1;
+  line-height: 42px;
+  font-weight: @cmsFontWeightLight;
+
+  @media (max-width: @screen-sm-max) {
+    font-size: 32px;
+    line-height: 34px;
+    @media (max-width: @screen-xs-max) {
+      font-size: 30px;
+      line-height: 32px;
+      @media (max-width: @screen-xs) {
+        font-size: 25px;
+        line-height: 27px;
+      }
+    }
+  }
+}
+
+h2, .cmsH2, h2 a, .cmsH2 a, .headline2, .headline2 a {
+  font-family: @cmsFontFamily;
+  font-size: 36px;
+  line-height: 38px;
+  color: @cmsColorPrimaryHigh2;
+  letter-spacing: -1.4px;
+  font-weight: @cmsFontWeightMedium;
+  @media (max-width: @screen-sm-max) {
+    font-size: 30px;
+    line-height: 32px;
+    @media (max-width: @screen-xs-max) {
+      font-size: 28px;
+      line-height: 30px;
+      @media (max-width: @screen-xs) {
+        font-size: 23px;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+h3, .cmsH3, h3 a, .cmsH3 a, .headline3, .headline3 a {
+  font-family: @cmsFontFamily;
+  font-size: 28px;
+  color: @cmsColorPrimaryHigh2;
+
+  font-weight: @cmsFontWeightLight;
+  @media (max-width: @screen-sm-max) {
+    font-size: 24px;
+    line-height: 26px;
+    @media (max-width: @screen-xs-max) {
+      font-size: 22px;
+      line-height: 20px;
+    }
+  }
+}
+
+h4, .cmsH4, h4 a, .cmsH4 a, .headline4, .headline4 a {
+  font-family: @cmsFontFamily;
+  font-size: 18px;
+  color: @cmsColorPrimaryHigh1;
+  letter-spacing: -0.3px;
+  font-weight: @cmsFontWeightLight;
+  @media (max-width: @screen-sm-max) {
+    font-size: 16px;
+  }
+}
+
+h5, .cmsH5, h5 a, .cmsH5 a, .headline5, .headline5 a {
+  font-family: @cmsFontFamily;
+/* product title */
+  font-size: 17px;
+  color: @cmsColorPrimaryLow1;
+  font-weight: @cmsFontWeightLight;
+}
+
+h6, .cmsH6, h6 a, .cmsH6 a, .headline6, .headline6 a {
+  font-family: @cmsFontFamily;
+/* product title (brand) */
+  font-size: 17px;
+  color: @cmsColorPrimaryHigh2;
+  font-weight: @cmsFontWeightLight;
+  text-transform: none;
+}
+
+.cssFont1 {
+  font-family: @cmsFontFamily;
+  font-size: 20px;
+  font-weight: @cmsFontWeightMedium;
+  color: @cmsColorSecondary;
+}
+
+.cssFont2 {
+  font-family: @cmsFontFamily;
+  font-size: 24px;
+  font-weight: @cmsFontWeightMedium;
+}
+
+.cssFont3 {
+  font-family: @cmsFontFamily;
+  font-size: 24px;
+  font-weight: @cmsFontWeightLight;
+}
+
+.cssFont4 {
+  font-family: @cmsFontFamily;
+  font-size: 12px;
+  font-weight: @cmsFontWeightMedium;
+}
+
+.cssFont5 {
+  font-family: @cmsFontFamily;
+  font-size: 12px;
+  font-weight: @cmsFontWeightLight;
+}
+
+.cssFont6 {
+  font-family: @cmsFontFamily;
+  font-size: 15px;
+  font-weight: @cmsFontWeightLight;
+  line-height: 17px;
+}
+
+.cssFont7 {
+  font-family: @cmsFontFamily;
+  font-size: 11px;
+  font-weight: @cmsFontWeightLight;
+}
+
+.cssFont8 {
+  font-family: @cmsFontFamily;
+  font-size: 14px;
+  font-weight: @cmsFontWeightLight;
+}
+
+.cssFont9 {
+  font-family: @cmsFontFamily;
+  font-size: 10px;
+  font-weight: @cmsFontWeightLight;
+}
+
+.cssFont10 {
+  font-family: @cmsFontFamily;
+  font-size: 9px;
+  font-weight: @cmsFontWeightLight;
+}
+
+// copytext, copytext links -> bootstrap
+.cmsBaseFont, .cmsLink {
+  font-family: @cmsFontFamily;
+  font-size: @cmsFontBaseSize;
+  color: @cmsColorPrimary;
+  font-weight: @cmsFontWeightLight;
+}
+
+.cmsLink {
+  font-family: @cmsFontFamily;
+  color: @cmsColorSecondary;
+}
+
+.cmsLinkHover {
+  font-family: @cmsFontFamily;
+  color: @cmsColorSecondary2;
+}
+
+.cmsSmall, .cmsSmallRegular {
+  font-family: @cmsFontFamily;
+  font-size: 11px;
+  color: @cmsColorPrimaryHigh1;
+  letter-spacing: -0.6px;
+  font-weight: @cmsFontWeightLight;
+}
+
+.cmsSmallRegular {
+  font-family: @cmsFontFamily;
+  font-size: 11px;
+  font-weight: @cmsFontWeightNormal;
+  line-height: 14px;
+  letter-spacing: 0;
+}
+
+.cmsStandardRegular {
+  font-family: @cmsFontFamily;
+  font-size: 12px;
+  font-weight: @cmsFontWeightNormal;
+  line-height: 14px;
+  letter-spacing: 0;
+}
+
+// errors, tooltips, etc
+.cmsMessage, .alert {
+  font-family: @cmsFontFamily;
+  font-size: 12px;
+}
+
+.messageErrorLarge {
+  font-family: @cmsFontFamily;
+  color: @cmsColorSecondary3;
+  font-weight: @cmsFontWeightMedium;
+
+}
+
+// main nav
+.cmsPrimaryNav {
+  font-family: @cmsFontFamily;
+  font-size: 18px;
+
+  font-weight: @cmsFontWeightLight;
+  text-transform: uppercase;
+  color: @cmsColorPrimaryHigh1;
+}
+
+.cmsTabs, .nav-tabs > li > a {
+  font-family: @cmsFontFamily;
+  font-size: 18px;
+
+  font-weight: @cmsFontWeightLight;
+  text-transform: uppercase;
+  color: @cmsColorPrimaryHigh3;
+}
+
+.cmsInput,
+label,
+input,
+button,
+select,
+textarea {
+  font-family: @cmsFontFamily;
+  font-size: 14px;
+  font-weight: @cmsFontWeightLight;
+}
+
+.cmsInput,
+input,
+button,
+select,
+textarea {
+  font-family: @cmsFontFamily;
+  color: @cmsColorPrimaryLow1;
+}
+
+.btn-lg, .cmsBtn-large {
+  font-family: @cmsFontFamily;
+  font-size: 15px;
+}
+
+.cmsBtn-small {
+  font-family: @cmsFontFamily;
+  font-weight: @cmsFontWeightLight;
+  line-height: 16px;
+}
+
+.btn-sm, .cmsBtn-small {
+  font-family: @cmsFontFamily;
+  font-size: 13px;
+}
+
+.btn-xs, .cmsBtn-mini {
+  font-family: @cmsFontFamily;
+  font-size: 12px;
+}
+
+.cmsLinkBtn {
+  font-family: @cmsFontFamily;
+  font-size: 12px;
+  font-weight: @cmsFontWeightLight;
+  line-height: 16px;
+  letter-spacing: -0.6px;
+}
+
+.cmsInlineHeadline {
+  font-family: @cmsFontFamily;
+  font-weight: @cmsFontWeightMedium;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.cmsInlineHeadlineSmall {
+  font-family: @cmsFontFamily;
+  font-weight: @cmsFontWeightMedium;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.cmsInlineHeadlineBig {
+  font-family: @cmsFontFamily;
+  font-weight: @cmsFontWeightMedium;
+  font-size: 17px;
+  line-height: 27px;
+  letter-spacing: -0.9px;
+}
+
+.cmsHeadline {
+  font-family: @cmsFontFamily;
+  font-weight: @cmsFontWeightMedium;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: -0.9px;
+}
+
+.cmsHeadlineBig {
+  font-family: @cmsFontFamily;
+  font-weight: @cmsFontWeightMedium;
+  font-size: 30px;
+  line-height: 33px;
+  letter-spacing: -1.4px;
+}
+
+.cmsHeadlineSmall {
+  font-family: @cmsFontFamily;
+  font-weight: @cmsFontWeightMedium;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.cmsHeadlineFooter {
+  font-family: @cmsFontFamily;
+  font-weight: @cmsFontWeightMedium;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 24px;
+  border-bottom: 1px solid @cmsBorder4;
+  color: @cmsColorPrimaryLow1;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.cmsHeadlinePrimary {
+  font-weight: @cmsFontWeightMedium;
+  font-size: 40px;
+  line-height: 45px;
+  letter-spacing: -1.4px;
+}
+
+a, a:hover, a:active, a:focus {
+  outline: medium none;
+}
+
+.cmswysiwyg {
+  a {
+    text-decoration: underline;
+    color: @cmsColorSecondary;
+    &:hover {
+      color: @cmsColorSecondary2;
+    }
+  }
+}
+
+.lighttextshadow {
+  text-shadow: 0 1px 0 rgba(255,255,255,0.60);
+}
+
+INPUT.placeholder {
+  color: @cmsColorSecondary5;
+}

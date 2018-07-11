@@ -1,0 +1,55 @@
+{#
+    description: Renders a form to edit an address in the wizard module
+    vars:
+
+    aTextData - optional - vars see /common/textBlock/textBlockSmallHeadline.html.twig
+    sSpotName - optional
+    sWizardModuleModuleSpot - required
+    sStepURL -required
+    aAddressList - optional - if the user may have more than one address
+
+#}
+
+
+<div class="snippetFormUserAddressWizardStep">
+    
+    {% if aTextData %}
+        {% include "/common/textBlock/textBlockSmallHeadline.html.twig" with aTextData %}
+    {% endif %}
+    <div class="form">
+        {% if aAddressList is defined and aAddressList|length >0 %}
+            <div class="row">
+                {% for aAddress in aAddressList %}
+                    {{ aAddress|raw }}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form class="addressForm form-horizontal" accept-charset="utf-8" method="post" >
+            <input type="hidden" value="UpdateUserAddress" name="module_fnc[{{ sSpotName }}]">
+            <input type="hidden" value="{{ sSpotName }}" name="{{ sWizardModuleModuleSpot }}">
+            <input type="hidden" name="sFailureURL" value="{{ sStepURL }}"/>
+            <input type="hidden" name="sSuccessURL" value="{{ sStepURL }}"/>
+            {%  if bIsBillingAddress is defined %} {# use as fallback because views using this could not use the mapper that creates the variable #}
+                {%  if bIsBillingAddress == true %}
+                    {% include "/common/userInput/address/billing.html.twig" %}
+                {%  else  %}
+                    {% include "/common/userInput/address/shipping-packstation.html.twig" %}
+                {% endif %}
+            {% else %}
+                {% include "/common/userInput/address/shipping.html.twig" %}
+            {%  endif %}
+            <div class="form-group">
+                <div class="input-group editButton {{ formDefaultSubmitClass }}">
+                    <div class="editButton pull-left">
+                        <input type="submit" value="{{ 'chameleon_system_chameleon_shop_theme.extranet.action_update_address'|trans }}" class="btn btn-default btn-success btn-lg"/>
+                    </div>
+                    {% if aAddressList is defined %}
+                        <div class="newButton pull-left">
+                            <input type="submit" onclick="$(this).parents('form.addressForm').children('.snippetUserInputAddressBase').children('.addressInputIdHolder').attr('value','');" value="{{ 'chameleon_system_chameleon_shop_theme.extranet.action_create_address'|trans }}" class="btn btn-default btn-success btn-lg"/>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

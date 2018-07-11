@@ -1,0 +1,46 @@
+{% if bAllowShowRegistrationGuest == true %}
+    <div class="snippetFormCreateAccountFromGuest">
+        {% if aTextData %}
+        {% include "/common/textBlock/textBlockSmallHeadline.html.twig" with aTextData%}
+        {% endif %}
+        <div class="form">
+            <form action="{{sFailureURL}}" method="post" accept-charset="utf-8" class="form-horizontal">
+                <input type="hidden" name="module_fnc[{{sExtranetSpotName}}]" value="RegisterGuestUser" />
+                <input type="hidden" name="sSuccessURL" value="{{sSuccesURL}}" />
+                <input type="hidden" name="sFailureURL" value="{{sFailureURL}}" />
+                <div class="inputBlock">
+                    {% set sLabelDefaultClass = 'col-xs-12 col-sm-4 col-md-5 col-lg-4' %}
+                    {% set sInputDefaultClass = 'col-xs-11 col-sm-7' %}
+                    {% set sButtonDefaultClass = 'col-xs-6 col-xs-offset-6 col-sm-offset-4 col-md-offset-5 col-lg-offset-4' %}
+                    <div class="userName ">
+                        {% set aFieldPasswordMapped = {
+                                                                 'sInputClass' : sInputDefaultClass,
+                                                                 'sLabelClass' : sLabelDefaultClass,
+                                                                 'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_password'|trans,
+                                                                 'sName' : 'aUser[password]',
+                                                                 'bRequired' : true,
+                                                                 'sFieldId': "guestRegPassword",
+                                                                 'sError': aFieldPassword.sError,
+                                                                 'sValue' : aFieldPassword.sValue}%}
+                        {% include "/common/userInput/form/password.html.twig" with aFieldPasswordMapped%}
+                    </div>
+                </div>
+                <div class="inputBlock">
+                    <div class="userName">
+                        {% set aFieldPasswordCheckMapped = {
+                                                                 'sInputClass' : sInputDefaultClass,
+                                                                 'sLabelClass' : sLabelDefaultClass,
+                                                                 'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_password_check'|trans,
+                                                                 'sName' : 'aUser[password2]',
+                                                                 'bRequired' : true,
+                                                                 'sFieldId': "guestRegPasswordCheck",
+                                                                 'sError': aFieldPasswordCheck.sError,
+                                                                 'sValue' : aFieldPasswordCheck.sValue}%}
+                        {% include "/common/userInput/form/password.html.twig" with aFieldPasswordCheckMapped%}
+                    </div>
+                </div>
+                {% include "/common/userInput/buttonStandard.html.twig" with {sButtonText:"chameleon_system_chameleon_shop_theme.action.submit"|trans, sButtonClass: sButtonDefaultClass}%}
+            </form>
+        </div>
+    </div>
+{% endif %}

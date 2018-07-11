@@ -1,0 +1,45 @@
+{#
+  description: renders paging as horizontal scroller
+  parameters:
+      -iActivePage
+      -iLastPage
+      -listIdent
+      -sURL with {[pageNumber]} to replace with page number
+#}
+{% if numberOfPages > 1 %}
+    {% import "common/lists/list-paging.macro.twig" as url %}
+    {% set controlPrevStyle = '' %}
+    {% if activePageNumber == 0 %}
+        {% set controlPrevStyle = 'display:none' %}
+    {% endif %}
+    {# do not translate the placeholders in data-title as they are needed in the page transition code in chameleon.js #}
+    <a class="carousel-control left" style="{{ controlPrevStyle }}"
+       href="{{ url.getPageURLV2(listPagerUrl, activePageNumber - 1) }}"
+       role="button" data-slide="prev"
+       data-title="{{ "chameleon_system_chameleon_shop_theme.products.page_back_detail" |trans }}"
+       title="{{ "chameleon_system_chameleon_shop_theme.products.page_back_detail" |trans({'%page%':activePageNumber, '%pageCount%': numberOfPages}) }}">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">{{ "chameleon_system_chameleon_shop_theme.products.page_back_detail" |trans({'%page%':activePageNumber, '%pageCount%': numberOfPages}) }}</span>
+    </a>
+
+    {% set controlNextStyle = '' %}
+    {% if activePageNumber + 1 == numberOfPages %}
+        {% set controlNextStyle = 'display:none' %}
+    {% endif %}
+    {# do not translate the placeholders in data-title as they are needed in the page transition code in chameleon.js #}
+    <a class="carousel-control right" style="{{ controlNextStyle }}"
+       href="{{ url.getPageURLV2(listPagerUrl, activePageNumber + 1) }}"
+       role="button" data-slide="next"
+       data-title="{{ "chameleon_system_chameleon_shop_theme.products.page_next_detail" |trans }}"
+       title="{{ "chameleon_system_chameleon_shop_theme.products.page_next_detail" |trans({'%page%':(activePageNumber +2), '%pageCount%': numberOfPages}) }}">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">{{ "chameleon_system_chameleon_shop_theme.products.page_next_detail" |trans({'%page%':(activePageNumber +2), '%pageCount%': numberOfPages}) }}</span>
+    </a>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            CHAMELEON.Custom.BootstrapCarousel('{{listIdent}}');
+        });
+    </script>
+{% endif %}

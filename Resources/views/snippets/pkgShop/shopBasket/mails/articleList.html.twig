@@ -1,0 +1,178 @@
+{#
+    description: show basket
+    parameters:
+        ** sCurrency
+        **
+        ** sSumVat
+        ** sSumVatWithoutShipping
+        ** sVatPercentage
+        ** aVatList
+        **
+        ** sSumDiscounts
+        ** aDiscountList
+        **
+        ** dSumDiscountVouchers
+        ** aDiscountVoucherList
+        **
+        ** sSumSponsoredVouchers
+        ** aSponsoredVoucherList
+        **
+        ** sSumShipping
+        ** sSumGrandTotal
+        **
+        ** sSumProducts
+        ** sSumProductsAfterDiscountsAndDiscountVouchers
+        ** sSumPaymentSurcharge
+        ** sSumTotalBasket
+        **
+        ** iNumberOfUniqueProducts
+        ** iNumberOfProducts
+        **
+        ** aArticleList
+            ** aArticle
+                ** sImageId
+                ** iAmount
+                ** sManufacturer
+                ** sArticleName
+                ** sArticleColor
+                ** sArticleSize
+                ** sShippingInformation
+                ** sPrice
+                ** sPriceTotal
+                ** sCurrency
+                ** sArticleDetailURL
+#}
+
+<div class="snippetMailsShopBasketArticleList">
+    <strong>{{'chameleon_system_chameleon_shop_theme.order_mail.product_list_headline'|trans}}</strong>
+    <table class="table" style="min-width: 500px">
+        <thead>
+            <tr>
+                <th class="image-and-article" colspan="2" style="text-align:left;">
+                    {{'chameleon_system_chameleon_shop_theme.basket.column_article'|trans}}
+                </th>
+                <th class="amount" style="text-align:right;">
+                    {{'chameleon_system_chameleon_shop_theme.basket.column_quantity'|trans}}
+                </th>
+                <th class="single price" style="text-align:right;">
+                    {{'chameleon_system_chameleon_shop_theme.basket.column_item_price'|trans}}
+                </th>
+                <th class="total price" style="text-align:right;">
+                    {{'chameleon_system_chameleon_shop_theme.basket.column_total_price'|trans}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for aArticle in aArticleList %}
+                <tr class="articleHeadline">
+                    <td colspan="5" style="background-color: #E0E0E0;padding:10px;">
+                        <a href="{{aArticle.sArticleDetailURL}}" style="font-weight: bold">
+                            {% if aArticle.sManufacturer %}<span class="manufacturerName">{{aArticle.sManufacturer}}</span>&nbsp;{% endif %}
+                            <span class="articleName">{{aArticle.sArticleName}}{% if aArticle.sArticleVariantName %} - {{ aArticle.sArticleVariantName }}{% endif %}</span>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="article">
+                    <td class="image">
+                        <a href="{{aArticle.sArticleDetailURL}}">
+                            <img src="{{aArticle.sImageId | cmsthumb(60, 60, true, true)}}" alt="{{aArticle.sManufacturer}} {{aArticle.sArticleName}}" />
+                        </a>
+                    </td>
+                    <td class="article-information">
+                        {% include '/pkgShop/shopArticle/mails/articleBasket.html.twig' with aArticle %}
+                    </td>
+                    <td class="amount" style="text-align:right;">
+                        {{aArticle.iAmount}}&nbsp;x
+                    </td>
+                    <td class="single price" style="text-align:right;">
+                        {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': aArticle.sPrice}  %}
+                    </td>
+                    <td class="total price" style="text-align:right;">
+                        {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': aArticle.sPriceTotal} %}
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+        <tfoot>
+            <tr class="summary">
+                <td class="sumCaption article-total" colspan="3" style="text-align:right;">
+                    {{'chameleon_system_chameleon_shop_theme.basket.product_total'|trans}}:
+                </td>
+                <td class="sumValue article-total" colspan="2" style="text-align:right;">
+                    {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': sSumProducts}  %}
+                </td>
+            </tr>
+            {% if 0 < sSumDiscounts %}
+                <tr class="summary">
+                    <td class="sumCaption discount" colspan="3" style="text-align:right;">
+                        {{'chameleon_system_chameleon_shop_theme.basket.discount_total'|trans}}:
+                    </td>
+                    <td class="sumValue discount" colspan="2" style="text-align:right;">
+                        - {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': sSumDiscounts}  %}
+                    </td>
+                </tr>
+            {% endif %}
+            <tr class="summary">
+                <td class="sumCaption shipping" colspan="3" style="text-align:right;">
+                    {{'chameleon_system_chameleon_shop_theme.basket.shipping_cost'|trans}}:
+                </td>
+                <td class="sumValue shipping" colspan="2" style="text-align:right;">
+                    {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': sSumShipping}  %}
+                </td>
+            </tr>
+            {% if 0 < sSumPaymentSurcharge %}
+                <tr class="summary">
+                    <td class="sumCaption payment-surcharge" colspan="3" style="text-align:right;">
+                        {{'chameleon_system_chameleon_shop_theme.basket.payment_surcharge'|trans}}:
+                    </td>
+                    <td class="sumValue payment-surcharge" colspan="2" style="text-align:right;">
+                        {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': sSumPaymentSurcharge}  %}
+                    </td>
+                </tr>
+            {% endif %}
+            {% for vat in aVatList %}
+                {% if vat.dValue > 0 %}
+                    <tr class="summary">
+                        <td class="sumCaption vat" colspan="3" style="text-align:right;">
+                            {{"chameleon_system_chameleon_shop_theme.basket.vat_value"|trans({'%dPercent%':aVat.iPercent}) }}:
+                        </td>
+                        <td class="sumValue vat" colspan="2" style="text-align:right;">
+                            {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': vat.sValue}  %}
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+
+            {% for aVoucher in aDiscountVoucherList %}
+                <tr class="summary">
+                    <td class="sumCaption voucher{{loop.index-1}}" colspan="3" style="text-align:right;">
+                        {{'chameleon_system_chameleon_shop_theme.basket.voucher'|trans({'%sVoucherCode%': aVoucher.sCode})}}:
+                    </td>
+                    <td class="sumValue voucher{{loop.index-1}}" colspan="2" style="text-align:right;">
+                        - {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': aVoucher.sValue}  %}
+                    </td>
+                </tr>
+            {% endfor %}
+            {% block sponsoredVouchers %}
+                {% for aSponsoredVoucher in aSponsoredVoucherList %}
+                    <tr class="sponsored-voucher negative">
+                        <td class="sumCaption voucher_sponsored{{loop.index-1}}" colspan="3" style="text-align:right;">
+                            {{'chameleon_system_chameleon_shop_theme.basket.voucher'|trans({'%sVoucherCode%': aSponsoredVoucher.sName})}}:
+                        <td class="sumValue voucher_sponsored{{loop.index-1}}" colspan="2" style="text-align:right;">
+                          - {% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':aSponsoredVoucher.sValue} %}</td>
+                    </tr>
+                {%  endfor %}
+            {% endblock %}
+            <tr class="summary">
+                <td class="sumCaption basket-total" colspan="3" style="text-align:right;">
+                    {{'chameleon_system_chameleon_shop_theme.basket.grand_total'|trans}}:
+                </td>
+                <td class="sumValue basket-total" colspan="2" style="text-align:right;">
+                    {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': sSumGrandTotal}  %}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+

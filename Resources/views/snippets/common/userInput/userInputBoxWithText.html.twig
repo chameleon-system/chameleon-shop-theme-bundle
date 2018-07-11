@@ -1,0 +1,29 @@
+{#
+  description: renders a input box with text on the left side
+  parameters:
+    ** sInputValue
+    ** sActionURL
+    ** sInputName
+    ** sIconClass - use to set icon before input value text. If empty no image will be show (styles: style1)
+    ** sBoxStyleClass - use to set different input box styles if not set use default
+#}
+
+
+<div class="snippetUserInputBoxWithText">
+    <div class="col-xs-5">
+        <div class="box boxpadding">
+            <div class="boxInner">
+                {%if sHtmlText%}
+                    <div class="textBlockLeft">{{sHtmlText}}</div>
+                {%endif%}
+                <div class="inputBlockright">
+                    <form accept-charset="utf-8" method="get" action="{{sActionURL}}" class="WithoutSpacer">
+                        {% include "/common/userInput/userInputSubmit.html.twig" %}
+                    </form>
+                </div>
+                <div class="clearfix">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+</div>

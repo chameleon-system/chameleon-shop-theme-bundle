@@ -1,0 +1,28 @@
+{#
+    description: show an article with image, name, manufacturer, size, color and shipping information
+    parameters:
+        ** sManufacturer
+        ** sArticleName
+        ** sArticleColor
+        ** sArticleSize
+        ** sShippingInformation
+#}
+
+<div class="snippetmailShopArticleArticleBasket">
+    {% set bHideTables = true%}
+
+    <table class="table variant-information">
+        <tbody>
+        {% include "/pkgShop/shopArticle/variants/mails/boxShow.html.twig"  %}
+        {% if customData and customDataTwigTemplate %}
+            {% include aArticle.customDataTwigTemplate with customData %}
+        {% endif %}
+        {% if sShippingInformation %}
+            <tr>
+                <td class="caption shipping">{{'chameleon_system_chameleon_shop_theme.checkout.basket_shipping'|trans}}:</td>
+                <td class="value shipping">{{sShippingInformation|raw}}</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>

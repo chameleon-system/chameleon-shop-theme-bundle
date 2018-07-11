@@ -1,0 +1,28 @@
+{#
+  description: renders a simple navigation tree as floating text
+  parameters:
+  - aTree: array of items (object or assoc array). each item has the following properties:
+    ** bIsActive
+    ** bIsExpanded
+    ** sLink
+    ** sTitle
+    ** sSeoTitle (defaults to sTitle)
+#}
+
+<nav class="simple">
+    <ul class="snippetNavigationSimple">
+        {% for oItem in aTree %}
+            {% set sClass = '' %}
+            {%if loop.last%}{% set sClass = sClass ~' lastNode'%}{% endif %}
+            {%if oItem.bIsActive%}{% set sClass = sClass ~' active'%}{% endif %}
+            {%if oItem.bIsExpanded%}{% set sClass = sClass ~' expanded'%}{% endif %}
+            {% if oItem.aChildren %}{% set sClass = sClass ~' hasChildren'%}{%endif%}
+            {%if loop.first%}{% set sClass = sClass ~' firstNode'%}{% endif %}
+            <li class="{{sClass|trim}}">
+                <a class="font_ubuntu_light_5 color_grey_2 {{sClass|trim}}" href="{{oItem.sLink|raw}}" title="{{oItem.sSeoTitle | default(oItem.sTitle)}}">
+                    {{oItem.sTitle}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

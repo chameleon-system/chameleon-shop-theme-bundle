@@ -1,0 +1,20 @@
+{% extends "/common/userInput/address/base.html.twig" %}
+{% block fields %}
+    {{ parent() }}
+    {% block fieldTelefon %}
+    {% endblock %}
+
+    {% block fieldFax %}
+        {% set aFieldFaxMapped = {
+                'sLabelClass' : formDefaultLabelClass,
+                'sInputClass' : formDefaultInputClass,
+                'sHelpClass' : formDefaultHelpClass,
+                'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_fax'|trans,
+                'sName' : sFieldNamesPrefix~'[fax]',
+                'sError': aFieldFax.sError,
+                'sFieldId': "addressFax"~sFieldNamesPrefix,
+                'sValue' : aFieldFax.sValue}%}
+        {% include "/common/userInput/form/text.html.twig" with aFieldFaxMapped%}
+    {% endblock%}
+
+{% endblock %}

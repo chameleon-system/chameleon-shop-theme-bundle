@@ -1,0 +1,14 @@
+{#
+  description: renders overview of ratings for an article
+  vars:
+   aRatingOverview
+    dRating
+    dRatingCount
+
+#}
+
+<div class="snippetRatingOverview">
+    {% for aRating in aRatingOverview %}
+        {% include "/pkgShopArticleReview/withTotalVotesSimple.html.twig" with aRating %}
+    {% endfor %}
+</div>

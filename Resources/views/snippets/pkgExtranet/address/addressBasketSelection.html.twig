@@ -1,0 +1,12 @@
+
+<div class="pkgExtranetAddressBasketSelection">
+    <div class="header">{{"chameleon_system_chameleon_shop_theme.extranet.my_addresses" | trans}}</div>
+    <ul>
+        {% for sAddress in aAddressList %}
+            <li>
+                {{sAddress|raw}}
+            </li>
+        {% endfor %}
+        <li><a href="#" onclick="SetSelectedAddress('new','');return false;">{{'chameleon_system_chameleon_shop_theme.extranet.action_ship_to_new'|trans}}</a></li>
+    </ul>
+</div>

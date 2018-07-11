@@ -1,0 +1,4 @@
+{% extends "/common/media/gallery/thumbnail.html.twig" %}
+{% block image %}
+    <img src="{{sImageURL}}" alt="{{ sImageTitle|trim | default ("chameleon_system_chameleon_shop_theme.products.default_product_alt_text")|trans }}" {% if sLargeImageURL  %}data-cmslargeimage="{{sLargeImageURL}}"{% endif %} {% if sLargeLink  %}data-cmslargeimagelink="{{sLargeLink}}"{% endif %} {% if sLargeTitle  %}data-cmslargeimagetitle="{{sLargeTitle}}" {% endif %} >
+{% endblock %}

@@ -1,0 +1,39 @@
+{#
+    description: an text block with optional link in header and image list under text content
+    parameters:
+        secondary false => h1/h2-headlines
+        secondary true => h2/h3-headlines
+        ** sTitle
+        ** sText
+        ** aLink optional if not given no link will be rendered
+            ** sLinkURL
+            ** sTitle
+            ** sLinkFont
+            ** sLinkColor
+            ** sLinkIconClass
+        ** aLinkList
+            ** aLink
+                ** sImageURL
+                ** sLinkURL
+                ** sTitle
+  )
+#}
+
+<div class="snippetTextBlockStandardWithLinkList">
+    {% if secondary == true %}
+        {% include "/common/textBlock/textBlockStandard.html.twig" %}  {# h2/h3-headline #}
+    {% else %}
+        {% include "/common/textBlock/textBlockMediumHeadline.html.twig" %}  {# h1/h2-headline #}
+    {% endif %}
+    {% if aLinkList and aLinkList|length > 0 %}
+        <div class="linkList row">
+            {% for aLink in aLinkList %}
+                <div class="pull-left">
+                    <div class="link col-xs-2">
+                        {% include "/common/links/linkStylesIcon.html.twig" with aLink %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

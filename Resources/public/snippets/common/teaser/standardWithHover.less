@@ -1,0 +1,62 @@
+.snippetListStandardShopArticle {
+  position: relative;
+  // it was't enough to set z-index on .snippetTeaserStandardWithHover .hover (problem with footer-layer)
+  z-index: 5;
+}
+
+.snippetTeaserStandardWithHover {
+  position: relative;
+  .image img {
+    width: 100%;
+  }
+  .hover {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    display: none;
+    width: 100%;
+    z-index: 6;
+    .content {
+      height: auto;
+    }
+    .snippetTeaserStandardBase {
+      .body {
+        .productdetails {
+          height: auto;
+        }
+      }
+      .infoline {
+        border-bottom: 1px solid @cmsBorder3;
+        color: @cmsColorPrimaryHigh2;
+        width: 92%;
+        margin: auto;
+        .colors {
+          td, th {
+            padding-bottom: 4px;
+          }
+          td.sizeRow {
+            border-bottom: 0;
+          }
+        }
+        ul {
+          list-style-type: none;
+          padding: 0;
+        }
+
+      }
+      .snippetShopArticleVariantsBoxSelection {
+        margin-bottom: 0;
+        border: 0;
+        td, th {
+          padding-top: 3px;
+          padding-bottom: 1px;
+        }
+      }
+    }
+  }
+  &:hover {
+    .hover {
+      display: block;
+    }
+  }
+}

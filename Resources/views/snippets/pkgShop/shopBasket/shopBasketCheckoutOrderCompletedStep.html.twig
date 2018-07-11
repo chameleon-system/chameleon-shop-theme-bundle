@@ -1,0 +1,24 @@
+
+<div class="shopBasketCheckoutOrderCompletedStep">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                {% if aTextData %}
+                    {% include "/common/textBlock/textBlockSmallHeadline.html.twig" with aStepTextData%}
+                {% endif %}
+                {% if aOrderPrintData%}
+                    <div class="orderBlock">
+                        <div class="image"><i class="i i-successSignRoundt">&nbsp;</i></div>
+                        <div class="text">{{ aOrderPrintData.sText | raw }}</div>
+                    </div>
+                {% endif %}
+                {% if sPaymentHtml%}
+                    <div class="orderBlock">
+                        {{sPaymentHtml | raw}}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-xs-12 col-md-6">
+                {% include "/common/userInput/form/formCreateAccountFromGuest.html.twig" %}
+            </div>
+        </div>
+</div>

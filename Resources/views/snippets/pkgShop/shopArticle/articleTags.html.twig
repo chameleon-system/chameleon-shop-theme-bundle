@@ -1,0 +1,22 @@
+{#
+    aArticleTags
+    - sName
+    - sUrlName
+    - iCount
+    - sUrlSearch
+#}
+{% if aArticleTags | length > 0 %}
+    <div class="snippetPkgShopShopArticleTags">
+        <h4>{{ 'chameleon_system_chameleon_shop_theme.products.keywords' | trans }}</h4>
+        <ul>
+            {%for aArticleTag in aArticleTags %}
+                <li>
+                    {% if aArticleTag.sUrlSearch %}<a href="{{ aArticleTag.sUrlSearch }}" title="{{ 'chameleon_system_chameleon_shop_theme.products.keywords_search' | trans({'%keyword%':aArticleTag.sName}) }}">{% endif %}
+                        <i class="glyphicon glyphicon-chevron-right"></i> {{ aArticleTag.sName }}
+                        {% if aArticleTag.sUrlSearch %}</a>{% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endif %}

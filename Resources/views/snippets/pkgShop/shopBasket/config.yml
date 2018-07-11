@@ -1,0 +1,17 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopBasket/shopBasketAddedToBasket.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopBasket/shopBasketArticleLayover.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopBasket/shopBasketArticleListAsTable.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopBasket/shopBasketCheckoutBasketStep.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopBasket/shopBasketCheckoutConfirmStep.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopBasket/shopBasketCheckoutOrderCompletedStep.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shippingAndPayment/shopBasketCheckoutShippingAndPayment.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopBasket/shopBasketMiniBasket.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopBasket/shopBasketSummary.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopBasket/telephoneOrder.less
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopBasket/shopBasketAddedToBasket.js
+   - /bundles/chameleonsystemchameleonshoptheme/bootstrap/js/modal.js
+
+include:
+    - common/lists

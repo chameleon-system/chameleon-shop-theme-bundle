@@ -1,0 +1,8 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/textBlock/textBlockBubble.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/textBlock/textBlockMediumHeadline.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/textBlock/textBlockOneLine.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/textBlock/textBlockSmallHeadline.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/textBlock/textBlockStandard.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/textBlock/textBlockStandardWithImageList.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/textBlock/textBlockStandardWithLinkList.less

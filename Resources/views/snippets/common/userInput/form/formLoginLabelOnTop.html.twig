@@ -1,0 +1,19 @@
+{#
+    description: renders login form
+    vars
+
+    aTextData - optional - vars see /common/textBlock/textBlockSmallHeadline.html.twig
+    aFieldUserName - required - vars see /common/userInput/form/text.html.twig
+    aFieldPassword - required - vars see /common/userInput/form/text.html.twig
+    aLinkForgotPassword - optional - vars see /common/links/linkStylesIcon.html.twig
+    aLinkRegister - optional - vars see /common/links/linkStylesIcon.html.twig
+    sSpotName - optional
+    sLoginSuccessURL - optional
+    sLoginFailureURL - optional
+    bIsLoggedIn - optional - should be set to display message instead of login form, if value is true the following variables are required
+        sUsername - username of the logged in user
+        sLogoutLink - link to the logout page
+
+#}
+    {% extends "/common/userInput/form/formLoginStandard.html.twig" %}
+    {% block formClass%}{% endblock%}

@@ -1,0 +1,194 @@
+@heightMain: 50px;
+@heightPhone: 40px;
+@widthArrow: 20px;
+
+ul.snippetNavigationStep {
+  overflow:hidden;
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+  width: 100%;
+  background: @cmsColorPrimaryHigh5;
+  border: 1px solid @cmsColorPrimaryHigh4;
+  height: @heightMain;
+
+  li {
+    height: @heightMain;
+    display: block;
+    float: left;
+    position: relative;
+    padding:0;
+    width:20%;
+    .wrapper {
+      padding: 0 0 0 10px + @widthArrow;
+      @media(max-width: @screen-xs-max){
+        padding-right:4px;
+        padding-left:5px + @widthArrow
+      }
+      @media(max-width: 479px){
+        padding: 0 3px 0 3px;
+      }
+    }
+    &.firstNode{
+      .wrapper {
+        padding-left: 10px;
+
+      }
+    }
+    .naviItemImage {
+      @padding-top: 9px;
+      height: @heightMain - @padding-top;
+      padding-top: @padding-top;
+      float: left;
+    }
+
+    a {
+      height:50px;
+      overflow:hidden;
+      margin-right:5px;
+      .cmsH5();
+      @media(max-width: @screen-md-max){
+        .cssFont8();
+      }
+      @media(min-width: @screen-sm-min) and (max-width: @screen-sm-max)  {
+        .cssFont9();
+        line-height: @heightMain;
+      }
+
+      @media(min-width: @screen-xs-min) and (max-width: @screen-xs-max)  {
+        .cssFont10();
+        line-height: @heightMain;
+      }
+
+      letter-spacing:-1px;
+      text-transform: uppercase;
+      display: block;
+
+      line-height: @heightMain;
+      /* @todo convert horizontal padding to percent */
+      &:hover {
+        color: @cmsColorSecondary;
+        text-decoration: none;
+      }
+
+      &.active {
+        color: @cmsColorSecondary;
+        &:hover {
+          color: @cmsColorSecondary2;
+        }
+      }
+      span{
+        white-space: nowrap;
+        padding-left:10px;
+        @media(max-width: @screen-md-max){
+          padding-left:5px;
+        }
+        @media(min-width: @screen-sm-min) and (max-width: @screen-sm-max)  {
+          .cssFont9();
+          padding-left:2px;
+        }
+
+        @media(min-width: @screen-xs-min) and (max-width: @screen-xs-max)  {
+          .cssFont10();
+          padding-left:2px;
+        }
+      }
+    }
+    span {
+      &.noAccess {
+        .cmsH5();
+
+        @media(max-width: @screen-md-max){
+          .cssFont8();
+        }
+        @media(min-width: @screen-sm-min) and (max-width: @screen-sm-max)  {
+          .cssFont9();
+          line-height: @heightMain;
+        }
+
+        @media(min-width: @screen-xs-min) and (max-width: @screen-xs-max)  {
+          .cssFont10();
+          line-height: @heightMain;
+        }
+        letter-spacing:-1px;
+        margin-right:5px;
+        text-transform: uppercase;
+        display: block;
+        line-height: @heightMain;
+        /* @todo convert horizontal padding to percent */
+        height:50px;
+        overflow:hidden;
+        span {
+          white-space: nowrap;
+          padding-left:10px;
+          @media(max-width: @screen-md-max){
+            padding-left:5px;
+          }
+          @media(min-width: @screen-sm-min) and (max-width: @screen-sm-max)  {
+            .cssFont9();
+            padding-left:2px;
+          }
+
+          @media(min-width: @screen-xs-min) and (max-width: @screen-xs-max)  {
+            .cssFont10();
+            padding-left:2px;
+          }
+        }
+      }
+    }
+
+    &.active {
+      .gradientMain();
+    }
+
+    .arrow {
+      .i();
+      .i-navigationStepArrow();
+      display: block;
+      position:absolute;
+      right: -@widthArrow;
+      width: @widthArrow;
+      height: @heightMain;
+      z-index: 1;
+      top: 0;
+
+      &.active {
+        .i-navigationStepArrowActive();
+      }
+    }
+  }
+}
+
+ul.snippetNavigationStep {
+  @media (max-width: 480px){
+    height: @heightPhone;
+    margin: 0 0 10px 0;
+    li {
+      width: 100%;
+
+      .wrapper, &.firstNode .wrapper {
+        padding-left:0;
+        padding-right:0;
+      }
+      .arrow {
+        display:none;
+      }
+      .naviItemImage {
+        padding-top: 4px;
+        padding-left: 4px;
+      }
+      a, span {
+        display:block;
+        white-space:nowrap;
+        .cssFont8();
+        line-height: @heightPhone;
+        padding:0 2px 0 2px;
+      }
+    }
+
+    li:not(.current) {
+      display: none;
+    }
+
+  }
+}

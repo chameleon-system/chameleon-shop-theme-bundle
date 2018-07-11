@@ -1,0 +1,29 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/articleBasket.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/articleBundleProducts.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/articleColors.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/articleExtendedInfoBlock.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/articleInfoBlock.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/articleMarker.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/articlePrice.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/articleQuestion.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/articleSize.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/articleSummaryBox.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/articleSummaryBoxWithManufacturer.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/galleryVerticalWithSocialSharePrivacy.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/price.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/quickShopping.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/shopArticleAddedToBasket.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/shopArticleAttributeColor.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/shopArticleAttributeSize.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/shopArticleSimpleWide.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/shopArticleDetailPageNextPrev.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/snippetPkgShopShopArticleTags.less
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/bootstrap/js/tooltip.js
+   - /bundles/chameleonsystemchameleonshoptheme/bootstrap/js/popover.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopArticle/sizeTable.js
+
+include:
+   - common/media/gallery
+   - common/userInput

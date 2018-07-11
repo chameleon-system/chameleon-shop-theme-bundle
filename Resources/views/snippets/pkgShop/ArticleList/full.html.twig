@@ -1,0 +1,16 @@
+<div class="pkgShopArticleList">
+    {% if listIcon or listTitle %}
+        <div class="header hidden-xs">
+            {% if listIcon %}<img class="box_header_icon" src="{{ listIcon.id|cmsthumb(200,200)}}" alt="{{ listIcon.description }}" />{% endif %}
+            {% if listTitle %}<h1 class="headline3">{{ listTitle }}</h1>{% endif %}
+        </div>
+    {% endif %}
+    {% if  description_start %}{{ description_start|raw }}{% endif %}
+    {% if numberOfPages > 0 %}
+        {{ articleList | raw }}
+    {% else %}
+        {{ "chameleon_system_chameleon_shop_theme.products.no_products" | trans }}
+    {% endif %}
+
+    {% if  description_end %}{{ description_end|raw }}{% endif %}
+</div>

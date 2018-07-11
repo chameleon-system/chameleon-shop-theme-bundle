@@ -1,0 +1,35 @@
+{#
+  description: renders an input box with optional image in it
+  parameters:
+    ** sInputValue
+    ** sInputName
+    ** sIconClass - use to set icon before input value text. If empty no image will be show (styles: style1)
+    ** sBoxStyleClass - use to set different input box styles if not set use default
+    ** bRequired
+    ** sPlaceholder
+
+  @todo you may not use this template(s) build your forms by yourself until we are clear that we definitely want to set up our forms by several templates
+#}
+
+<div class="snippetUserInputText {{ sBoxLayoutCSS }}">
+    {% if bRequired %} {% set sBoxStyleClass = sBoxStyleClass~" required"%}{% endif %}
+    <div class="{{("form-group inputHolderBox "~sBoxStyleClass)|trim}}">
+        <div class="controls inputHolderBoxInner{% if sIconClass %} userInputBoxInputWithImage{% endif %}">
+            {% block preInputField %}
+                {% if sIconClass %}
+                    <i class="userInputBoxImage {{sIconClass}}"></i>
+                {% endif %}
+            {% endblock%}
+            {% block inputField %}
+                <input {%if sPlaceholder %}placeholder="{{sPlaceholder}}"{%endif%} class="userInputBoxInput" type="text" name="{{sInputName}}"  value="{{sInputValue}}" />
+            {% endblock%}
+            {% block postInputField %}
+                {% if bRequired %}
+                    <span class="icon">
+                        <i class="glyphicon glyphicon-star"></i>
+                    </span>
+                {% endif %}
+            {% endblock%}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+.snippetNavigationTabsStandardVertical {
+  position: absolute;
+  top: 425px;
+  right: 0;
+  z-index: 500;
+  .nav-tabs {
+    border-bottom: none;
+    width: 40px;
+    float: left;
+    position: absolute;
+    left: -40px;
+    z-index: 600;
+    li {
+      float: right;
+      a {
+        display: block;
+        font-size: 0;
+        padding: 0;
+        margin: 0;
+      }
+      &.Zuletztgesehen {
+        a {
+          .i();
+          .i-lastSeenInactive();
+
+        }
+        &.inactive {
+          a {
+            background-image: none;
+          }
+        }
+        &.active {
+          a {
+            .i();
+            .i-lastSeenActive();
+          }
+        }
+
+      }
+      &.Merkzettel {
+        a {
+          .i();
+          .i-flag-noticelist();
+
+        }
+        &.inactive {
+          a {
+            background-image: none;
+          }
+        }
+      }
+    }
+  }
+  .tab-content {
+    width: 1px;
+    box-shadow: 0 0 13px 2px #BBBBBB;
+    background-color: @cmsBackground3;
+    overflow: visible;
+    .tab-pane {
+      min-height: 350px;
+      background-color: @cmsBackground3;
+      .tabContent {
+        margin-top: 11px;
+        background-color: @cmsBackground3;
+      }
+      &:after {
+        visibility: hidden;
+        clear: both;
+        display: block;
+        content: "";
+      }
+      .closer {
+        position: relative;
+        right: -102%;
+        top: 13px;
+        cursor: pointer
+      }
+    }
+  }
+}
+
+.nav > li.Zuletztgesehen > a,
+.nav > li.Zuletztgesehen > a:hover,
+.nav > li.Merkzettel > a,
+.nav > li.Merkzettel > a:hover {
+  background-color: transparent;
+  border: medium none;
+}

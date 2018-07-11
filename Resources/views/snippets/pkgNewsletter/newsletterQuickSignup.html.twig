@@ -1,0 +1,35 @@
+{#
+    description: shows the newsletter quick signup box
+    vars
+        sNewsletterLink
+        sModuleSpotName
+        sFieldNamesPrefix
+#}
+
+{% set q = 'chameleon_system_chameleon_shop_theme.newsletter.form_quick_signup_help' | trans %}
+<div class="snippetPkgNewsletterNewsletterQuickSignup">
+    <form name="newsletterquicksignupform" action="{{sNewsletterLink|raw}}" method="post" accept-charset="utf-8">
+        <input type="hidden" value="SignUp" name="module_fnc[{{sModuleSpotName}}]"/>
+        {% if 'chameleon_system_chameleon_shop_theme.newsletter.form_quick_signup_help'|trans == q %}
+            {% set q = "" %}
+        {% endif %}
+
+        {% set aMappedData = {
+        'sPlaceholder' : 'chameleon_system_chameleon_shop_theme.newsletter.form_quick_signup_help'|trans,
+        'sLabelClass' : '',
+        'sInputClass' : '',
+        'sHelpClass' : '',
+        'sLabelText' : '',
+        'sName' : sFieldNamesPrefix ~ '[email]',
+        'sTitle' : 'chameleon_system_chameleon_shop_theme.newsletter.form_quick_signup_title'|trans,
+        'sValue' : q,
+        } %}
+        {% embed "/common/userInput/form/text.html.twig" with aMappedData%}
+            {% block postInputField %}
+                <span class="input-group-btn">
+                    <button class="btn btn-default userInputBoxSubmit" type="submit" ><span class="glyphicon glyphicon-chevron-right"></span></button>
+                </span>
+            {% endblock %}
+        {% endembed %}
+    </form>
+</div>

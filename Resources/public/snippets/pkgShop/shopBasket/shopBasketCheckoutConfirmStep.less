@@ -1,0 +1,68 @@
+.snippetShopBasketShopBasketCheckoutConfirmStep {
+  td.amount {
+    color: @cmsColorPrimaryHigh2;
+  }
+
+  .table tr.summary td.sumValue.voucher .table td {
+    border: none;
+  }
+  .shopBasketSummary {
+    @media (max-width: @screen-xs-max) {
+      margin-top: 10px;
+    }
+  }
+}
+
+.confirmStepAgb {
+  @media (max-width: @screen-xs-max) {
+    margin-bottom: 10px;
+  }
+}
+
+.customerCommentContainer {
+  margin: 20px 0 40px 0;
+}
+
+.ConfirmStepInfoBlock {
+
+  @media (max-width: @screen-xs-max) {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .ConfirmStepInfoBlockBox {
+    margin-bottom: 50px;
+    @media (max-width: @screen-xs-max) {
+      margin-bottom: 0;
+      border-bottom: 1px solid @cmsBorder3;
+    }
+    .innerBox {
+      margin-bottom: 20px;
+    }
+    .headline4 {
+      a {
+        color: @cmsColorSecondary;
+        &:hover {
+          color: @cmsColorSecondary2;
+        }
+      }
+    }
+  }
+
+  &:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: "";
+  }
+
+  h3 {
+    margin-bottom: 20px;
+  }
+}
+
+.confirmStepAgb {
+  a {
+    text-decoration: underline;
+  }
+}

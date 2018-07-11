@@ -1,0 +1,4 @@
+{% extends "/common/userInput/form/checkbox.html.twig" %}
+{% block field %}
+    <input type="checkbox" {% if bRequired == true%} required {%endif%} {%if sOnClick %}onclick="{{sOnClick | raw}}"{%endif%} {% if bIsChecked %}checked="checked"{% endif %} {% if sFieldId is defined %}id="{{sFieldId}}"{% endif %} name="{{sName}}" value="{{sValue}}">{% if sLabelText is defined %}{{sLabelText | raw}}{% endif %}
+{% endblock field%}

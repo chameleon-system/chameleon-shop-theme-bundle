@@ -1,0 +1,8 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/tabs/standard.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/tabs/standardVertical.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/onelevel.less
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/js/jquery/jquery.blockUI.js
+   - /bundles/chameleonsystemchameleonshoptheme/js/snippets/navigation/tabs/standard.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/navigation/tabs/standardVertical.js

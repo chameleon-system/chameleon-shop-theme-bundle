@@ -1,0 +1,76 @@
+{#
+    vars
+        aFieldLogin
+        aFieldPassword
+        aFieldBirthday
+
+#}
+{% extends "/common/userInput/address/base.html.twig" %}
+
+{% block fields %}
+    {{ parent() }}
+
+
+    {% set aFieldTelMapped = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_phone'|trans,
+            'sFieldId': "addressShippingTel"~sFieldNamesPrefix,
+            'sName' : sFieldNamesPrefix~'[telefon]',
+            'sError': aFieldTel.sError,
+            'sValue' : aFieldTel.sValue,
+            'bRequired' : false,
+            'sHelpText': 'chameleon_system_chameleon_shop_theme.extranet.form_phone_help'|trans
+        }
+    %}
+    {% include "/common/userInput/form/text.html.twig" with aFieldTelMapped%}
+
+    {% set aMappedData = {
+            'sPlaceholder' : '',
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_email'|trans,
+            'sName' : 'aUser[name]',
+            'bRequired' : true,
+            'sFieldId': "userRegistrationEMail",
+            'sError': aFieldLogin.sError,
+            'sValue' : aFieldLogin.sValue} %}
+    {% include "/common/userInput/form/text.html.twig" with aMappedData%}
+
+    {% set aMappedData = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_password'|trans,
+            'sName' : 'aUser[password]',
+            'bRequired' : true,
+            'sFieldId': "userRegistrationPassword",
+            'sError': aFieldPassword.sError,
+            'sValue' : ''} %}
+    {% include "/common/userInput/form/password.html.twig" with aMappedData %}
+
+    {% set aMappedData = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_password_check'|trans,
+            'sName' : 'aUser[password2]',
+            'bRequired' : true,
+            'sFieldId': "userRegistrationPasswordCheck",
+            'sError': aFieldPassword2.sError,
+            'sValue' : ''} %}
+    {% include "/common/userInput/form/password.html.twig" with aMappedData %}
+
+    {% set aMappedData = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_date_of_birth'|trans,
+            'sName' : 'aUser[birthdate]',
+            'sFieldId': "userRegistrationBirthDate",
+            'sError': aFieldBirthday.sError,
+            'sValue' : aFieldBirthday.sValue} %}
+    {% include "/common/userInput/form/text.html.twig" with aMappedData %}
+{% endblock %}

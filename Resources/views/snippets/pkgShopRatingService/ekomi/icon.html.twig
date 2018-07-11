@@ -1,0 +1,9 @@
+
+
+{% if sRatingApiId != '' %}
+    <div class="snippetEkomiIcon">
+        {% include '/pkgShopRatingService/ekomi/loader.html.twig' %}
+        <div id="eKomiSeal_default"></div>
+        {% include '/pkgShopArticleReview/standard.html.twig' with {'dRating': current_rating} %}
+    </div>
+{% endif %}

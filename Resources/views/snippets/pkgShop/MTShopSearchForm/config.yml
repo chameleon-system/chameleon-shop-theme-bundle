@@ -1,0 +1,5 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/MTShopSearchForm/quicksearch.less
+
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/js/bootstrap3-typeahead.min.js

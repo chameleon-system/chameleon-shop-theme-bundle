@@ -1,0 +1,162 @@
+{#
+    description: renders form field list to edit user address
+
+    vars
+        The following fields are defined each with keys: sError, sValue. Fields that offer a multiple choices have those under aValueList
+            aFieldSalutation
+            aFieldFirstName
+            aFieldLastName
+            aFieldAdditionalInfo
+            aFieldStreet
+            aFieldStreetNr
+            aFieldPLZ
+            aFieldCity
+            aFieldCountry
+            aFieldTel
+            aFieldFax
+
+    sWizardModuleModuleSpot - required
+    sCustomMSGConsumer - optional
+    sFieldNamesPrefix - set before field name. was used to use template for billing and shipping address
+    sAddressId - required - id of the active address
+
+#}
+
+
+<div class="snippetUserInputAddressBase {{sFieldNamesPrefix}}">
+    [{CMSMSG-{{sFieldNamesPrefix}}}]
+    <input type="hidden" class="addressInputIdHolder" name="{{sFieldNamesPrefix}}[id]" value="{{sAddressId}}" />
+    {% block fields %}
+        {% block fieldSalutation %}
+            {% set aFieldSalutationMapped = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_salutation'|trans,
+            'sName' : sFieldNamesPrefix~'[data_extranet_salutation_id]',
+            'bRequired' : true,
+            'sFieldId': "addressSalutation"~sFieldNamesPrefix,
+            'sError': aFieldSalutation.sError,
+            'sValue' : aFieldSalutation.sValue,
+            'aValueList' : aFieldSalutation.aValueList}%}
+            {% include "/common/userInput/form/select.html.twig" with aFieldSalutationMapped%}
+        {% endblock %}
+
+        {% block fieldFirstname %}
+            {% set aFieldFirstNameMapped = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_first_name'|trans,
+            'sName' : sFieldNamesPrefix~'[firstname]',
+            'bRequired' : true,
+            'sFieldId': "addressfirstName"~sFieldNamesPrefix,
+            'sError': aFieldFirstName.sError,
+            'sValue' : aFieldFirstName.sValue}%}
+            {% include "/common/userInput/form/text.html.twig" with aFieldFirstNameMapped%}
+        {% endblock %}
+
+
+        {% block fieldLastname %}
+            {% set aFieldLastNameMapped = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_last_name'|trans,
+            'sName' : sFieldNamesPrefix~'[lastname]',
+            'bRequired' : true,
+            'sFieldId': "addressLastName"~sFieldNamesPrefix,
+            'sError': aFieldLastName.sError,
+            'sValue' : aFieldLastName.sValue
+            }
+            %}
+            {% include "/common/userInput/form/text.html.twig" with aFieldLastNameMapped%}
+        {% endblock %}
+
+
+        {% block fieldAdditionalInfo %}
+            {% set aFieldAdditionalInfoMapped = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_additional_info'|trans,
+            'sFieldId': "addressAddInfo"~sFieldNamesPrefix,
+            'sName' : sFieldNamesPrefix~'[address_additional_info]',
+            'sError': aFieldAdditionalInfo.sError,
+            'sValue' : aFieldAdditionalInfo.sValue,
+            'sHelpText': 'chameleon_system_chameleon_shop_theme.extranet.form_additional_info_help'|trans
+            }
+            %}
+            {% include "/common/userInput/form/text.html.twig" with aFieldAdditionalInfoMapped%}
+        {% endblock %}
+
+        {% block fieldStreet %}
+            <div class="form-group{% if aFieldStreet.sError or aFieldStreetNr.sError %} error{% endif %}">
+                <label class="{{ formDefaultLabelClass }} control-label" for='{{ "addressStreet"~sFieldNamesPrefix }}'>{{ 'chameleon_system_chameleon_shop_theme.extranet.form_street_and_number' | trans }}<span class="required">*</span></label>
+                <div class="input-group {{ formDefaultInputClass }}">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <input class="form-control" type="text" value="{{ aFieldStreet.sValue }}" name="{{ sFieldNamesPrefix~'[street]' }}" id="{{ "addressStreet"~sFieldNamesPrefix }}">
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="form-control" type="text" value="{{ aFieldStreetNr.sValue }}" name="{{ sFieldNamesPrefix~'[streetnr]' }}" id="{{ "addressStreetNr"~sFieldNamesPrefix }}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-block input-group {{ formDefaultHelpClass }}">
+                    {% if aFieldStreet.sError %}<p class="errortext">{{aFieldStreet.sError|raw}}</p>{% endif %}
+                    {% if aFieldStreet.sError is empty and aFieldStreetNr.sError %}<p class="errortext">{{aFieldStreetNr.sError|raw}}</p>{% endif %}
+                </div>
+            </div>
+        {% endblock %}
+
+        {% block fieldStreetNr %}
+        {% endblock %}
+
+        {% block fieldPostalcode %}
+            {% set aFieldPLZMapped = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_zip'|trans,
+            'sFieldId': "addressPLZ"~sFieldNamesPrefix,
+            'sName' : sFieldNamesPrefix~'[postalcode]',
+            'bRequired' : true,
+            'sError': aFieldPLZ.sError,
+            'sValue' : aFieldPLZ.sValue}%}
+            {% include "/common/userInput/form/text.html.twig" with aFieldPLZMapped%}
+        {% endblock %}
+
+        {% block fieldCity %}
+            {% set aFieldCityMapped = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_city'|trans,
+            'sFieldId': "addressCity"~sFieldNamesPrefix,
+            'sName' : sFieldNamesPrefix~'[city]',
+            'bRequired' : true,
+            'sError': aFieldCity.sError,
+            'sValue' : aFieldCity.sValue}%}
+            {% include "/common/userInput/form/text.html.twig" with aFieldCityMapped%}
+        {% endblock %}
+
+        {% block fieldCountry %}
+            {% set aFieldCountryMapped = {
+            'sLabelClass' : formDefaultLabelClass,
+            'sInputClass' : formDefaultInputClass,
+            'sHelpClass' : formDefaultHelpClass,
+            'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_country'|trans,
+            'sFieldId': "addressCountry"~sFieldNamesPrefix,
+            'sName' : sFieldNamesPrefix~'[data_country_id]',
+            'bRequired' : true,
+            'sError': aFieldCountry.sError,
+            'sValue' : aFieldCountry.sValue,
+            'aValueList' : aFieldCountry.aValueList}%}
+            {% include "/common/userInput/form/select.html.twig" with aFieldCountryMapped%}
+        {% endblock %}
+        {% block fieldTelefon %}
+        {% endblock %}
+    {% endblock %}
+</div>

@@ -1,0 +1,28 @@
+{#
+    aStatusList = array(
+        array(
+            'date'=>
+            'codeName'=>
+            'info'=>
+            'aPositions'=>array(
+                array(
+                    'amount'=>'',
+                    'productName'=>''
+                ),
+                ..
+            ),
+         ...
+    )
+#}
+{% if aStatusList | length > 0  %}
+    <div class="shopOrderStatusList">
+        <h4>{{ "chameleon_system_chameleon_shop_theme.order_state.headline" | trans }}</h4>
+        <ol class="statuslist unstyled">
+            {% for aStatus in aStatusList %}
+                <li>
+                    {% include 'pkgShop/shopOrder/status/oneOrderStatusEntry.html.twig'  with aStatus%}
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endif %}

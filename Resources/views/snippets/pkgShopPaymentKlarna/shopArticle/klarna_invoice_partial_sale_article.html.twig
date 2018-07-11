@@ -1,0 +1,23 @@
+{% if bAllowToShowPartialSale %}
+    <div class="klarnaInvoiceArticlePartialSaleSnippet">
+        <br />
+        <div class="pull-left">
+            <img src="https://cdn.klarna.com/public/images/DE/badges/v1/account/DE_account_badge_std_blue.png?width=125&eid={{ sMerchantId }}" alt="{{ 'chameleon_system_chameleon_shop_theme.payment_klarna.klarna_badge_alt'|trans }}" />
+        </div>
+        <div class="pull-right">
+            {{ "chameleon_system_chameleon_shop_theme.payment_klarna.finanz_starting_at"|trans({'%dMonthlyCosts%':dMonthlyCosts,'%sCurrency%':sCurrency}) }}
+            <div id="klarna-link-dynamic"></div>
+            <script src="http://static.klarna.com/external/toc/v1.0/js/klarna.terms.min.js" type="text/javascript" charset="utf-8"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    new Klarna.Terms.Account({
+                        el:'klarna-link-dynamic',
+                        eid:'{{ sMerchantId }}',
+                    country:'{{ sCountryISO }}'
+                });
+                });
+            </script>
+         </div>
+        <div class="clear">&nbsp;</div>
+    </div>
+{% endif %}

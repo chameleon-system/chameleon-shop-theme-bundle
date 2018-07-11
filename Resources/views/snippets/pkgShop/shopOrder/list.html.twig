@@ -1,0 +1,95 @@
+{#
+    description:
+    parameters:
+        * sCurrency
+        * sDetailLinkCaption
+        * aOrderList - each item must contain following properties
+            * sOrderDate
+            * sOrdernumber
+            * sSumGrandTotal
+            * sShippingAddress
+            * sDetailLink
+            * bActive
+        * sOrderDate
+        * sOrdernumber
+        * sPaymentName
+        * aBillingAddress
+        * aShippingAddress
+        * bShipToBillingAddress
+        * aArticleList
+        * sSumGrandTotal
+        * sSumShipping
+        * sSumVat
+        * sVatPercentage
+        * sSumProducts
+        *
+        * aOrder - see /pkgShop/shopOrder/detail.html.twig
+#}
+
+
+
+{% if not sDetailLinkCaption %}
+    {% set sDetailLinkCaption = 'Details anzeigen' %}
+{% endif %}
+
+{% if not sCurrency %}
+    {% set sCurrency = '€' %}
+{% endif %}
+
+<div class="snippetShopOrderList">
+    {% if aOrderList | length > 0 %}
+        <table class="table order-list table-hover table-striped" title="{{"chameleon_system_chameleon_shop_theme.order_history.headline"|trans}}">
+            <thead>
+            <tr>
+                <th>
+                    {{ 'chameleon_system_chameleon_shop_theme.order_history.column_date'|trans }}
+                </th>
+                <th>
+                    {{ 'chameleon_system_chameleon_shop_theme.order_history.column_number'|trans }}
+                </th>
+                <th>
+                    {{ 'chameleon_system_chameleon_shop_theme.order_history.column_total'|trans }}
+                </th>
+                <th>
+                    {{ 'chameleon_system_chameleon_shop_theme.order_history.column_ship_to'|trans }}
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for aItem in aOrderList %}
+                {% if aItem.bActive %}
+
+                    <tr>
+                        <td class="order-detail" colspan="5">
+                            {% include '/pkgShop/shopOrder/detail.html.twig' %}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td data-label="{{ 'chameleon_system_chameleon_shop_theme.order_history.column_date'|trans }}">
+                            {{ aItem.sOrderDate }}
+                        </td>
+                        <td data-label="{{ 'chameleon_system_chameleon_shop_theme.order_history.column_number'|trans }}">
+                            {{ aItem.sOrdernumber }}
+                        </td>
+                        <td data-label="{{ 'chameleon_system_chameleon_shop_theme.order_history.column_total'|trans }}">
+                            {{ aItem.sSumGrandTotal }} {{ sCurrency }}
+                        </td>
+                        <td data-label="{{ 'chameleon_system_chameleon_shop_theme.order_history.column_ship_to'|trans }}">
+                            {{ aItem.sShippingAddress }}
+                        </td>
+                        <td data-label="">
+                            <a href="{{ aItem.sDetailLink|raw }}" title="{{ sDetailLinkCaption }} {{"chameleon_system_chameleon_shop_theme.order_history.action_show_order"|trans}} {{aItem.sOrdernumber}}">
+                                {{ sDetailLinkCaption }}
+                            </a>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        {{ 'chameleon_system_chameleon_shop_theme.order_history.no_orders' | trans }}
+    {% endif %}
+</div>

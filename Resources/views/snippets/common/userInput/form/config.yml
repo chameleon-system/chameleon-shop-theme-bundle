@@ -1,0 +1,9 @@
+less:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/form/formContact.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/form/formLoginStandard.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/form/formTelephoneOrder.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/form/UserAddressWizardStep.less
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/form/formWriteReviewStandard.less
+js:
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/common/userInput/form/rating.js
+   - /bundles/chameleonsystemchameleonshoptheme/snippets/pkgShop/shopOrder/telephoneOrder/telephoneOrder.js

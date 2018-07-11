@@ -1,0 +1,67 @@
+{#
+    description: an text teaser with image on left side and text and optional link on the right
+    parameters:
+        ** sHeadline
+        ** sTeaserText
+        ** sText
+        ** sSubHeadLine - optional
+        ** sImageId optional show image on the right side
+        ** aLink - optional-  if not given no link will be rendered ()
+            ** sLinkURL
+            ** sTitle
+            ** sLinkFont
+            ** sLinkColor
+            ** sLinkIconClass
+        ** aSecondLink - optional -  if not given no link will be rendered - show button link below text
+            ** sLinkURL
+            ** sTitle
+            ** html - optional
+  )
+#}
+{% block main %}
+<div class="snippetTextBlockStandard">
+    <div class="textBlockContainer">
+        {% if sImageId %}
+            <div class="imageTeaser span">
+                {%block imageTag %}
+                    <img class="img-responsive" src="{{sImageId | cmsthumb(370,220)}}" alt="{{sHeadline}}" />
+                {% endblock %}
+            </div>
+        {% endif %}
+        <div  {% if sImageId %}class="textBlockContentLeft"{% endif %}>
+            <header>
+                <div class="leftTitle">
+                    {%block headline %}<h2>{{sHeadline}}</h2>{% endblock %}
+                    {% if sSubHeadLine %}
+                        {% block subHeadline %}<h3 class="subHeadline">{{sSubHeadLine}}</h3>{% endblock %}
+                    {% endif %}
+                </div>
+                {% if aLink and aLink|length >0 %}
+                    <div class="rightLink">
+                        {% include "/common/links/linkStylesIcon.html.twig" with aLink %}
+                    </div>
+                {% endif %}
+            </header>
+            {% block sTeaserText %}
+                {% if sTeaserText%}<div class="textTeaserBlockContent">{{sTeaserText|raw}}</div>{% endif %}
+            {% endblock %}
+            {% block sText %}
+                <div class="textBlockContent">{{sText|raw}}</div>
+            {% endblock %}
+
+            {% block SecondLink %}
+                {% if aSecondLink and aSecondLink|length >0 %}
+                    <div class="bottomLink">
+                    {% if aSecondLink.html %}
+                        {{ aSecondLink.html | raw }}
+                    {% else %}
+                        <a href="{{aSecondLink.sLinkUrl}}" title="{{aSecondLink.sTitle}}">{{aSecondLink.sTitle}}</a>
+                    {% endif %}
+                    </div>
+                {% endif %}
+            {% endblock %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

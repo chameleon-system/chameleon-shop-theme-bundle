@@ -1,0 +1,89 @@
+/*generate sprite at http://spritegen.website-performance.org/
+    horizontal
+    offset 10
+    Class Prefix: i-
+    Display width and height: yes
+    compress image with optiPNG
+
+    if you have hover sprite states, follow these rules
+      * name the hover version like the normal version with "-hover". Example: my-image.png would have my-image-hover.png as hover state
+      * after generating the sprite css, run the following regex
+        search for: \.i\-(.*)\-hover\{
+        replace with: \.i-$1-hover, .i-$1:hover\{
+*/
+
+.i {
+  background-image: url(/bundles/chameleonsystemchameleonshoptheme/images/sprite.png?v=3);
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+i:hover, a.i:hover {
+  text-decoration: none;
+}
+
+.i-arrow-black-left{ background-position: 0 0; width: 21px; height: 41px; }
+.i-arrow-black-right{ background-position: -31px 0; width: 21px; height: 41px; }
+.i-arrow_grey{ background-position: -62px 0; width: 4px; height: 7px; }
+.i-arrow_small_left-hover, .i-arrow_small_left:hover{ background-position: -76px 0; width: 20px; height: 20px; }
+.i-arrow_small_left{ background-position: -106px 0; width: 20px; height: 20px; }
+.i-arrow_small_right-hover, .i-arrow_small_right:hover{ background-position: -136px 0; width: 20px; height: 20px; }
+.i-arrow_small_right{ background-position: -166px 0; width: 20px; height: 20px; }
+.i-basket_icon{ background-position: -196px 0; width: 40px; height: 46px; }
+.i-cc-security{ background-position: -246px 0; width: 35px; height: 23px; }
+.i-close{ background-position: -291px 0; width: 17px; height: 17px; }
+.i-flag-gift-packaging{ background-position: -318px 0; width: 29px; height: 26px; }
+.i-flag-noticelist{ background-position: -357px 0; width: 31px; height: 31px; }
+.i-flag_de{ background-position: -398px 0; width: 16px; height: 11px; }
+.i-flag_en{ background-position: -424px 0; width: 17px; height: 13px; }
+.i-flag_es{ background-position: -451px 0; width: 16px; height: 11px; }
+.i-flag_fr{ background-position: -477px 0; width: 16px; height: 11px; }
+.i-gift-wrapping{ background-position: -503px 0; width: 33px; height: 30px; }
+.i-grey-nose-transparent{ background-position: -546px 0; width: 40px; height: 20px; }
+.i-grey-nose-white{ background-position: -596px 0; width: 40px; height: 20px; }
+.i-header_image_one{ background-position: -646px 0; width: 54px; height: 44px; }
+.i-header_image_two{ background-position: -710px 0; width: 39px; height: 44px; }
+.i-home{ background-position: -759px 0; width: 14px; height: 14px; }
+.i-lastSeenActive{ background-position: -783px 0; width: 41px; height: 93px; }
+.i-lastSeenInactive{ background-position: -834px 0; width: 38px; height: 93px; }
+.i-marker-left{ background-position: -882px 0; width: 31px; height: 25px; }
+.i-marker-right{ background-position: -923px 0; width: 31px; height: 25px; }
+.i-navigationStepArrow{ background-position: -964px 0; width: 20px; height: 50px; }
+.i-navigationStepArrowActive{ background-position: -994px 0; width: 20px; height: 50px; }
+.i-navigationStepBasketCartActive{ background-position: -1024px 0; width: 32px; height: 32px; }
+.i-navigationStepBasketConfirm{ background-position: -1066px 0; width: 32px; height: 32px; }
+.i-navigationStepBasketConfirmActive{ background-position: -1108px 0; width: 32px; height: 32px; }
+.i-navigationStepBasketLogin{ background-position: -1150px 0; width: 32px; height: 32px; }
+.i-navigationStepBasketLoginActive{ background-position: -1192px 0; width: 32px; height: 32px; }
+.i-navigationStepBasketPayment{ background-position: -1234px 0; width: 32px; height: 32px; }
+.i-navigationStepBasketPaymentActive{ background-position: -1276px 0; width: 32px; height: 32px; }
+.i-navigationStepBasketShipping{ background-position: -1318px 0; width: 32px; height: 32px; }
+.i-navigationStepBasketShippingActive{ background-position: -1360px 0; width: 32px; height: 32px; }
+.i-paypal{ background-position: -1402px 0; width: 67px; height: 18px; }
+.i-paypalWide{ background-position: -1479px 0; width: 157px; height: 45px; }
+.i-point_dark_grey{ background-position: -1646px 0; width: 20px; height: 20px; }
+.i-point_green{ background-position: -1676px 0; width: 20px; height: 20px; }
+.i-point_light_grey{ background-position: -1706px 0; width: 20px; height: 20px; }
+.i-pointer-up-hover, .i-pointer-up:hover{ background-position: -1736px 0; width: 20px; height: 20px; }
+.i-pointer-up{ background-position: -1766px 0; width: 20px; height: 20px; }
+.i-pointer_transparent{ background-position: -1796px 0; width: 20px; height: 20px; }
+.i-print-hover, .i-print:hover{ background-position: -1826px 0; width: 20px; height: 20px; }
+.i-print{ background-position: -1856px 0; width: 20px; height: 20px; }
+.i-reload{ background-position: -1886px 0; width: 25px; height: 24px; }
+.i-star-small-empty{ background-position: -1921px 0; width: 17px; height: 16px; }
+.i-star-small-full{ background-position: -1948px 0; width: 17px; height: 16px; }
+.i-star-small-half{ background-position: -1975px 0; width: 17px; height: 16px; }
+.i-star-tiny-empty{ background-position: 0 -103px; width: 13px; height: 12px; }
+.i-star-tiny-full{ background-position: -23px -103px; width: 13px; height: 12px; }
+.i-star-tiny-half{ background-position: -46px -103px; width: 13px; height: 12px; }
+.i-star-very-tiny-empty{ background-position: -69px -103px; width: 8px; height: 7px; }
+.i-star-very-tiny-full{ background-position: -87px -103px; width: 8px; height: 7px; }
+.i-star-very-tiny-half{ background-position: -105px -103px; width: 8px; height: 7px; }
+.i-successSign{ background-position: -123px -103px; width: 79px; height: 70px; }
+.i-successSignMiddle{ background-position: -212px -103px; width: 33px; height: 29px; }
+.i-successSignRoundt{ background-position: -255px -103px; width: 53px; height: 53px; }
+.i-telephone{ background-position: -318px -103px; width: 52px; height: 52px; }
+.i-trustedshops-medium{ background-position: -380px -103px; width: 53px; height: 53px; }
+.i-white-nose-transparent-down{ background-position: -443px -103px; width: 40px; height: 20px; }
+.i-white-nose-transparent{ background-position: -493px -103px; width: 40px; height: 20px; }
+.i-white-nose-white{ background-position: -543px -103px; width: 40px; height: 20px; }

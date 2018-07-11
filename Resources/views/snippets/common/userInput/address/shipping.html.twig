@@ -1,0 +1,22 @@
+{#
+    description
+    vars
+        sChangeIsPackstationStateMethod
+
+#}
+{% extends "/common/userInput/address/base.html.twig" %}
+
+    {% block fieldTelefon %}
+        {% set aFieldTelMapped = {'sInputClass' : 'col-xs-4',
+                                         'sLabelText' : 'chameleon_system_chameleon_shop_theme.extranet.form_phone'|trans,
+                                         'sFieldId': "addressShippingTel"~sFieldNamesPrefix,
+                                         'sName' : sFieldNamesPrefix~'[telefon]',
+                                         'sError': aFieldTel.sError,
+                                         'sValue' : aFieldTel.sValue,
+                                         'bRequired' : false,
+                                         'sHelpText': 'chameleon_system_chameleon_shop_theme.extranet.form_phone_help'|trans
+                                 }
+        %}
+        {% include "/common/userInput/form/text.html.twig" with aFieldTelMapped%}
+    {% endblock %}
+

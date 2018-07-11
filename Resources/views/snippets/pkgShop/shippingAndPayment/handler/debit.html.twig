@@ -1,0 +1,18 @@
+{#
+    render form for debit
+    vars
+        sHiddenControlFields
+        aUserInput - array with field values
+#}
+
+<div class="bankContainer">
+    {{sHiddenControlFields | raw}}
+    [{CMSMSG-TShopIPaymentHandlerDebitMSG}]
+
+    {% include "/common/userInput/form/text.html.twig" with {'sLabelText':'Kontonummer','bRequired' : true,'sName':'bank_accountnumber', 'sValue':aUserInput.bank_accountnumber }  %}
+    {% include "/common/userInput/form/text.html.twig" with {'sLabelText':'Bankleitzahl','bRequired' : true,'sName':'bank_code', 'sValue':aUserInput.bank_code }  %}
+    {% include "/common/userInput/form/text.html.twig" with {'sLabelText':'Bankname','bRequired' : true,'sName':'bank_name', 'sValue':aUserInput.bank_name }  %}
+
+    <input type="hidden" name="bank_country" value="DE" >
+
+</div>

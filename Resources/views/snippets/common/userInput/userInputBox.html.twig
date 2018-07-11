@@ -1,0 +1,22 @@
+{#
+  description: renders input box
+  parameters:
+  - aTree: array of items (object or assoc array). each item has the following properties:
+    ** sInputValue
+    ** sActionURL
+    ** sInputName
+    ** sIconClass - use to set icon before input value text. If empty no image will be show (styles: style1)
+    ** sBoxStyleClass - use to set different input box styles if not set use default
+#}
+
+<div class="snippetUserInputBox">
+    <div class="col-xs-3">
+        <div class="box boxpadding">
+            <div class="boxInner">
+                <form accept-charset="utf-8" method="get" action="{{aInputBox.sActionURL}}" class="WithoutSpacer">
+                    {% include "/common/userInput/userInputSubmit.html.twig" %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+{#
+    description: show the stock message for an article
+    vars
+        sStockMessage
+        sStockMessageCSSClass
+#}
+
+{%- if sStockMessage -%}
+    <div class="snipptShopArticlePartialsArticleStockMessage">
+        <div class="{{sStockMessageCSSClass}}">{{sStockMessage | raw}}</div>
+    </div>
+{%- endif -%}

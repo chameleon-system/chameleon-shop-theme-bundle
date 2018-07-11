@@ -1,0 +1,65 @@
+.snippetListHeaderTab {
+    .tabListHeaderContent {
+        border-bottom: 1px solid @cmsBorder5;
+        ul {
+            float: left;
+            position: relative;
+            top: 1px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                float: left;
+                border-right: 1px solid @cmsBorder5;
+                line-height: 13px;
+                margin-top: 14px;
+                background-color: @cmsBackground3;
+                &.lastTab{
+                    border-right: none;
+                }
+                a , span{
+                    .cmsPrimaryNav();
+                    letter-spacing: -1px;
+                    padding-right: 17px;
+                    padding-left: 14px;
+                    line-height: 13px;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                }
+
+                &.active, &:Hover {
+                    margin-top: 0;
+                    padding-top: 13px;
+                    padding-bottom: 16px;
+                    margin-left: -1px;
+                    padding-left: 1px;
+                    border-top: 1px solid @cmsBorder5;
+                    border-left: 1px solid @cmsBorder5;
+                    border-right: 1px solid @cmsBorder5;
+                    a {
+                        padding-left: 13px;
+                    }
+                }
+            }
+        }
+        .minimizer {
+            cursor:pointer;
+            float: right;
+            width: 10px;
+            padding-top: 20px;
+            margin-left:15px;
+            background: url("/bundles/chameleonsystemchameleonshoptheme/images/layout/arrow-down-small.png") no-repeat scroll right center transparent;
+            &.active {
+                background: url("/bundles/chameleonsystemchameleonshoptheme/images/layout/arrow-up-small.png") no-repeat scroll right center transparent;
+            }
+        }
+        .activeTabAllLink{
+            float: right;
+            padding-top:13px;
+        }
+    }
+}

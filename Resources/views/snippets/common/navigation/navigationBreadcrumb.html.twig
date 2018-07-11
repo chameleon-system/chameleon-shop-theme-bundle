@@ -1,0 +1,32 @@
+{#
+  description: renders a navigation tree as breadcrumb (shows only one level)
+  parameters:
+  - aTree: array of items (object or assoc array). each item has the following properties:
+    ** bIsActive
+    ** bIsExpanded
+    ** sLink
+    ** sTitle
+    ** sSeoTitle (defaults to sTitle)
+#}
+
+<nav>
+    <ul class="snippetNavigationBreadcrumb breadcrumb" itemtype="http://schema.org/BreadcrumbList">
+        <li class="firstNode"><a href="/"><span class="i i-home homeSign">&nbsp;</span></a></li>
+        {% for oItem in aTree %}
+            {%if loop.first%}{% set sRootNode = oItem.sSeoTitle | default(oItem.sTitle) %}{% endif %}
+            {% set sClass = '' %}
+            {%if loop.last%}{% set sClass = sClass ~' lastNode'%}{% endif %}
+            {%if oItem.bIsActive%}{% set sClass = sClass ~' active'%}{% endif %}
+            {%if oItem.bIsExpanded%}{% set sClass = sClass ~' expanded'%}{% endif %}
+            <li class="{{sClass|trim}}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a itemprop="item" class="font_ubuntu_light_5 color_grey_2 {{sClass|trim}}" href="{{ oItem.sLink|raw }}" title="{%if not loop.first%}{{sRootNode}} {%endif%}{{ oItem.sSeoTitle | default(oItem.sTitle) }}">
+                    <span itemprop="name">{{ oItem.sTitle }}</span>
+                </a>
+                <meta itemprop="position" content="{{ loop.index }}" />
+                {% if not loop.last %}
+                    <span class="divider i i-arrow_grey"></span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

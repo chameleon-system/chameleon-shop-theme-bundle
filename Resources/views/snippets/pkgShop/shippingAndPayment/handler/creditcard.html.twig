@@ -1,0 +1,54 @@
+{{sHiddenControlFields | raw}}
+{#
+    render form for ipayment credit card
+    vars
+        sHiddenControlFields
+        aUserInput - array with field values
+#}
+
+<div class="snippetOrderwizardShippingAndPaymentCreditcard creditCardContainer">
+    
+    {% set aImage = {'sImageSrc': '/bundles/chameleonsystemchameleonshoptheme/images/snippets/payment/creditcard.png'} %}
+    {% include '/common/textTeaser/textTeaserImageStrongHeadlineText.html.twig' with {'sHeadline':'100% Sichere Kreditkartenzahlung', 'sText' : 'Dies ist eine sicher 128 Bit verschlüsselte Verbindung!'} %}
+    <br />
+    
+    [{CMSMSG-TShopIPaymentHandlerCreditCardMSG}]
+
+    {% include "/common/userInput/form/select.html.twig" with {'sLabelText':'Kartentyp','sName':'cc_typ','bRequired' : true, 'sValue':aUserInput.cc_typ,
+    'aValueList': cardList }  %}
+
+    {% include "/common/userInput/form/text.html.twig" with {'sLabelText':'Kartennummer','sName':'cc_number','bRequired' : true, 'sValue':aUserInput.cc_number, 'sHelpText':'(Diese 12- bis 16-stellige Zahl finden Sie auf der Vorderseite Ihrer Kreditkarte.)' }  %}
+
+    {% include "/common/userInput/form/text.html.twig" with {'sLabelText':'Karten-Inhaber','sName':'addr_name','bRequired' : true, 'sValue':aUserInput.addr_name }  %}
+
+    {% embed "/common/userInput/form/text.html.twig"  with {'sLabelText':'Gültig bis','bRequired' : true,'sHelpText': '(Das Datum finden Sie ebenfalls auf der Vorderseite.)'} %}
+
+        {% block field %}
+            <select name="cc_expdate_month" class="month">
+                {% for iMonth in 1..12 %}
+                    <option value="{{iMonth}}" {%if aUserInput.cc_expdate_month == iMonth%}selected="selected"{%endif%}>{% if iMonth < 10%}0{%endif%}{{iMonth}}</option>
+                {% endfor %}
+            </select>
+            {% set iStartYear =  "now"|date("Y") %}
+            {% set iEndYear =  iStartYear + 6 %}
+            <select name="cc_expdate_year" class="year">
+                {% for iYear in iStartYear..iEndYear %}
+                    <option value="{{iYear}}" {%if aUserInput.cc_expdate_year == iYear%}selected="selected"{%endif%}>{{iYear}}</option>
+                {% endfor %}
+            </select>
+        {% endblock %}
+    {% endembed %}
+
+    {% set ccHint = "(Diese 3-stellige Zahl finden Sie auf der Rückseite Ihrer Kreditkarte .)" %}
+    {% if amexEnabled %}
+        {% set ccHint = "Geben Sie hier Ihren Sicherheitscode ein.<br/>(Visa, Master: dreistellig, auf der Rückseite Ihrer Kreditkarte;<br/>Amex: vierstellig, auf der Vorderseite Ihrer Karte.)" %}
+    {% endif %}
+    {% embed "/common/userInput/form/text.html.twig"  with {'sLabelText':'Sicherheitscode','bRequired' : true, 'sName':'cc_checkcode', 'sInputClass':'securitycode', 'sValue':aUserInput.cc_checkcode,'sHelpTextHTML': ccHint} %}
+        {% block field %}
+            <span class="inputrow">
+                {{parent()}}
+                <i class="securityicon">&nbsp;</i>
+            </span>
+        {% endblock %}
+    {% endembed %}
+</div>

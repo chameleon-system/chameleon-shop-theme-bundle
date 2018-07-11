@@ -1,0 +1,42 @@
+{#
+    description: show article in wide view from left to right -> image , amount , name , price
+    parameters:
+        ** sImageId
+        ** iAmount
+        ** sManufacturer
+        ** sArticleName
+        ** sPrice
+        ** sCurrency
+        ** sArticleDetailURL
+#}
+
+<div class="snippetShopArticleSimpleWide">
+    <article>
+        <div class="completerow">
+            <div class="articleImage articleRow">
+                <div class="content">
+                    <a href="{{sArticleDetailURL}}">
+                        <img src="{{sImageId | cmsthumb(60,60,true)}}" alt="{{sManufacturer}} {{sArticleName}}" />
+                    </a>
+                </div>
+            </div>
+            <div class="amount articleRow">
+                <div class="content">{{iAmount}}&nbsp;x</div>
+            </div>
+            <div class="name articleRow">
+                <div class="content">
+                    <a href="{{sArticleDetailURL}}">
+                        {% if sManufacturer %}<span class="manufacturerName">{{sManufacturer}}</span>&nbsp;&nbsp;{% endif %}
+                        <span class="articleName">{{sArticleName}}</span>
+                    </a>
+                </div>
+            </div>
+            <div class="price articleRow">
+                <div class="content">
+                    {% include '/pkgShop/shopArticle/price.html.twig' %}
+                </div>
+            </div>
+            <div class="clearfix">&nbsp;</div>
+        </div>
+    </article>
+</div>

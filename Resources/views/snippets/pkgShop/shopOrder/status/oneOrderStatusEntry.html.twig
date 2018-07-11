@@ -1,0 +1,86 @@
+{#
+    'date'=>
+    'codeName'=>
+    'info'=>
+    'aPositions'=>array(
+        array(
+            'amount'=>'',
+            'productName'=>''
+        ),
+        ..
+    ),
+
+#}
+<div class="status">
+    <span class="date">{{ date }}:</span>
+    <span class="code">{{ codeName }}</span>
+</div>
+{{ info|raw }}
+{% if aPositions | length > 0 %}
+<table class="table" style="min-width: 500px"  cellpadding="5">
+    <thead>
+    <tr>
+        <th class="image-and-article" colspan="2" style="text-align:left;">
+            {{'chameleon_system_chameleon_shop_theme.basket.column_article'|trans}}
+        </th>
+        <th class="amount" colspan="3" style="text-align:center;">
+            {{'chameleon_system_chameleon_shop_theme.basket.column_quantity'|trans}}
+        </th>
+        <th class="status" style="text-align:left;">
+            {{'chameleon_system_chameleon_shop_theme.basket.column_state'|trans}}
+        </th>
+        <th class="single price" style="text-align:right;">
+            {{'chameleon_system_chameleon_shop_theme.basket.column_item_price'|trans}}
+        </th>
+        <th colspan="3" class="total price" style="text-align:center;">
+            {{'chameleon_system_chameleon_shop_theme.basket.column_total_price'|trans}}
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for aPosition in aPositions %}
+            <tr class="articleHeadline">
+                <td colspan="10" style="background-color: #E0E0E0;padding:10px;">
+                    <a href="{{aPosition.sArticleDetailURL}}" style="font-weight: bold">
+                        {% if aArticle.sManufacturer %}<span class="manufacturerName">{{aPosition.sManufacturer}}</span>&nbsp;{% endif %}
+                        <span class="articleName">{{aPosition.sArticleName}}{% if aPosition.sArticleVariantName %} - {{ aPosition.sArticleVariantName }}{% endif %}</span>
+                    </a>
+                </td>
+            </tr>
+            <tr class="article">
+                <td class="image">
+                    <a href="{{aPosition.sArticleDetailURL}}">
+                        <img src="{{aPosition.sImageId | cmsthumb(60, 60, true, true)}}" alt="{{aPosition.sManufacturer}} {{aPosition.sArticleName}}" />
+                    </a>
+                </td>
+                <td class="article-information">
+                    {% include '/pkgShop/shopArticle/mails/articleBasket.html.twig' with aPosition %}
+                </td>
+                <td class="usedAmount" style="text-align:right;">
+                    {{aPosition.iUsedAmount}}
+                </td>
+                <td class="amountSpace" style="text-align:center;">
+                    {{ 'chameleon_system_chameleon_shop_theme.text.x_of_y'|trans }}
+                </td>
+                <td class="amount" style="text-align:left;">
+                    {{aPosition.iAmount}}
+                </td>
+                <td class="code" style="text-align:left;">
+                    {{codeName}}
+                </td>
+                <td class="single price" style="text-align:right;">
+                    {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': aPosition.sPrice}  %}
+                </td>
+                <td class="total price" style="text-align:right;">
+                    {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': aPosition.sUsedPriceTotal} %}
+                </td>
+                <td class="amount" style="text-align:center;">
+                    {{ 'chameleon_system_chameleon_shop_theme.text.x_of_y'|trans }}
+                </td>
+                <td class="total price" style="text-align:left;">
+                    {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': aPosition.sPriceTotal} %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}

@@ -1,0 +1,25 @@
+{#
+    description:
+    params:
+        ** sRatingApiId - you can found this in the generated script(s) as the variable certId or on you eKomi page if your NOT logged in (PARTNER ID:)
+#}
+
+{% if sRatingApiId != '' %}
+<!-- eKomiLoader START, only needed once per page -->
+<script type="text/javascript">
+	(function(){
+        if(typeof eKomiIntegrationConfig == "undefined") {
+            eKomiIntegrationConfig = new Array(
+                {certId:'{{sRatingApiId}}'}
+            );
+            if(typeof eKomiIntegrationConfig != "undefined"){for(var eKomiIntegrationLoop=0;eKomiIntegrationLoop<eKomiIntegrationConfig.length;eKomiIntegrationLoop++){
+                var eKomiIntegrationContainer = document.createElement('script');
+                eKomiIntegrationContainer.type = 'text/javascript'; eKomiIntegrationContainer.defer = true;
+                eKomiIntegrationContainer.src = (document.location.protocol=='https:'?'https:':'http:') +"//connect.ekomi.de/integration_1351251446/" + eKomiIntegrationConfig[eKomiIntegrationLoop].certId + ".js";
+                document.getElementsByTagName("head")[0].appendChild(eKomiIntegrationContainer);
+            }}else{if('console' in window){ console.error('connectEkomiIntegration - Cannot read eKomiIntegrationConfig'); }}
+        }
+	})();
+</script>
+<!-- eKomiLoader END, only needed once per page -->
+{% endif %}

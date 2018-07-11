@@ -1,0 +1,7 @@
+{#
+    description: address based on order data
+    parameters:
+        ** aBillingAddress - see /pkgExtranet/address/address.dummy.php
+#}
+{{'chameleon_system_chameleon_shop_theme.order_mail.billing_address'|trans}}:
+{% include '/pkgExtranet/mails/address.txt.twig' with aBillingAddress %}

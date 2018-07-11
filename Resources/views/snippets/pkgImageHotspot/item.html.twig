@@ -1,0 +1,90 @@
+{#
+    description: presenter with marker and layovers
+    vars
+        sActiveItemId
+        sHeadline
+        aNext
+            sTitle
+            sLink
+            sLinkJS
+        aPrevious
+            sTitle
+            sLink
+            sLinkJS
+        aNavigation -array with
+            sTitle
+            sLink
+            sLinkJS
+            bIsActive
+        sBackgroundImageId
+        sBackgroundImageAlt
+        aImageLayoverList
+            iLeft
+            iTop
+            sLink
+            sTitle
+            sImageURL
+            sHoverImageURL
+
+        aMarkerList
+            id
+            iLeft
+            iTop
+            sLink
+            sLinkText
+            sContent
+            sDirection
+            imageMap
+#}
+
+
+<img class="backgroundImage" src="{{ sBackgroundImageId | cmsthumb(1170,385,true) }}" height="385" alt="{{ sBackgroundImageAlt }}" usemap="#image{{ sBackgroundImageId }}" />
+
+{# add image marker  #}
+{% if aImageLayoverList is defined and aImageLayoverList|length > 0 %}
+    {% for aImageLayover in aImageLayoverList %}
+        <a style="left:{{aImageLayover.iLeft}}px;top:{{aImageLayover.iTop}}px;" id="markerLink{{ aImageLayover.id }}" href="{{aImageLayover.sLink}}" title="{{aImageLayover.sTitle}}" class="layover toPercent{% if aImageLayover.sContent != '' %} markerLink{% endif %}"><img src="{{aImageLayover.sImageURL}}" alt="{{aImageLayover.sTitle}}" {% if aImageLayover.sHoverImageURL %}data-url="{{aImageLayover.sHoverImageURL}}" class="toPercent" {% endif %}></a>
+        {% if aImageLayover.sContent != '' %}
+        <div style="top:0px; left:0px" class="marker toPercent" id="markerLayover{{ aImageLayover.id }}">
+            <div class="objectDisplayBlock">
+                <div class="objectDisplayBlockContent">{{aImageLayover.sContent | raw}}</div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{# add object marker (products, etc #}
+{% if aMarkerList is defined and aMarkerList|length > 0 %}
+    {% for aMarker in aMarkerList %}
+
+        {% if aMarker.imageMap != '' %}
+            {% if aMarker.sContent != '' %}
+            <div style="top:{{aMarker.iTop}}px;left:{{aMarker.iLeft}}px" class="marker toPercent" id="markerLayover{{ aMarker.id }}">
+                <div class="objectDisplayBlock">
+                    <div class="objectDisplayBlockContent">{{aMarker.sContent | raw}}</div>
+                </div>
+            </div>
+            {% endif %}
+        {% else %}
+            <div style="top:{{aMarker.iTop}}px;left:{{aMarker.iLeft}}px" class="marker marker-{{aMarker.sDirection|default('right')}} toPercent">
+                <a class="link" href="{{aMarker.sLink}}">
+                    <i class="markericon-{{aMarker.sDirection|default('right')}}">{{("chameleon_system_chameleon_shop_theme.text.jump_to"|trans)}} {{ aMarker.sLinkText}}</i>
+                </a>
+            {% if aMarker.sContent != '' %}
+                <div class="objectDisplayBlock">
+                    <div class="objectDisplayBlockContent">{{aMarker.sContent | raw}}</div>
+                </div>
+            {% endif %}
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    <map name="image{{ sBackgroundImageId }}">
+    {% for aMarker in aMarkerList %}
+        {% if aMarker.imageMap != '' %}
+            <area shape="poly" coords="{{ aMarker.imageMap }}" class="markerMap" id="markerMap{{ aMarker.id }}" href="{{ aMarker.sLink }}" alt="{{("chameleon_system_chameleon_shop_theme.text.jump_to"|trans)}} {{ aMarker.sLinkText}}" title="{{("chameleon_system_chameleon_shop_theme.text.jump_to"|trans)}} {{ aMarker.sLinkText}}">
+        {% endif %}
+    {% endfor %}
+    </map>
+{% endif %}

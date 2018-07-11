@@ -1,0 +1,39 @@
+.snippetShopArticleArticleExtendedInfoBlock {
+  .articleHeadline {
+    margin-top: 2px;
+    .manufacturer {
+      color: @cmsColorPrimaryHigh2;
+    }
+    .article {
+      font-size: 32px;
+    }
+  }
+  .articletext {
+    line-height: 25px;
+    font-size: 13px;
+  }
+  table {
+    margin-top: 29px;
+    margin-bottom: 25px;
+    &.snippetShopArticleArticleExtendedInfoBlock {
+      border-bottom: 1px solid @table-border-color;
+      .snippetShopArticleArticleBundleProducts {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      th {
+        padding-left: 0;
+        .cssFont5;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  .snippetShopArticleArticleExtendedInfoBlock {
+    .articleHeadline {
+      .cssFont2;
+    }
+  }
+}

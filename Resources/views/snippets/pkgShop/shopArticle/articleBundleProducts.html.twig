@@ -1,0 +1,14 @@
+{#
+    description: shows all products that are part of a bundle
+    var
+        aBundleArticleList - array with (sAmount, sTitle, sLink, sPrice, sCurrency)
+#}
+
+<ul class="snippetShopArticleArticleBundleProducts unstyled">
+    {% for aArticle in aBundleArticleList %}
+        <li>
+            <span class="amount">{{aArticle.sAmount}}</span> x <a href="{{aArticle.sLink}}" class="product">{{aArticle.sTitle}}</a> &aacute;
+            {% include "/pkgShop/shopArticle/price.html.twig" with aArticle %}
+        </li>
+    {% endfor %}
+</ul>

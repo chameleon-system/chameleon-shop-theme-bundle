@@ -1,0 +1,15 @@
+{#
+    description:
+    parameters:
+        ** sPaymentName
+        ** aPaymentInformation
+            ** sName
+            ** sValue
+#}
+
+<strong>{{'chameleon_system_chameleon_shop_theme.order_mail.payment_headline'|trans}}:</strong>
+<span>{{sPaymentName}}</span>
+
+<div class="paymentInformation">
+    {{sPaymentHtml|raw}}
+</div>

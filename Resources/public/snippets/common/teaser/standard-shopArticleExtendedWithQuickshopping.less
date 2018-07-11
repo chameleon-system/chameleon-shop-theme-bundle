@@ -1,0 +1,33 @@
+.snippetTeaserStandardBase .quickshop {
+  border: 1px solid transparent;
+  padding: 0 5px 0 5px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -opera-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+
+  .cmsBtn-large();
+  text-transform: uppercase;
+  color: @white;
+  line-height: 25px;
+  background-color: grey;
+  background: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+}
+.snippetTeaserStandardBase .image .linkBar.initHidden{
+  display: none;
+}
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  .snippetTeaserStandardBase .quickshop {
+    font-size: 10px;
+    line-height: 19px;
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  .snippetTeaserStandardBase .quickshop {
+    display: none;
+  }
+}

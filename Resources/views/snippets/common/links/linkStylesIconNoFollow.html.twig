@@ -1,0 +1,12 @@
+{#
+  description: an text teaser with image on left side and text and link on the right
+  parameters:
+      ** sLinkFont  Set font (default = font_ubuntu_light_1)
+      ** sLinkIconClass sprite class for icon (default i-point_dark_grey)
+      ** sTitle
+      ** sLinkURL
+#}
+{% extends "/common/links/linkStylesIcon.html.twig" %}
+{%  block aAdditionalTags %}
+    rel="nofollow"
+{% endblock %}

@@ -1,0 +1,80 @@
+{#
+
+   description: render a shop article teaser in standard format (see common/teaser/standard-base.html.twig)
+   variables:
+     - see common/teaser/standard-base.html.twig
+     - see /pkgShop/shopArticle/articlePrice.html.twig
+
+     bIsNew - new article - show new flag
+     aColor -> array of array(sLink=>'',sHex=>'')
+     sLinkNext - optional link that can be used to switch between alternative presentations of the product
+     sLinkNextJs
+     sLinkPrevious
+     sLinkPreviousJs
+
+#}
+{% extends "/common/teaser/standard-base.html.twig" %}
+
+
+{%- block image -%}
+    {{ parent() }}
+
+    {% if sLinkPrevious is defined or sLinkNext is defined %}
+        <span class="linkBar">
+    {% endif %}
+    {%- block linkbar -%}
+        {%- if sLinkPrevious is defined -%}
+            <a class="linkPrevious" href="{{sLinkPrevious}}" title="{{"chameleon_system_chameleon_shop_theme.products.page_back"|trans}}" {%if sLinkPreviousJs is defined%}onclick="{{sLinkPreviousJs}}"{%endif%}>&lt;</a>
+        {%- endif -%}
+        {%- if sLinkNext is defined -%}
+            <a class="linkNext" href="{{sLinkNext}}" title="{{"chameleon_system_chameleon_shop_theme.products.page_next"|trans}}" {%if sLinkNextJs is defined%}onclick="{{sLinkNextJs}}"{%endif%}>&gt;</a>
+        {%- endif -%}
+    {%- endblock -%}
+    {% if sLinkPrevious is defined or sLinkNext is defined %}
+        </span>
+    {% endif %}
+{%- endblock -%}
+
+{%- block body -%}
+        <div class="productdetails">{{parent()}}</div>
+{%- endblock %}
+{%- block teasertext -%}
+        {% include "/pkgShop/shopArticle/articlePrice.html.twig" %}
+{%- endblock -%}
+
+{%- block footer -%}
+    {% set bHasIcons = bIsNew %}
+    {% set bHasIcons = bHasIcons or sRetailPrice is defined %}
+
+    {# need to define the table outside of the subblock since other snippets will extend the table rows#}
+    {% if (aColors|length > 0) or bHasIcons %}
+        <table class="infoline table table-condensed" title="{{"chameleon_system_chameleon_shop_theme.products.product_details"|trans}}">
+    {% else %}
+        <div class="infoline-placeholder"></div>
+    {%endif%}
+
+    {# extend this if you want to add additional info lines #}
+    {% block footerdetails -%}
+        {% if (aColors|length > 0) or bHasIcons %}
+            <tr class="colors">
+                <td colspan="2">
+                    {% block colors %}
+                    {% endblock %}
+                    {% if bHasIcons -%}
+                        <div class="icons">
+                            <ul>
+                                {%if sRetailPrice is defined %}<li>{%include "/common/badges/sale.html.twig" %}</li>{% endif %}
+                                {%if (bIsNew == true) %}<li>{%include "/common/badges/new.html.twig" %}</li>{% endif %}
+                            </ul>
+                        </div>
+                    {%- endif %}
+                </td>
+            </tr>
+        {% endif %}
+    {%- endblock footerdetails %}
+
+    {% if (aColors|length > 0)  or bHasIcons %}
+        </table>
+    {%endif%}
+
+{%- endblock -%}

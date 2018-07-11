@@ -1,0 +1,17 @@
+{#
+    description: shows the available sizes an article is available in.
+    vars
+        sActiveSizeId
+        aSizeList = array(
+            array('id'=>'','name'=>'', 'selectLink'=>''),
+            ..
+        )
+#}
+
+{%- if aSizeList|length > 0 -%}
+    <ul class="snippetShopArticleArticleSize">
+        {%for aSize in aSizeList %}
+            <li><a href="{{aSize.selectLink}}" class="btn btn-default {%- if sActiveSizeId == aSize.id %} active{% endif %}">{{aSize.name}}</a></li>
+        {% endfor %}
+    </ul>
+{%- endif -%}

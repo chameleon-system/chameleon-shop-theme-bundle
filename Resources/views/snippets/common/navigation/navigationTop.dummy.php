@@ -1,0 +1,108 @@
+<?php
+
+$aTree = array(
+    array(
+        'bIsActive' => false,
+        'bIsExpanded' => true,
+        'sLink' => '#test',
+        'sTitle' => 'Kundencenter',
+        'sSeoTitle' => 'Seo Titel 1',
+        'aChildren' => array(),
+    ),
+    array(
+        'bIsActive' => false,
+        'bIsExpanded' => true,
+        'sLink' => '#test2',
+        'sTitle' => 'Newsletter',
+        'sSeoTitle' => 'Seo Titel 2',
+        'aChildren' => array(),
+    ),
+    array(
+        'bIsActive' => false,
+        'bIsExpanded' => true,
+        'sLink' => '#test2',
+        'sTitle' => 'Retourenservice',
+        'sSeoTitle' => 'Seo Titel 2',
+        'aChildren' => array(),
+    ),
+    array(
+        'bIsActive' => false,
+        'bIsExpanded' => true,
+        'sLink' => '#test2',
+        'sTitle' => 'Deutsch',
+        'sSeoTitle' => 'Seo Titel 2',
+        'sNavigationIconClass' => 'i-flag_de',
+        'aChildren' => array(
+            array(
+                'bIsActive' => false,
+                'bIsExpanded' => true,
+                'sLink' => '#test2',
+                'sTitle' => 'Deutsch',
+                'sSeoTitle' => 'Seo Titel 2',
+                'sNavigationIconClass' => 'i-flag_de',
+                'aChildren' => array(),
+            ),
+            array(
+                'bIsActive' => false,
+                'bIsExpanded' => true,
+                'sLink' => '#test2',
+                'sTitle' => 'Englisch',
+                'sSeoTitle' => 'Seo Titel 2',
+                'sNavigationIconClass' => 'i-flag_gb',
+                'aChildren' => array(),
+            ),
+            array(
+                'bIsActive' => false,
+                'bIsExpanded' => true,
+                'sLink' => '#test2',
+                'sTitle' => 'Spanisch',
+                'sSeoTitle' => 'Seo Titel 2',
+                'sNavigationIconClass' => 'i-flag_es',
+                'aChildren' => array(),
+            ),
+        ),
+    ),
+    array(
+        'bIsActive' => false,
+        'bIsExpanded' => true,
+        'sLink' => '#test2',
+        'sTitle' => '€/ EUR',
+        'sSeoTitle' => 'Seo Titel 2',
+        'aChildren' => array(
+            array(
+                'bIsActive' => false,
+                'bIsExpanded' => true,
+                'sLink' => '#test2',
+                'sTitle' => '€/EUR',
+                'sSeoTitle' => 'Seo Titel 2',
+                'aChildren' => array(),
+            ),
+            array(
+                'bIsActive' => false,
+                'bIsExpanded' => true,
+                'sLink' => '#test2',
+                'sTitle' => '€/EUR',
+                'sSeoTitle' => 'Seo Titel 2',
+                'aChildren' => array(),
+            ),
+            array(
+                'bIsActive' => false,
+                'bIsExpanded' => true,
+                'sLink' => '#test2',
+                'sTitle' => '€/EUR',
+                'sSeoTitle' => 'Seo Titel 2',
+                'aChildren' => array(),
+            ),
+        ),
+    ),
+    array(
+        'bIsActive' => false,
+        'bIsExpanded' => true,
+        'sLink' => '#test2',
+        'sTitle' => 'Login',
+        'sSeoTitle' => 'Seo Titel 2',
+        'aChildren' => array(),
+    ),
+);
+
+return array('aTree' => $aTree);

@@ -1,0 +1,30 @@
+{#
+    description: shows list of shipping groups for the user to select from
+    sCurrency
+    parameter
+        aShippingGroups array of groups each with the following
+            bIsActive
+            sCost
+            sTitle
+            id
+#}
+
+<form class="snippetOrderWizardShippingAndPaymentSelectShippingGroup" name="selectShippingGroupForm" method="post" action="?" accept-charset="utf-8">
+    {{sFormControlParameter | raw}}
+    <fieldset>
+        <h2 class="headline3">{{"chameleon_system_chameleon_shop_theme.checkout.shipping_headline" | trans}}</h2>
+        <ul>
+            {% for aShippingGroup in aShippingGroups %}
+            <li {%if aShippingGroup.bIsActive%}class="active"{%endif%}><label {% if loop.length > 1%}class="radio"{%endif%}>
+                {% if loop.length > 1%}
+                    <input onclick="$(this).parentsUntil('form').parent().submit();" type="radio" {%if aShippingGroup.bIsActive%}checked="checked"{%endif%}  name="aShipping[shop_shipping_group_id]" value="{{aShippingGroup.id}}">
+                {% endif %}
+                <span>{{aShippingGroup.sTitle}}{% if aShippingGroup.sCost%} (<span class="additionalcost">+ {{sCurrency}}{{aShippingGroup.sCost}})</span>{% endif %}</span></label>
+            </li>
+            {% endfor %}
+        </ul>
+    </fieldset>
+    <noscript>
+        <button type="submit" class="btn btn-lg btn-primary">{{"chameleon_system_chameleon_shop_theme.checkout.shipping_select" | trans}}</button>
+    </noscript>
+</form>

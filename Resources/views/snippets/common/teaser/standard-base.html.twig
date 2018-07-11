@@ -1,0 +1,40 @@
+{#
+  description: shows a teaser with image, name, etc. the teaser ist tall
+  variables:
+    sImageUrl
+    sTopic
+    sHeadline
+    sLink
+    sTeaserText - optional
+#}
+{% if iMaxImageWidth is not defined %}{% set iMaxImageWidth = 324 %}{% endif %}
+{% if iMaxImageHeight is not defined %}{% set iMaxImageHeight = 450 %}{% endif %}
+
+<article class="snippetTeaserStandardBase{% block shopArticleColumn %} col-xs-12{% endblock %}">
+    <div class="content">
+        <div class="image">
+            {% block image -%}
+                <a href="{{ sLink }}"><img src="{{ sImageId | cmsthumb(iMaxImageWidth,iMaxImageHeight,true) }}" alt="{{ (sTopic~" "~sHeadline)|trim }}"/></a>
+            {%- endblock %}
+        </div>
+        <div class="body">
+            {%- block body -%}
+                <div class="hgroup">
+                    {% if sTopic %}
+                        <div class="topic"><a href="{{ sLink }}">{{ sTopic }}</a></div>
+                    {% endif %}
+                    {% if sHeadline %}
+                        <div class="headline"><a href="{{ sLink }}">{{ sHeadline }}</a></div>
+                    {% endif %}
+                </div>
+                <div class="teasertext">
+                    {%- block teasertext -%}
+                        {{ sTeaserText | raw }}
+                    {%- endblock -%}
+                </div>
+            {%- endblock -%}
+        </div>
+        {% block footer -%}
+        {%- endblock %}
+    </div>
+</article>

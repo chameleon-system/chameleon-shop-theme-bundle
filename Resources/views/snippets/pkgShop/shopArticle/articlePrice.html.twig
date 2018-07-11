@@ -1,0 +1,20 @@
+{#
+    description: shows the price of a product
+    vars
+        sCurrency
+        sPrice
+        sRetailPrice
+        sShippingLink
+#}
+
+<span class="snippetShopArticleArticlePrice">
+    <span>
+        {%- include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':sPrice} -%}
+        {%- if sRetailPrice -%}
+            <span class="retailPrice">{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':sRetailPrice, 'hasReducedPrice': true} %}</span>
+        {%- endif %}
+        <span class="shippingInfo">
+            {{'chameleon_system_chameleon_shop_theme.checkout.product_vat_note'|trans}} {{sShippingLink|raw}}
+        </span>
+    </span>
+</span>

@@ -1,0 +1,1334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="messages.en.xliff">
+        <body>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.deprecated_browser_message">
+                <source>chameleon_system_chameleon_shop_theme.deprecated_browser_message</source>
+                <target><![CDATA[You are using an outdated browser version.<br>We cannot guarantee proper display of the page.<br>Please update your browser version.]]></target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.action.submit">
+                <source>chameleon_system_chameleon_shop_theme.action.submit</source>
+                <target>Submit</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.action.save">
+                <source>chameleon_system_chameleon_shop_theme.action.save</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.action.create">
+                <source>chameleon_system_chameleon_shop_theme.action.create</source>
+                <target>Create</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.layout.footer_print_page">
+                <source>chameleon_system_chameleon_shop_theme.layout.footer_print_page</source>
+                <target>Print page</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.layout.footer_jump_top">
+                <source>chameleon_system_chameleon_shop_theme.layout.footer_jump_top</source>
+                <target>Jump to top</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.layout.footer_price_note">
+                <source>chameleon_system_chameleon_shop_theme.layout.footer_price_note</source>
+                <target>All prices incl. VAT plus %sShippingLink%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.layout.footer_shipping">
+                <source>chameleon_system_chameleon_shop_theme.layout.footer_shipping</source>
+                <target>shipping</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.layout.header_shipping">
+                <source>chameleon_system_chameleon_shop_theme.layout.header_shipping</source>
+                <target>Shipping</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.layout.header_product_return">
+                <source>chameleon_system_chameleon_shop_theme.layout.header_product_return</source>
+                <target>Return policy</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_username_email">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_username_email</source>
+                <target>Username/Email</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_email">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_email</source>
+                <target>Email address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_email_help">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_email_help</source>
+                <target>We need your email address to be able to send your order confirmation.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_new_email">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_new_email</source>
+                <target>New email address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_password">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_password_check">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_password_check</source>
+                <target>Repeat password</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_create_account">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_create_account</source>
+                <target>Yes, I'd like to benefit from the features of a user account</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_salutation">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_salutation</source>
+                <target>Salutation</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_first_name">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_first_name</source>
+                <target>First name</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_last_name">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_last_name</source>
+                <target>Last name</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_company">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_company</source>
+                <target>Company</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_additional_info">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_additional_info</source>
+                <target>Additional info</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_additional_info_help">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_additional_info_help</source>
+                <target>e.g. company name</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_street_and_number">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_street_and_number</source>
+                <target>Street, no.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_street">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_street</source>
+                <target>Street</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_street_nr">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_street_nr</source>
+                <target>Street no.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_zip">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_zip</source>
+                <target>ZIP</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_city">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_city</source>
+                <target>City</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_date_of_birth">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_date_of_birth</source>
+                <target>Date of birth (DD.MM.YYYY)</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_country">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_country</source>
+                <target>Country</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_phone">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_phone</source>
+                <target>Telephone</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_phone_help">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_phone_help</source>
+                <target>For inquiries, if problems occur with the delivery.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_fax">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_fax</source>
+                <target>Fax</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_subject">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_subject</source>
+                <target>Subject</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_message">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_message</source>
+                <target>Message</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.shipping_address">
+                <source>chameleon_system_chameleon_shop_theme.extranet.shipping_address</source>
+                <target>Shipping address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.billing_address">
+                <source>chameleon_system_chameleon_shop_theme.extranet.billing_address</source>
+                <target>Billing address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.error_send_password_unknown_mail">
+                <source>chameleon_system_chameleon_shop_theme.extranet.error_send_password_unknown_mail</source>
+                <target>This email address is unknown.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.question_register">
+                <source>chameleon_system_chameleon_shop_theme.extranet.question_register</source>
+                <target>Register?</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.question_reset_password">
+                <source>chameleon_system_chameleon_shop_theme.extranet.question_reset_password</source>
+                <target>Forgot password?</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.action_send_password">
+                <source>chameleon_system_chameleon_shop_theme.extranet.action_send_password</source>
+                <target>Send email</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.reset_password_header">
+                <source>chameleon_system_chameleon_shop_theme.extranet.reset_password_header</source>
+                <target>Change password</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.reset_password_help">
+                <source>chameleon_system_chameleon_shop_theme.extranet.reset_password_help</source>
+                <target>Here you can set a new password.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.packstation_finder">
+                <source>chameleon_system_chameleon_shop_theme.extranet.packstation_finder</source>
+                <target>Go to Packstation finder</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.send_to_packstation">
+                <source>chameleon_system_chameleon_shop_theme.extranet.send_to_packstation</source>
+                <target>Send to Packstation</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.packstation_postnumber">
+                <source>chameleon_system_chameleon_shop_theme.extranet.packstation_postnumber</source>
+                <target>PostNumber</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.packstation_number">
+                <source>chameleon_system_chameleon_shop_theme.extranet.packstation_number</source>
+                <target>Packstation No.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.action_login">
+                <source>chameleon_system_chameleon_shop_theme.extranet.action_login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.login_help">
+                <source>chameleon_system_chameleon_shop_theme.extranet.login_help</source>
+                <target>Login here with your credentials:</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.logged_in_as">
+                <source>chameleon_system_chameleon_shop_theme.extranet.logged_in_as</source>
+                <target><![CDATA[You're logged in as <b>%sUsername%</b>. <br /> Click <a href="%sLink%">here</a> to logout.]]></target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.action_update_address">
+                <source>chameleon_system_chameleon_shop_theme.extranet.action_update_address</source>
+                <target>Change address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.action_create_address">
+                <source>chameleon_system_chameleon_shop_theme.extranet.action_create_address</source>
+                <target>Create address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.my_addresses">
+                <source>chameleon_system_chameleon_shop_theme.extranet.my_addresses</source>
+                <target>My addresses</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.action_ship_to_new">
+                <source>chameleon_system_chameleon_shop_theme.extranet.action_ship_to_new</source>
+                <target>Send to a new address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.action_use_for_shipping">
+                <source>chameleon_system_chameleon_shop_theme.extranet.action_use_for_shipping</source>
+                <target>Send to this address</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.action_edit_address">
+                <source>chameleon_system_chameleon_shop_theme.extranet.action_edit_address</source>
+                <target>Change</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.action_delete_address">
+                <source>chameleon_system_chameleon_shop_theme.extranet.action_delete_address</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.address_vcard_telefon">
+                <source>chameleon_system_chameleon_shop_theme.extranet.address_vcard_telefon</source>
+                <target>Tel:</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_current_password">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_current_password</source>
+                <target>Current password</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_new_password">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_new_password</source>
+                <target>New password</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_new_password_check">
+                <source>chameleon_system_chameleon_shop_theme.extranet.form_new_password_check</source>
+                <target>Repeat new password</target>
+            </trans-unit>
+
+
+
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.comments.next_page">
+                <source>chameleon_system_chameleon_shop_theme.comments.next_page</source>
+                <target>Next</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.comments.previous_page">
+                <source>chameleon_system_chameleon_shop_theme.comments.previous_page</source>
+                <target>Back</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.marker.new">
+                <source>chameleon_system_chameleon_shop_theme.marker.new</source>
+                <target>New!</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.text_unknown_product">
+                <source>chameleon_system_chameleon_shop_theme.review.text_unknown_product</source>
+                <target>Unknown product</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.text_waiting_for_publication">
+                <source>chameleon_system_chameleon_shop_theme.review.text_waiting_for_publication</source>
+                <target>Awaiting approval</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.text_published">
+                <source>chameleon_system_chameleon_shop_theme.review.text_published</source>
+                <target>Published</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.single_rating">
+                <source>chameleon_system_chameleon_shop_theme.review.single_rating</source>
+                <target>%article% reviewed by %author% (%rating% - %ratingAge% ago)</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.action_show_all">
+                <source>chameleon_system_chameleon_shop_theme.review.action_show_all</source>
+                <target>Show all reviews</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.reviews">
+                <source>chameleon_system_chameleon_shop_theme.review.reviews</source>
+                <target>Reviews</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.add_review">
+                <source>chameleon_system_chameleon_shop_theme.review.add_review</source>
+                <target>Review product</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.show_reviews">
+                <source>chameleon_system_chameleon_shop_theme.review.show_reviews</source>
+                <target>Check customer reviews</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.author">
+                <source>chameleon_system_chameleon_shop_theme.review.author</source>
+                <target>By %user% - %date%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.rating">
+                <source>chameleon_system_chameleon_shop_theme.review.rating</source>
+                <target>%dStars% stars</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.review_count">
+                <source>chameleon_system_chameleon_shop_theme.review.review_count</source>
+                <target>{0}no reviews|{1}1 review|[2,Inf]%iRatingCount% reviews</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.action_login">
+                <source>chameleon_system_chameleon_shop_theme.review.action_login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.action_register">
+                <source>chameleon_system_chameleon_shop_theme.review.action_register</source>
+                <target>Register</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.forgot_password">
+                <source>chameleon_system_chameleon_shop_theme.review.forgot_password</source>
+                <target>Forgot password?</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.login_required">
+                <source>chameleon_system_chameleon_shop_theme.review.login_required</source>
+                <target>Please login to write a product review.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.write_review_headline">
+                <source>chameleon_system_chameleon_shop_theme.review.write_review_headline</source>
+                <target>Review Product</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.author_name">
+                <source>chameleon_system_chameleon_shop_theme.review.author_name</source>
+                <target>Your name</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.author_name_help">
+                <source>chameleon_system_chameleon_shop_theme.review.author_name_help</source>
+                <target>Will be displayed with your review.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.rating_value">
+                <source>chameleon_system_chameleon_shop_theme.review.rating_value</source>
+                <target>Rating</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.rating_value_help">
+                <source>chameleon_system_chameleon_shop_theme.review.rating_value_help</source>
+                <target>Click on the stars to rate the product.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.title">
+                <source>chameleon_system_chameleon_shop_theme.review.title</source>
+                <target>Title</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.rating_text">
+                <source>chameleon_system_chameleon_shop_theme.review.rating_text</source>
+                <target>Review text</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.review.rating_submit">
+                <source>chameleon_system_chameleon_shop_theme.review.rating_submit</source>
+                <target>Submit review</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.bundle.bundle_content">
+                <source>chameleon_system_chameleon_shop_theme.bundle.bundle_content</source>
+                <target>This bundle contains these products</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.bundle.bundle_content_short">
+                <source>chameleon_system_chameleon_shop_theme.bundle.bundle_content_short</source>
+                <target>Consists of</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.headline">
+                <source>chameleon_system_chameleon_shop_theme.order.headline</source>
+                <target>Your order</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.detail_headline">
+                <source>chameleon_system_chameleon_shop_theme.order.detail_headline</source>
+                <target>Details of order no. %sOrdernumber%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.detail_date">
+                <source>chameleon_system_chameleon_shop_theme.order.detail_date</source>
+                <target>Orders %sOrderDate%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.order_date">
+                <source>chameleon_system_chameleon_shop_theme.order.order_date</source>
+                <target>Order date</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.customer_number">
+                <source>chameleon_system_chameleon_shop_theme.order.customer_number</source>
+                <target>Your customer number</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.order_number">
+                <source>chameleon_system_chameleon_shop_theme.order.order_number</source>
+                <target>Your order number</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.reorder_item">
+                <source>chameleon_system_chameleon_shop_theme.order.reorder_item</source>
+                <target>Buy</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.add_to_wish_list">
+                <source>chameleon_system_chameleon_shop_theme.order.add_to_wish_list</source>
+                <target>Add to wishlist</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.detail_billing_address">
+                <source>chameleon_system_chameleon_shop_theme.order.detail_billing_address</source>
+                <target>Billing address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.detail_shipping_address">
+                <source>chameleon_system_chameleon_shop_theme.order.detail_shipping_address</source>
+                <target>Shipping address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.detail_shipping_address_is_billing_address">
+                <source>chameleon_system_chameleon_shop_theme.order.detail_shipping_address_is_billing_address</source>
+                <target>Same as billing address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.detail_payment">
+                <source>chameleon_system_chameleon_shop_theme.order.detail_payment</source>
+                <target>Payment type</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.detail_access_denied">
+                <source>chameleon_system_chameleon_shop_theme.order.detail_access_denied</source>
+                <target>Access denied</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.detail_order_not_found">
+                <source>chameleon_system_chameleon_shop_theme.order.detail_order_not_found</source>
+                <target>Couldn't find order</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order.detail_unknown_error">
+                <source>chameleon_system_chameleon_shop_theme.order.detail_unknown_error</source>
+                <target>Unknown error</target>
+            </trans-unit>
+
+
+
+
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_history.headline">
+                <source>chameleon_system_chameleon_shop_theme.order_history.headline</source>
+                <target>Order history</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_history.column_date">
+                <source>chameleon_system_chameleon_shop_theme.order_history.column_date</source>
+                <target>Order date</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_history.column_number">
+                <source>chameleon_system_chameleon_shop_theme.order_history.column_number</source>
+                <target>Order number</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_history.column_total">
+                <source>chameleon_system_chameleon_shop_theme.order_history.column_total</source>
+                <target>Orders total</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_history.column_ship_to">
+                <source>chameleon_system_chameleon_shop_theme.order_history.column_ship_to</source>
+                <target>Shipping address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_history.action_show_order">
+                <source>chameleon_system_chameleon_shop_theme.order_history.action_show_order</source>
+                <target>Order</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_history.no_orders">
+                <source>chameleon_system_chameleon_shop_theme.order_history.no_orders</source>
+                <target>You have no orders, yet.</target>
+            </trans-unit>
+
+
+
+
+
+
+
+
+            
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_headline">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_headline</source>
+                <target><![CDATA[Order review & confirmation]]></target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_error">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_error</source>
+                <target>Errors occured (Details see below)</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_shipment">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_shipment</source>
+                <target>Shipment</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_edit">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_shipment_type">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_shipment_type</source>
+                <target>Shipment type</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_payment">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_payment</source>
+                <target>Payment</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_payment_type">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_payment_type</source>
+                <target>Payment type</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_newsletter">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_newsletter</source>
+                <target>Yes, I'd like to receive your newsletter (You can unsubscribe any time)</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_agb">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_agb</source>
+                <target>Terms and conditions</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_agb_block">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_agb_block</source>
+                <target>By ordering you agree to our %sAGB%. Details about data privacy, return policy and cancellation can be found in our %sAGB% as well.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_order">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_order</source>
+                <target>Buy now</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_info_mail">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_info_mail</source>
+                <target>You'll receive an order confirmation by email</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_headline_shipping">
+                <source>chameleon_system_chameleon_shop_theme.checkout.user_headline_shipping</source>
+                <target>Shipment</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_previous_step">
+                <source>chameleon_system_chameleon_shop_theme.checkout.user_previous_step</source>
+                <target>Back to Login</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_next_step">
+                <source>chameleon_system_chameleon_shop_theme.checkout.user_next_step</source>
+                <target>Jump to payment</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_use_shipping_as_billing_address">
+                <source>chameleon_system_chameleon_shop_theme.checkout.user_use_shipping_as_billing_address</source>
+                <target>This is my billing address as well</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_use_shipping_not_as_billing_address">
+                <source>chameleon_system_chameleon_shop_theme.checkout.user_use_shipping_not_as_billing_address</source>
+                <target>A different billing address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_shipping_address">
+                <source>chameleon_system_chameleon_shop_theme.checkout.user_shipping_address</source>
+                <target>Shipping address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_shipping_address_help">
+                <source>chameleon_system_chameleon_shop_theme.checkout.user_shipping_address_help</source>
+                <target>Please specify where to ship your order.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_billing_address">
+                <source>chameleon_system_chameleon_shop_theme.checkout.user_billing_address</source>
+                <target>Billing address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_billing_address_help">
+                <source>chameleon_system_chameleon_shop_theme.checkout.user_billing_address_help</source>
+                <target>Please enter your billing address.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.quantity">
+                <source>chameleon_system_chameleon_shop_theme.checkout.quantity</source>
+                <target>Quantity</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.text_select_a_variant">
+                <source>chameleon_system_chameleon_shop_theme.checkout.text_select_a_variant</source>
+                <target>Please select a variant.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.error_select_a_variant_first">
+                <source>chameleon_system_chameleon_shop_theme.checkout.error_select_a_variant_first</source>
+                <target>Please select a variant first.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.action_add_to_basket">
+                <source>chameleon_system_chameleon_shop_theme.checkout.action_add_to_basket</source>
+                <target>Add to shopping cart</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.error_add_to_basket">
+                <source>chameleon_system_chameleon_shop_theme.checkout.error_add_to_basket</source>
+                <target>Can't add product to cart</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.action_request_call">
+                <source>chameleon_system_chameleon_shop_theme.checkout.action_request_call</source>
+                <target>Please call me</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.payment_headline">
+                <source>chameleon_system_chameleon_shop_theme.checkout.payment_headline</source>
+                <target>Payment options</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.payment_help">
+                <source>chameleon_system_chameleon_shop_theme.checkout.payment_help</source>
+                <target>Please select a payment method</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.payment_select">
+                <source>chameleon_system_chameleon_shop_theme.checkout.payment_select</source>
+                <target>Select</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.shipping_headline">
+                <source>chameleon_system_chameleon_shop_theme.checkout.shipping_headline</source>
+                <target>Your shipping type</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.shipping_and_payment_headline">
+                <source>chameleon_system_chameleon_shop_theme.checkout.shipping_and_payment_headline</source>
+                <target>Shipping type and payment</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.shipping_unavailable">
+                <source>chameleon_system_chameleon_shop_theme.checkout.shipping_unavailable</source>
+                <target>Unfortunately we can't ship to your country at the moment. Please contact our support: %sMail%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.shipping_previous_step">
+                <source>chameleon_system_chameleon_shop_theme.checkout.shipping_previous_step</source>
+                <target>Back to shipment</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.shipping_next_step">
+                <source>chameleon_system_chameleon_shop_theme.checkout.shipping_next_step</source>
+                <target>To order confirmation</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.shipping_select">
+                <source>chameleon_system_chameleon_shop_theme.checkout.shipping_select</source>
+                <target>Select</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.basket_shipping">
+                <source>chameleon_system_chameleon_shop_theme.checkout.basket_shipping</source>
+                <target>Shipping status</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.msg_added_to_basket">
+                <source>chameleon_system_chameleon_shop_theme.checkout.msg_added_to_basket</source>
+                <target>Product added to your shopping cart</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.msg_not_added_to_basket">
+                <source>chameleon_system_chameleon_shop_theme.checkout.msg_not_added_to_basket</source>
+                <target>Product not added to cart</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.action_continue_shopping">
+                <source>chameleon_system_chameleon_shop_theme.checkout.action_continue_shopping</source>
+                <target>Continue shopping</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.action_to_basket">
+                <source>chameleon_system_chameleon_shop_theme.checkout.action_to_basket</source>
+                <target>View shopping cart</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.msg_empty_basket">
+                <source>chameleon_system_chameleon_shop_theme.checkout.msg_empty_basket</source>
+                <target>Your shopping cart is empty</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.product_vat_note">
+                <source>chameleon_system_chameleon_shop_theme.checkout.product_vat_note</source>
+                <target>Incl. VAT plus</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.action_to_payment">
+                <source>chameleon_system_chameleon_shop_theme.checkout.action_to_payment</source>
+                <target>Go to checkout</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.basket_refresh">
+                <source>chameleon_system_chameleon_shop_theme.checkout.basket_refresh</source>
+                <target>Refresh</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.basket_remove_from_basket">
+                <source>chameleon_system_chameleon_shop_theme.checkout.basket_remove_from_basket</source>
+                <target>Remove product</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.basket_paypal_express_checkout">
+                <source>chameleon_system_chameleon_shop_theme.checkout.basket_paypal_express_checkout</source>
+                <target>Express checkout</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_product_list">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_product_list</source>
+                <target>Product list</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_edit_items">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_edit_items</source>
+                <target>Update items</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_edit_items_help">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_edit_items_help</source>
+                <target>You'll be forwarded to the shopping cart</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_order_comment">
+                <source>chameleon_system_chameleon_shop_theme.checkout.confirm_order_comment</source>
+                <target>Your order note for us</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.basket_form_voucher_code">
+                <source>chameleon_system_chameleon_shop_theme.checkout.basket_form_voucher_code</source>
+                <target>Voucher code</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.basket_form_voucher_code_help">
+                <source>chameleon_system_chameleon_shop_theme.checkout.basket_form_voucher_code_help</source>
+                <target>To use a gift voucher or promotional code, please enter it here:</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.basket_action_submit_voucher">
+                <source>chameleon_system_chameleon_shop_theme.checkout.basket_action_submit_voucher</source>
+                <target>Redeem</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.google_analytics.opt_in">
+                <source>chameleon_system_chameleon_shop_theme.google_analytics.opt_in</source>
+                <target>Google Analytics opt-in</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.google_analytics.opt_out">
+                <source>chameleon_system_chameleon_shop_theme.google_analytics.opt_out</source>
+                <target>Google Analytics opt-out</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.minibasket.action_show_basket_title">
+                <source>chameleon_system_chameleon_shop_theme.minibasket.action_show_basket_title</source>
+                <target>Show shopping cart</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.minibasket.action_show_basket">
+                <source>chameleon_system_chameleon_shop_theme.minibasket.action_show_basket</source>
+                <target>Shopping cart</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.minibasket.number_of_products">
+                <source>chameleon_system_chameleon_shop_theme.minibasket.number_of_products</source>
+                <target>Products</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.minibasket.basket_value">
+                <source>chameleon_system_chameleon_shop_theme.minibasket.basket_value</source>
+                <target>Value</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.product_total">
+                <source>chameleon_system_chameleon_shop_theme.basket.product_total</source>
+                <target>Subtotal</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.discount_total">
+                <source>chameleon_system_chameleon_shop_theme.basket.discount_total</source>
+                <target>Discount total</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.voucher">
+                <source>chameleon_system_chameleon_shop_theme.basket.voucher</source>
+                <target>Voucher %sVoucherCode%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.action_remove_voucher">
+                <source>chameleon_system_chameleon_shop_theme.basket.action_remove_voucher</source>
+                <target>Remove</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.discount_voucher_total">
+                <source>chameleon_system_chameleon_shop_theme.basket.discount_voucher_total</source>
+                <target>Discount voucher's subtotal</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.discounted_product_total">
+                <source>chameleon_system_chameleon_shop_theme.basket.discounted_product_total</source>
+                <target>Subtotal after rebate(s)</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.shipping_cost">
+                <source>chameleon_system_chameleon_shop_theme.basket.shipping_cost</source>
+                <target>Shipping</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.payment_surcharge">
+                <source>chameleon_system_chameleon_shop_theme.basket.payment_surcharge</source>
+                <target>Payment surcharge</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.grand_total_without_sponsored_vouchers">
+                <source>chameleon_system_chameleon_shop_theme.basket.grand_total_without_sponsored_vouchers</source>
+                <target>Total</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.sponsored_vouchers_total">
+                <source>chameleon_system_chameleon_shop_theme.basket.sponsored_vouchers_total</source>
+                <target>Sponsored voucher's subtotal</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.vat_value">
+                <source>chameleon_system_chameleon_shop_theme.basket.vat_value</source>
+                <target>Including VAT %dPercent%%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.grand_total">
+                <source>chameleon_system_chameleon_shop_theme.basket.grand_total</source>
+                <target>Total</target>
+            </trans-unit>
+
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_mail.product_list_headline">
+                <source>chameleon_system_chameleon_shop_theme.order_mail.product_list_headline</source>
+                <target>Products</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_mail.billing_address">
+                <source>chameleon_system_chameleon_shop_theme.order_mail.billing_address</source>
+                <target>Billing address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_mail.shipping_address">
+                <source>chameleon_system_chameleon_shop_theme.order_mail.shipping_address</source>
+                <target>Shipping address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_mail.shipping_address_is_billing_address">
+                <source>chameleon_system_chameleon_shop_theme.order_mail.shipping_address_is_billing_address</source>
+                <target>Same as billing address</target>
+            </trans-unit>
+
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_mail.payment_headline">
+                <source>chameleon_system_chameleon_shop_theme.order_mail.payment_headline</source>
+                <target>Payment</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_mail.payment">
+                <source>chameleon_system_chameleon_shop_theme.order_mail.payment</source>
+                <target>Payment: %sPaymentName%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.category_teaser.headline">
+                <source>chameleon_system_chameleon_shop_theme.category_teaser.headline</source>
+                <target>Categories in %sTitle%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.category.navigation_mobile">
+                <source>chameleon_system_chameleon_shop_theme.category.navigation_mobile</source>
+                <target>Category</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_card_type">
+                <source>chameleon_system_chameleon_shop_theme.payment.form_card_type</source>
+                <target>Credit Card type</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_card_number">
+                <source>chameleon_system_chameleon_shop_theme.payment.form_card_number</source>
+                <target>CC Number</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_card_owner">
+                <source>chameleon_system_chameleon_shop_theme.payment.form_card_owner</source>
+                <target>CC Holder</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_card_valid_until">
+                <source>chameleon_system_chameleon_shop_theme.payment.form_card_valid_until</source>
+                <target>Valid until</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_card_checksum">
+                <source>chameleon_system_chameleon_shop_theme.payment.form_card_checksum</source>
+                <target>Card validation code</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_card_shipping">
+                <source>chameleon_system_chameleon_shop_theme.payment.form_card_shipping</source>
+                <target>Your credit card will be charged after shipping.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_debit_headline">
+                <source>chameleon_system_chameleon_shop_theme.payment.form_debit_headline</source>
+                <target>Your bank account</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_debit_account">
+                <source>chameleon_system_chameleon_shop_theme.payment.form_debit_account</source>
+                <target>IBAN</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_debit_bank">
+                <source>chameleon_system_chameleon_shop_theme.payment.form_debit_bank</source>
+                <target>BIC</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_debit_shipping">
+                <source>chameleon_system_chameleon_shop_theme.payment.form_debit_shipping</source>
+                <target>Your account will be charged after shipping.</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.payment.paypal_action_pay">
+                <source>chameleon_system_chameleon_shop_theme.payment.paypal_action_pay</source>
+                <target>Pay now with PayPal</target>
+            </trans-unit>
+
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.filter.headline">
+                <source>chameleon_system_chameleon_shop_theme.filter.headline</source>
+                <target>Filter</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.filter.colour_all_title">
+                <source>chameleon_system_chameleon_shop_theme.filter.colour_all_title</source>
+                <target>All colors</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.filter.colour_all">
+                <source>chameleon_system_chameleon_shop_theme.filter.colour_all</source>
+                <target>All</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.filter.size_all_title">
+                <source>chameleon_system_chameleon_shop_theme.filter.size_all_title</source>
+                <target>All sizes</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.filter.size_all">
+                <source>chameleon_system_chameleon_shop_theme.filter.size_all</source>
+                <target>All</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.filter.multi_select_all">
+                <source>chameleon_system_chameleon_shop_theme.filter.multi_select_all</source>
+                <target>All</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.filter.action_set">
+                <source>chameleon_system_chameleon_shop_theme.filter.action_set</source>
+                <target>Filter</target>
+            </trans-unit>
+
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.form_salutation">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.form_salutation</source>
+                <target>Salutation</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.form_first_name">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.form_first_name</source>
+                <target>First name</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.form_last_name">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.form_last_name</source>
+                <target>Last name</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.form_subscribe_all">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.form_subscribe_all</source>
+                <target>Subscribe to all newsletters</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.action_subscribe">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.action_subscribe</source>
+                <target>Subscribe</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.form_sign_up_email">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.form_sign_up_email</source>
+                <target>Email address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.form_newsletter">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.form_newsletter</source>
+                <target>Newsletter</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.action_signup">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.action_signup</source>
+                <target>Subscribe</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.signout_my_account">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.signout_my_account</source>
+                <target><![CDATA[You've subscribed to our newsletter. Click <a href="%sActionLink%">here</a> to unsubscribe.]]></target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.signup_my_account">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.signup_my_account</source>
+                <target><![CDATA[You're not subscribed to our newsletter. Click <a href="%sActionLink%">here</a> to subscribe.]]></target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.form_quick_signup_help">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.form_quick_signup_help</source>
+                <target>Enter email address and subscribe to our newsletter</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.form_quick_signup_title">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.form_quick_signup_title</source>
+                <target>Newsletter subscription</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.my_newsletters_headline">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.my_newsletters_headline</source>
+                <target>The newsletters you're subscribed to</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.unsubscribe_form_email">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.unsubscribe_form_email</source>
+                <target>Email address</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.unsubscribe_form_unsubscribe_all">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.unsubscribe_form_unsubscribe_all</source>
+                <target>Unsubscribe from all newsletters</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.newsletter.unsubscribe_action_unsubscribe">
+                <source>chameleon_system_chameleon_shop_theme.newsletter.unsubscribe_action_unsubscribe</source>
+                <target>Unsubscribe</target>
+            </trans-unit>
+
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.no_search_results">
+                <source>chameleon_system_chameleon_shop_theme.products.no_search_results</source>
+                <target>Your search returned no results</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.search_term_correction">
+                <source>chameleon_system_chameleon_shop_theme.products.search_term_correction</source>
+                <target>Did you mean "%searchTermSpellchecked%" ?</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.no_products">
+                <source>chameleon_system_chameleon_shop_theme.products.no_products</source>
+                <target>No products found</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.product_list_header">
+                <source>chameleon_system_chameleon_shop_theme.products.product_list_header</source>
+                <target>Products</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.tab.show_all">
+                <source>chameleon_system_chameleon_shop_theme.tab.show_all</source>
+                <target>All %sActiveTabName%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.tab.show">
+                <source>chameleon_system_chameleon_shop_theme.tab.show</source>
+                <target>Show</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.you_searched_for">
+                <source>chameleon_system_chameleon_shop_theme.products.you_searched_for</source>
+                <target>Your search term</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.of_total">
+                <source>chameleon_system_chameleon_shop_theme.products.of_total</source>
+                <target>of</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.sort">
+                <source>chameleon_system_shop.product_list.sort</source>
+                <target>Order by</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.action_change_order">
+                <source>chameleon_system_chameleon_shop_theme.products.action_change_order</source>
+                <target>Apply</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.page_back">
+                <source>chameleon_system_chameleon_shop_theme.products.page_back</source>
+                <target>Back</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.page_next">
+                <source>chameleon_system_chameleon_shop_theme.products.page_next</source>
+                <target>Next</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.page_back_detail">
+                <source>chameleon_system_chameleon_shop_theme.products.page_back_detail</source>
+                <target>Back to page %page% of %pageCount%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.page_next_detail">
+                <source>chameleon_system_chameleon_shop_theme.products.page_next_detail</source>
+                <target>To the next page %page% of %pageCount%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.default_product_alt_text">
+                <source>chameleon_system_chameleon_shop_theme.products.default_product_alt_text</source>
+                <target>Product image</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.action_quickshop">
+                <source>chameleon_system_chameleon_shop_theme.products.action_quickshop</source>
+                <target>Quick shop</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.product_details">
+                <source>chameleon_system_chameleon_shop_theme.products.product_details</source>
+                <target>Product details</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.product_reviews">
+                <source>chameleon_system_chameleon_shop_theme.products.product_reviews</source>
+                <target>Reviews</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.shipping_info">
+                <source>chameleon_system_chameleon_shop_theme.products.shipping_info</source>
+                <target>Available</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.additional_info">
+                <source>chameleon_system_chameleon_shop_theme.products.additional_info</source>
+                <target>Product information</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.attributes">
+                <source>chameleon_system_chameleon_shop_theme.products.attributes</source>
+                <target>Features</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.info_block_header">
+                <source>chameleon_system_chameleon_shop_theme.products.info_block_header</source>
+                <target>Product information</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.bulk_prices_headline">
+                <source>chameleon_system_chameleon_shop_theme.products.bulk_prices_headline</source>
+                <target>Bulk prices</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.bulk_prices_from_quantity">
+                <source>chameleon_system_chameleon_shop_theme.products.bulk_prices_from_quantity</source>
+                <target>starting at %amount% piece(s)</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.questions_you_ask_we_answer">
+                <source>chameleon_system_chameleon_shop_theme.products.questions_you_ask_we_answer</source>
+                <target>Questions about the product? Let us help!</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.questions_you_ask">
+                <source>chameleon_system_chameleon_shop_theme.products.questions_you_ask</source>
+                <target>You have questions about this product?</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.questions_we_answer">
+                <source>chameleon_system_chameleon_shop_theme.products.questions_we_answer</source>
+                <target>We'd like to help you</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.questions_action_send">
+                <source>chameleon_system_chameleon_shop_theme.products.questions_action_send</source>
+                <target>Send question</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.questions_form_name">
+                <source>chameleon_system_chameleon_shop_theme.products.questions_form_name</source>
+                <target>Your name</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.questions_form_name_placeholder">
+                <source>chameleon_system_chameleon_shop_theme.products.questions_form_name_placeholder</source>
+                <target>Last name, First name</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.questions_form_email">
+                <source>chameleon_system_chameleon_shop_theme.products.questions_form_email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.questions_form_question">
+                <source>chameleon_system_chameleon_shop_theme.products.questions_form_question</source>
+                <target>Your question</target>
+            </trans-unit>
+
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.keywords">
+                <source>chameleon_system_chameleon_shop_theme.products.keywords</source>
+                <target>Keywords</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.keywords_search">
+                <source>chameleon_system_chameleon_shop_theme.products.keywords_search</source>
+                <target>Search for %keyword%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.special_attributes">
+                <source>chameleon_system_chameleon_shop_theme.products.special_attributes</source>
+                <target>Special Features</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.previous_product">
+                <source>chameleon_system_chameleon_shop_theme.products.previous_product</source>
+                <target>Previous product</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.next_product">
+                <source>chameleon_system_chameleon_shop_theme.products.next_product</source>
+                <target>Next product</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.return_to_list">
+                <source>chameleon_system_chameleon_shop_theme.products.return_to_list</source>
+                <target>Return to list</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.available_variants">
+                <source>chameleon_system_chameleon_shop_theme.products.available_variants</source>
+                <target>Variants</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.variant_sold_out">
+                <source>chameleon_system_chameleon_shop_theme.products.variant_sold_out</source>
+                <target>Out of stock</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.variant_action_select_type">
+                <source>chameleon_system_chameleon_shop_theme.products.variant_action_select_type</source>
+                <target>Please select your %sType%</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.variant_error_no_type_selected">
+                <source>chameleon_system_chameleon_shop_theme.products.variant_error_no_type_selected</source>
+                <target>You have to select your %sType% first</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.manufacturer_sizes_all">
+                <source>chameleon_system_chameleon_shop_theme.products.manufacturer_sizes_all</source>
+                <target>All sizes</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.products.manufacturer_size_table">
+                <source>chameleon_system_chameleon_shop_theme.products.manufacturer_size_table</source>
+                <target>Size chart</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.action.abort">
+                <source>chameleon_system_chameleon_shop_theme.action.abort</source>
+                <target>Cancel</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.navigation.show_hide_menu">
+                <source>chameleon_system_chameleon_shop_theme.navigation.show_hide_menu</source>
+                <target>Show/hide menu</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.navigation.shop_menu">
+                <source>chameleon_system_chameleon_shop_theme.navigation.shop_menu</source>
+                <target>Shop</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.navigation.service_menu">
+                <source>chameleon_system_chameleon_shop_theme.navigation.service_menu</source>
+                <target>Service</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.badge.new">
+                <source>chameleon_system_chameleon_shop_theme.badge.new</source>
+                <target>New</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.badge.sale">
+                <source>chameleon_system_chameleon_shop_theme.badge.sale</source>
+                <target>Sale</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.manufacturer.no_matches">
+                <source>chameleon_system_chameleon_shop_theme.manufacturer.no_matches</source>
+                <target>Brand/Manufacturer not found</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.notice_list.action_add">
+                <source>chameleon_system_chameleon_shop_theme.notice_list.action_add</source>
+                <target>Add to wish list</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.notice_list.action_move">
+                <source>chameleon_system_chameleon_shop_theme.notice_list.action_move</source>
+                <target>Move to wish list</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.notice_list.action_remove">
+                <source>chameleon_system_chameleon_shop_theme.notice_list.action_remove</source>
+                <target>Remove</target>
+            </trans-unit>
+            
+            <trans-unit id="chameleon_system_chameleon_shop_theme.preorder.headline">
+                <source>chameleon_system_chameleon_shop_theme.preorder.headline</source>
+                <target>Preorder product</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.preorder.help">
+                <source>chameleon_system_chameleon_shop_theme.preorder.help</source>
+                <target>This product is currently not available. We'll inform you by email as soon as the item is back in stock.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.preorder.action_preorder">
+                <source>chameleon_system_chameleon_shop_theme.preorder.action_preorder</source>
+                <target>Vormerken</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.form.select_box_no_selection">
+                <source>chameleon_system_chameleon_shop_theme.form.select_box_no_selection</source>
+                <target>Please select</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.form.select_box_title">
+                <source>chameleon_system_chameleon_shop_theme.form.select_box_title</source>
+                <target>%option% select</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.text.jump_to">
+                <source>chameleon_system_chameleon_shop_theme.text.jump_to</source>
+                <target>to</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.text.x_of_y">
+                <source>chameleon_system_chameleon_shop_theme.text.x_of_y</source>
+                <target>from</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.column_article">
+                <source>chameleon_system_chameleon_shop_theme.basket.column_article</source>
+                <target>Product</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.column_quantity">
+                <source>chameleon_system_chameleon_shop_theme.basket.column_quantity</source>
+                <target>Quantity</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.column_item_price">
+                <source>chameleon_system_chameleon_shop_theme.basket.column_item_price</source>
+                <target>Item price</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.column_total_price">
+                <source>chameleon_system_chameleon_shop_theme.basket.column_total_price</source>
+                <target>Total price</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.basket.column_state">
+                <source>chameleon_system_chameleon_shop_theme.basket.column_state</source>
+                <target>State</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_state.headline">
+                <source>chameleon_system_chameleon_shop_theme.order_state.headline</source>
+                <target>Order state</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.telephone_order.phone">
+                <source>chameleon_system_chameleon_shop_theme.telephone_order.phone</source>
+                <target>Questions about your order?</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.gift_wrapping.action_wrap">
+                <source>chameleon_system_chameleon_shop_theme.gift_wrapping.action_wrap</source>
+                <target>Gift wrap</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.payment_klarna.finanz_starting_at">
+                <source>chameleon_system_chameleon_shop_theme.payment_klarna.finanz_starting_at</source>
+                <target>Installment purchase price starting at %dMonthlyCosts%%sCurrency%/Month for 24 months</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.payment_klarna.klarna_badge_alt">
+                <source>chameleon_system_chameleon_shop_theme.payment_klarna.klarna_badge_alt</source>
+                <target>Installment purchase by Klarna</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.existing_customer_headline">
+                <source>chameleon_system_chameleon_shop_theme.order_login.existing_customer_headline</source>
+                <target>Existing customers</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.existing_customer_help">
+                <source>chameleon_system_chameleon_shop_theme.order_login.existing_customer_help</source>
+                <target>I'm an existing customer and I can provide my credentials:</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.forgot_password">
+                <source>chameleon_system_chameleon_shop_theme.order_login.forgot_password</source>
+                <target>Forgot password?</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.new_customer_headline">
+                <source>chameleon_system_chameleon_shop_theme.order_login.new_customer_headline</source>
+                <target>New customer</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.new_customer_help">
+                <source>chameleon_system_chameleon_shop_theme.order_login.new_customer_help</source>
+                <target>By registering as a customer you can order more quickly, check your order state at any time and review all past orders.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.action_register">
+                <source>chameleon_system_chameleon_shop_theme.order_login.action_register</source>
+                <target>Register</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.guest_headline">
+                <source>chameleon_system_chameleon_shop_theme.order_login.guest_headline</source>
+                <target>Order as guest</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.guest_help">
+                <source>chameleon_system_chameleon_shop_theme.order_login.guest_help</source>
+                <target>When ordering as a guest, your data will not be saved and you don't get your own customer account. When placing another order in the future you'll have to re-enter all your data.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.action_continue_as_guest">
+                <source>chameleon_system_chameleon_shop_theme.order_login.action_continue_as_guest</source>
+                <target>Proceed to checkout as guest</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.telefon_order_headline">
+                <source>chameleon_system_chameleon_shop_theme.order_login.telefon_order_headline</source>
+                <target>I've questions about my order.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.telefon_order_help">
+                <source>chameleon_system_chameleon_shop_theme.order_login.telefon_order_help</source>
+                <target>Please call me!</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.notice_required_fields">
+                <source>chameleon_system_chameleon_shop_theme.notice_required_fields</source>
+                <target>Fields with %requiredFieldsMarker% are required.</target>
+            </trans-unit>
+
+            <trans-unit id="chameleon_system_chameleon_shop_theme.tell_a_friend.no_product">
+                <source>chameleon_system_chameleon_shop_theme.tell_a_friend.no_product</source>
+                <target>No product was given.</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.tell_a_friend.label_sender_name">
+                <source>chameleon_system_chameleon_shop_theme.tell_a_friend.label_sender_name</source>
+                <target>Your name:</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.tell_a_friend.label_sender_email_address">
+                <source>chameleon_system_chameleon_shop_theme.tell_a_friend.label_sender_email_address</source>
+                <target>Your email address:</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.tell_a_friend.label_recipient_name">
+                <source>chameleon_system_chameleon_shop_theme.tell_a_friend.label_recipient_name</source>
+                <target>Recipient's name:</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.tell_a_friend.label_recipient_email_address">
+                <source>chameleon_system_chameleon_shop_theme.tell_a_friend.label_recipient_email_address</source>
+                <target>Recipient's email address:</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.tell_a_friend.label_anti_spam">
+                <source>chameleon_system_chameleon_shop_theme.tell_a_friend.label_anti_spam</source>
+                <target>Anti-spam:</target>
+            </trans-unit>
+            <trans-unit id="chameleon_system_chameleon_shop_theme.tell_a_friend.action_send_message">
+                <source>chameleon_system_chameleon_shop_theme.tell_a_friend.action_send_message</source>
+                <target>Send email</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

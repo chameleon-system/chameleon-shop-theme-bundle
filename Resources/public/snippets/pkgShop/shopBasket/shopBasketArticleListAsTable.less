@@ -1,0 +1,168 @@
+input.input-micro {
+  width: 20px;
+}
+input[type=number].input-micro {
+  width: 32px;
+}
+.snippetShopBasketArticleListAsTable {
+    tr.empty-row {
+        display: none;
+    }
+
+    th {
+        border-top-color: @cmsBorder5;
+
+        &.price {
+          text-align:right;
+        }
+
+        .cmsInput();
+        text-transform: uppercase;
+        background-color: @cmsBackground5;
+        border-right: 1px solid @cmsColorPrimaryHigh5;
+    }
+
+    td {
+        border-top-color: @cmsBorder5;
+
+        .manufacturerName {
+            color: @cmsColorPrimaryHigh2;
+        }
+
+        .articleName {
+            color: @cmsColorPrimaryLow1;
+        }
+
+        &.amount {
+            .cmsHeadlineSmall();
+            .amount-control.input-group {
+                margin-bottom: 30px;
+                max-width: 40px;
+                .input-micro {
+                  min-width: 3em;
+                }
+            }
+            .reload {
+                .i();
+                .i-reload();
+                margin-right: 20px;
+                position: relative;
+                top: 7px;
+                display: block;
+                float: left;
+            }
+            .close {
+                .i();
+                .i-close();
+                float: left;
+                position: relative;
+                top: 2px;
+                margin-right: 5px;
+            }
+            .snippetUserInputButtonAddToNoticeList {
+                margin-bottom: 10px;
+            }
+            .inputIncDecField {
+                margin-right: 20px;
+            }
+        }
+
+        &.price {
+            text-align:right;
+            &.single {
+                .snippetShopArticlePrice {
+                    .cmsHeadlineSmall();
+                    color: @cmsColorPrimaryHigh1;
+
+                    .currency {
+                        .cmsHeadlineSmall();
+                        color:@cmsColorPrimaryHigh2;
+                    }
+                }
+            }
+
+            &.total {
+                .snippetShopArticlePrice {
+                    .cmsHeadline();
+                    @media (max-width: @screen-xs-max) {
+                      font-size: 16px;
+                    }
+
+                    .currency {
+                        .cmsHeadline();
+                        @media (max-width: @screen-xs-max) {
+                          font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+        &.image {
+            padding: 8px 0;
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    td {
+      &.amount {
+        .reload {
+          margin-right:10px;
+        }
+        .inputIncDecField {
+          margin-right:10px;
+        }
+      }
+    }
+  }
+  @media (max-width: @screen-sm-max) {
+    td {
+      &.amount {
+        .input {
+          margin-bottom:10px;
+        }
+        .reload {
+          margin-right:0;
+        }
+        .inputIncDecField {
+          margin-right:0;
+        }
+      }
+    }
+  }
+  @media (max-width: @screen-xs-max) {
+    th, td {
+      padding-right:4px !important;
+      padding-left:4px !important;
+      @media (max-width: 400px) {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+      }
+
+      &.amount .amount-control.input-group {
+        display: block;
+        .input-group-btn,
+        .form-control  {
+          .btn {
+            margin:0;
+            min-width: 3em;
+            display: block;
+            border-radius: 0;
+          }
+        }
+      }
+
+
+      &.article {
+        padding-left:5px;
+      }
+    }
+  }
+  th {
+    padding:4px;
+    font-size:12px;
+  }
+
+}

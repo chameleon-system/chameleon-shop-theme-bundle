@@ -1,0 +1,10 @@
+{%- if error -%}
+    Export wie folgt aufrufen: DOMAIN/Export/sModuleSpotName/{{ spotName }}/view/csv/key/im-shop-hinterlegeter-export-key.txt
+    <br>
+    <br>
+    Froogle erwartet die Datei im root Verzeichnis, daher kann der link alternativ auch mit "-" anstelle von "/" aufgerufen werden
+    Note: Froogle scheint nur echte Dateien zu akzeptieren. Lösung: cronjob -> /usr/bin/lynx -source DOMAIN/Export/sModuleSpotName/primary/view/csv/key/im-shop-hinterlegeter-export-key.txt > /path/to/document/root/somefile.txt
+    <br>
+{%- else -%}
+    {{- exportData|raw -}}
+{%- endif -%}
