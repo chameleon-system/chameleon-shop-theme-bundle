@@ -30,6 +30,9 @@
         "oyejorge/less.php": "~1.5",
         "twbs/bootstrap": "~3.3"
     },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0"
+    },
     "autoload": {
         "psr-4": {
             "ChameleonSystem\\ChameleonShopThemeBundle\\": ""
