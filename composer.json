@@ -31,6 +31,9 @@
         "twbs/bootstrap": "~3.3"
     },
     "require-dev": {
+        "chameleon-system/chameleon-base": "dev-master",
+        "chameleon-system/sanitycheck": "dev-master",
+        "chameleon-system/sanitycheck-bundle": "dev-master",
         "phpunit/phpunit": "~7.0"
     },
     "autoload": {
