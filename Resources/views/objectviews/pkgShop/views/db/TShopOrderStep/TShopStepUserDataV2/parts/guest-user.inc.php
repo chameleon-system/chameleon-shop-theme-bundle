@@ -3,7 +3,6 @@
 /** @var $oShippingAddress TdbDataExtranetUserAddress */
 /** @var $oBillingAddress TdbDataExtranetUserAddress */
 /** @var $bShipToBillingAddress tinyint */
-
 ?>
 <div class="shipping">
     <h2 class="headline3"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.user_shipping_address')); ?></h2>

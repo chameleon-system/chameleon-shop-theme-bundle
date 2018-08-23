@@ -26,7 +26,7 @@
                     <a href="<?=$sBackLink; ?>" class="btn btn-default btn-lg btn-block"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.user_previous_step')); ?></a>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 pull-right">
-                    <button id="primarypaymentbutton" disabled="disabled" type="submit" class="btn btn-large btn-success btn-block" ><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.user_next_step'));?></button>
+                    <button id="primarypaymentbutton" disabled="disabled" type="submit" class="btn btn-large btn-success btn-block" ><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.user_next_step')); ?></button>
                 </div>
             </div>
 		</form>

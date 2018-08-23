@@ -3,7 +3,6 @@
 /** @var $oNewsletterSignup TdbPkgNewsletterUser */
 /** @var $oNewsletterConfig TdbPkgNewsletterModuleSignupconfig */
 /** @var $aMainModuleInfo array */
-
 $oViewRenderer = new ViewRenderer();
 
 $oViewRenderer->addMapperFromIdentifier('chameleon_system_newsletter.mapper.signup_config');

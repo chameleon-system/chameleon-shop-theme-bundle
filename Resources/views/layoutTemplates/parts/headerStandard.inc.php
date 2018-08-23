@@ -1,6 +1,5 @@
 <?php
 /** @var $modules TModuleLoader* */
-
 use ChameleonSystem\CoreBundle\ServiceLocator;
 
 $translator = ServiceLocator::get('translator');
