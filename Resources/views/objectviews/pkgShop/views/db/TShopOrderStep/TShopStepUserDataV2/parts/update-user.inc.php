@@ -37,7 +37,6 @@
 
         <?php
 
-
             include __DIR__.'/ChangeShipToBillingAddress.inc.php';
 
             if ('1' != $bShipToBillingAddress) {
