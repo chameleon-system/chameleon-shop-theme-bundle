@@ -46,7 +46,7 @@
 
             <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_username_email">
                 <source>chameleon_system_chameleon_shop_theme.extranet.form_username_email</source>
-                <target>Username/Email</target>
+                <target>Username/email</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_email">
                 <source>chameleon_system_chameleon_shop_theme.extranet.form_email</source>
@@ -110,7 +110,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_zip">
                 <source>chameleon_system_chameleon_shop_theme.extranet.form_zip</source>
-                <target>ZIP</target>
+                <target>Zip</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.form_city">
                 <source>chameleon_system_chameleon_shop_theme.extranet.form_city</source>
@@ -480,7 +480,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_error">
                 <source>chameleon_system_chameleon_shop_theme.checkout.confirm_error</source>
-                <target>Errors occured (Details see below)</target>
+                <target>Errors occurred (see details below)</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_shipment">
                 <source>chameleon_system_chameleon_shop_theme.checkout.confirm_shipment</source>
@@ -504,7 +504,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_newsletter">
                 <source>chameleon_system_chameleon_shop_theme.checkout.confirm_newsletter</source>
-                <target>Yes, I'd like to receive your newsletter (You can unsubscribe any time)</target>
+                <target>Yes, I'd like to receive your newsletter (you can unsubscribe any time)</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_agb">
                 <source>chameleon_system_chameleon_shop_theme.checkout.confirm_agb</source>
@@ -529,7 +529,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_previous_step">
                 <source>chameleon_system_chameleon_shop_theme.checkout.user_previous_step</source>
-                <target>Back to Login</target>
+                <target>Back to login</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_next_step">
                 <source>chameleon_system_chameleon_shop_theme.checkout.user_next_step</source>
@@ -740,7 +740,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.basket.discounted_product_total">
                 <source>chameleon_system_chameleon_shop_theme.basket.discounted_product_total</source>
-                <target>Subtotal after rebate(s)</target>
+                <target>Subtotal after discount(s)</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.basket.shipping_cost">
                 <source>chameleon_system_chameleon_shop_theme.basket.shipping_cost</source>
@@ -804,15 +804,15 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_card_type">
                 <source>chameleon_system_chameleon_shop_theme.payment.form_card_type</source>
-                <target>Credit Card type</target>
+                <target>Credit card type</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_card_number">
                 <source>chameleon_system_chameleon_shop_theme.payment.form_card_number</source>
-                <target>CC Number</target>
+                <target>CC number</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_card_owner">
                 <source>chameleon_system_chameleon_shop_theme.payment.form_card_owner</source>
-                <target>CC Holder</target>
+                <target>CC holder</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.payment.form_card_valid_until">
                 <source>chameleon_system_chameleon_shop_theme.payment.form_card_valid_until</source>
@@ -1070,7 +1070,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.products.questions_form_name_placeholder">
                 <source>chameleon_system_chameleon_shop_theme.products.questions_form_name_placeholder</source>
-                <target>Last name, First name</target>
+                <target>Last name, first name</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.products.questions_form_email">
                 <source>chameleon_system_chameleon_shop_theme.products.questions_form_email</source>
@@ -1092,7 +1092,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.products.special_attributes">
                 <source>chameleon_system_chameleon_shop_theme.products.special_attributes</source>
-                <target>Special Features</target>
+                <target>Special features</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.products.previous_product">
                 <source>chameleon_system_chameleon_shop_theme.products.previous_product</source>
@@ -1157,7 +1157,7 @@
 
             <trans-unit id="chameleon_system_chameleon_shop_theme.manufacturer.no_matches">
                 <source>chameleon_system_chameleon_shop_theme.manufacturer.no_matches</source>
-                <target>Brand/Manufacturer not found</target>
+                <target>Brand/manufacturer not found</target>
             </trans-unit>
 
             <trans-unit id="chameleon_system_chameleon_shop_theme.notice_list.action_add">
@@ -1183,7 +1183,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.preorder.action_preorder">
                 <source>chameleon_system_chameleon_shop_theme.preorder.action_preorder</source>
-                <target>Vormerken</target>
+                <target>Preorder</target>
             </trans-unit>
 
             <trans-unit id="chameleon_system_chameleon_shop_theme.form.select_box_no_selection">
@@ -1244,7 +1244,7 @@
 
             <trans-unit id="chameleon_system_chameleon_shop_theme.payment_klarna.finanz_starting_at">
                 <source>chameleon_system_chameleon_shop_theme.payment_klarna.finanz_starting_at</source>
-                <target>Installment purchase price starting at %dMonthlyCosts%%sCurrency%/Month for 24 months</target>
+                <target>Installment purchase price starting at %dMonthlyCosts%%sCurrency%/month for 24 months</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.payment_klarna.klarna_badge_alt">
                 <source>chameleon_system_chameleon_shop_theme.payment_klarna.klarna_badge_alt</source>
@@ -1253,11 +1253,11 @@
 
             <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.existing_customer_headline">
                 <source>chameleon_system_chameleon_shop_theme.order_login.existing_customer_headline</source>
-                <target>Existing customers</target>
+                <target>Registered customers</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.existing_customer_help">
                 <source>chameleon_system_chameleon_shop_theme.order_login.existing_customer_help</source>
-                <target>I'm an existing customer and I can provide my credentials:</target>
+                <target>I'm a registered customer and I can provide my credentials:</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.order_login.forgot_password">
                 <source>chameleon_system_chameleon_shop_theme.order_login.forgot_password</source>
