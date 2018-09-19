@@ -27,6 +27,7 @@
     "require": {
         "bassjobsen/bootstrap-3-typeahead": "~4.0",
         "chameleon-system/chameleon-shop": "dev-master",
+        "chameleon-system/code-style-config": "dev-master@dev",
         "oyejorge/less.php": "~1.5",
         "twbs/bootstrap": "~3.3"
     },

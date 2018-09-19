@@ -3,7 +3,6 @@
 /** @var $oShippingAddress TdbDataExtranetUserAddress */
 /** @var $oBillingAddress TdbDataExtranetUserAddress */
 /** @var $bShipToBillingAddress bool */
-
 ?>
 
     <div class="col-xs-12 col-md-3">
@@ -37,7 +36,6 @@
         </div>
 
         <?php
-
 
             include __DIR__.'/ChangeShipToBillingAddress.inc.php';
 

@@ -1,6 +1,5 @@
 <?php
 
-
 $oDummyData = new TPkgViewRendererSnippetDummyData();
 $aRaw = array();
 $aIncludes = array('/pkgShop/shopArticle/articlePrice.dummy.php');

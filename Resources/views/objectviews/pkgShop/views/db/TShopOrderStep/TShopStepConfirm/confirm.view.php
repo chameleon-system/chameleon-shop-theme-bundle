@@ -141,7 +141,7 @@ if ($oMessageManager->ConsumerHasMessages(MTShopBasketCore::MSG_CONSUMER_NAME.'-
                 <div class="col-xs-12 col-sm-4">
                     <button id="primarypaymentbutton" class="btn btn-lg btn-success btn-block" type="submit"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_order')); ?></button>
                     <div class="cssFont5">
-                        (<?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_info_mail'));?>)
+                        (<?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_info_mail')); ?>)
                     </div>
                 </div>
             </form>
