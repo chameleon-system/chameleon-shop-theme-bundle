@@ -202,7 +202,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.logged_in_as">
                 <source>chameleon_system_chameleon_shop_theme.extranet.logged_in_as</source>
-                <target><![CDATA[Sie sind angemeldet als <b>%sUsername%</b>. <br /> Klicken Sie <a href="%sLink%">hier</a> um sich abzumelden.]]></target>
+                <target><![CDATA[Sie sind angemeldet als <b>%sUsername%</b>. <br /> Klicken Sie <a href="%sLink%">hier</a>, um sich abzumelden.]]></target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.extranet.action_update_address">
                 <source>chameleon_system_chameleon_shop_theme.extranet.action_update_address</source>
@@ -348,7 +348,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.review.rating_value_help">
                 <source>chameleon_system_chameleon_shop_theme.review.rating_value_help</source>
-                <target>Klicken Sie auf die Sterne um das Produkt zu bewerten.</target>
+                <target>Klicken Sie auf die Sterne, um das Produkt zu bewerten.</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.review.title">
                 <source>chameleon_system_chameleon_shop_theme.review.title</source>
@@ -512,7 +512,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_agb_block">
                 <source>chameleon_system_chameleon_shop_theme.checkout.confirm_agb_block</source>
-                <target>Mit Ihrer Bestellung erklären Sie sich mit den %sAGB% einverstanden. Einzelheiten zu Datenschutz, Rücksendungen und Widerruf entnehmen Sie bitte ebenfalls unseren %sAGB%</target>
+                <target>Mit Ihrer Bestellung erklären Sie sich mit den %sAGB% einverstanden. Einzelheiten zu Datenschutz, Rücksendungen und Widerruf entnehmen Sie bitte ebenfalls unseren %sAGB%.</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_order">
                 <source>chameleon_system_chameleon_shop_theme.checkout.confirm_order</source>
@@ -520,7 +520,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.confirm_info_mail">
                 <source>chameleon_system_chameleon_shop_theme.checkout.confirm_info_mail</source>
-                <target>Sie erhalten eine Auftragsbestätigung per E-Mail</target>
+                <target>Sie erhalten eine Auftragsbestätigung per E-Mail.</target>
             </trans-unit>
 
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_headline_shipping">
@@ -549,7 +549,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_shipping_address_help">
                 <source>chameleon_system_chameleon_shop_theme.checkout.user_shipping_address_help</source>
-                <target>Bitte geben Sie an wohin wir Ihre Ware schicken dürfen.</target>
+                <target>Bitte geben Sie an, wohin wir Ihre Ware schicken dürfen.</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.user_billing_address">
                 <source>chameleon_system_chameleon_shop_theme.checkout.user_billing_address</source>
@@ -641,7 +641,7 @@
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.msg_empty_basket">
                 <source>chameleon_system_chameleon_shop_theme.checkout.msg_empty_basket</source>
-                <target>Sie haben noch keine Produkte im Warenkorb</target>
+                <target>Sie haben noch keine Produkte im Warenkorb.</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.checkout.product_vat_note">
                 <source>chameleon_system_chameleon_shop_theme.checkout.product_vat_note</source>
@@ -950,7 +950,7 @@
 
             <trans-unit id="chameleon_system_chameleon_shop_theme.products.no_search_results">
                 <source>chameleon_system_chameleon_shop_theme.products.no_search_results</source>
-                <target>Ihre Suche ergab leider keine Treffer</target>
+                <target>Ihre Suche ergab leider keine Treffer.</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.products.search_term_correction">
                 <source>chameleon_system_chameleon_shop_theme.products.search_term_correction</source>
@@ -1244,7 +1244,7 @@
 
             <trans-unit id="chameleon_system_chameleon_shop_theme.payment_klarna.finanz_starting_at">
                 <source>chameleon_system_chameleon_shop_theme.payment_klarna.finanz_starting_at</source>
-                <target>Finanzierung: ab %dMonthlyCosts%%sCurrency%/Monat 24 Monate</target>
+                <target>Finanzierung: Ab %dMonthlyCosts%%sCurrency%/Monat 24 Monate</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.payment_klarna.klarna_badge_alt">
                 <source>chameleon_system_chameleon_shop_theme.payment_klarna.klarna_badge_alt</source>
