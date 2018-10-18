@@ -102,8 +102,8 @@ $translator = ServiceLocator::get('translator');
     <div class="row" id="footerinfoline"><div class="col-xs-12 border">
         <div class="row">
             <div class="col-xs-12 col-sm-4 preiseinfo"><?= $translator->trans('chameleon_system_chameleon_shop_theme.layout.footer_price_note', array('%sShippingLink%' => TdbShop::GetInstance()->GetLinkToSystemPageAsPopUp($translator->trans('chameleon_system_chameleon_shop_theme.layout.footer_shipping'), 'shipping'))); ?></div>
-            <div class="col-xs-12 col-sm-4" id="footernavi"><div class=""><?php $modules->GetModule('footernavi'); ?></div></div>
-            <div class="col-xs-12 col-sm-4 ga-optout-optin-link" style="display: none">
+            <div class="col-xs-12 col-sm-8" id="footernavi"><div class="footernavi-inner"><?php $modules->GetModule('footernavi'); ?></div></div>
+            <div class="col-xs-12 ga-optout-optin-link" style="display: none">
                 <a class="ga-optout-link"><?= $translator->trans('chameleon_system_chameleon_shop_theme.google_analytics.opt_out'); ?></a>
                 <a class="ga-optin-link"><?= $translator->trans('chameleon_system_chameleon_shop_theme.google_analytics.opt_in'); ?></a>
             </div>
