@@ -75,6 +75,11 @@
     .lighttextshadow;
 }
 #footernavi {
+  .footernavi-inner {
+      @media (min-width: @screen-sm-min) {
+          float: right;
+      }
+  }
   .nav-list {
     padding-left: 0;
     li a {
@@ -181,7 +186,7 @@ padding: 20px 20px 0 20px;
         }
     }
     .nav>li>a {
-        padding-left: 0px;
+        padding: 3px 0;
     }
     .ga-optin-link, .ga-optout-link {
         cursor: pointer;
