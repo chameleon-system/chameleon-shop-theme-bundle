@@ -770,7 +770,7 @@
 
             <trans-unit id="chameleon_system_chameleon_shop_theme.order_mail.product_list_headline">
                 <source>chameleon_system_chameleon_shop_theme.order_mail.product_list_headline</source>
-                <target>Products</target>
+                <target>Your order</target>
             </trans-unit>
             <trans-unit id="chameleon_system_chameleon_shop_theme.order_mail.billing_address">
                 <source>chameleon_system_chameleon_shop_theme.order_mail.billing_address</source>
