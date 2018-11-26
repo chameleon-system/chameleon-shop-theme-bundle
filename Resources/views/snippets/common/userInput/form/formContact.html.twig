@@ -46,7 +46,6 @@
                            {% include "/common/userInput/form/text.html.twig" with aFieldFirstNameMapped%}
                        {% endblock %}
 
-
                        {% block fieldLastname %}
                            {% set aFieldNameMapped = {
                                 'sLabelClass' : formDefaultLabelClass,
@@ -57,7 +56,7 @@
                                 'sFieldId': "contactLastName",
                                 'bRequired' : true,
                                 'sError': aFieldName.sError,
-                                'sValue' : aFieldName.sValu
+                                'sValue' : aFieldName.sValue
                            }%}
                            {% include "/common/userInput/form/text.html.twig" with aFieldNameMapped%}
                        {% endblock %}
