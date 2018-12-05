@@ -61,13 +61,12 @@ To use this bundle in a backend-configured theme, do the following:
 - If upgrading from the older standard theme, search for paths starting with `/assets/chameleon-standard-shop-assets/`
   in the file base and replace this path prefix with `/bundles/chameleonsystemchameleonshoptheme/`.
 
-
 Quick-shopping
 --------------
 
 Set the constant SHOP_DISABLE_QUICK_SHOP to true in order to deactivate quick-shopping in product teasers.
 
-Double-Click-Prevention
+Double-Click Prevention
 -----------------------
 
 Any POST forms not marked with the CSS class 'chameleon-allow-double-click' will be prevented from being submitted more

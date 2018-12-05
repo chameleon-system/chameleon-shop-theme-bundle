@@ -17,8 +17,9 @@ License
 -------
 
 This bundle is licensed under the MIT License. See the complete license under `LICENSE` for details.
+This repository also includes works under other copyright notices. See `THIRD-PARTY-LICENSE` for details.
 
-Reporting an issue or a feature request
+Reporting an Issue or a Feature Request
 ---------------------------------------
 
-TODO
+Please report issues and feature requests at the official [GitHub repository](https://github.com/chameleon-system/chameleon-shop-theme-bundle/issues).
