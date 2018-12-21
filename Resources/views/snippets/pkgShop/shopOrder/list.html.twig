@@ -74,7 +74,7 @@
                             {{ aItem.sOrdernumber }}
                         </td>
                         <td data-label="{{ 'chameleon_system_chameleon_shop_theme.order_history.column_total'|trans }}">
-                            {{ aItem.sSumGrandTotal }} {{ sCurrency }}
+                            {{ aItem.sSumGrandTotal }} {% if aItem.currencySymbol is defined %} {{ aItem.currencySymbol }} {% else %}{{ sCurrency }} {% endif %}
                         </td>
                         <td data-label="{{ 'chameleon_system_chameleon_shop_theme.order_history.column_ship_to'|trans }}">
                             {{ aItem.sShippingAddress }}
