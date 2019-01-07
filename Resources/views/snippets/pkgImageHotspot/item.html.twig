@@ -17,6 +17,7 @@
             sLinkJS
             bIsActive
         sBackgroundImageId
+        backgroundImageCropId
         sBackgroundImageAlt
         aImageLayoverList
             iLeft
@@ -37,8 +38,12 @@
             imageMap
 #}
 
-
-<img class="backgroundImage" src="{{ sBackgroundImageId | cmsthumb(1170,385,true) }}" height="385" alt="{{ sBackgroundImageAlt }}" usemap="#image{{ sBackgroundImageId }}" />
+{% if backgroundImageCropId is not null %}
+    {% set backgroundImageUrl = sBackgroundImageId|imageUrlWithCropFallbackPreset(backgroundImageCropId, 'pkgImageHotspotItemBackground') %}
+{% else %}
+    {% set backgroundImageUrl = sBackgroundImageId | cmsthumb(1170,385,true) %}
+{% endif %}
+<img class="backgroundImage" src="{{ backgroundImageUrl|e('html_attr') }}" height="385" alt="{{ sBackgroundImageAlt }}" usemap="#image{{ sBackgroundImageId }}" />
 
 {# add image marker  #}
 {% if aImageLayoverList is defined and aImageLayoverList|length > 0 %}
