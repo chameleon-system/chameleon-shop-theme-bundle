@@ -17,7 +17,7 @@ $data = TCMSLogChange::createMigrationQueryData('cms_image_crop_preset', 'de')
             'height' => '450',
             'system_name' => 'snippetTeaserStandardBase',
             'position' => $highestPosition++,
-            'id' => '240b9fd8-1546-bcca-73f1-20af946f249f',
+            'id' => TCMSLogChange::createUnusedRecordId('cms_image_crop_preset'),
         ]
     );
 TCMSLogChange::insert(__LINE__, $data);
