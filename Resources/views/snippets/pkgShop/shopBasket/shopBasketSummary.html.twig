@@ -36,7 +36,7 @@
                     {% for aDiscountVoucher in aDiscountVoucherList %}
                         <tr class="discount-voucher negative">
                             <th>{{aDiscountVoucher.sName}} ({{ aDiscountVoucher.sCode }}) {% if bShowVoucherRemovalLinks and aDiscountVoucher.sRemoveFromBasketLink %}<span class="remove">[<a href="{{ aDiscountVoucher.sRemoveFromBasketLink|raw }}">{{ "chameleon_system_chameleon_shop_theme.basket.action_remove_voucher"|trans }}</a></span>]{% endif %}:</th>
-                            <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':aDiscountVoucher.sValue} %}</td>
+                            <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':aDiscountVoucher.sValueInOrderCurrency} %}</td>
                         </tr>
                     {%  endfor %}
 
@@ -93,7 +93,7 @@
                     {% for aSponsoredVoucher in aSponsoredVoucherList %}
                         <tr class="sponsored-voucher negative">
                             <th>{{aSponsoredVoucher.sName}} ({{ aSponsoredVoucher.sCode }}) {% if bShowVoucherRemovalLinks and aSponsoredVoucher.sRemoveFromBasketLink %}<span class="remove">[<a href="{{ aSponsoredVoucher.sRemoveFromBasketLink|raw }}">{{ "chameleon_system_chameleon_shop_theme.basket.action_remove_voucher"|trans }}</a></span>]{% endif %}:</th>
-                            <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':aSponsoredVoucher.sValue} %}</td>
+                            <td>{% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':aSponsoredVoucher.sValueInOrderCurrency} %}</td>
                         </tr>
                     {%  endfor %}
                 {% endblock %}

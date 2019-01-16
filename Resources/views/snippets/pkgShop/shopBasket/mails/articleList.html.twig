@@ -150,7 +150,7 @@
                         {{'chameleon_system_chameleon_shop_theme.basket.voucher'|trans({'%sVoucherCode%': aVoucher.sCode})}}:
                     </td>
                     <td class="sumValue voucher{{loop.index-1}}" colspan="2" style="text-align:right;">
-                        - {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': aVoucher.sValue}  %}
+                        - {% include '/pkgShop/shopArticle/price.html.twig' with {'sCurrency': sCurrency, 'sPrice': aVoucher.sValueInOrderCurrency}  %}
                     </td>
                 </tr>
             {% endfor %}
@@ -160,7 +160,7 @@
                         <td class="sumCaption voucher_sponsored{{loop.index-1}}" colspan="3" style="text-align:right;">
                             {{'chameleon_system_chameleon_shop_theme.basket.voucher'|trans({'%sVoucherCode%': aSponsoredVoucher.sName})}}:
                         <td class="sumValue voucher_sponsored{{loop.index-1}}" colspan="2" style="text-align:right;">
-                          - {% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':aSponsoredVoucher.sValue} %}</td>
+                          - {% include '/pkgShop/shopArticle/price.html.twig'  with {'sCurrency':sCurrency, 'sPrice':aSponsoredVoucher.sValueInOrderCurrency} %}</td>
                     </tr>
                 {%  endfor %}
             {% endblock %}
