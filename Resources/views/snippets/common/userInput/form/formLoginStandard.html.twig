@@ -22,8 +22,10 @@
     {% endif %}
     {% if not bIsLoggedIn %}
         <div class="loginForm">
-            <form accept-charset="utf-8" method="post" action="{{ loginFormAction is defined ? loginFormAction : '?' }}" class="{% block formClass%}form-horizontal{% endblock%}">
-                {% if sSpotName %}<input type="hidden" value="Login" name="module_fnc[{{sSpotName}}]">{% endif %}
+            <form accept-charset="utf-8" method="post"
+                  {% if loginFormAction is defined %}action="{{ loginFormAction | e('html_attr') }}"{% endif %}
+                  class="{% block formClass %}form-horizontal{% endblock %}">
+            {% if sSpotName %}<input type="hidden" value="Login" name="module_fnc[{{sSpotName}}]">{% endif %}
                 <input type="hidden" value="" name="spwdhash">
                 <input type="hidden" value="loginBox" name="sConsumer">
                 <input type="hidden" value="{{sLoginSuccessURL}}" name="sSuccessURL">
