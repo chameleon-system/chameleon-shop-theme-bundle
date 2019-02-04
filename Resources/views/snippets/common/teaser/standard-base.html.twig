@@ -14,7 +14,12 @@
     <div class="content">
         <div class="image">
             {% block image -%}
-                <a href="{{ sLink }}"><img src="{{ sImageId | cmsthumb(iMaxImageWidth,iMaxImageHeight,true) }}" alt="{{ (sTopic~" "~sHeadline)|trim }}"/></a>
+                {% if sImageId|imageHasCropDataForPreset('snippetTeaserStandardBase') %}
+                    {% set imageUrl = sImageId|imageUrlWithCropFallbackPreset(null, 'snippetTeaserStandardBase') %}
+                {% else %}
+                    {% set imageUrl = sImageId|cmsthumb(iMaxImageWidth,iMaxImageHeight,true) %}
+                {% endif %}
+                <a href="{{ sLink }}"><img src="{{ imageUrl|e('html_attr') }}" alt="{{ (sTopic~" "~sHeadline)|trim }}"/></a>
             {%- endblock %}
         </div>
         <div class="body">
