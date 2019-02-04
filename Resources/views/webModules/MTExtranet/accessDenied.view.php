@@ -1,9 +1,10 @@
 <?php
-/**
- * @var $sModuleSpotName string
- * @var $sSuccessUrl     string
- */
-$translator = \ChameleonSystem\CoreBundle\ServiceLocator::get('translator');
+
+use ChameleonSystem\CoreBundle\Service\ActivePageServiceInterface;
+use ChameleonSystem\CoreBundle\ServiceLocator;
+use ChameleonSystem\ExtranetBundle\Interfaces\ExtranetConfigurationInterface;
+
+$translator = ServiceLocator::get('translator');
 
 $oViewRenderer = new ViewRenderer();
 $oViewRenderer->AddMapper(new TPkgExtranetMapper_Login());
@@ -16,10 +17,22 @@ $oViewRenderer->AddSourceObject('sRegisterLinkTitle', $translator->trans('chamel
 $oViewRenderer->AddSourceObject('sForgetPasswordLinkTitle', $translator->trans('chameleon_system_chameleon_shop_theme.extranet.question_reset_password'));
 
 if (empty($sSuccessURL)) {
-    $activePageService = \ChameleonSystem\CoreBundle\ServiceLocator::get('chameleon_system_core.active_page_service');
+    /**
+     * @var $activePageService ActivePageServiceInterface
+     */
+    $activePageService = ServiceLocator::get('chameleon_system_core.active_page_service');
     $sSuccessURL = $activePageService->getLinkToActivePageRelative();
 }
 $oViewRenderer->AddSourceObject('sLoginSuccessURL', $sSuccessURL);
+
+/**
+ * @var $extranetConfig ExtranetConfigurationInterface
+ */
+$extranetConfig = ServiceLocator::get('chameleon_system_extranet.extranet_config');
+$loginUrl = $extranetConfig->getLink(ExtranetConfigurationInterface::PAGE_LOGIN);
+if (null !== $loginUrl && '' !== $loginUrl) {
+    $oViewRenderer->AddSourceObject('loginFormAction', $loginUrl);
+}
 
 ?>
 
