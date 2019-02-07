@@ -7,6 +7,14 @@ CHAMELEON.Custom.GetLoadingImageConfig = function () {
     return {baseZ:2000, bindEvents:false, constrainTabKey:false, timeout:50000, css:{border:'none', backgroundColor:'transparent'}, overlayCSS:{backgroundColor:'#fff', opacity:0.5}, message:'<div class="loadingbg"><img src="/assets/images/loader.gif" /></div>' };
 };
 
+window.onpageshow = function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+};
+
+$(window).on('unload', function () { });
+
 function GetAjaxCall(url, functionName) {
     $.ajax({
         url:url,
