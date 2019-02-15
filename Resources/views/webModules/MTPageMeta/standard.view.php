@@ -20,8 +20,6 @@ foreach ($data['aMetaData'] as $metaType => $metaData) {
     }
 }
 
-// TODO what about other MTPageMeta/standard.view.php ("non-theme")?
-
 foreach ($data['language-alternatives'] as $iso => $url) {
     echo sprintf('<link rel="alternate" href="%s" hreflang="%s"/>', $url, $iso);
 }
