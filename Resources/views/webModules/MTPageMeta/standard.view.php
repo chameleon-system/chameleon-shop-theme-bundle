@@ -22,11 +22,10 @@ foreach ($data['aMetaData'] as $metaType => $metaData) {
 
 // TODO what about other MTPageMeta/standard.view.php ("non-theme")?
 
-if (\count($data['language-alternatives']) > 0) {
-    foreach ($data['language-alternatives'] as $iso => $url) {
-        echo sprintf('<link rel="alternate" href="%s" hreflang="%s"/>', $url, $iso);
-    }
+foreach ($data['language-alternatives'] as $iso => $url) {
+    echo sprintf('<link rel="alternate" href="%s" hreflang="%s"/>', $url, $iso);
 }
+
 if (!empty($data['sCustomHeaderData'])) {
     echo $data['sCustomHeaderData'];
 }
