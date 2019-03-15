@@ -13,3 +13,11 @@ $data = TCMSLogChange::createMigrationQueryData('cms_image_crop_preset', 'en')
         ]
     )->setWhereEquals(['system_name' => 'snippetTeaserStandardBase']);
 TCMSLogChange::update(__LINE__, $data);
+
+$data = TCMSLogChange::createMigrationQueryData('cms_image_crop_preset', 'de')
+    ->setFields(
+        [
+            'name' => 'Standard-Teaser (z.B. in Produktlisten verwendet)',
+        ]
+    )->setWhereEquals(['system_name' => 'snippetTeaserStandardBase']);
+TCMSLogChange::update(__LINE__, $data);
