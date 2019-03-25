@@ -1,7 +1,9 @@
 <?php
+use ChameleonSystem\CoreBundle\ServiceLocator;
+
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
   $oShop = TdbShop::GetInstance();
-  $oPortal = TTools::GetActivePortal();
+  $oPortal = ServiceLocator::get('chameleon_system_core.portal_domain_service')->getActivePortal();
 
 ?>
 <feed xmlns="http://www.w3.org/2005/Atom">

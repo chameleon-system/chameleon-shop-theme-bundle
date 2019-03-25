@@ -1,4 +1,9 @@
-<?php if (TGlobal::IsCMSTemplateEngineEditMode()) {
+<?php
+
+use ChameleonSystem\CoreBundle\ServiceLocator;
+
+$isCmsTemplateEngineEditMode = ServiceLocator::get('chameleon_system_core.request_info_service')->isCmsTemplateEngineEditMode();
+    if (true === $isCmsTemplateEngineEditMode) {
     ?>
     <!doctype html>
     <head>
@@ -8,7 +13,7 @@
 <?php
 } ?>
 <?php $modules->GetModule('primary'); ?>
-<?php if (TGlobal::IsCMSTemplateEngineEditMode()) {
+<?php if (true === $isCmsTemplateEngineEditMode) {
         ?>
     </body>
     </html>
