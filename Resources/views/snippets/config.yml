@@ -3,8 +3,3 @@ js:
     - /bundles/chameleonsystemchameleonshoptheme/js/chameleonBootstrapExtension.js
     - /bundles/chameleonsystemchameleonshoptheme/js/bootstrap3-typeahead.min.js
     - /bundles/chameleonsystemchameleonshoptheme/bootstrap/js/tooltip.js
-    - /bundles/chameleonsystemchameleonshoptheme/snippets/widgets/socialSharePrivacy/js/jquery.socialshareprivacy.js
-    - /bundles/chameleonsystemchameleonshoptheme/snippets/widgets/socialSharePrivacy/js/initsocialshareprivacy.js
-
-less:
-    - /bundles/chameleonsystemchameleonshoptheme/snippets/widgets/socialSharePrivacy/less/custom-socialshareprivacy.less
