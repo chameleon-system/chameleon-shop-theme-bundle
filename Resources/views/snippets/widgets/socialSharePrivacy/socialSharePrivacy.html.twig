@@ -1,1 +1,11 @@
-<div class="socialSharePrivacy" data-language="{{ socialLanguage }}"></div>
+<div class="socialSharePrivacy">
+    Teilen auf:<br>
+
+    {% if activeArticleUrl is defined %}
+        <a href="https://www.twitter.com/share?url={{ activeArticleUrl | url_encode }}" target="_blank">Twitter</a><br>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ activeArticleUrl | url_encode }}" target="_blank">Facebook</a>
+    {% else  %}
+        <a href="javascript: window.open('https://www.twitter.com/share?url=' + encodeURI(document.location.href), '_blank')">Twitter</a><br>
+        <a href="javascript: window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURI(document.location.href), '_blank')">Facebook</a>
+    {% endif %}
+</div>

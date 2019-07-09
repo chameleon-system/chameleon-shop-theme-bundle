@@ -1,3 +1,5 @@
+/* @deprecated since 6.2.11 - not used anymore */
+
 $(document).ready(function () {
     $('.socialSharePrivacy').each(function(){
         var language = $(this).data("language");
