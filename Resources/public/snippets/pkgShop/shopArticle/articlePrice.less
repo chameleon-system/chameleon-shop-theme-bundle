@@ -1,14 +1,39 @@
 .snippetShopArticleArticlePrice {
+    .snippetShopArticlePrice {
+        font-size: 17px;
+        .currency {
+            font-size: 16px;
+        }
+
+        @media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+            font-size: 14px !important;
+            .currency {
+                font-size: 13px !important;
+            }
+        }
+    }
+
     .retailPrice {
+        padding-left: 5px;
+
         .snippetShopArticlePrice {
             .cmsHeadlineSmall();
             white-space: nowrap;
             text-decoration: line-through;
             color:@cmsColorSecondary6;
+            font-size: 15px;
 
             .currency {
                 color:@cmsColorPrimaryHigh4;
                 .cmsHeadlineSmall();
+                font-size: 14px;
+            }
+
+            @media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+                font-size: 12px !important;
+                .currency {
+                    font-size: 11px !important;
+                }
             }
         }
     }
