@@ -28,6 +28,20 @@ $translator = ServiceLocator::get('translator');
                         <div class="navbar-brand-icons">
                             <div class="searchMagnifier"><span class="glyphicon glyphicon-search"></span></div>
                             <div class="miniBasketMobile"><?php $modules->GetModule('minibasketmobile'); ?></div>
+                            <div id="mainMenueButton">
+                                <button class="navbar-toggle collapsed" id="buttonMobileNavigationMain" data-toggle="collapse"
+                                        data-target="#mainMenu" aria-expanded="false">
+                                    <span class="sr-only"><?= $translator->trans('chameleon_system_chameleon_shop_theme.navigation.shop_menu'); ?></span>
+                                    <span class="icon-menu">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </span>
+                                    <span class="buttonText">
+                                        <?= $translator->trans('chameleon_system_chameleon_shop_theme.navigation.shop_menu'); ?>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

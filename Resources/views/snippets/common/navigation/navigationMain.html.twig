@@ -24,20 +24,7 @@
 {% if iLevel == 1 %}
     <nav class="hidden-print">
         <div class="navbar navbar-default">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" id="buttonMobileNavigationMain" data-toggle="collapse"
-                        data-target="#mainMenu" aria-expanded="false">
-                    <span class="sr-only">{{ "chameleon_system_chameleon_shop_theme.navigation.shop_menu"|trans }}</span>
-                    <span class="icon-menu">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </span>
-                    <span class="buttonText">
-                        {{ "chameleon_system_chameleon_shop_theme.navigation.shop_menu"|trans }}
-                    </span>
-                </button>
-            </div>
+            {# the mobile menu-button (navbar-header) has moved to headerStandard.inc.php within the fixed header #}
 
             <div id="mainMenu" class="collapse navbar-collapse">
 {% endif %}
