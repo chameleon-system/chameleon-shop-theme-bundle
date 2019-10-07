@@ -1,4 +1,7 @@
 .snippetShopArticleArticlePrice {
+    position: relative;
+    display: inline-block;
+    width: 100%;
     .snippetShopArticlePrice {
         font-size: 17px;
         .currency {
@@ -15,6 +18,13 @@
 
     .retailPrice {
         padding-left: 5px;
+
+        @media screen and (max-width: 450px) {
+            position: absolute;
+            left: 0;
+            top: -12px;
+            padding-left: 0;
+        }
 
         .snippetShopArticlePrice {
             .cmsHeadlineSmall();
