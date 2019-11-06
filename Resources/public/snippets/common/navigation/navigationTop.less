@@ -43,10 +43,15 @@
         align-items: center;
         color: @cmsColorPrimaryHigh1;
         font-size: @cmsFontBaseSize+10;
-        margin-left: 1em;
+        margin-left: 0;
 
         .searchMagnifier {
           font-size: 0.8em;
+          margin-top: 5px;
+          display: none;
+          @media (min-width: 400px) {
+            display: block;
+          }
         }
 
         a {
@@ -55,19 +60,21 @@
 
         .miniBasketMobile {
           margin-left: 0.5em;
-          margin-right: 0.1em;
-          @media (min-width: 580px) {
-            margin-left: 1em;
-            margin-right: 0.5em;
-          }
+          margin-right: 0.5em;
+          margin-top: 5px;
+          padding-left: 0;
 
           position: relative;
           .amount {
             position: absolute;
-            top: 5px;
-            right: -5px;
+            top: -5px;
+            right: 3px;
             background: @cmsBackground6;
           }
+        }
+
+        #mainMenueButton .navbar-toggle {
+          margin-right: 0;
         }
       }
     }
