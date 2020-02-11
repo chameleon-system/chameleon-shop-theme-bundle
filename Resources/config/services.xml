@@ -16,7 +16,7 @@
                  class="ChameleonSystem\ChameleonShopThemeBundle\Bridge\Chameleon\Mapper\FormBootstrapStyleDefaultsMapper">
         </service>
 
-        <service id="chameleon_system_chameleon_shop_theme.mapper.schema_org_product"
+        <service id="chameleon_system_chameleon_shop_theme.mapper.schema_org_product" public="true"
                  class="ChameleonSystem\ChameleonShopThemeBundle\Bridge\Chameleon\Mapper\SchemaOrgProductMapper">
         </service>
     </services>
