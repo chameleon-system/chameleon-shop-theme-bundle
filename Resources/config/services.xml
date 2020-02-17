@@ -13,7 +13,8 @@
 
     <services>
         <service id="chameleon_system_chameleon_shop_theme.mapper.form_style_defaults"
-                 class="ChameleonSystem\ChameleonShopThemeBundle\Bridge\Chameleon\Mapper\FormBootstrapStyleDefaultsMapper">
+                 class="ChameleonSystem\ChameleonShopThemeBundle\Bridge\Chameleon\Mapper\FormBootstrapStyleDefaultsMapper"
+                 public="true">
         </service>
 
         <service id="chameleon_system_chameleon_shop_theme.mapper.schema_org_product" public="true"
