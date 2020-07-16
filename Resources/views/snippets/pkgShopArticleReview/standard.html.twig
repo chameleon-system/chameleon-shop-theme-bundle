@@ -15,7 +15,7 @@
 
 {% set iNumberOfStars = 5 %}
 {% set bIsHalfStar = false %}
-{% spaceless %}
+{% apply spaceless %}
 <ul class="snippetRatingStandard" title="{{'chameleon_system_chameleon_shop_theme.review.rating'|trans({'%dStars%':dRating})}}">
     {% for iStar in 1..iNumberOfStars %}
     {% set starType = "" %}
@@ -29,4 +29,4 @@
     <li class="star{{starType}} star_{{iStar}}">{% if starType == "half" %}o{% elseif starType == "full" %}*{%else%}&nbsp;{% endif %}</li>
     {% endfor %}
 </ul>
-{% endspaceless %}
+{% endapply %}

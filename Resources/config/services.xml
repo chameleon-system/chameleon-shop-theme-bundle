@@ -14,10 +14,12 @@
     <services>
         <service id="chameleon_system_chameleon_shop_theme.mapper.form_style_defaults"
                  class="ChameleonSystem\ChameleonShopThemeBundle\Bridge\Chameleon\Mapper\FormBootstrapStyleDefaultsMapper">
+            <tag name="chameleon_system.mapper"/>
         </service>
 
         <service id="chameleon_system_chameleon_shop_theme.mapper.schema_org_product"
                  class="ChameleonSystem\ChameleonShopThemeBundle\Bridge\Chameleon\Mapper\SchemaOrgProductMapper">
+            <tag name="chameleon_system.mapper"/>
         </service>
     </services>
 
