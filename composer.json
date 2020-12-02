@@ -26,15 +26,15 @@
     },
     "require": {
         "bassjobsen/bootstrap-3-typeahead": "~4.0",
-        "chameleon-system/chameleon-shop": "dev-master",
+        "chameleon-system/chameleon-shop": "~7.1.0",
         "wikimedia/less.php": "^2.0",
         "twbs/bootstrap": "~3.3"
     },
     "require-dev": {
-        "chameleon-system/chameleon-base": "dev-master",
+        "chameleon-system/chameleon-base": "~7.1.0",
         "chameleon-system/code-style-config": "dev-master@dev",
-        "chameleon-system/sanitycheck": "dev-master",
-        "chameleon-system/sanitycheck-bundle": "dev-master",
+        "chameleon-system/sanitycheck": "~7.1.0",
+        "chameleon-system/sanitycheck-bundle": "~7.1.0",
         "phpunit/phpunit": "~7.0"
     },
     "autoload": {
