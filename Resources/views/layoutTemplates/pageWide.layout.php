@@ -12,7 +12,6 @@ $modules->GetModule('breadcrumbNavigation', false, '<div class="row"><div class=
 
 $sSpotName = 'primary';
 echo $modules->GetModule($sSpotName, true, '<div class="row"><div id="spot'.$sSpotName.'" class="col-xs-12 cmsspot">[{content}]</div></div>', false);
-TGlobal::GetController()->FlushContentToBrowser();
 
 $sLeftColumnContent = '';
 $sSpotName = 'spot1';
@@ -36,7 +35,6 @@ if (!empty($sLeftColumnContent) || !empty($sRightColumnContent)) {
     echo '<div class="col-xs-12 col-md-4 col-md-push-8">'.$sRightColumnContent.'</div>';
     echo '<div class="col-xs-12 col-md-8 col-md-pull-4">'.$sLeftColumnContent.'</div>';
     echo '</div>';
-    TGlobal::GetController()->FlushContentToBrowser();
 }
 
 $sLeftColumnContent = '';
@@ -60,11 +58,9 @@ if (!empty($sLeftColumnContent) || !empty($sRightColumnContent)) {
     echo '<div class="col-xs-6">'.$sLeftColumnContent.'</div>';
     echo '<div class="col-xs-6">'.$sRightColumnContent.'</div>';
     echo '</div>';
-    TGlobal::GetController()->FlushContentToBrowser();
 }
 
 $sSpotName = 'lasso';
 echo $modules->GetModule($sSpotName, true, '<div class="row"><div id="spot'.$sSpotName.'" class="col-xs-12 cmsspot">[{content}]</div></div>', false);
-TGlobal::GetController()->FlushContentToBrowser();
 
 include __DIR__.'/page-skeleton/layoutFooter.inc.php';
