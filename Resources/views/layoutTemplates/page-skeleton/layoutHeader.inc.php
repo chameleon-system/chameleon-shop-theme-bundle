@@ -20,7 +20,6 @@ TdbPkgExternalTrackerList::GetActiveInstance()->TrackPage($activePage);
 </div>
 <a id="top"></a>
 <div id="headerwrap">
-    <div id="headerimg"></div>
     <?php
     if (!empty($sHeaderFile)) {
         include __DIR__.'/../'.$sHeaderFile;
