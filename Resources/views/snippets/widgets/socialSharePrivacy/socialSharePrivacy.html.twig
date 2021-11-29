@@ -1,11 +1,29 @@
 <div class="socialSharePrivacy">
-    Teilen auf:<br>
+    <div class="row">
+        <div class="col-xs-12">Teilen auf:</div>
+        {% if activeArticleUrl is defined %}
+            <div class="col-xs-6">
+                <a href="https://www.twitter.com/share?url={{ activeArticleUrl | url_encode }}" target="_blank">
+                    Twitter
+                </a>
+            </div>
 
-    {% if activeArticleUrl is defined %}
-        <a href="https://www.twitter.com/share?url={{ activeArticleUrl | url_encode }}" target="_blank">Twitter</a><br>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ activeArticleUrl | url_encode }}" target="_blank">Facebook</a>
-    {% else  %}
-        <a href="javascript: window.open('https://www.twitter.com/share?url=' + encodeURI(document.location.href), '_blank')">Twitter</a><br>
-        <a href="javascript: window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURI(document.location.href), '_blank')">Facebook</a>
-    {% endif %}
+            <div class="col-xs-6">
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ activeArticleUrl | url_encode }}" target="_blank">
+                    Facebook
+                </a>
+            </div>
+        {% else  %}
+            <div class="col-xs-6">
+                <a href="javascript: window.open('https://www.twitter.com/share?url=' + encodeURI(document.location.href), '_blank')">
+                    <span class="icomoon-twitter"></span> Twitter
+                </a>
+            </div>
+            <div class="col-xs-6">
+                <a href="javascript: window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURI(document.location.href), '_blank')">
+                    <span class="icomoon-facebook2"></span> Facebook
+                </a>
+            </div>
+        {% endif %}
+    </div>
 </div>

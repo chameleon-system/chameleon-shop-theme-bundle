@@ -2,7 +2,7 @@
             </div>
         </div>
         <div id="footercontainer">
-            <div class="container"><i class="i i-white-nose-transparent-down">&nbsp;</i>
+            <div class="container">
 
 <?php
     if (!empty($sFooterFile)) {
