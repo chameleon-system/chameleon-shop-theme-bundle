@@ -2,7 +2,7 @@
   /*@var $oShopBundleArticle TdbShopBundleArticle*/
   /*@var $aCallTimeVars array*/
 
-  $oArticle = &$oShopBundleArticle->GetFieldBundleArticle();
+  $oArticle = $oShopBundleArticle->GetFieldBundleArticle();
 
 ?>
 <div class="TShopBundleArticle"><div class="standard">

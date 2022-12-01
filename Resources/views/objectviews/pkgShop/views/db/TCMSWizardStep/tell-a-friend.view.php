@@ -3,7 +3,7 @@
   /*@var $oArticle TdbShopArticle*/
 
   $oUser = TdbDataExtranetUser::GetInstance();
-  $oExtranetConfig = &TdbDataExtranet::GetInstance();
+  $oExtranetConfig = TdbDataExtranet::GetInstance();
   $translator = \ChameleonSystem\CoreBundle\ServiceLocator::get('translator');
   $requiredFieldsNotice = $translator->trans('chameleon_system_chameleon_shop_theme.notice_required_fields', array(
     '%requiredFieldsMarker%' => '<span class="required">*</span>',

@@ -5,7 +5,7 @@
   /*@var $oArticle TdbShopArticle*/
   /*@var $sMessages string*/
   /*@var $aCallTimeVars array*/
-  $oStockMessage = &$oArticle->GetFieldShopStockMessage();
+  $oStockMessage = $oArticle->GetFieldShopStockMessage();
   if (!is_null($oStockMessage)) {
       /*$oShopStockMessageTrigger =& $oStockMessage->GetFieldShopStockMessageTrigger(); /**@var $oShopStockMessageTrigger TdbShopStockMessageTrigger
       if (!is_null($oShopStockMessageTrigger)) echo $oShopStockMessageTrigger->fieldCssClass;

@@ -7,6 +7,6 @@
   /*@var $aCallTimeVars array*/
 
   if ($oArticle->fieldIsBundle) {
-      $oBundleList = &$oArticle->GetFieldShopBundleArticleList();
+      $oBundleList = $oArticle->GetFieldShopBundleArticleList();
       echo $oBundleList->Render('standard', 'Customer', $aCallTimeVars);
   }

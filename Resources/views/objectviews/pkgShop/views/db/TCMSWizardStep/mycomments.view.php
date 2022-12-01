@@ -2,7 +2,7 @@
   /*@var $oStep TdbCmsWizardStep*/
 
   $oUser = TdbDataExtranetUser::GetInstance();
-  $oReviews = &$oUser->GetFieldShopArticleReviewList();
+  $oReviews = $oUser->GetFieldShopArticleReviewList();
 
 ?>
 <div class="step">
@@ -20,7 +20,7 @@
     <input type="hidden" name="<?=TGlobal::OutHTML(MTCMSWizardCore::URL_PARAM_MODULE_SPOT); ?>" value="<?=TGlobal::OutHTML($sSpotName); ?>" />
 
     <?php
-    while ($oReview = &$oReviews->Next()) {
+    while ($oReview = $oReviews->Next()) {
         echo $oReview->Render('owner', 'Customer');
     }
     ?>

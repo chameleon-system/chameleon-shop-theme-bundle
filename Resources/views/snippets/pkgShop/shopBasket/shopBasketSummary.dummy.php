@@ -78,7 +78,7 @@ $aData = array(
 
 // map d and i
 if (!function_exists('addFormattedValues__')) {
-    function addFormattedValues__(&$aData)
+    function addFormattedValues__($aData)
     {
         foreach (array_keys($aData) as $sField) {
             if (is_array($aData[$sField])) {

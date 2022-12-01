@@ -3,7 +3,7 @@
   /*@var $sMessages string*/
   /*@var $aCallTimeVars array*/
 
-  $oLocal = &TCMSLocal::GetActive();
+  $oLocal = TCMSLocal::GetActive();
   $oManufacturer = $oArticle->GetFieldShopManufacturer();
 ?>
 <div class="TShopArticle"><div class="hotspot">

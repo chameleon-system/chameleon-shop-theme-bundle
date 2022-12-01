@@ -3,7 +3,7 @@
 /** @var $oModuleConfig TdbDataExtranetModuleMyAccount */
 /** @var $sNewsSignupLink string */
 /** @var $sNewsSignoutLink string */
-$oNewsletterUser = &TdbPkgNewsletterUser::GetInstanceForActiveUser();
+$oNewsletterUser = TdbPkgNewsletterUser::GetInstanceForActiveUser();
 $oViewRender = new ViewRenderer();
 $oViewRender->addMapperFromIdentifier('chameleon_system_shop.mapper.my_account.my_account_mapper_newsletter');
 $oViewRender->AddSourceObject('oNewsletterUser', $oNewsletterUser);

@@ -8,8 +8,8 @@
   /*@var $oArticle TdbShopArticle*/
   /*@var $sMessages string*/
   /*@var $aCallTimeVars array*/
-  $oLocal = &TCMSLocal::GetActive();
-  $oPreviewObject = &$oArticle->GetImagePreviewObject('cover-large'); /* @var $oPreviewObject TdbShopArticlePreviewImage */
+  $oLocal = TCMSLocal::GetActive();
+  $oPreviewObject = $oArticle->GetImagePreviewObject('cover-large'); /* @var $oPreviewObject TdbShopArticlePreviewImage */
   $oPrimaryCategory = $oArticle->GetPrimaryCategory();
   $oManufacturer = $oArticle->GetFieldShopManufacturer();
 

@@ -1,6 +1,6 @@
 <?php
-  $oInfos = &$data['oInfos']; /*@var $oInfos TdbShopSystemInfoList */
-  $oConf = &$data['oConf']; /*@var $oConf TdbShopSystemInfoModuleConfig */
+  $oInfos = $data['oInfos']; /*@var $oInfos TdbShopSystemInfoList */
+  $oConf = $data['oConf']; /*@var $oConf TdbShopSystemInfoModuleConfig */
 
 ?>
   <div class="shopinfopage">
@@ -14,7 +14,7 @@
           echo "<div class=\"intro\">{$sIntoText}</div><br />\n";
       }
 
-      while ($oInfo = &$oInfos->Next()) {
+      while ($oInfo = $oInfos->Next()) {
           echo $oInfo->Render('standard', 'Customer');
       }
 

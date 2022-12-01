@@ -17,7 +17,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
   <id>urn:uuid:<?=TTools::GetUUID(); ?></id>
   <generator uri="http://www.chameleon-cms.com" version="3.0">ESONO Chameleon CMS</generator>
 <?php
-    while ($oArticle = &$data['oArticleList']->Next()) { /*@var $oArticle TdbShopArticle */
+    while ($oArticle = $data['oArticleList']->Next()) { /*@var $oArticle TdbShopArticle */
         echo $oArticle->Render('atom-froogle', 'Customer');
     }
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-$oExtranetConfig = &TdbDataExtranet::GetInstance();
+$oExtranetConfig = TdbDataExtranet::GetInstance();
 $oViewRender = new ViewRenderer();
 $oViewRender->AddMapper(new TCMSWizardStepMapper_UserProfileEmail());
 $oViewRender->addMapperFromIdentifier('chameleon_system_chameleon_shop_theme.mapper.form_style_defaults');

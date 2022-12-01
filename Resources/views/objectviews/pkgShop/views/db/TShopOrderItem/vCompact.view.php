@@ -3,8 +3,8 @@
   /*@var $oOrderItem TdbShopOrderItem*/
   /*@var $aCallTimeVars array*/
 
-  $oOriginalArticle = &$oOrderItem->GetFieldShopArticle();
-  $oLocal = &TCMSLocal::GetActive();
+  $oOriginalArticle = $oOrderItem->GetFieldShopArticle();
+  $oLocal = TCMSLocal::GetActive();
 
   echo TGlobal::OutHTML($oLocal->FormatNumber($oOrderItem->fieldOrderAmount, 0).' '.$oOrderItem->fieldName);
   if ($oOriginalArticle) {

@@ -41,7 +41,7 @@
   }
 
   echo implode("\t", $aTmpFields)."\n";
-  while ($oArticle = &$data['oArticleList']->Next()) { /*@var $oArticle TdbShopArticle */
+  while ($oArticle = $data['oArticleList']->Next()) { /*@var $oArticle TdbShopArticle */
       if (!$oArticle->HasVariants()) {
           $aRawData = $aFields;
           $sCatPath = '';
