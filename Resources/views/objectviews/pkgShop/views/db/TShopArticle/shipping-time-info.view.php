@@ -7,7 +7,7 @@
   /*@var $aCallTimeVars array*/
   $oStockMessage = $oArticle->GetFieldShopStockMessage();
   if (!is_null($oStockMessage)) {
-      /*$oShopStockMessageTrigger =& $oStockMessage->GetFieldShopStockMessageTrigger(); /**@var $oShopStockMessageTrigger TdbShopStockMessageTrigger
+      /*$oShopStockMessageTrigger = $oStockMessage->GetFieldShopStockMessageTrigger(); /**@var $oShopStockMessageTrigger TdbShopStockMessageTrigger
       if (!is_null($oShopStockMessageTrigger)) echo $oShopStockMessageTrigger->fieldCssClass;
       else echo $oStockMessage->fieldName;*/ ?>
 <div class="TShopArticle"><div class="shipping-time-info <?=$oStockMessage->fieldClass; ?>">
