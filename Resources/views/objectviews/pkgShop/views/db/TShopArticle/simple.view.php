@@ -10,7 +10,7 @@
   if ($oParentArticle->IsVariant()) {
       $oParentArticle = $oArticle->GetFieldVariantParent();
   }
-  $oLocal = &TCMSLocal::GetActive();
+  $oLocal = TCMSLocal::GetActive();
   $oUser = TdbDataExtranetUser::GetInstance();
   $sBlockId = $oArticle->id;
   if ($oArticle->IsVariant()) {
@@ -38,7 +38,7 @@
                       // no match... so find one
                       $oVariantList->GoToStart();
                       $bFound = false;
-                      while (!$bFound && ($oCurrentVariant = &$oVariantList->Next())) {
+                      while (!$bFound && ($oCurrentVariant = $oVariantList->Next())) {
                           $oColor = $oCurrentVariant->GetActiveVaraintValue('color');
                           if (in_array($oColor->fieldName, $aFilter)) {
                               $bFound = true;
@@ -70,7 +70,7 @@
       }
   }
 
-  $oPreviewObject = &$oArticle->GetImagePreviewObject($aCallTimeVars['imageSizeIdentifier']); /* @var $oPreviewObject TdbShopArticlePreviewImage */
+  $oPreviewObject = $oArticle->GetImagePreviewObject($aCallTimeVars['imageSizeIdentifier']); /* @var $oPreviewObject TdbShopArticlePreviewImage */
 
   $sBlockCSSClass = '';
   if (array_key_exists('sBlockCSSClass', $aCallTimeVars)) {

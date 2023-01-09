@@ -17,7 +17,7 @@
         <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.form_salutation')); ?><span class="required">*</span></th>
         <td>
           <?php
-            $oSalutationList = &TdbDataExtranetSalutationList::GetList();
+            $oSalutationList = TdbDataExtranetSalutationList::GetList();
             $sSelectedId = $oUserAddress->fieldDataExtranetSalutationId;
             while ($oSalutation = $oSalutationList->Next()) {
                 $sSelected = '';
@@ -123,7 +123,7 @@
         <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.form_country')); ?><span class="required">*</span></th>
         <td>
           <?php
-            $oCountries = &TdbDataCountryList::GetList();
+            $oCountries = TdbDataCountryList::GetList();
             $oShop = TdbShop::GetInstance();
             $iCountryId = $oUserAddress->fieldDataCountryId;
             if (is_null($iCountryId) || $iCountryId < 1) {

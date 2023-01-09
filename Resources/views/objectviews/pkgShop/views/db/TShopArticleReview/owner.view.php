@@ -2,7 +2,7 @@
   /*@var $oReview TdbShopArticleReview */
   /*@var $aCallTimeVars array */
 
-  $oArticle = &$oReview->GetFieldShopArticle();
+  $oArticle = $oReview->GetFieldShopArticle();
 ?>
 <div class="TShopArticleReview"><div class="owner">
   <div class="reviewitem">

@@ -2,8 +2,8 @@
   <h2><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.order.headline')); ?></h2>
 
   <?php
-    $oLocal = &TCMSLocal::GetActive();
-    $oSal = &$oOrder->GetFieldAdrBillingSalutation();
+    $oLocal = TCMSLocal::GetActive();
+    $oSal = $oOrder->GetFieldAdrBillingSalutation();
     $sSal = 'Herr';
     if (!is_null($oSal)) {
         $sSal = $oSal->fieldName;

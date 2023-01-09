@@ -41,7 +41,7 @@
   /**
    * @var $oArticle TdbShopArticle
    */
-  while ($oArticle = &$data['oArticleList']->Next()) {
+  while ($oArticle = $data['oArticleList']->Next()) {
       $sInfoText = $oArticle->GetTextFieldPlain('description_short');
       if (!empty($sInfoText)) {
           $sInfoText .= "\n";
@@ -49,11 +49,11 @@
       $sInfoText .= $oArticle->GetTextFieldPlain('description');
 
       $sManufacturer = '';
-      $oManufacturer = &$oArticle->GetFieldShopManufacturer();
+      $oManufacturer = $oArticle->GetFieldShopManufacturer();
       if (!is_null($oManufacturer)) {
           $sManufacturer = $oManufacturer->fieldName;
       }
-      $oImages = &$oArticle->GetFieldShopArticleImageList();
+      $oImages = $oArticle->GetFieldShopArticleImageList();
 
       $aData = array();
       $aData['link'] = viewEscapeCSVField($oArticle->GetDetailLink(true));
@@ -75,7 +75,7 @@
 
       $aImageUrls = array();
       $iMaxImageCount = 10;
-      while ($iMaxImageCount > 0 && ($oImg = &$oImages->Next())) {
+      while ($iMaxImageCount > 0 && ($oImg = $oImages->Next())) {
           --$iMaxImageCount;
           $oCMSImage = $oImg->GetImage(0, 'cms_media_id');
           $aImageUrls[] = $oCMSImage->GetFullURL();

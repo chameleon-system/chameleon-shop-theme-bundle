@@ -6,7 +6,7 @@
    * @var $sMessages     string
    * @var $aCallTimeVars array
    */
-  $oLocal = &TCMSLocal::GetActive();
+  $oLocal = TCMSLocal::GetActive();
   $sDetailLink = $oArticle->GetDetailLink(true);
 
   $sInfoText = $oArticle->fieldUsp;
@@ -14,9 +14,9 @@
       $sInfoText = $oArticle->fieldSubtitle;
   }
 
-  $oManufacturer = &$oArticle->GetFieldShopManufacturer();
+  $oManufacturer = $oArticle->GetFieldShopManufacturer();
 
-  $oImages = &$oArticle->GetFieldShopArticleImageList();
+  $oImages = $oArticle->GetFieldShopArticleImageList();
 
 ?>
 <entry>
@@ -38,7 +38,7 @@
 
   <?php
     $iMaxImageCount = 10;
-    while ($iMaxImageCount > 0 && ($oImg = &$oImages->Next())) {
+    while ($iMaxImageCount > 0 && ($oImg = $oImages->Next())) {
         --$iMaxImageCount;
         $oCMSImage = $oImg->GetImage(0, 'cms_media_id');
         echo '<g:image_link>'.$oCMSImage->GetFullURL()."</g:image_link>\n";

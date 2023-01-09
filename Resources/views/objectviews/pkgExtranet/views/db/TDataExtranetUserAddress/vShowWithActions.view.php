@@ -2,7 +2,7 @@
   /** @var $oUserAddress TdbDataExtranetUserAddress */
   /** @var $oExtranetConfig TdbDataExtranet */
   /** @var $aCallTimeVars array */
-  $oExtranetConfig = &TdbDataExtranet::GetInstance();
+  $oExtranetConfig = TdbDataExtranet::GetInstance();
   $translator = \ChameleonSystem\CoreBundle\ServiceLocator::get('translator');
 
   $bShowShippingAddressInput = '0';
@@ -13,7 +13,7 @@
 
   $oCountry = $oUserAddress->GetCountry(true);
   $aName = array();
-  $oSal = &$oUserAddress->GetFieldDataExtranetSalutation();
+  $oSal = $oUserAddress->GetFieldDataExtranetSalutation();
   if (null !== $oSal) {
       $aName[] = TGlobal::OutHTML($oSal->GetName());
   }

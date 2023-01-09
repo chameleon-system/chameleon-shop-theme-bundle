@@ -5,7 +5,7 @@
   /*@var $oArticle TdbShopArticle*/
   /*@var $sMessages string*/
   /*@var $aCallTimeVars array*/
-  $oLocal = &TCMSLocal::GetActive();
+  $oLocal = TCMSLocal::GetActive();
   $sDetailLink = $oArticle->GetDetailLink(true);
 
   $sInfoText = $oArticle->fieldUsp;
