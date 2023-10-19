@@ -9,6 +9,5 @@ $sFooterFile = '/parts/footerPopUp.inc.php';
 include __DIR__.'/page-skeleton/layoutPopUpHeader.inc.php';
 $sSpotName = 'primary';
 echo $modules->GetModule($sSpotName, true, '<div class="row"><div id="spot'.$sSpotName.'" class="col-xs-12 cmsspot">[{content}]</div></div>', false);
-TGlobal::GetController()->FlushContentToBrowser();
 
 include __DIR__.'/page-skeleton/layoutPopUpFooter.inc.php';

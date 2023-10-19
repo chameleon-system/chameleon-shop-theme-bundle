@@ -14,12 +14,10 @@ $modules->GetModule('breadcrumbNavigation', false, '<div class="row"><div class=
         <?php
         $sSpotName = 'subnavi';
         echo $modules->GetModule($sSpotName, true, '<div id="spot'.$sSpotName.'" class="cmsspot">[{content}]</div>', false);
-        TGlobal::GetController()->FlushContentToBrowser();
 
         for ($i = 7; $i <= 12; ++$i) {
             $sSpotName = 'spot'.$i;
             echo  $modules->GetModule($sSpotName, true, '<div id="spot'.$sSpotName.'" class="cmsspot">[{content}]</div>', false);
-            TGlobal::GetController()->FlushContentToBrowser();
         }
         ?>
     </div>
@@ -27,12 +25,10 @@ $modules->GetModule('breadcrumbNavigation', false, '<div class="row"><div class=
         <?php
         $sSpotName = 'primary';
         echo $modules->GetModule($sSpotName, true, '<div id="spot'.$sSpotName.'" class="cmsspot">[{content}]</div>', false);
-        TGlobal::GetController()->FlushContentToBrowser();
 
         for ($i = 1; $i <= 6; ++$i) {
             $sSpotName = 'spot'.$i;
             echo  $modules->GetModule($sSpotName, true, '<div id="spot'.$sSpotName.'" class="cmsspot">[{content}]</div>', false);
-            TGlobal::GetController()->FlushContentToBrowser();
         }
         ?>
     </div>
@@ -41,6 +37,5 @@ $modules->GetModule('breadcrumbNavigation', false, '<div class="row"><div class=
 <?php
 $sSpotName = 'lasso';
 echo $modules->GetModule($sSpotName, true, '<div class="row"><div id="spot'.$sSpotName.'" class="col-xs-12 cmsspot">[{content}]</div></div>', false);
-TGlobal::GetController()->FlushContentToBrowser();
 
 include __DIR__.'/page-skeleton/layoutFooter.inc.php';

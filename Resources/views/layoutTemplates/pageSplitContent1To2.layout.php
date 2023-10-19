@@ -15,7 +15,6 @@ include __DIR__.'/page-skeleton/layoutHeader.inc.php';
                 <?php
                 $sSpotName = 'oPrevNext';
                 echo $modules->GetModule($sSpotName, true, null, false);
-                TGlobal::GetController()->FlushContentToBrowser();
                 ?>
             </div>
         </div>
@@ -25,7 +24,6 @@ include __DIR__.'/page-skeleton/layoutHeader.inc.php';
 <?php
 $sSpotName = 'primary';
 echo $modules->GetModule($sSpotName, true, '<div class="row"><div id="spot'.$sSpotName.'" class="col-xs-12 cmsspot">[{content}]</div></div>', false);
-TGlobal::GetController()->FlushContentToBrowser();
 ?>
 
 <div class="row">
@@ -34,7 +32,6 @@ TGlobal::GetController()->FlushContentToBrowser();
             for ($i = 7; $i <= 12; ++$i) {
                 $sSpotName = 'spot'.$i;
                 echo  $modules->GetModule($sSpotName, true, '<div id="spot'.$sSpotName.'" class="cmsspot">[{content}]</div>', false);
-                TGlobal::GetController()->FlushContentToBrowser();
             }
         ?>
     </div>
@@ -52,7 +49,6 @@ TGlobal::GetController()->FlushContentToBrowser();
             for ($i = 3; $i <= 6; ++$i) {
                 $sSpotName = 'spot'.$i;
                 echo  $modules->GetModule($sSpotName, true, '<div id="spot'.$sSpotName.'" class="cmsspot">[{content}]</div>', false);
-                TGlobal::GetController()->FlushContentToBrowser();
             }
 
         ?>
@@ -63,6 +59,5 @@ TGlobal::GetController()->FlushContentToBrowser();
 <?php
     $sSpotName = 'lasso';
     echo $modules->GetModule($sSpotName, true, '<div class="row"><div id="spot'.$sSpotName.'" class="col-xs-12 cmsspot">[{content}]</div></div>', false);
-    TGlobal::GetController()->FlushContentToBrowser();
 
 include __DIR__.'/page-skeleton/layoutFooter.inc.php';
