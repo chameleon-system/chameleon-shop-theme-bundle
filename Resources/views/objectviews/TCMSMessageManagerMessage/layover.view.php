@@ -7,7 +7,6 @@ $oViewRenderer = new ViewRenderer();
 
 $oViewRenderer->addMapperFromIdentifier('chameleon_system_shop_currency.mapper.shop_currency_mapper');
 $oViewRenderer->addMapperFromIdentifier('chameleon_system_core.mapper.message_manager');
-$oViewRenderer->AddMapper(new \ChameleonSystem\AmazonPaymentBundle\mappers\AmazonButtonWidgetMapper());
 $oViewRenderer->AddSourceObject('oMessageType', $oMessageType);
 $oViewRenderer->AddSourceObject('sMessage', $sMessageString);
 

@@ -1,17 +1,4 @@
 <div class="row">
-	<div class="amazonSelectAddress col-xs-12 col-md-6">
-		<?php
-        if (null === $amazonConfig) {
-            echo 'error loading amazon widget';
-        } else {
-            $oViewRenderer = new ViewRenderer();
-            $oViewRenderer->AddMapper(new \ChameleonSystem\AmazonPaymentBundle\mappers\AmazonWidgetMapper());
-            $oViewRenderer->AddSourceObject('basket', $oBasket);
-            $oViewRenderer->AddSourceObject('config', $amazonConfig);
-            echo $oViewRenderer->Render('/pkgshoppaymentamazon/widgets/address.html.twig');
-        }
-        ?>
-	</div>
 	<div class="col-xs-12 col-md-6">
 		<?php
         echo $oStep->fieldDescription;

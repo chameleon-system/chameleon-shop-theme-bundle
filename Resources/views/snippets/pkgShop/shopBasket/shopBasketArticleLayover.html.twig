@@ -56,9 +56,6 @@
                             {%set sLinkIconClass = 'i-point_green '%}
                             {% include "/common/links/linkStylesIcon.html.twig" %}
                         </div>
-                        <div>
-                            {% include 'pkgshoppaymentamazon/amazonbutton.html.twig' with amazonPayment %}
-                        </div>
                         <div class="linkCheckout"><a class="btn btn-default btn-lg " href="{{sCheckoutURL | raw}}">{{'chameleon_system_chameleon_shop_theme.checkout.action_to_payment'|trans}}</a></div>
                         <div class="clearfix">&nbsp;</div>
                     </div>

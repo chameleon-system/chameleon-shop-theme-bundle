@@ -61,17 +61,6 @@ if ($oMessageManager->ConsumerHasMessages(MTShopBasketCore::MSG_CONSUMER_NAME.'-
 						<h4><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.shipping_address')); ?>
 							(<a href="<?=$sLinkShippingAddress; ?>"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_edit')); ?></a>)
 						</h4>
-						<?php
-                            if (null === $amazonConfig) {
-                                echo 'error loading amazon widget';
-                            } else {
-                                $oViewRenderer = new ViewRenderer();
-                                $oViewRenderer->AddMapper(new \ChameleonSystem\AmazonPaymentBundle\mappers\AmazonWidgetMapper());
-                                $oViewRenderer->AddSourceObject('basket', $oBasket);
-                                $oViewRenderer->AddSourceObject('config', $amazonConfig);
-                                echo $oViewRenderer->Render('/pkgshoppaymentamazon/widgets/address-read-only.html.twig');
-                            }
-                        ?>
 					</div>
 					</div>
 			</div>
@@ -82,19 +71,6 @@ if ($oMessageManager->ConsumerHasMessages(MTShopBasketCore::MSG_CONSUMER_NAME.'-
 						<h4><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_payment_type')); ?>
 							(<a href="<?=$sLinkShipping; ?>"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_edit')); ?></a>)
 						</h4>
-						<?php
-                            $oPaymentMethod = $oBasket->GetActivePaymentMethod();
-                            if (null === $amazonConfig) {
-                                echo 'error loading amazon widget';
-                            } else {
-                                $oViewRenderer = new ViewRenderer();
-                                $oViewRenderer->AddMapper(new \ChameleonSystem\AmazonPaymentBundle\mappers\AmazonWidgetMapper());
-                                $oViewRenderer->AddSourceObject('basket', $oBasket);
-                                $oViewRenderer->AddSourceObject('config', $amazonConfig);
-                                echo $oViewRenderer->Render('/pkgshoppaymentamazon/widgets/wallet-read-only.html.twig');
-                            }
-
-                        ?>
 					</div>
 				</div>
 			</div>

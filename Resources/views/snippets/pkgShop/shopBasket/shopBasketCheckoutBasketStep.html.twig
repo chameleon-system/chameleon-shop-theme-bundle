@@ -154,9 +154,6 @@
                 </div>
                 <div class="col-xs-6 col-sm-4">
                     <div class="buttonContainer">
-                        <div>
-                            {% include 'pkgshoppaymentamazon/amazonbutton.html.twig' with amazonPayment %}
-                        </div>
                         <a class="btn btn-success btn-lg btn-block" onclick="forms.checkout.submit();">{{ 'chameleon_system_chameleon_shop_theme.checkout.action_to_payment' | trans }}</a>
                         {% if sPayPalExpressLink %}
                             <a class="btn btn-warning btn-lg btn-block" href="{{ sPayPalExpressLink | sanitizeurl('html_attr') }}">{{ 'chameleon_system_chameleon_shop_theme.checkout.basket_paypal_express_checkout' | trans }}
