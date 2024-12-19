@@ -5,6 +5,5 @@ $oViewRenderer->addMapperFromIdentifier('chameleon_system_shop_currency.mapper.s
 $oViewRenderer->AddMapper(new TPkgShopBasketMapper_BasketSummary());
 $oViewRenderer->AddMapper(new TPkgShopBasketMapper_BasketItems());
 $oViewRenderer->AddMapper(new TPkgShopBasketMapper_ToMiniBasket());
-$oViewRenderer->AddMapper(new \ChameleonSystem\AmazonPaymentBundle\mappers\AmazonButtonWidgetMapper());
 
 echo $oViewRenderer->Render('/pkgShop/shopBasket/shopBasketMiniBasketMobile.html.twig');

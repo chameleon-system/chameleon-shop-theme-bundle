@@ -50,6 +50,5 @@ $viewRenderer->AddMapper(new TPkgShopBasketMapper_VoucherInput());
 $viewRenderer->AddMapper(new TPkgShopPaymentHandlerMapper_PayPalExpressBasket());
 $viewRenderer->AddMapper(new TPkgShopBasketMapper_TelephoneOrder());
 $viewRenderer->AddMapper(new TPkgShopBasketMapper_TelephoneOrderForm());
-$viewRenderer->AddMapper(new \ChameleonSystem\AmazonPaymentBundle\mappers\AmazonButtonWidgetMapper());
 
 echo $viewRenderer->Render('/pkgShop/shopBasket/shopBasketCheckoutBasketStep.html.twig');
