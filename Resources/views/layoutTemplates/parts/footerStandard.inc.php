@@ -39,11 +39,6 @@ echo $oViewRenderer->Render('/pkgCmsTextBlock/standard.html.twig');
         </div>
         <div class="cmsspot col-xs-12 col-sm-3">
             <div id="footersocial">
-                <?php
-    $oViewRenderer = ServiceLocator::get('chameleon_system_view_renderer.view_renderer');
-$oViewRenderer->addMapperFromIdentifier('chameleon_system_shop.mapper.social.social_share_privacy');
-echo $oViewRenderer->Render('/widgets/socialSharePrivacy/socialSharePrivacy.html.twig');
-?>
             </div>
             <div id="footeraux">
                 <a title="<?php echo $translator->trans('chameleon_system_chameleon_shop_theme.layout.footer_print_page'); ?>" href="#" onclick="window.print(); return false;" class="snippetLinkStylesIcon cmsBtn-small">
