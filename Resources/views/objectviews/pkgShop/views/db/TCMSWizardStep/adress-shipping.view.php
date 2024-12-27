@@ -2,7 +2,7 @@
 
 /*@var $oStep TdbCmsWizardStep*/
 
-$oShop = TdbShop::GetInstance();
+$oShop = \ChameleonSystem\CoreBundle\ServiceLocator::get('chameleon_system_shop.shop_service')->getActiveShop();
 $oUser = TdbDataExtranetUser::GetInstance();
 $oShippingAddress = $oUser->GetShippingAddress();
 $oBillingAddress = $oUser->GetBillingAddress();

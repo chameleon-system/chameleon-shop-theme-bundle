@@ -2,7 +2,7 @@
 use ChameleonSystem\CoreBundle\ServiceLocator;
 
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-  $oShop = TdbShop::GetInstance();
+  $oShop = \ChameleonSystem\CoreBundle\ServiceLocator::get('chameleon_system_shop.shop_service')->getActiveShop();
   $oPortal = ServiceLocator::get('chameleon_system_core.portal_domain_service')->getActivePortal();
   $urlToPortalHome = ServiceLocator::get('chameleon_system_core.page_service')->getLinkToPortalHomeAbsolute([], $oPortal);
 

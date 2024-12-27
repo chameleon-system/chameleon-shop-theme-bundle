@@ -91,7 +91,7 @@ echo $oViewRenderer->Render('/pkgCmsTextBlock/footerWithHeadline.html.twig');
      </div>
     <div class="row" id="footerinfoline"><div class="col-xs-12 border">
         <div class="row">
-            <div class="col-xs-12 col-sm-4 preiseinfo"><?php echo $translator->trans('chameleon_system_chameleon_shop_theme.layout.footer_price_note', ['%sShippingLink%' => TdbShop::GetInstance()->GetLinkToSystemPageAsPopUp($translator->trans('chameleon_system_chameleon_shop_theme.layout.footer_shipping'), 'shipping')]); ?></div>
+            <div class="col-xs-12 col-sm-4 preiseinfo"><?php echo $translator->trans('chameleon_system_chameleon_shop_theme.layout.footer_price_note', ['%sShippingLink%' => \ChameleonSystem\CoreBundle\ServiceLocator::get('chameleon_system_shop.shop_service')->getActiveShop()->GetLinkToSystemPageAsPopUp($translator->trans('chameleon_system_chameleon_shop_theme.layout.footer_shipping'), 'shipping')]); ?></div>
             <div class="col-xs-12 col-sm-8" id="footernavi"><div class="footernavi-inner"><?php $modules->GetModule('footernavi'); ?></div></div>
             <div class="col-xs-12 ga-optout-optin-link" style="display: none">
                 <a class="ga-optout-link"><?php echo $translator->trans('chameleon_system_chameleon_shop_theme.google_analytics.opt_out'); ?></a>
