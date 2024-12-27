@@ -124,7 +124,7 @@
         <td>
           <?php
             $oCountries = TdbDataCountryList::GetList();
-            $oShop = TdbShop::GetInstance();
+            $oShop = \ChameleonSystem\CoreBundle\ServiceLocator::get('chameleon_system_shop.shop_service')->getActiveShop();
             $iCountryId = $oUserAddress->fieldDataCountryId;
             if (is_null($iCountryId) || $iCountryId < 1) {
                 $iCountryId = $oShop->fieldDataCountryId;

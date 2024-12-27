@@ -7,7 +7,7 @@
 /** @var $aModuleInstances */
 /** @var $aSetItems */
 if (isset($aModuleInstances) && is_array($aModuleInstances) && count($aModuleInstances) > 0) {
-    $oShopConfig = TdbShop::GetInstance();
+    $oShopConfig = \ChameleonSystem\CoreBundle\ServiceLocator::get('chameleon_system_shop.shop_service')->getActiveShop();
     $sBasketNodeId = $oShopConfig->GetSystemPageNodeId('checkout');
     $oActivePage = \ChameleonSystem\CoreBundle\ServiceLocator::get('chameleon_system_core.active_page_service')->getActivePage();
     $iActivePageNodeId = $oActivePage->GetMainTreeId();
