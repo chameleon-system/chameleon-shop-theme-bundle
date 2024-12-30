@@ -7,8 +7,8 @@
     $oViewRenderer = new ViewRenderer();
     $oLoginText = TdbPkgCmsTextBlock::GetInstanceFromSystemName('shop_basket_step_user_login');
     if (is_null($oLoginText)) {
-        $sTitle = TGlobal::Translate('chameleon_system_chameleon_shop_theme.order_login.existing_customer_headline');
-        $sText = TGlobal::Translate('chameleon_system_chameleon_shop_theme.order_login.existing_customer_help');
+        $sTitle = \ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order_login.existing_customer_headline');
+        $sText = \ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order_login.existing_customer_help');
     } else {
         $sTitle = $oLoginText->fieldName;
         $sText = $oLoginText->GetTextField('content');
@@ -21,7 +21,7 @@
     $oViewRenderer->AddSourceObject('sTitle', $sTitle);
     $oViewRenderer->AddSourceObject('sText', $sText);
     $oViewRenderer->AddSourceObject('sRegisterLinkTitle', '');
-    $oViewRenderer->AddSourceObject('sForgetPasswordLinkTitle', TGlobal::Translate('chameleon_system_chameleon_shop_theme.order_login.forgot_password'));
+    $oViewRenderer->AddSourceObject('sForgetPasswordLinkTitle', \ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order_login.forgot_password'));
 
     $spot1 = $oViewRenderer->Render('/common/userInput/form/formLoginLabelOnTop.html.twig');
 
@@ -30,8 +30,8 @@
     $oViewRenderer2 = new ViewRenderer();
     $oRegisterText = TdbPkgCmsTextBlock::GetInstanceFromSystemName('shop_basket_step_user_register');
     if (is_null($oRegisterText)) {
-        $sTitle = TGlobal::Translate('chameleon_system_chameleon_shop_theme.order_login.new_customer_headline');
-        $sText = TGlobal::Translate('chameleon_system_chameleon_shop_theme.order_login.new_customer_help');
+        $sTitle = \ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order_login.new_customer_headline');
+        $sText = \ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order_login.new_customer_help');
     } else {
         $sTitle = $oRegisterText->fieldName;
         $sText = $oRegisterText->GetTextField('content');
@@ -49,7 +49,7 @@
             'sValue' => 'register',
         ),
     ));
-    $oFormRenderer->AddSourceObject('sSubmitTitle', TGlobal::Translate('chameleon_system_chameleon_shop_theme.order_login.action_register'));
+    $oFormRenderer->AddSourceObject('sSubmitTitle', \ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order_login.action_register'));
     $sForm = $oFormRenderer->Render('/common/userInput/form/simpleFormWrapper.html.twig');
 
     $oViewRenderer2->AddSourceObject('aSecondLink', array('html' => $sForm));
@@ -61,8 +61,8 @@
     $oViewRenderer3 = new ViewRenderer();
     $oRegisterGuestText = TdbPkgCmsTextBlock::GetInstanceFromSystemName('shop_basket_step_user_register_guest');
     if (is_null($oRegisterGuestText)) {
-        $sTitle = TGlobal::Translate('chameleon_system_chameleon_shop_theme.order_login.guest_headline');
-        $sText = TGlobal::Translate('chameleon_system_chameleon_shop_theme.order_login.guest_help');
+        $sTitle = \ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order_login.guest_headline');
+        $sText = \ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order_login.guest_help');
     } else {
         $sTitle = $oRegisterGuestText->fieldName;
         $sText = $oRegisterGuestText->GetTextField('content');
@@ -80,7 +80,7 @@
             'sValue' => 'guest',
         ),
     ));
-    $oFormRenderer2->AddSourceObject('sSubmitTitle', TGlobal::Translate('chameleon_system_chameleon_shop_theme.order_login.action_continue_as_guest'));
+    $oFormRenderer2->AddSourceObject('sSubmitTitle', \ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order_login.action_continue_as_guest'));
     $sForm2 = $oFormRenderer2->Render('/common/userInput/form/simpleFormWrapper.html.twig');
 
     $oViewRenderer3->AddSourceObject('aSecondLink', array('html' => $sForm2));
@@ -90,8 +90,8 @@
     $oViewRenderer4 = new ViewRenderer();
     $oTelephoneText = TdbPkgCmsTextBlock::GetInstanceFromSystemName('shop_basket_step_user_telephone');
     if (is_null($oTelephoneText)) {
-        $sTitle = TGlobal::Translate('chameleon_system_chameleon_shop_theme.order_login.telefon_order_headline');
-        $sText = TGlobal::Translate('chameleon_system_chameleon_shop_theme.order_login.telefon_order_help');
+        $sTitle = \ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order_login.telefon_order_headline');
+        $sText = \ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order_login.telefon_order_help');
     } else {
         $sTitle = $oTelephoneText->fieldName;
         $sText = $oTelephoneText->GetTextField('content');

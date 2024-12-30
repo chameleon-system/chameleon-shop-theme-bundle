@@ -20,8 +20,8 @@
     </div>
     <div class="col-xs-12 col-md-9">
         <div class="shipping">
-            <h3><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.user_shipping_address')); ?></h3>
-            <div class="helptext"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.user_shipping_address_help')); ?></div>
+            <h3><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.user_shipping_address')); ?></h3>
+            <div class="helptext"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.user_shipping_address_help')); ?></div>
             <?php
                 $oViewRenderer = new ViewRenderer();
                 $oViewRenderer->AddMapper(new TPkgExtranetMapper_AddressForm());
@@ -42,8 +42,8 @@
             if ('1' != $bShipToBillingAddress) {
                 ?>
                 <div class="billing">
-                    <h3><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.user_billing_address')); ?></h3>
-                    <div class="helptext"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.user_billing_address_help')); ?></div>
+                    <h3><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.user_billing_address')); ?></h3>
+                    <div class="helptext"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.user_billing_address_help')); ?></div>
                     <?php
                         $oViewRenderer = new ViewRenderer();
                 $oViewRenderer->AddMapper(new TPkgExtranetMapper_AddressForm());

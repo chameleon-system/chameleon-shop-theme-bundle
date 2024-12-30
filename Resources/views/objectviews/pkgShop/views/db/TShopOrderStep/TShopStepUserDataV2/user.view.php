@@ -17,7 +17,7 @@ $sDescription = $oStep->GetDescription();
 $oMessageManager = TCMSMessageManager::GetInstance();
 ?>
 
-    <h1><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.user_headline_shipping')); ?></h1>
+    <h1><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.user_headline_shipping')); ?></h1>
 
         <script type="text/javascript">
             //<![CDATA[
@@ -58,7 +58,7 @@ $oMessageManager = TCMSMessageManager::GetInstance();
                         <div class="col-xs-12 col-sm-6 col-lg-3">
                             <?php if (false === $oUser->IsLoggedIn()) {
                 ?>
-                                <a href="<?=$sBackLink; ?>" class="btn btn-default btn-lg btn-block"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.user_previous_step')); ?></a>
+                                <a href="<?=$sBackLink; ?>" class="btn btn-default btn-lg btn-block"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.user_previous_step')); ?></a>
                             <?php
             } else {
                 ?>
@@ -67,7 +67,7 @@ $oMessageManager = TCMSMessageManager::GetInstance();
             } ?>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-lg-3 pull-right">
-                            <button id="primarypaymentbutton" type="submit" class="btn btn-lg btn-success btn-block" ><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.user_next_step')); ?></button>
+                            <button id="primarypaymentbutton" type="submit" class="btn btn-lg btn-success btn-block" ><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.user_next_step')); ?></button>
                         </div>
                     </div>
                     <?php if ($oUser->IsLoggedIn()) {

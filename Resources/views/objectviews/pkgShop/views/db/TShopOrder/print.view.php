@@ -1,5 +1,5 @@
 <div class="printOrder">
-  <h2><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.order.headline')); ?></h2>
+  <h2><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order.headline')); ?></h2>
 
   <?php
     $oLocal = TCMSLocal::GetActive();
@@ -11,9 +11,9 @@
   ?>
 
   <br />
-  <strong><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.order.order_date')); ?>:</strong> <?=$oLocal->FormatDate($oOrder->fieldDatecreated, TCMSLocal::DATEFORMAT_SHOW_DATE); ?><br />
-  <strong><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.order.customer_number')); ?>:</strong> <?=TGlobal::OutHTML($oOrder->fieldCustomerNumber); ?><br />
-  <strong><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.order.order_number')); ?>:</strong> <?=TGlobal::OutHTML($oOrder->fieldOrdernumber); ?><br />
+  <strong><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order.order_date')); ?>:</strong> <?=$oLocal->FormatDate($oOrder->fieldDatecreated, TCMSLocal::DATEFORMAT_SHOW_DATE); ?><br />
+  <strong><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order.customer_number')); ?>:</strong> <?=TGlobal::OutHTML($oOrder->fieldCustomerNumber); ?><br />
+  <strong><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.order.order_number')); ?>:</strong> <?=TGlobal::OutHTML($oOrder->fieldOrdernumber); ?><br />
 
   <?php
     /*@var $oOrder TdbShopOrder*/
@@ -29,6 +29,6 @@
   ?>
   <div class="hideonPrint" style="padding-top:20px;">
     <br />
-    <a href="#" onclick="window.print()"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.layout.footer_print_page')); ?></a>
+    <a href="#" onclick="window.print()"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.layout.footer_print_page')); ?></a>
   </div>
 </div>

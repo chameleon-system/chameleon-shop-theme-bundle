@@ -22,7 +22,7 @@ if ($oArticle->IsVariant()) {
 <a href="<?php echo $sDetailLink; ?>">
 <?php
   if ('1' == $oArticle->fieldIsNew) {
-      echo '<img class="marker" src="/assets/images/icons/new.png" alt="'.TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.marker.new')).'" />';
+      echo '<img class="marker" src="/assets/images/icons/new.png" alt="'.TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.marker.new')).'" />';
   }
 if ($oArticle->fieldPriceReference > $oArticle->dPrice) {
     $sStyle = '';

@@ -6,7 +6,7 @@
 ?>
 <table summary="">
   <tr>
-    <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.payment.form_card_type')); ?><span class="required">*</span></th>
+    <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.payment.form_card_type')); ?><span class="required">*</span></th>
     <td onclick="document.getElementById('labelHookId<?=$aCallTimeVars['iPaymentMethodId']; ?>').checked='checked'">
       <?php
         $sSelected = '';
@@ -30,7 +30,7 @@
     </td>
   </tr>
   <tr>
-    <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.payment.form_card_number')); ?><span class="required">*</span></th>
+    <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.payment.form_card_number')); ?><span class="required">*</span></th>
     <td onclick="document.getElementById('labelHookId<?=$aCallTimeVars['iPaymentMethodId']; ?>').checked='checked'">
       <?=TTemplateTools::InputField(TdbShopPaymentHandler::URL_PAYMENT_USER_INPUT.'[creditCardNumber]', $aUserPaymentData['creditCardNumber'], 170); ?>
       <?php
@@ -41,7 +41,7 @@
     </td>
   </tr>
   <tr>
-    <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.payment.form_card_owner')); ?><span class="required">*</span></th>
+    <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.payment.form_card_owner')); ?><span class="required">*</span></th>
     <td onclick="document.getElementById('labelHookId<?=$aCallTimeVars['iPaymentMethodId']; ?>').checked='checked'">
       <?=TTemplateTools::InputField(TdbShopPaymentHandler::URL_PAYMENT_USER_INPUT.'[creditCardOwnerName]', $aUserPaymentData['creditCardOwnerName'], 170); ?>
       <?php
@@ -52,7 +52,7 @@
     </td>
   </tr>
   <tr>
-    <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.payment.form_card_valid_until')); ?><span class="required">*</span></th>
+    <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.payment.form_card_valid_until')); ?><span class="required">*</span></th>
     <td onclick="document.getElementById('labelHookId<?=$aCallTimeVars['iPaymentMethodId']; ?>').checked='checked'">
       <?php
         $aMonth = array('1' => '01', '2' => '02', '3' => '03', '4' => '04', '5' => '05', '6' => '06', '7' => '07', '8' => '08', '9' => '09', '10' => '10', '11' => '11', '12' => '12');
@@ -76,7 +76,7 @@
     </td>
   </tr>
   <tr>
-    <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.payment.form_card_checksum')); ?><span class="required">*</span></th>
+    <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.payment.form_card_checksum')); ?><span class="required">*</span></th>
     <td onclick="document.getElementById('labelHookId<?=$aCallTimeVars['iPaymentMethodId']; ?>').checked='checked'">
       <?=TTemplateTools::InputField(TdbShopPaymentHandler::URL_PAYMENT_USER_INPUT.'[creditCardChecksum]', $aUserPaymentData['creditCardChecksum'], 85); ?>
       <?php
@@ -87,4 +87,4 @@
     </td>
   </tr>
 </table>
-<div><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.payment.form_card_shipping')); ?></div>
+<div><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.payment.form_card_shipping')); ?></div>
