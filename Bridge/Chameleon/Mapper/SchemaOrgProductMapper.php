@@ -20,7 +20,7 @@ class SchemaOrgProductMapper extends \AbstractViewMapper
     /**
      * {@inheritdoc}
      */
-    public function GetRequirements(IMapperRequirementsRestricted $oRequirements)
+    public function GetRequirements(IMapperRequirementsRestricted $oRequirements): void
     {
         $oRequirements->NeedsSourceObject('sTopic', 'string', '', true);
         $oRequirements->NeedsSourceObject('sHeadline', 'string');
@@ -35,7 +35,7 @@ class SchemaOrgProductMapper extends \AbstractViewMapper
     /**
      * {@inheritdoc}
      */
-    public function Accept(IMapperVisitorRestricted $oVisitor, $bCachingEnabled, IMapperCacheTriggerRestricted $oCacheTriggerManager)
+    public function Accept(IMapperVisitorRestricted $oVisitor, $bCachingEnabled, IMapperCacheTriggerRestricted $oCacheTriggerManager): void
     {
         $topic = $oVisitor->GetSourceObject('sTopic');
         $headline = $oVisitor->GetSourceObject('sHeadline');

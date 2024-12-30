@@ -21,14 +21,14 @@ class FormBootstrapStyleDefaultsMapper extends AbstractViewMapper
     /**
      * {@inheritdoc}
      */
-    public function GetRequirements(IMapperRequirementsRestricted $oRequirements)
+    public function GetRequirements(IMapperRequirementsRestricted $oRequirements): void
     {
     }
 
     /**
      * {@inheritdoc}
      */
-    public function Accept(IMapperVisitorRestricted $oVisitor, $bCachingEnabled, IMapperCacheTriggerRestricted $oCacheTriggerManager)
+    public function Accept(IMapperVisitorRestricted $oVisitor, $bCachingEnabled, IMapperCacheTriggerRestricted $oCacheTriggerManager): void
     {
         $oVisitor->SetMappedValue('formDefaultLabelClass', 'col-xs-12 col-sm-4 col-md-3 col-lg-2');
         $oVisitor->SetMappedValue('formDefaultInputClass', 'col-xs-12 col-sm-7 col-md-6 col-lg-5');
