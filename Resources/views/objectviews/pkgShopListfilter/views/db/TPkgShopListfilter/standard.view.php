@@ -33,7 +33,7 @@ $oGlobal = TGlobal::instance();
                     </div>
                 </div>
             </div>
-            <input type="submit" class="hideOnJS" value="<?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.filter.action_set')); ?>">
+            <input type="submit" class="hideOnJS" value="<?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.filter.action_set')); ?>">
         </form>
     </div>
 </div>

@@ -20,10 +20,10 @@ $sDescription = $oStep->GetDescription();
 
 ?>
 
-<h1><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_headline')); ?></h1>
+<h1><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_headline')); ?></h1>
 <?php
 if ($oMessageManager->ConsumerHasMessages(MTShopBasketCore::MSG_CONSUMER_NAME.'-agb')) {
-    echo '<div class="cmsmessage messageerror mainmessage">'.TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_error')).'</div>';
+    echo '<div class="cmsmessage messageerror mainmessage">'.TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_error')).'</div>';
 }
 ?>
 [{CMSMSG-<?= MTShopBasketCore::MSG_CONSUMER_NAME; ?>}]
@@ -35,11 +35,11 @@ if ($oMessageManager->ConsumerHasMessages(MTShopBasketCore::MSG_CONSUMER_NAME.'-
     <div class="col-xs-12 col-sm-3">
         <div class="ConfirmStepInfoBlock">
             <div class="shippingConfirmStepInfoBlock ConfirmStepInfoBlockBox">
-                <h2 class="headline3"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_shipment')); ?></h2>
+                <h2 class="headline3"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_shipment')); ?></h2>
 
                 <div class="shippingadr innerBox">
-                    <h3 class="headline4"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.shipping_address')); ?>
-                        (<a href="<?=$sLinkShippingAddress; ?>"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_edit')); ?></a>)
+                    <h3 class="headline4"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.shipping_address')); ?>
+                        (<a href="<?=$sLinkShippingAddress; ?>"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_edit')); ?></a>)
                     </h3>
                     <?php
                     $oShippingAddress = $oUser->GetShippingAddress();
@@ -53,8 +53,8 @@ if ($oMessageManager->ConsumerHasMessages(MTShopBasketCore::MSG_CONSUMER_NAME.'-
                     <?php
                     $oShippingGroups = TdbShopShippingGroupList::GetAvailableShippingGroups();
                     ?>
-                    <h3 class="headline4"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_shipment_type')); ?>
-                        (<a href="<?=$sLinkShipping; ?>"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_edit')); ?></a>)
+                    <h3 class="headline4"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_shipment_type')); ?>
+                        (<a href="<?=$sLinkShipping; ?>"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_edit')); ?></a>)
                     </h3>
                     <?php
                     $oShipping = $oBasket->GetActiveShippingGroup();
@@ -64,11 +64,11 @@ if ($oMessageManager->ConsumerHasMessages(MTShopBasketCore::MSG_CONSUMER_NAME.'-
             </div>
 
             <div class="billingConfirmStepInfoBlock ConfirmStepInfoBlockBox">
-                <h2 class="headline3"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_payment')); ?></h2>
+                <h2 class="headline3"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_payment')); ?></h2>
 
                 <div class="shippingadr innerBox">
-                    <h3 class="headline4"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.billing_address')); ?>
-                        (<a href="<?=$sLinkShippingAddress; ?>"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_edit')); ?></a>)</h3>
+                    <h3 class="headline4"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.billing_address')); ?>
+                        (<a href="<?=$sLinkShippingAddress; ?>"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_edit')); ?></a>)</h3>
                     <?php
                     $oBillingAddress = $oUser->GetBillingAddress();
                     $oViewRenderer = new ViewRenderer();
@@ -80,8 +80,8 @@ if ($oMessageManager->ConsumerHasMessages(MTShopBasketCore::MSG_CONSUMER_NAME.'-
 
 
                 <div class="shippingtype innerBox">
-                    <h3 class="headline4"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_payment_type')); ?>
-                        (<a href="<?=$sLinkShipping; ?>"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_edit')); ?></a>)
+                    <h3 class="headline4"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_payment_type')); ?>
+                        (<a href="<?=$sLinkShipping; ?>"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_edit')); ?></a>)
                     </h3>
                     <?php
                     $oPaymentMethod = $oBasket->GetActivePaymentMethod();
@@ -114,7 +114,7 @@ if ($oMessageManager->ConsumerHasMessages(MTShopBasketCore::MSG_CONSUMER_NAME.'-
                             <div class="checkbox">
                                 <label><input type="checkbox" value="1" <?php if ($newsletter) {
                 echo 'checked="checked"';
-            } ?> name="aInput[newsletter]"/> <?=TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_newsletter'); ?>
+            } ?> name="aInput[newsletter]"/> <?=\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_newsletter'); ?>
                                 </label>
                             </div>
                         </div>
@@ -123,12 +123,12 @@ if ($oMessageManager->ConsumerHasMessages(MTShopBasketCore::MSG_CONSUMER_NAME.'-
         } ?>
                     <div class="agb confirmStepAgb">
                         <?php
-                        $sAGBLink = $oShop->GetLinkToSystemPageAsPopUp(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_agb'), 'agb-popup', null, false, 750);
+                        $sAGBLink = $oShop->GetLinkToSystemPageAsPopUp(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_agb'), 'agb-popup', null, false, 750);
                         $sText = 'chameleon_system_chameleon_shop_theme.checkout.confirm_agb_block';
                         ?>
                         <div class="form-group">
                             <div class="checkbox">
-                                <label><input type="checkbox" value="true" name="aInput[agb]"/> <?=TGlobal::Translate($sText, array('%sAGB%' => $sAGBLink)); ?>
+                                <label><input type="checkbox" value="true" name="aInput[agb]"/> <?=\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans($sText, array('%sAGB%' => $sAGBLink)); ?>
                                 </label>
                             </div>
                         </div>
@@ -139,9 +139,9 @@ if ($oMessageManager->ConsumerHasMessages(MTShopBasketCore::MSG_CONSUMER_NAME.'-
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <button id="primarypaymentbutton" class="btn btn-lg btn-success btn-block" type="submit"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_order')); ?></button>
+                    <button id="primarypaymentbutton" class="btn btn-lg btn-success btn-block" type="submit"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_order')); ?></button>
                     <div class="cssFont5">
-                        (<?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.checkout.confirm_info_mail')); ?>)
+                        (<?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.checkout.confirm_info_mail')); ?>)
                     </div>
                 </div>
             </form>

@@ -30,10 +30,10 @@
 
     <div class="stepnavibuttons">
       <?php if (!is_null($oStepNext)) {
-        ?><div class="formButtonNext"><input type="submit" value="<?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.comments.next_page')); ?>" /></div><?php
+        ?><div class="formButtonNext"><input type="submit" value="<?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.comments.next_page')); ?>" /></div><?php
     } ?>
       <?php if ($sBackLink) {
-        ?><div class="formButtonBack"><a href="<?=$sBackLink; ?>" class="backLink"><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.comments.previous_page')); ?></a></div><?php
+        ?><div class="formButtonBack"><a href="<?=$sBackLink; ?>" class="backLink"><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.comments.previous_page')); ?></a></div><?php
     } ?>
     </div>
   </form>

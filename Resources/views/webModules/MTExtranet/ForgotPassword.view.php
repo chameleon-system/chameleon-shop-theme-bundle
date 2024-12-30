@@ -5,7 +5,7 @@ $sText = (isset($bSendPasswordFormSubmitted) && true === $bSendPasswordFormSubmi
 
 $sError = '';
 if (isset($bError) && true === $bError) {
-    $sError = (isset($sErrorMsg)) ? ($sErrorMsg) : (TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.error_send_password_unknown_mail')));
+    $sError = (isset($sErrorMsg)) ? ($sErrorMsg) : (TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.error_send_password_unknown_mail')));
 }
 
 $sName = (isset($Name)) ? ($Name) : ('');

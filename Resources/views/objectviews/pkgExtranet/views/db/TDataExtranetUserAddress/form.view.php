@@ -14,7 +14,7 @@
     <input type="hidden" name="<?=$sAddressName.'[id]'; ?>" value="<?=TGlobal::OutHTML($oUserAddress->id); ?>" />
     <table summary="">
       <tr>
-        <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.form_salutation')); ?><span class="required">*</span></th>
+        <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.form_salutation')); ?><span class="required">*</span></th>
         <td>
           <?php
             $oSalutationList = TdbDataExtranetSalutationList::GetList();
@@ -35,7 +35,7 @@
         </td>
       </tr>
       <tr>
-        <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.form_first_name')); ?><span class="required">*</span></th>
+        <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.form_first_name')); ?><span class="required">*</span></th>
         <td>
           <?=TTemplateTools::InputField($sAddressName.'[firstname]', $oUserAddress->fieldFirstname, 310); ?>
           <?php
@@ -46,7 +46,7 @@
         </td>
       </tr>
       <tr>
-        <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.form_last_name')); ?><span class="required">*</span></th>
+        <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.form_last_name')); ?><span class="required">*</span></th>
         <td>
           <?=TTemplateTools::InputField($sAddressName.'[lastname]', $oUserAddress->fieldLastname, 310); ?>
           <?php
@@ -57,7 +57,7 @@
         </td>
       </tr>
        <tr>
-        <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.form_company')); ?></th>
+        <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.form_company')); ?></th>
         <td><?=TTemplateTools::InputField($sAddressName.'[company]', $oUserAddress->fieldCompany, 300); ?>
           <?php
             if ($oMessageManager->ConsumerHasMessages($sAddressName.'-company')) {
@@ -67,7 +67,7 @@
         </td>
       </tr>
       <tr>
-        <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.form_additional_info')); ?></th>
+        <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.form_additional_info')); ?></th>
         <td><?=TTemplateTools::InputField($sAddressName.'[address_additional_info]', $oUserAddress->fieldAddressAdditionalInfo, 310); ?>
           <?php
             if ($oMessageManager->ConsumerHasMessages($sAddressName.'-address_additional_info')) {
@@ -78,7 +78,7 @@
       </tr>
 
       <tr>
-        <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.form_street_and_number')); ?><span class="required">*</span></th>
+        <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.form_street_and_number')); ?><span class="required">*</span></th>
         <td>
           <div style="float:left; width: 240px;">
             <?=TTemplateTools::InputField($sAddressName.'[street]', $oUserAddress->fieldStreet, 270); ?>
@@ -98,7 +98,7 @@
         </td>
       </tr>
       <tr>
-        <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.form_zip')); ?><span class="required">*</span></th>
+        <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.form_zip')); ?><span class="required">*</span></th>
         <td>
           <?=TTemplateTools::InputField($sAddressName.'[postalcode]', $oUserAddress->fieldPostalcode, 310); ?>
           <?php
@@ -109,7 +109,7 @@
         </td>
       </tr>
       <tr>
-        <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.form_city')); ?><span class="required">*</span></th>
+        <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.form_city')); ?><span class="required">*</span></th>
         <td>
           <?=TTemplateTools::InputField($sAddressName.'[city]', $oUserAddress->fieldCity, 310); ?>
           <?php
@@ -120,7 +120,7 @@
         </td>
       </tr>
       <tr>
-        <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.form_country')); ?><span class="required">*</span></th>
+        <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.form_country')); ?><span class="required">*</span></th>
         <td>
           <?php
             $oCountries = TdbDataCountryList::GetList();
@@ -138,7 +138,7 @@
         </td>
       </tr>
       <tr>
-        <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.form_phone')); ?></th>
+        <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.form_phone')); ?></th>
         <td><?=TTemplateTools::InputField($sAddressName.'[telefon]', $oUserAddress->fieldTelefon, 310); ?>
           <?php
             if ($oMessageManager->ConsumerHasMessages($sAddressName.'-telefon')) {
@@ -148,7 +148,7 @@
         </td>
       </tr>
       <tr>
-        <th><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.extranet.form_fax')); ?></th>
+        <th><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.extranet.form_fax')); ?></th>
         <td><?=TTemplateTools::InputField($sAddressName.'[fax]', $oUserAddress->fieldFax); ?>
           <?php
             if ($oMessageManager->ConsumerHasMessages($sAddressName.'-fax')) {

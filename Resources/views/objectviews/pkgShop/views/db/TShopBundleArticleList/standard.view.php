@@ -5,7 +5,7 @@
   if ($oShopBundleArticleList->Length() > 0) {
       ?>
 <div class="TShopBundleArticleList"><div class="standard">
-  <h4><?=TGlobal::OutHTML(TGlobal::Translate('chameleon_system_chameleon_shop_theme.bundle.bundle_content')); ?></h4>
+  <h4><?=TGlobal::OutHTML(\ChameleonSystem\CoreBundle\ServiceLocator::get('translator')->trans('chameleon_system_chameleon_shop_theme.bundle.bundle_content')); ?></h4>
   <?php
     while ($oBundle = $oShopBundleArticleList->Next()) {
         echo $oBundle->Render('standard', 'Customer', $aCallTimeVars);
