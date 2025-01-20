@@ -64,61 +64,52 @@
     <script type="text/javascript">
         $(document).ready(function () {
             var $sliderPriceContainer = $('.sliderPriceContainer');
-            if(Modernizr.touch){
-                $sliderPriceContainer.find('.slider-touch').show();
-                $sliderPriceContainer.find('.slider-no-touch').hide();
+            $sliderPriceContainer.find('.slider-touch').hide();
+            $sliderPriceContainer.find('.slider-no-touch').show();
+            $sliderPriceContainer.find('#sliderPrice').slider({
+                range:true,
+                disabled: {{ slider.disabled }},
+                values: [
+                    {{slider.valueLow}},
+                    {{slider.valueHigh}}
+                ],
+                min: {{slider.min}},
+                max: {{slider.max}},
+                step: {{slider.step}},
 
-                $sliderPriceContainer.find('select.priceFrom').attr('disabled', false);
-                $sliderPriceContainer.find('select.priceTo').attr('disabled', false);
-            }
-            else {
-                $sliderPriceContainer.find('.slider-touch').hide();
-                $sliderPriceContainer.find('.slider-no-touch').show();
-                $sliderPriceContainer.find('#sliderPrice').slider({
-                    range:true,
-                    disabled: {{ slider.disabled }},
-                    values: [
-                        {{slider.valueLow}},
-                        {{slider.valueHigh}}
-                    ],
-                    min: {{slider.min}},
-                    max: {{slider.max}},
-                    step: {{slider.step}},
+                slide: function(event, ui){
+                    var startValue = ui.values[0],
+                        endValue = ui.values[1];
+                    $sliderPriceContainer.find('.sliderLabel .amountStart').html(' {{sCurrency}} ' + startValue );
+                    $sliderPriceContainer.find('.sliderLabel .amountEnd').html(' {{sCurrency}} ' + endValue );
 
-                    slide: function(event, ui){
-                        var startValue = ui.values[0],
-                            endValue = ui.values[1];
-                        $sliderPriceContainer.find('.sliderLabel .amountStart').html(' {{sCurrency}} ' + startValue );
-                        $sliderPriceContainer.find('.sliderLabel .amountEnd').html(' {{sCurrency}} ' + endValue );
+                    /**
+                     * shortcut for changing a the selected option of a select input
+                     */
+                    var $priceFromSelect = $sliderPriceContainer.find('select.priceFrom'),
+                        $priceToSelect = $sliderPriceContainer.find('select.priceTo');
 
+                    $priceFromSelect.val(startValue);
+                    $priceToSelect.val(endValue);
+
+
+                },
+                stop: function (event, ui) {
+                    var startValue = ui.values[0],
+                        endValue = ui.values[1];
+
+                    if($(this).slider('option', 'min') != startValue ||
+                       $(this).slider('option', 'max') != endValue){
                         /**
-                         * shortcut for changing a the selected option of a select input
+                         * we only want to submit the form if the user really changed something
                          */
-                        var $priceFromSelect = $sliderPriceContainer.find('select.priceFrom'),
-                            $priceToSelect = $sliderPriceContainer.find('select.priceTo');
-
-                        $priceFromSelect.val(startValue);
-                        $priceToSelect.val(endValue);
-
-
-                    },
-                    stop: function (event, ui) {
-                        var startValue = ui.values[0],
-                            endValue = ui.values[1];
-
-                        if($(this).slider('option', 'min') != startValue ||
-                           $(this).slider('option', 'max') != endValue){
-                            /**
-                             * we only want to submit the form if the user really changed something
-                             */
-                            //document.TdbPkgShopListfilter.submit();
-                        }
-                        document.TdbPkgShopListfilter.submit();
+                        //document.TdbPkgShopListfilter.submit();
                     }
-                });
-                $sliderPriceContainer.find('#sliderPrice a:first').addClass('selectorLeft');
-                $sliderPriceContainer.find('#sliderPrice a:last').addClass('selectorRight');
-            }
+                    document.TdbPkgShopListfilter.submit();
+                }
+            });
+            $sliderPriceContainer.find('#sliderPrice a:first').addClass('selectorLeft');
+            $sliderPriceContainer.find('#sliderPrice a:last').addClass('selectorRight');
         });
     </script>
 {% endblock %}

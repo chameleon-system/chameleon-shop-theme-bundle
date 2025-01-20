@@ -22,16 +22,6 @@
         <?php $modules->GetModule('metadata'); ?>
 
 <?php
-/*
-  * All JavaScript at the bottom, except this Modernizr build.
-  * Modernizr enables HTML5 elements & feature detects for optimal performance.
-  * Create your own custom Modernizr build: www.modernizr.com/download/
-  */
-?>
-        <!--#CMSRESOURCEIGNORE#-->
-        <script src="/bundles/chameleonsystemchameleonshoptheme/js/modernizr/modernizr-2.5.3.min.js"></script>
-        <!--#ENDCMSRESOURCEIGNORE#-->
-<?php
         if (isset($aHeadIncludes) && is_array($aHeadIncludes)) {
             echo implode("\n        ", $aHeadIncludes);
         }
