@@ -26,7 +26,7 @@
     },
     "require": {
         "bassjobsen/bootstrap-3-typeahead": "~4.0",
-        "chameleon-system/chameleon-shop": "dev-master@dev",
+        "chameleon-system/chameleon-shop": "~8.0.0",
         "wikimedia/less.php": "^5.1",
         "twbs/bootstrap": "~3.3"
     },
