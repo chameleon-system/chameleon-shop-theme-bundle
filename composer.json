@@ -32,8 +32,6 @@
     },
     "require-dev": {
         "chameleon-system/chameleon-base": "~8.0.0",
-        "chameleon-system/sanitycheck": "~8.0.0",
-        "chameleon-system/sanitycheck-bundle": "~8.0.0",
         "phpunit/phpunit": "^8.5.13"
     },
     "autoload": {
